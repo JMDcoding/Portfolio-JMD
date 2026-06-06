@@ -1,201 +1,159 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const macWrapper = document.getElementById("mac-wrapper");
-  const macScreen = document.getElementById("mac-screen");
-  const welcomeHeader = document.querySelector(".welcome-header");
-  
-  // Screen States
-  const stateOff = document.getElementById("state-off");
-  const stateBooting = document.getElementById("state-booting");
-  const stateOn = document.getElementById("state-on");
-  
-  // Progress Bar
-  const bootProgress = document.getElementById("boot-progress");
-  
-  // Actions
-  const btnZoomOut = document.getElementById("btn-zoom-out");
-  const btnShutdown = document.getElementById("btn-shutdown");
-  
-  // Windows & Tiles
-  const tiles = document.querySelectorAll(".mosaic-tile");
-  const windows = document.querySelectorAll(".mac-window");
-  const closeButtons = document.querySelectorAll(".mac-close-btn");
-  
-  let isBooted = false;
-  let isZoomed = false;
+// Scroll Reveal
+const revealElements = document.querySelectorAll('.reveal');
+const yearElement = document.getElementById('year');
+const navToggle = document.querySelector('.nav-toggle');
+const siteNav = document.getElementById('site-navigation');
 
-  // Clock Update
-  const menuClock = document.getElementById("menu-clock");
-  const updateClock = () => {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    if (menuClock) menuClock.textContent = `${hours}:${minutes}`;
-  };
-  setInterval(updateClock, 1000);
-  updateClock();
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
-  // Web Audio Retro Boot Chime (Generates a clean synth chord beep)
-  const playBootChime = () => {
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContext) return;
-      const ctx = new AudioContext();
-      
-      const playTone = (freq, delay, duration) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(freq, ctx.currentTime + delay);
-        
-        gain.gain.setValueAtTime(0, ctx.currentTime + delay);
-        gain.gain.linearRampToValueAtTime(0.12, ctx.currentTime + delay + 0.05);
-        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + delay + duration);
-        
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        
-        osc.start(ctx.currentTime + delay);
-        osc.stop(ctx.currentTime + delay + duration);
-      };
-      
-      // Play a retro major chord (C5, E5, G5, C6) with arpeggio effect
-      playTone(523.25, 0.0, 1.2); // C5
-      playTone(659.25, 0.08, 1.2); // E5
-      playTone(783.99, 0.16, 1.2); // G5
-      playTone(1046.50, 0.24, 1.5); // C6
-    } catch (e) {
-      console.log("Audio not supported or blocked by browser policy.");
-    }
-  };
-
-  // Click on screen or Mac chassis to Boot & Zoom in
-  macWrapper.addEventListener("click", (e) => {
-    // If user clicks a button or interactive element, ignore default boot zoom
-    if (e.target.closest(".mosaic-tile") || e.target.closest(".mac-window") || e.target.closest(".mac-menu-bar")) {
-      return;
-    }
-
-    if (!isZoomed) {
-      zoomIn();
-      if (!isBooted) {
-        bootSequence();
+// Intersection Observer for fade-in animations
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
       }
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    }
+  );
+
+  revealElements.forEach((element) => observer.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add('is-visible'));
+}
+
+// Mobile navigation toggle
+if (navToggle && siteNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+}
+
+// Smooth scrolling and closing mobile nav on click
+const navLinks = document.querySelectorAll('.site-nav a, .header-cta, .button');
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (siteNav && siteNav.classList.contains('open')) {
+      siteNav.classList.remove('open');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
     }
   });
+});
 
-  const zoomIn = () => {
-    macWrapper.classList.add("zoomed");
-    welcomeHeader.classList.add("hidden");
-    isZoomed = true;
-  };
+// Project filtering system
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-  const zoomOut = () => {
-    macWrapper.classList.remove("zoomed");
-    welcomeHeader.classList.remove("hidden");
-    isZoomed = false;
-  };
+filterButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    // Remove active class from all buttons and add to clicked
+    filterButtons.forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
 
-  const bootSequence = () => {
-    isBooted = true;
-    playBootChime();
-    
-    // Switch to booting state
-    stateOff.classList.add("hidden");
-    stateBooting.classList.remove("hidden");
-    
-    // Animate progress bar
-    let progress = 0;
-    bootProgress.style.width = "0%";
-    
-    const interval = setInterval(() => {
-      progress += 4;
-      if (bootProgress) bootProgress.style.width = `${progress}%`;
+    const filterValue = btn.getAttribute('data-filter');
+
+    projectCards.forEach((card) => {
+      const cardCategory = card.getAttribute('data-category');
       
-      if (progress >= 100) {
-        clearInterval(interval);
-        // Completed booting, show OS Desktop
+      if (filterValue === 'all' || cardCategory === filterValue) {
+        card.style.display = 'flex';
+        // Re-trigger animation
         setTimeout(() => {
-          stateBooting.classList.add("hidden");
-          stateOn.classList.remove("hidden");
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 10);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(10px)';
+        // Smooth transition out, then hide
+        setTimeout(() => {
+          card.style.display = 'none';
         }, 300);
       }
-    }, 80);
-  };
-
-  // Reculer (Zoom out) Action
-  if (btnZoomOut) {
-    btnZoomOut.addEventListener("click", (e) => {
-      e.stopPropagation();
-      zoomOut();
-    });
-  }
-
-  // Shutdown Action
-  if (btnShutdown) {
-    btnShutdown.addEventListener("click", (e) => {
-      e.stopPropagation();
-      zoomOut();
-      setTimeout(() => {
-        // Power off CRT screen
-        stateOn.classList.add("hidden");
-        stateOff.classList.remove("hidden");
-        // Close all windows
-        windows.forEach(win => win.classList.add("hidden"));
-        isBooted = false;
-      }, 600);
-    });
-  }
-
-  // Windows Management
-  tiles.forEach(tile => {
-    tile.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const targetId = tile.getAttribute("data-target");
-      if (targetId) {
-        // Close all windows first to save space on small screen
-        windows.forEach(win => win.classList.add("hidden"));
-        
-        const targetWindow = document.getElementById(targetId);
-        if (targetWindow) {
-          targetWindow.classList.remove("hidden");
-        }
-      }
-    });
-  });
-
-  closeButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const targetId = btn.getAttribute("data-close");
-      if (targetId) {
-        const targetWindow = document.getElementById(targetId);
-        if (targetWindow) {
-          targetWindow.classList.add("hidden");
-        }
-      }
-    });
-  });
-
-  // Projects category filter logic inside window
-  const filterBtns = document.querySelectorAll(".win-filter-btn");
-  const repoItems = document.querySelectorAll(".win-repo-item");
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const filter = btn.getAttribute("data-filter");
-      repoItems.forEach(item => {
-        const cat = item.getAttribute("data-category");
-        if (filter === "all" || cat === filter) {
-          item.classList.remove("hide");
-        } else {
-          item.classList.add("hide");
-        }
-      });
     });
   });
 });
+
+// Interactive terminal simulator
+const terminal = document.getElementById('interactive-terminal');
+
+if (terminal) {
+  const terminalLines = [
+    { text: "jmd@infra:~$ systemctl status security-core", type: "input" },
+    { text: "● security-core.service - Core Security Infrastructure", type: "output" },
+    { text: "   Active: active (running) since Sat 2026-06-06", type: "output" },
+    { text: "   CGroup: /system.slice/security-core.service", type: "output" },
+    { text: "           ├─cowrie-honeypot --port 2222", type: "output" },
+    { text: "           └─pfsense-monitor --vlan 10,20", type: "output" },
+    { text: "jmd@infra:~$ check-certs --status", type: "input" },
+    { text: "[+] Cisco CCNA: VALIDATED", type: "output", color: "var(--accent-green)" },
+    { text: "[+] Fortinet NSE 4: VALIDATED", type: "output", color: "var(--accent-green)" },
+    { text: "jmd@infra:~$ cat candidate.json", type: "input" },
+    { text: '{\n  "name": "Jean-Marc Dussaud",\n  "role": "Systems & Networks",\n  "seeking": "Alternance Sept 2026",\n  "location": "Rennes (France)"\n}', type: "output", color: "var(--accent-cyan)" },
+    { text: "jmd@infra:~$ ", type: "input", last: true }
+  ];
+
+  let lineIndex = 0;
+
+  function typeTerminalLine() {
+    if (lineIndex >= terminalLines.length) return;
+
+    const lineData = terminalLines[lineIndex];
+    const lineElement = document.createElement('p');
+    
+    if (lineData.color) {
+      lineElement.style.color = lineData.color;
+    }
+
+    if (lineData.type === 'input') {
+      lineElement.className = 'cmd-prompt';
+      terminal.appendChild(lineElement);
+      
+      let charIndex = 0;
+      const textToType = lineData.text;
+      
+      function typeChar() {
+        if (charIndex < textToType.length) {
+          lineElement.textContent += textToType.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeChar, 40 + Math.random() * 30);
+        } else {
+          // If it's the last line, append cursor
+          if (lineData.last) {
+            const cursor = document.createElement('span');
+            cursor.className = 'cursor';
+            lineElement.appendChild(cursor);
+          } else {
+            lineIndex++;
+            setTimeout(typeTerminalLine, 400);
+          }
+        }
+      }
+      typeChar();
+    } else {
+      lineElement.className = 'cmd-output';
+      // Outputting block blocks immediately or pre-formatted
+      lineElement.style.whiteSpace = 'pre-wrap';
+      lineElement.textContent = lineData.text;
+      terminal.appendChild(lineElement);
+      
+      lineIndex++;
+      setTimeout(typeTerminalLine, 500);
+    }
+
+    // Scroll to bottom
+    terminal.scrollTop = terminal.scrollHeight;
+  }
+
+  // Start terminal typing
+  setTimeout(typeTerminalLine, 1000);
+}

@@ -5,410 +5,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de Jean-Marc DUSSAUD — Administrateur Systèmes et Réseaux. Expérience rétro interactive avec un Macintosh vintage."
+      content="Portfolio de Jean-Marc DUSSAUD — Alternant Administrateur Systèmes et Réseaux / Cybersécurité. Découvrez mes projets, compétences en virtualisation, sécurité et réseaux."
     />
-    <title>Jean-Marc DUSSAUD | Portfolio Vintage Mac</title>
+    <title>Jean-Marc DUSSAUD | Alternant Administrateur Systèmes & Réseaux</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Retro Fonts (VT323 for screen, Courier for vintage look, Space Grotesk for headings) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=VT323&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Grid overlay background -->
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-vignette" aria-hidden="true"></div>
+    <!-- Canvas or background grids -->
+    <div class="cyber-grid" aria-hidden="true"></div>
+    <div class="glow-orb glow-cyan" aria-hidden="true"></div>
+    <div class="glow-orb glow-blue" aria-hidden="true"></div>
 
-    <main class="portfolio-container">
-      <!-- Welcome Header -->
-      <header class="welcome-header">
-        <h1 class="reveal-fast">Jean-Marc DUSSAUD</h1>
-        <p class="subtitle reveal-fast">Alternant Administrateur Systèmes & Réseaux</p>
-        <div class="welcome-card reveal-fast">
-          <p>
-            Bienvenue sur mon portfolio interactif. Explorez mes compétences en virtualisation, sécurité et administration de réseaux.
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="Retour en haut">
+        <span class="brand-mark">JMD</span>
+        <span class="brand-copy">
+          <strong>Jean-Marc DUSSAUD</strong>
+          <span>SysOps & Security</span>
+        </span>
+      </a>
+      
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect class="line-1" y="1" width="22" height="2" rx="1" fill="currentColor" />
+          <rect class="line-2" y="6" width="22" height="2" rx="1" fill="currentColor" />
+          <rect class="line-3" y="11" width="22" height="2" rx="1" fill="currentColor" />
+        </svg>
+      </button>
+
+      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
+        <a href="#about">Profil</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projets</a>
+        <a href="#stack">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="#contact">Me Contacter</a>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="hero section" id="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="pulse-icon"></span> Disponible en Alternance - Septembre 2026</p>
+          <h1>Sécuriser les flux, administrer l'infrastructure.</h1>
+          <p class="hero-text">
+            Étudiant passionné de Systèmes & Réseaux, certifié <strong>Cisco CCNA</strong> & <strong>Fortinet NSE 4</strong>. Spécialisé en virtualisation, sécurité périmétrique et supervision d'infrastructures hybrides.
           </p>
-          <div class="pulse-indicator">💻 Cliquez sur l'écran du Macintosh pour démarrer l'expérience</div>
-        </div>
-      </header>
-
-      <!-- Desk & Retro Mac Container -->
-      <div class="desk-environment">
-        <div class="macintosh-wrapper" id="mac-wrapper">
-          
-          <!-- Classic Macintosh Bezel & Case -->
-          <div class="mac-chassis">
-            
-            <!-- CRT Screen area -->
-            <div class="mac-screen-border">
-              <div class="mac-screen-bezel">
-                <div class="mac-screen-glass">
-                  <div class="mac-screen-content" id="mac-screen">
-                    
-                    <!-- 1. SCREEN OFF STATE -->
-                    <div class="screen-state" id="state-off">
-                      <div class="boot-prompt">
-                        <div class="boot-disquette">💾</div>
-                        <div class="boot-arrow">⬇</div>
-                        <p class="blink">CLIQUEZ POUR INITIALISER</p>
-                        <div class="system-tag">System 1.0</div>
-                      </div>
-                    </div>
-
-                    <!-- 2. BOOTING STATE -->
-                    <div class="screen-state hidden" id="state-booting">
-                      <div class="happy-mac-container">
-                        <div class="happy-mac-icon">😀</div>
-                        <p class="mac-loading-text">Welcome to Macintosh...</p>
-                        <div class="boot-progress-bar">
-                          <div class="boot-progress-fill" id="boot-progress"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- 3. ACTIVE OS STATE -->
-                    <div class="screen-state hidden" id="state-on">
-                      <!-- Retro Macintosh Top Menu Bar -->
-                      <div class="mac-menu-bar">
-                        <span class="menu-apple"></span>
-                        <span class="menu-item">Fichier</span>
-                        <span class="menu-item">Edition</span>
-                        <span class="menu-item">Spécial</span>
-                        <span class="menu-clock" id="menu-clock">18:00</span>
-                      </div>
-
-                      <!-- Retro Desktop Grid (Mosaic of Squares) -->
-                      <div class="retro-desktop-grid" id="desktop-grid">
-                        <button class="mosaic-tile" data-target="win-about">
-                          <span class="tile-icon">👤</span>
-                          <span class="tile-label">À Propos</span>
-                        </button>
-                        <button class="mosaic-tile" data-target="win-cv">
-                          <span class="tile-icon">📄</span>
-                          <span class="tile-label">Mon CV</span>
-                        </button>
-                        <button class="mosaic-tile" data-target="win-projects">
-                          <span class="tile-icon">📁</span>
-                          <span class="tile-label">Projets (32)</span>
-                        </button>
-                        <button class="mosaic-tile" data-target="win-stack">
-                          <span class="tile-icon">⚙️</span>
-                          <span class="tile-label">Compétences</span>
-                        </button>
-                        <button class="mosaic-tile" data-target="win-contact">
-                          <span class="tile-icon">✉️</span>
-                          <span class="tile-label">Contact</span>
-                        </button>
-                        <button class="mosaic-tile tile-action-btn" id="btn-zoom-out">
-                          <span class="tile-icon">🔍</span>
-                          <span class="tile-label">Reculer</span>
-                        </button>
-                        <button class="mosaic-tile tile-action-btn" id="btn-shutdown">
-                          <span class="tile-icon">🔌</span>
-                          <span class="tile-label">Éteindre</span>
-                        </button>
-                      </div>
-
-                      <!-- OS Windows Inside Screen -->
-                      <div class="desktop-windows-container">
-                        
-                        <!-- ABOUT WINDOW -->
-                        <div class="mac-window hidden" id="win-about">
-                          <div class="mac-window-titlebar">
-                            <button class="mac-close-btn" data-close="win-about"></button>
-                            <div class="mac-window-title">À Propos</div>
-                          </div>
-                          <div class="mac-window-body">
-                            <h3>Jean-Marc DUSSAUD</h3>
-                            <p class="subtitle-bold">Concevoir des architectures réseau et systèmes durables.</p>
-                            <p>La technologie n'est qu'un outil pour résoudre de réels défis. Mon but en tant qu'administrateur systèmes & réseaux est de simplifier l'infrastructure, d'optimiser les flux et de blinder la sécurité périmétrique.</p>
-                            <hr class="retro-hr">
-                            <ul class="retro-list">
-                              <li><strong>Vision globale</strong> : Comprendre les enjeux métiers.</li>
-                              <li><strong>Durable & Scalable</strong> : Déployer des bases propres sans dette technique.</li>
-                              <li><strong>Sécurité d'abord</strong> : Intégrer les bonnes pratiques dès l'architecture.</li>
-                            </ul>
-                          </div>
-                        </div>
-
-                        <!-- CV WINDOW -->
-                        <div class="mac-window hidden" id="win-cv">
-                          <div class="mac-window-titlebar">
-                            <button class="mac-close-btn" data-close="win-cv"></button>
-                            <div class="mac-window-title">Mon CV</div>
-                          </div>
-                          <div class="mac-window-body">
-                            <h3>Administrateur Systèmes & Réseaux</h3>
-                            <p>📍 Rennes (Mobilité France) | 📧 jeanmarcdussaud@gmail.com</p>
-                            <p class="cv-summary">
-                              Étudiant en systèmes et réseaux certifié Cisco CCNA et Fortinet NSE 4. Prêt à superviser et optimiser votre infrastructure.
-                            </p>
-                            <hr class="retro-hr">
-                            <h4>Certifications & Langues</h4>
-                            <p>Cisco CCNA | Fortinet NSE 4 | Anglais C1, Allemand B2, Lingala</p>
-                            <h4>Expériences & Projets</h4>
-                            <ul class="retro-list">
-                              <li><strong>Pare-feu pfSense/IPFire</strong> : Segmentation VLAN, routage sécurisé.</li>
-                              <li><strong>Cowrie SSH Honeypot</strong> : Grafana, Loki, automatisation de logs.</li>
-                              <li><strong>Virtualisation</strong> : VMware ESXi, Proxmox VE, snapshots, backups.</li>
-                            </ul>
-                            <a href="Jean-Marc_DUSSAUD_CV.txt" download class="mac-btn">📥 Télécharger CV.txt</a>
-                          </div>
-                        </div>
-
-                        <!-- PROJECTS WINDOW -->
-                        <div class="mac-window hidden" id="win-projects">
-                          <div class="mac-window-titlebar">
-                            <button class="mac-close-btn" data-close="win-projects"></button>
-                            <div class="mac-window-title">Projets GitHub</div>
-                          </div>
-                          <div class="mac-window-body">
-                            <h4>Sélection de Projets Vedettes</h4>
-                            <div class="win-featured-grid">
-                              <div class="win-feat-card">
-                                <strong>Serenity</strong>
-                                <p>IA de santé mentale. Anonymisation et conformité RGPD.</p>
-                              </div>
-                              <div class="win-feat-card">
-                                <strong>Velocity Ops</strong>
-                                <p>Supervision et monitoring temps réel d'infrastructure.</p>
-                              </div>
-                              <div class="win-feat-card">
-                                <strong>Northlink</strong>
-                                <p>Système communautaire modulaire en temps réel.</p>
-                              </div>
-                            </div>
-                            <hr class="retro-hr">
-                            <h4>Tous les dépôts (32 projets)</h4>
-                            <div class="win-filters">
-                              <button class="win-filter-btn active" data-filter="all">Tous</button>
-                              <button class="win-filter-btn" data-filter="sec-net">Sécurité/Net</button>
-                              <button class="win-filter-btn" data-filter="web">Web</button>
-                              <button class="win-filter-btn" data-filter="python-data">Python/Data</button>
-                              <button class="win-filter-btn" data-filter="others">Autres</button>
-                            </div>
-                            <div class="win-repos-list">
-                              <!-- 1 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>Site_Web_Conseil_Financier <span class="retro-badge pvt">Privé</span></h5>
-                                <p>Plateforme de conseil sur les finances éthiques (React/Node).</p>
-                              </div>
-                              <!-- 2 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>Sérénité <span class="retro-badge pvt">Privé</span></h5>
-                                <p>IA santé mentale — Sécurisation applicative.</p>
-                              </div>
-                              <!-- 3 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Examen_linux_B2 <span class="retro-badge pub">Public</span></h5>
-                                <p>Scripts et configurations d'examen Linux.</p>
-                              </div>
-                              <!-- 4 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Mini-jeu-JAVA <span class="retro-badge pub">Public</span></h5>
-                                <p>Mini-jeu arcade développé en Java.</p>
-                              </div>
-                              <!-- 5 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Plateforme_Surveillance_IoT <span class="retro-badge pub">Public</span></h5>
-                                <p>Système de monitoring et surveillance de capteurs IoT.</p>
-                              </div>
-                              <!-- 6 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Malware_PY-Cadre-pédagogique- <span class="retro-badge pub">Public</span></h5>
-                                <p>Cadre d'analyse de malwares éducatif.</p>
-                              </div>
-                              <!-- 7 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Jeu-Video-Great_Road_Racer- <span class="retro-badge pub">Public</span></h5>
-                                <p>Jeu de course auto développé en C#.</p>
-                              </div>
-                              <!-- 8 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Scan_Anti-Poison <span class="retro-badge pub">Public</span></h5>
-                                <p>Scanner de composants et substances nocives.</p>
-                              </div>
-                              <!-- 9 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Virtualisation_PareFeu <span class="retro-badge pub">Public</span></h5>
-                                <p>Virtualisation de pare-feu et segmentation VLAN.</p>
-                              </div>
-                              <!-- 10 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Projet_Big-Data- <span class="retro-badge pub">Public</span></h5>
-                                <p>Projet académique de traitement de données massives.</p>
-                              </div>
-                              <!-- 11 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Taureau <span class="retro-badge pub">Public</span></h5>
-                                <p>Algorithmes et structures de données en C++.</p>
-                              </div>
-                              <!-- 12 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Honeypot- <span class="retro-badge pub">Public</span></h5>
-                                <p>Piège à intrusion (Grafana, Loki, honeypot Cowrie).</p>
-                              </div>
-                              <!-- 13 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Manipulation_PFSENSE <span class="retro-badge pub">Public</span></h5>
-                                <p>Routage, NAT et règles de filtrage avec pfSense.</p>
-                              </div>
-                              <!-- 14 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Bank_COBOL <span class="retro-badge pub">Public</span></h5>
-                                <p>Simulation d'un système bancaire robuste en COBOL.</p>
-                              </div>
-                              <!-- 15 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>FORTUNE <span class="retro-badge pub">Public</span></h5>
-                                <p>Application de microfinance et gestion de comptes.</p>
-                              </div>
-                              <!-- 16 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Suivant <span class="retro-badge pub">Public</span></h5>
-                                <p>Projet expérimental d'orchestration de scripts.</p>
-                              </div>
-                              <!-- 17 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Analyse_de_Logs <span class="retro-badge pub">Public</span></h5>
-                                <p>Analyse de logs serveurs et détection d'anomalies.</p>
-                              </div>
-                              <!-- 18 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Optimisation_Analyse_IA <span class="retro-badge pub">Public</span></h5>
-                                <p>Optimisation de modèles prédictifs d'IA.</p>
-                              </div>
-                              <!-- 19 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>Hack_pour_le_bien <span class="retro-badge pub">Public</span></h5>
-                                <p>Site informatif sur la cybersécurité éthique.</p>
-                              </div>
-                              <!-- 20 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Simulation_Physique <span class="retro-badge pub">Public</span></h5>
-                                <p>Simulation numérique de lois physiques en Python.</p>
-                              </div>
-                              <!-- 21 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Projet_RA-RV <span class="retro-badge pub">Public</span></h5>
-                                <p>Expériences en Réalité Virtuelle avec Unity/C#.</p>
-                              </div>
-                              <!-- 22 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>Portfolio-JMD <span class="retro-badge pub">Public</span></h5>
-                                <p>Le code source de ce portfolio retro interactif.</p>
-                              </div>
-                              <!-- 23 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>Projet_Etude_A2 <span class="retro-badge pub">Public</span></h5>
-                                <p>Projet de fin de deuxième année de cycle supérieur.</p>
-                              </div>
-                              <!-- 24 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Dashboard_Maintenance <span class="retro-badge pub">Public</span></h5>
-                                <p>Suivi et tableau de bord de maintenance préventive.</p>
-                              </div>
-                              <!-- 25 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>App_Rencontre_LIU <span class="retro-badge pub">Public</span></h5>
-                                <p>Application de rencontre universitaire (WebSockets).</p>
-                              </div>
-                              <!-- 26 -->
-                              <div class="win-repo-item" data-category="web">
-                                <h5>Portfolio-DAV <span class="retro-badge pvt">Privé</span></h5>
-                                <p>Portfolio sur mesure pour profil DAV.</p>
-                              </div>
-                              <!-- 27 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>IA_Telephonique <span class="retro-badge pub">Public</span></h5>
-                                <p>Assistant vocal IA intégré à flux VoIP.</p>
-                              </div>
-                              <!-- 28 -->
-                              <div class="win-repo-item" data-category="others">
-                                <h5>Bonjour <span class="retro-badge pvt">Privé</span></h5>
-                                <p>Prototype de test et validation de serveur.</p>
-                              </div>
-                              <!-- 29 -->
-                              <div class="win-repo-item" data-category="sec-net">
-                                <h5>Scanner-Kali-linux <span class="retro-badge pub">Public</span></h5>
-                                <p>Scripts d'automatisation d'audit Nmap.</p>
-                              </div>
-                              <!-- 30 -->
-                              <div class="win-repo-item" data-category="python-data">
-                                <h5>Tableau_de_bord_IoT <span class="retro-badge pub">Public</span></h5>
-                                <p>Monitoring de variables IoT en temps réel.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- STACK WINDOW -->
-                        <div class="mac-window hidden" id="win-stack">
-                          <div class="mac-window-titlebar">
-                            <button class="mac-close-btn" data-close="win-stack"></button>
-                            <div class="mac-window-title">Compétences</div>
-                          </div>
-                          <div class="mac-window-body">
-                            <h3>Réseau & Cybersécurité</h3>
-                            <p>DNS, DHCP, IPv4/IPv6, Pare-feux (pfSense, IPFire), Wireshark, Zabbix (Monitoring), Active Directory, Fortinet NSE 4, Cisco CCNA, Kali Linux</p>
-                            <hr class="retro-hr">
-                            <h3>Développement & Systèmes</h3>
-                            <p>Python, Bash/Shell scripting, C#, Java, COBOL, JavaScript, HTML, CSS, SQL. Virtualisation (VMware ESXi, Proxmox VE, Hyper-V)</p>
-                            <hr class="retro-hr">
-                            <h3>Méthodes & Outils</h3>
-                            <p>Docker, Git, CI/CD, méthodologies agiles, documentation technique approfondie.</p>
-                          </div>
-                        </div>
-
-                        <!-- CONTACT WINDOW -->
-                        <div class="mac-window hidden" id="win-contact">
-                          <div class="mac-window-titlebar">
-                            <button class="mac-close-btn" data-close="win-contact"></button>
-                            <div class="mac-window-title">Contact</div>
-                          </div>
-                          <div class="mac-window-body">
-                            <h3>Collaborons ensemble</h3>
-                            <p>Je suis ouvert aux discussions concernant des alternances ou des projets d'administration systèmes et sécurité.</p>
-                            <hr class="retro-hr">
-                            <div class="mac-contact-list">
-                              <a href="mailto:jeanmarcdussaud@gmail.com" class="mac-btn">✉️ Envoyer un Email</a>
-                              <a href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" class="mac-btn">🔗 Profil LinkedIn</a>
-                              <a href="https://github.com/JMDcoding" target="_blank" class="mac-btn">🐙 Profil GitHub</a>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Floppy Slot & Retro brand -->
-            <div class="mac-case-bottom">
-              <div class="mac-floppy-slot">
-                <div class="mac-slot-opening"></div>
-              </div>
-              <div class="mac-logo"></div>
-            </div>
-            
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explorer les projets</a>
+            <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger le CV
+            </a>
           </div>
-          <div class="mac-pedestal"></div>
-          <div class="mac-stand-base"></div>
         </div>
 
-        <!-- Desk Wood Surface -->
-        <div class="desk-surface"></div>
-        <div class="desk-leg desk-leg-left"></div>
-        <div class="desk-leg desk-leg-right"></div>
-      </div>
+        <div class="hero-visual reveal">
+          <div class="terminal-container">
+            <div class="terminal-header">
+              <span class="terminal-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </span>
+              <span class="terminal-title">jmd@infrastructure-core:~</span>
+            </div>
+            <div class="terminal-body" id="interactive-terminal">
+              <!-- Content filled via JavaScript -->
+              <noscript>
+                <p class="cmd-prompt">jmd@infra:~$ cat info.json</p>
+                <pre class="cmd-output">{
+  "status": "Online",
+  "certifications": ["CCNA", "Fortinet NSE 4"],
+  "focus": "Virtualization, Security, DevOps"
+}</pre>
+              </noscript>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section class="section about" id="about">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Profil & Mindset</p>
+          <h2>Concevoir des infrastructures résilientes et sécurisées.</h2>
+          <p>
+            Face à l'évolution constante des menaces, une bonne infrastructure doit être robuste dès sa conception. Mon approche s'appuie sur la segmentation réseau rigoureuse, la virtualisation optimisée et un monitoring proactif en temps réel.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="value-card reveal">
+            <div class="card-icon">🛡️</div>
+            <h3>Sécurité & Isolation</h3>
+            <p>Segmentation VLAN, règles de pare-feu pfSense/Fortinet et déploiement de honeypots pour piéger et comprendre les intrusions.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="card-icon">⚡</div>
+            <h3>Virtualisation & DevOps</h3>
+            <p>Déploiement et gestion d'hyperviseurs Proxmox VE et VMware ESXi. Automatisation système avec Python et scripting Bash.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="card-icon">📊</div>
+            <h3>Supervision & Télémétrie</h3>
+            <p>Monitoring avancé avec Zabbix, collecte de logs centralisée via Grafana/Loki pour une visibilité totale de l'infrastructure.</p>
+          </article>
+          <article class="value-card reveal">
+            <div class="card-icon">🤝</div>
+            <h3>Méthode & Rigueur</h3>
+            <p>Approche Agile, documentation technique rigoureuse, et respect strict des politiques de conformité des données (RGPD).</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS SECTION -->
+      <section class="section certs" id="certifications">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Validations Officielles</p>
+          <h2>Certifications Industrielles</h2>
+        </div>
+
+        <div class="certs-container">
+          <div class="cert-card reveal">
+            <div class="cert-badge">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="cert-info">
+              <h3>Cisco Certified Network Associate (CCNA)</h3>
+              <p>Routage et commutation, adressage IP, protocoles OSPF/EIGRP, sécurité réseau de base et services IP (DHCP, NAT, DNS).</p>
+            </div>
+          </div>
+
+          <div class="cert-card reveal">
+            <div class="cert-badge alt-badge">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="line-1" x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="cert-info">
+              <h3>Fortinet NSE 4 — Network Security Professional</h3>
+              <p>Configuration, administration et surveillance des pare-feux FortiGate. Gestion des politiques de sécurité et tunnels VPN.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section class="section projects" id="projects">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Projets & Réalisations Pratiques</h2>
+          <p>Filtrer les projets par catégorie technique pour découvrir mon travail pratique :</p>
+          
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="sys-net">Systèmes & Réseaux</button>
+            <button class="filter-btn" data-filter="security">Sécurité & Monitoring</button>
+            <button class="filter-btn" data-filter="dev">Développement & Scripts</button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Honeypot -->
+          <article class="project-card reveal" data-category="security">
+            <div class="project-header">
+              <span class="project-tag">Sécurité & Analyse</span>
+              <a href="https://github.com/JMDcoding/Honeypot-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Honeypot SSH, Grafana & Loki</h3>
+            <p class="project-desc">Déploiement d'un pot de miel (Honeypot) SSH avec Cowrie. Collecte et corrélation de logs d'attaques en temps réel avec Grafana et Loki pour la visualisation cartographique et l'analyse de force brute.</p>
+            <div class="project-tech">
+              <span>Cowrie</span>
+              <span>Grafana</span>
+              <span>Loki</span>
+              <span>Docker</span>
+            </div>
+          </article>
+
+          <!-- Project 2: PFSense -->
+          <article class="project-card reveal" data-category="sys-net">
+            <div class="project-header">
+              <span class="project-tag">Réseau & Firewall</span>
+              <a href="https://github.com/JMDcoding/Manipulation_PFSENSE" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Pare-Feu Virtuel & pfSense</h3>
+            <p class="project-desc">Configuration avancée et virtualisation de pare-feux pfSense/IPFire. Mise en place de règles de filtrage de ports, d'isolation VLAN, NAT et routage statique/dynamique pour environnements académiques.</p>
+            <div class="project-tech">
+              <span>pfSense</span>
+              <span>IPFire</span>
+              <span>VLAN</span>
+              <span>Virtualisation</span>
+            </div>
+          </article>
+
+          <!-- Project 3: Serenity -->
+          <article class="project-card reveal" data-category="dev">
+            <div class="project-header">
+              <span class="project-tag">Sécurité Applicative</span>
+              <a href="https://github.com/JMDcoding/S%C3%A9r%C3%A9nit%C3%A9" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Sérénité — IA & RGPD</h3>
+            <p class="project-desc">Conception d'une application d'assistance en santé mentale basée sur l'IA, sécurisation des flux de données et implémentation de protocoles de chiffrement et d'anonymisation pour conformité RGPD.</p>
+            <div class="project-tech">
+              <span>JavaScript</span>
+              <span>Cryptographie</span>
+              <span>RGPD</span>
+              <span>IA API</span>
+            </div>
+          </article>
+
+          <!-- Project 4: Monitoring IoT -->
+          <article class="project-card reveal" data-category="sys-net">
+            <div class="project-header">
+              <span class="project-tag">IoT & Supervision</span>
+              <a href="https://github.com/JMDcoding/Mon_tableau_de_bord_IoT" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Surveillance IoT & Dashboard</h3>
+            <p class="project-desc">Plateforme et tableau de bord de supervision de capteurs physiques. Capture des métriques via des API locales et affichage des variations d'états d'appareils connectés.</p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>IoT</span>
+              <span>Websockets</span>
+              <span>Dashboard</span>
+            </div>
+          </article>
+
+          <!-- Project 5: Scanner Kali Linux -->
+          <article class="project-card reveal" data-category="security">
+            <div class="project-header">
+              <span class="project-tag">Sécurité & Audits</span>
+              <a href="https://github.com/JMDcoding/Scanner-Kali-linux" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Scanner de Réseau Kali</h3>
+            <p class="project-desc">Scripts automatiques de scan et de mapping réseau sous Kali Linux. Utilisation combinée de Nmap pour auditer rapidement la sécurité périmétrique et détecter les ports ouverts et OS.</p>
+            <div class="project-tech">
+              <span>Kali Linux</span>
+              <span>Nmap</span>
+              <span>Bash</span>
+              <span>Audit</span>
+            </div>
+          </article>
+
+          <!-- Project 6: Log Analyzer -->
+          <article class="project-card reveal" data-category="dev">
+            <div class="project-header">
+              <span class="project-tag">Scripting & Ops</span>
+              <a href="https://github.com/JMDcoding/Analyse%20de%20Logs" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Analyseur Automatisé de Logs</h3>
+            <p class="project-desc">Script en Python destiné à analyser des fichiers de logs Apache/syslog volumineux pour extraire les tentatives d'intrusions, adresses IP suspectes et anomalies de trafic.</p>
+            <div class="project-tech">
+              <span>Python</span>
+              <span>Regex</span>
+              <span>Syslog</span>
+              <span>Security</span>
+            </div>
+          </article>
+
+          <!-- Project 7: Bank Cobol -->
+          <article class="project-card reveal" data-category="dev">
+            <div class="project-header">
+              <span class="project-tag">Systèmes Académiques</span>
+              <a href="https://github.com/JMDcoding/Bank_COBOL" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Bank COBOL</h3>
+            <p class="project-desc">Simulation d'un backend transactionnel de gestion bancaire écrit en COBOL. Permet la manipulation de comptes et de transactions avec validation rigoureuse des données.</p>
+            <div class="project-tech">
+              <span>COBOL</span>
+              <span>Legacy Systems</span>
+              <span>Algorithms</span>
+            </div>
+          </article>
+
+          <!-- Project 8: Mini Jeu Java / Unity -->
+          <article class="project-card reveal" data-category="dev">
+            <div class="project-header">
+              <span class="project-tag">Jeux & Simulation</span>
+              <a href="https://github.com/JMDcoding/Jeu-Video-Great_Road_Racer-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+            <h3>Jeux Vidéo & Simulations 2D/3D</h3>
+            <p class="project-desc">Développement de mini-jeux interactifs, dont Great Road Racer en C# sous Unity, et un mini-jeu 2D sous Java, afin d'étudier la gestion des collisions et la physique des jeux.</p>
+            <div class="project-tech">
+              <span>C#</span>
+              <span>Unity</span>
+              <span>Java</span>
+              <span>OOP</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section class="section stack" id="stack">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Compétences Techniques</p>
+          <h2>Boîte à outils de l'Administrateur</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <h3>Systèmes & Virtualisation</h3>
+            <ul>
+              <li>VMware ESXi</li>
+              <li>Proxmox VE</li>
+              <li>Linux (Debian/Ubuntu)</li>
+              <li>Windows Server</li>
+              <li>Active Directory</li>
+              <li>Docker</li>
+            </ul>
+            <p>Administration de serveurs physiques et virtuels, gestion de parcs, snapshots et politiques de sauvegarde.</p>
+          </article>
+
+          <article class="stack-card reveal">
+            <h3>Réseaux & Sécurité</h3>
+            <ul>
+              <li>pfSense / IPFire</li>
+              <li>VLAN / VPN</li>
+              <li>Wireshark</li>
+              <li>Nmap / Kali Linux</li>
+              <li>DNS / DHCP</li>
+              <li>FortiGate</li>
+            </ul>
+            <p>Conception de topologies réseau sécurisées, routage, filtrage de flux et diagnostics de protocoles.</p>
+          </article>
+
+          <article class="stack-card reveal">
+            <h3>Supervision & Cloud</h3>
+            <ul>
+              <li>Zabbix</li>
+              <li>Grafana</li>
+              <li>Loki</li>
+              <li>AWS</li>
+              <li>Azure</li>
+              <li>Syslog</li>
+            </ul>
+            <p>Télémétrie centralisée, gestion d'alertes en temps réel et bases de la transition vers le cloud hybride.</p>
+          </article>
+
+          <article class="stack-card reveal">
+            <h3>Développement & Outils</h3>
+            <ul>
+              <li>Python</li>
+              <li>Bash</li>
+              <li>JavaScript</li>
+              <li>Java / C#</li>
+              <li>SQL</li>
+              <li>Git / GitHub</li>
+            </ul>
+            <p>Automatisation de tâches réseau, scripts de parsing et gestion de version collaborative.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="section contact" id="contact">
+        <div class="contact-panel reveal">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Bâtissons un réseau solide.</h2>
+            <p>
+              À la recherche d'un alternant rigoureux, certifié et opérationnel pour renforcer vos équipes à Rennes ou ailleurs ? Contactez-moi par mail ou via les réseaux sociaux.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:jeanmarcdussaud@gmail.com">Envoyer un message</a>
+            <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">Télécharger le CV</a>
+            <a class="button button-tertiary" href="https://github.com/JMDcoding" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button button-tertiary" href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Jean-Marc DUSSAUD. Tous droits réservés.</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>

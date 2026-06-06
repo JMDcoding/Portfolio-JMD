@@ -1,23 +1,29 @@
-/* CSS Variables - Retro & Cozy Dark Workspace Palette */
 :root {
-  --bg-dark: #0a0c10;
-  --bg-glow: rgba(42, 120, 255, 0.08);
-  --mac-plastic: #d6cfc7;
-  --mac-plastic-dark: #b8b1a8;
-  --mac-screen-bg: #8c9c84; /* Retro gray-green CRT color */
-  --mac-screen-text: #1a2416;
-  --mac-screen-accent: #2e3d29;
-  --crt-glow: rgba(140, 156, 132, 0.25);
+  --bg: #07090e;
+  --bg-soft: #0c0f17;
+  --panel: rgba(13, 18, 30, 0.75);
+  --panel-strong: rgba(18, 25, 41, 0.95);
+  --line: rgba(0, 229, 255, 0.12);
+  --line-strong: rgba(42, 120, 255, 0.3);
+  --text: #f3f4f6;
+  --muted: rgba(243, 244, 246, 0.65);
   
-  --desk-wood: linear-gradient(to bottom, #422a1d, #2e1d14);
-  --desk-shadow: rgba(0, 0, 0, 0.6);
-  
-  --glass-color: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: rgba(0, 0, 0, 0.24);
-  
+  /* Accent colors */
   --accent-blue: #2a78ff;
-  --accent-pink: #ff2a85;
+  --accent-cyan: #00e5ff;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-yellow: #f59e0b;
+  
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  --glow-blue: 0 0 30px rgba(42, 120, 255, 0.25);
+  --glow-cyan: 0 0 35px rgba(0, 229, 255, 0.3);
+  
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --content-width: min(1200px, calc(100vw - 2.5rem));
 }
 
 * {
@@ -26,802 +32,813 @@
   padding: 0;
 }
 
-body {
-  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-dark);
-  color: #f0f4f8;
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Ambient Ambient Light & Retro Grids */
-.bg-grid {
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Background Grids & Orbs */
+.cyber-grid {
   position: fixed;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(42, 120, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(42, 120, 255, 0.04) 1px, transparent 1px);
-  background-size: 50px 50px;
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
+  mask-image: radial-gradient(circle at 50% 30%, black 20%, transparent 85%);
 }
 
-.bg-vignette {
+.glow-orb {
   position: fixed;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 50% 30%, transparent 20%, rgba(10, 12, 16, 0.88) 80%),
-    radial-gradient(circle at 50% -20%, rgba(42, 120, 255, 0.16) 0%, transparent 60%);
+  border-radius: 50%;
+  filter: blur(120px);
   pointer-events: none;
+  z-index: 0;
+  opacity: 0.25;
+}
+
+.glow-cyan {
+  width: 40rem;
+  height: 40rem;
+  top: -10rem;
+  left: -15rem;
+  background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+}
+
+.glow-blue {
+  width: 45rem;
+  height: 45rem;
+  bottom: -15rem;
+  right: -15rem;
+  background: radial-gradient(circle, var(--accent-blue), transparent 70%);
+}
+
+/* Common Layout Components */
+.section {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 5rem 0;
+  position: relative;
   z-index: 1;
 }
 
-/* Container spacing */
-.portfolio-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 98vh;
-  z-index: 2;
-  position: relative;
+.section-heading {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
 }
 
-/* Welcome Header */
-.welcome-header {
-  text-align: center;
-  margin-bottom: 2rem;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.welcome-header.hidden {
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
-}
-
-.welcome-header h1 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 700;
+.section-heading h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 30%, #a5c7ff 100%);
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff, #9ca3af);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.4rem;
 }
 
-.welcome-header .subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.35rem);
-  color: var(--accent-blue);
-  font-weight: 500;
-  letter-spacing: 0.12em;
+.section-heading p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.eyebrow {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-.welcome-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-  padding: 1.2rem 2rem;
-  border-radius: 20px;
-  max-width: 650px;
-  margin: 0 auto;
-  box-shadow: 0 10px 30px var(--glass-shadow);
-}
-
-.welcome-card p {
-  color: rgba(240, 244, 248, 0.85);
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 0.8rem;
-}
-
-.pulse-indicator {
-  font-size: 0.88rem;
-  color: #fffbdf;
+  letter-spacing: 0.15em;
+  color: var(--accent-cyan);
   font-weight: 600;
-  text-shadow: 0 0 10px rgba(255, 251, 223, 0.3);
-  animation: glow-text 2s infinite ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-@keyframes glow-text {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
+/* Header */
+.site-header {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.08);
 }
 
-/* Desk environment positioning */
-.desk-environment {
-  width: 100%;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 2.8rem;
+  height: 2.8rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(42, 120, 255, 0.05));
+  border: 1px solid var(--line-strong);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
+
+.brand-copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
-  perspective: 1200px;
-  margin-top: auto;
 }
 
-/* Macintosh Wrapper & Interactive scale trigger */
-.macintosh-wrapper {
+.brand-copy strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.brand-copy span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
   position: relative;
-  width: 380px;
-  height: 470px;
-  z-index: 10;
-  transform-style: preserve-3d;
-  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-cyan);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus::after {
+  transform: scaleX(1);
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 60;
+}
+
+.header-cta,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-xl);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
 }
 
-.macintosh-wrapper.zoomed {
-  transform: scale(2.8) translateY(24%);
-  cursor: default;
+.header-cta {
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--accent-cyan);
+  box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.05);
 }
 
-@media (max-width: 1100px) {
-  .macintosh-wrapper.zoomed {
-    transform: scale(2.2) translateY(18%);
-  }
+.header-cta:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: inset 0 0 15px rgba(0, 229, 255, 0.15), 0 0 15px rgba(0, 229, 255, 0.15);
+  transform: translateY(-2px);
 }
 
-@media (max-width: 720px) {
-  .macintosh-wrapper {
-    width: 290px;
-    height: 360px;
-  }
-  .macintosh-wrapper.zoomed {
-    transform: scale(2.1) translateY(12%);
-  }
+/* Buttons */
+.button-primary {
+  background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 25px rgba(42, 120, 255, 0.25);
 }
 
-/* Macintosh Chassis design */
-.mac-chassis {
-  position: relative;
-  width: 100%;
-  height: 85%;
-  background: linear-gradient(135deg, var(--mac-plastic) 0%, var(--mac-plastic-dark) 100%);
-  border-radius: 12px 12px 6px 6px;
-  box-shadow: 
-    inset 2px 2px 0px rgba(255,255,255,0.4),
-    inset -2px -2px 0px rgba(0,0,0,0.2),
-    0px 10px 40px rgba(0,0,0,0.5);
-  padding: 1.5rem;
+.button-primary:hover {
+  box-shadow: 0 12px 30px rgba(42, 120, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.button-tertiary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.button-tertiary:hover {
+  border-color: rgba(0, 229, 255, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: calc(100svh - 5.5rem);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.hero-copy {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pulse-icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  box-shadow: 0 0 12px var(--accent-green);
+  display: inline-block;
+  animation: status-pulse 1.8s infinite;
+}
+
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 40%, #90a1b5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 550px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Terminal Visualizer */
+.hero-visual {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  transform-style: preserve-3d;
 }
 
-/* Bezel around CRT screen */
-.mac-screen-border {
-  width: 96%;
-  height: 65%;
-  background: var(--mac-plastic-dark);
-  border-radius: 8px;
-  box-shadow: 
-    inset 0 3px 8px rgba(0,0,0,0.5),
-    0 1px 2px rgba(255,255,255,0.4);
-  padding: 0.9rem;
-  margin-bottom: 0.8rem;
-}
-
-.mac-screen-bezel {
+.terminal-container {
   width: 100%;
-  height: 100%;
-  background: #2b2b2b;
-  border-radius: 6px;
-  padding: 0.6rem;
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
+  max-width: 480px;
+  background: rgba(10, 15, 26, 0.85);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow), var(--glow-blue);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
 }
 
-.mac-screen-glass {
-  width: 100%;
-  height: 100%;
-  background: #151813;
-  border-radius: 4px;
+.terminal-header {
+  background: rgba(18, 25, 41, 0.9);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.terminal-dots span {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background-color: var(--accent-red); }
+.dot-yellow { background-color: var(--accent-yellow); }
+.dot-green { background-color: var(--accent-green); }
+
+.terminal-title {
+  margin-left: 1.5rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.terminal-body {
+  padding: 1.2rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.85rem;
+  min-height: 280px;
+  color: #fff;
+  line-height: 1.5;
+  overflow-y: auto;
+}
+
+.cmd-prompt {
+  color: var(--accent-cyan);
+  margin-bottom: 0.4rem;
+}
+
+.cmd-output {
+  color: var(--muted);
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.cmd-highlight {
+  color: var(--accent-green);
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-color: var(--accent-cyan);
+  animation: cursor-blink 1s steps(2, start) infinite;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* ABOUT CARDS */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow), 0 10px 30px rgba(0, 229, 255, 0.05);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.value-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #fff;
+}
+
+.value-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* CERTIFICATIONS */
+.certs-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.cert-card {
+  display: flex;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(13, 18, 30, 0.8), rgba(8, 12, 21, 0.8));
+  border: 1px solid rgba(42, 120, 255, 0.15);
+  padding: 1.8rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
-  box-shadow: inset 0 0 12px rgba(0,0,0,0.9);
 }
 
-/* Glass Screen Overlay CRT effect */
-.mac-screen-glass::after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 200;
-  background-size: 100% 4px, 6px 100%;
-  pointer-events: none;
-}
-
-/* Curved screen reflection */
-.mac-screen-glass::before {
+.cert-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
-  border-radius: 0 0 50% 50% / 0 0 10% 10%;
-  z-index: 199;
-  pointer-events: none;
-}
-
-.mac-screen-content {
   width: 100%;
-  height: 100%;
-  position: relative;
-  background-color: #0c0f0a; /* Dark when off */
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-blue), transparent);
 }
 
-/* --- CRT Screen States --- */
-.screen-state {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
+.cert-card.reveal {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-card:hover {
+  border-color: rgba(42, 120, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.cert-badge {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(42, 120, 255, 0.12);
+  border: 1px solid rgba(42, 120, 255, 0.25);
+  display: grid;
+  place-items: center;
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.alt-badge {
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  color: var(--accent-cyan);
+}
+
+.cert-info h3 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.cert-info p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* PROJECTS SECTION & FILTERS */
+.project-filters {
   display: flex;
-  flex-direction: column;
-}
-
-.screen-state.hidden {
-  display: none !important;
-}
-
-/* Boot screen off */
-#state-off {
-  background-color: #0d0e0b;
-  justify-content: center;
-  align-items: center;
-  font-family: "VT323", monospace;
-  color: #4c5a45;
-  text-shadow: 0 0 4px rgba(76, 90, 69, 0.4);
-}
-
-.boot-prompt {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 0.6rem;
-  font-size: 1.3rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
 }
 
-.boot-disquette {
-  font-size: 2.8rem;
-  animation: float-disk 2.5s infinite ease-in-out;
-}
-
-.boot-arrow {
-  font-size: 1rem;
-}
-
-@keyframes float-disk {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-.blink {
-  animation: blink-anim 1.4s step-end infinite;
-}
-
-@keyframes blink-anim {
-  50% { opacity: 0; }
-}
-
-.system-tag {
+.filter-btn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
   font-size: 0.85rem;
-  opacity: 0.4;
-  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
-/* Booting screen */
-#state-booting {
-  background-color: var(--mac-screen-bg);
-  color: var(--mac-screen-text);
-  font-family: "Courier Prime", monospace;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
+.filter-btn:hover {
+  border-color: rgba(0, 229, 255, 0.2);
+  color: #fff;
 }
 
-.happy-mac-container {
+.filter-btn.active {
+  background: rgba(0, 229, 255, 0.1);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.15);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
   display: flex;
   flex-direction: column;
+  gap: 1.1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow), 0 10px 30px rgba(0, 229, 255, 0.05);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.project-tag {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  background: rgba(0, 229, 255, 0.07);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 229, 255, 0.12);
+}
+
+.github-link {
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.github-link:hover {
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.project-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.project-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tech span {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+/* COMPÉTENCES (STACK) */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.stack-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
   gap: 1.2rem;
 }
 
-.happy-mac-icon {
-  font-size: 3rem;
-  text-shadow: 0 0 6px rgba(0,0,0,0.15);
-}
-
-.mac-loading-text {
-  font-size: 0.85rem;
-  font-weight: bold;
-}
-
-.boot-progress-bar {
-  width: 140px;
-  height: 12px;
-  border: 2px solid var(--mac-screen-text);
-  padding: 1px;
-  background-color: white;
-}
-
-.boot-progress-fill {
-  width: 0%;
-  height: 100%;
-  background-color: var(--mac-screen-text);
-  transition: width 0.1s linear;
-}
-
-/* Active Desktop State */
-#state-on {
-  background-color: var(--mac-screen-bg);
-  color: var(--mac-screen-text);
-  box-shadow: inset 0 0 30px var(--crt-glow);
-  font-family: "Courier Prime", monospace;
-}
-
-/* Retro OS Menu Bar */
-.mac-menu-bar {
-  width: 100%;
-  height: 18px;
-  background: white;
-  border-bottom: 2px solid var(--mac-screen-text);
-  display: flex;
-  align-items: center;
-  padding: 0 0.6rem;
-  font-size: 0.65rem;
-  font-weight: bold;
-  gap: 0.8rem;
-  z-index: 10;
-  position: relative;
-}
-
-.menu-apple {
-  font-size: 0.75rem;
-  margin-right: 0.2rem;
-}
-
-.menu-clock {
-  margin-left: auto;
-}
-
-/* Desktop Folder Mosaic */
-.retro-desktop-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.8rem 0.5rem;
-  padding: 1rem 0.6rem;
-  height: calc(100% - 18px);
-  overflow-y: auto;
-}
-
-.mosaic-tile {
-  background: transparent;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--mac-screen-text);
-  cursor: pointer;
-  outline: none;
-  transition: transform 0.1s ease;
-}
-
-.mosaic-tile:active {
-  transform: scale(0.92);
-}
-
-.tile-icon {
-  font-size: 1.6rem;
-  margin-bottom: 0.15rem;
-  display: grid;
-  place-items: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  border: 2px solid transparent;
-}
-
-.mosaic-tile:hover .tile-icon {
-  border: 2px dashed var(--mac-screen-text);
-  background: rgba(255,255,255,0.4);
-}
-
-.tile-label {
-  font-size: 0.55rem;
-  font-weight: bold;
-  text-align: center;
-  background-color: white;
-  padding: 1px 3px;
-  border: 1px solid var(--mac-screen-text);
-  box-shadow: 1px 1px 0px var(--mac-screen-text);
-  word-break: break-word;
-  max-width: 90%;
-}
-
-.tile-action-btn .tile-label {
-  background-color: #fffae0;
-}
-
-/* System Windows */
-.desktop-windows-container {
-  position: absolute;
-  inset: 18px 0 0 0;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.mac-window {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
-  background: var(--mac-screen-bg);
-  border: 2px solid var(--mac-screen-text);
-  box-shadow: 3px 3px 0px var(--mac-screen-text);
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-  pointer-events: auto;
-}
-
-.mac-window.hidden {
-  display: none !important;
-}
-
-/* Classic Macintosh window title bar */
-.mac-window-titlebar {
-  height: 18px;
-  background: white;
-  border-bottom: 2px solid var(--mac-screen-text);
-  display: flex;
-  align-items: center;
-  padding: 0 4px;
-  position: relative;
-  /* Horizontal line pattern in title bar */
-  background-image: linear-gradient(to bottom, transparent 4px, var(--mac-screen-text) 4px, var(--mac-screen-text) 6px, transparent 6px);
-  background-size: 100% 8px;
-}
-
-.mac-close-btn {
-  width: 10px;
-  height: 10px;
-  border: 2px solid var(--mac-screen-text);
-  background: white;
-  cursor: pointer;
-  outline: none;
-  flex-shrink: 0;
-  z-index: 5;
-}
-
-.mac-close-btn:active {
-  background: var(--mac-screen-text);
-}
-
-.mac-window-title {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 0.6rem;
-  font-weight: bold;
-  background: var(--mac-screen-bg);
-  margin: 0 auto;
-  width: fit-content;
-  padding: 0 10px;
-  pointer-events: none;
-}
-
-/* Window content area styling */
-.mac-window-body {
-  flex-grow: 1;
-  padding: 0.6rem;
-  overflow-y: auto;
-  font-size: 0.62rem;
-  line-height: 1.5;
-  background: var(--mac-screen-bg);
-}
-
-/* Scrollbars for retro look */
-.mac-window-body::-webkit-scrollbar,
-.win-repos-list::-webkit-scrollbar {
-  width: 12px;
-}
-
-.mac-window-body::-webkit-scrollbar-track,
-.win-repos-list::-webkit-scrollbar-track {
-  background: white;
-  border-left: 2px solid var(--mac-screen-text);
-}
-
-.mac-window-body::-webkit-scrollbar-thumb,
-.win-repos-list::-webkit-scrollbar-thumb {
-  background-color: var(--mac-screen-bg);
-  border: 2px solid var(--mac-screen-text);
-  box-shadow: inset 1px 1px 0 white;
-}
-
-.mac-window-body h3 {
-  font-size: 0.85rem;
-  margin-bottom: 0.3rem;
+.stack-card h3 {
   font-family: "Space Grotesk", sans-serif;
-  letter-spacing: -0.02em;
+  color: #fff;
+  font-size: 1.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.6rem;
 }
 
-.mac-window-body h4 {
-  font-size: 0.72rem;
-  margin: 0.6rem 0 0.3rem;
-}
-
-.subtitle-bold {
-  font-weight: bold;
-  font-size: 0.65rem;
-  margin-bottom: 0.4rem;
-}
-
-.retro-hr {
-  border: none;
-  border-top: 2px dashed var(--mac-screen-text);
-  margin: 0.6rem 0;
-}
-
-.retro-list {
+.stack-card ul {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.retro-list li::before {
-  content: "■ ";
-  font-size: 0.5rem;
+.stack-card li {
+  font-size: 0.8rem;
+  background: rgba(42, 120, 255, 0.08);
+  border: 1px solid rgba(42, 120, 255, 0.15);
+  color: #93c5fd;
+  padding: 0.35rem 0.7rem;
+  border-radius: 99px;
+  font-weight: 500;
 }
 
-.cv-summary {
-  font-style: italic;
-  margin-bottom: 0.4rem;
+.stack-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin-top: auto;
 }
 
-/* Vintage style buttons */
-.mac-btn {
-  display: inline-block;
-  background: white;
-  color: var(--mac-screen-text);
-  border: 2px solid var(--mac-screen-text);
-  box-shadow: 2px 2px 0 var(--mac-screen-text);
-  padding: 0.3rem 0.6rem;
-  font-weight: bold;
-  font-size: 0.6rem;
-  text-decoration: none;
-  margin-top: 0.6rem;
-  cursor: pointer;
-  outline: none;
+/* CONTACT */
+.contact-panel {
+  background: linear-gradient(135deg, rgba(13, 18, 30, 0.9), rgba(6, 9, 15, 0.95));
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow), var(--glow-blue);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: center;
+  backdrop-filter: blur(20px);
 }
 
-.mac-btn:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0 var(--mac-screen-text);
+.contact-panel h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: #fff;
+  margin-bottom: 0.8rem;
 }
 
-.mac-contact-list {
+.contact-panel p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.contact-actions {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  margin-top: 0.4rem;
+  gap: 0.8rem;
 }
 
-.mac-contact-list .mac-btn {
-  margin-top: 0;
+.contact-actions .button {
+  width: 100%;
+}
+
+/* Footer */
+.site-footer {
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   text-align: center;
 }
 
-/* Projects Explorer in Window */
-.win-featured-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.4rem;
+.site-footer p {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.85rem;
 }
 
-.win-feat-card {
-  border: 1px solid var(--mac-screen-text);
-  background: white;
-  padding: 0.4rem;
+/* Animations & Reveal States */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.win-feat-card strong {
-  font-size: 0.65rem;
-  display: block;
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.win-feat-card p {
-  font-size: 0.58rem;
-  margin-top: 0.1rem;
+@keyframes cursor-blink {
+  50% { opacity: 0; }
 }
 
-.win-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem;
-  margin: 0.5rem 0;
+@keyframes status-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-.win-filter-btn {
-  background: white;
-  border: 1px solid var(--mac-screen-text);
-  font-size: 0.5rem;
-  font-weight: bold;
-  padding: 0.15rem 0.35rem;
-  cursor: pointer;
-  outline: none;
+/* Responsive Styles */
+@media (max-width: 968px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2rem;
+    text-align: center;
+  }
+  
+  .hero-text {
+    margin: 0 auto;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .terminal-container {
+    margin: 0 auto;
+  }
+  
+  .certs-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .contact-actions {
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
-.win-filter-btn.active {
-  background: var(--mac-screen-text);
-  color: var(--mac-screen-bg);
-}
-
-.win-repos-list {
-  border: 2px solid var(--mac-screen-text);
-  height: 120px;
-  overflow-y: auto;
-  background: white;
-  display: flex;
-  flex-direction: column;
-}
-
-.win-repo-item {
-  padding: 0.4rem;
-  border-bottom: 1px solid rgba(0,0,0,0.15);
-}
-
-.win-repo-item.hide {
-  display: none !important;
-}
-
-.win-repo-item h5 {
-  font-size: 0.65rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.retro-badge {
-  font-size: 0.45rem;
-  padding: 1px 4px;
-  border-radius: 99px;
-  font-weight: bold;
-}
-
-.retro-badge.pub {
-  background: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
-
-.retro-badge.pvt {
-  background: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-.win-repo-item p {
-  font-size: 0.55rem;
-  margin-top: 0.15rem;
-  color: rgba(0,0,0,0.7);
-}
-
-/* Macintosh Floppy slot and bottom details */
-.mac-case-bottom {
-  width: 100%;
-  margin-top: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 1rem;
-}
-
-.mac-floppy-slot {
-  width: 100px;
-  height: 12px;
-  background: #3a3a3a;
-  border-radius: 2px;
-  padding: 2px;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
-  position: relative;
-}
-
-.mac-slot-opening {
-  width: 100%;
-  height: 3px;
-  background: #151515;
-}
-
-.mac-logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--accent-blue);
-  text-shadow: 0 0 10px rgba(42, 120, 255, 0.4);
-}
-
-/* Macintosh base stand structure */
-.mac-pedestal {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 140px;
-  height: 44px;
-  background: linear-gradient(90deg, var(--mac-plastic-dark) 0%, var(--mac-plastic) 50%, var(--mac-plastic-dark) 100%);
-  border-radius: 0 0 8px 8px;
-  box-shadow: inset 0 4px 6px rgba(0,0,0,0.15);
-  z-index: 5;
-}
-
-.mac-stand-base {
-  position: absolute;
-  bottom: -48px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 10px;
-  background: var(--mac-plastic-dark);
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
-  z-index: 4;
-}
-
-/* Desk Surface */
-.desk-surface {
-  width: 140vw;
-  height: 250px;
-  background: var(--desk-wood);
-  box-shadow: inset 0 15px 40px rgba(0,0,0,0.8), 0 30px 60px rgba(0,0,0,0.9);
-  position: absolute;
-  bottom: -220px;
-  left: -20vw;
-  transform: rotateX(25deg);
-  z-index: 1;
-  border-top: 4px solid #5a3a29;
-}
-
-.desk-leg {
-  width: 40px;
-  height: 300px;
-  background: #1e140f;
-  position: absolute;
-  bottom: -520px;
-  z-index: 0;
-}
-
-.desk-leg-left {
-  left: 10%;
-}
-
-.desk-leg-right {
-  right: 10%;
-}
-
-/* Keyframes animations & utility classes */
-.reveal-fast {
-  animation: reveal-up-anim 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes reveal-up-anim {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1rem 0;
+  }
+  
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-soft);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1.2rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .site-nav.open {
+    display: flex;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .header-cta {
+    display: none;
+  }
+  
+  .project-filters {
+    justify-content: center;
+  }
 }

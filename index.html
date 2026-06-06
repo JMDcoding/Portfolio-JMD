@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Jean-Marc DUSSAUD — Administrateur Systèmes et Réseaux en alternance. Compétences : virtualisation, sécurité, supervision, Cloud."
+    />
+    <title>Portfolio | Full-Stack Engineer & Product Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-left" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-right" aria-hidden="true"></div>
+    <div class="bg-laser bg-laser-one" aria-hidden="true"></div>
+    <div class="bg-laser bg-laser-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="Retour en haut">
+        <span class="brand-mark">JMD</span>
+        <span class="brand-copy">
+          <strong>Jean-Marc DUSSAUD</strong>
+          <span>Alternant Administrateur Systèmes & Réseaux</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect y="1" width="22" height="2" rx="1" fill="currentColor" />
+          <rect y="6" width="22" height="2" rx="1" fill="currentColor" />
+          <rect y="11" width="22" height="2" rx="1" fill="currentColor" />
+        </svg>
+      </button>
+
+      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#stack">Stack</a>
+        <a href="#method">Méthode</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-cta" href="#contact">Me contacter</a>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Portfolio / Product Engineering / UX Strategy</p>
+          <h1>Je conçois des produits numériques fiables, humains et pensés pour durer.</h1>
+          <p class="hero-text">
+            J’aide les startups, entreprises et projets ambitieux à construire des plateformes modernes, rapides et accessibles
+            sans sacrifier l’expérience utilisateur ni la maintenabilité.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Voir les projets</a>
+            <a class="button button-secondary" href="#cv">Télécharger le CV</a>
+          </div>
+          <ul class="hero-points" aria-label="Points forts">
+            <li>Architecture scalable</li>
+            <li>Design systems accessibles</li>
+            <li>Performance orientée produit</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="visual-shell">
+            <div class="terminal-window">
+              <div class="terminal-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="terminal-content">
+                <p><span class="muted">status</span> :: building trust</p>
+                <p><span class="muted">mode</span> :: product-first engineering</p>
+                <p><span class="muted">focus</span> :: performance / clarity / impact</p>
+                <p class="terminal-highlight">> systems that feel simple at the surface</p>
+              </div>
+            </div>
+
+            <div class="network-card network-card-top">
+              <span class="network-dot"></span>
+              <div>
+                <strong>Low-friction UX</strong>
+                <p>Interfaces pensées pour décider vite.</p>
+              </div>
+            </div>
+
+            <div class="network-card network-card-bottom">
+              <span class="network-dot network-dot-alt"></span>
+              <div>
+                <strong>Reliable delivery</strong>
+                <p>Des bases techniques conçues pour durer.</p>
+              </div>
+            </div>
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="core-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Mindset / À propos</p>
+          <h2>Construire des systèmes utiles avant de construire des fonctionnalités.</h2>
+          <p>
+            La technologie n’a de valeur que lorsqu’elle résout un vrai problème. Mon approche combine architecture logicielle,
+            expérience utilisateur et compréhension produit pour créer des solutions robustes, évolutives et réellement utilisables.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="value-card reveal">
+            <span>01</span>
+            <h3>Vision Produit</h3>
+            <p>Comprendre le besoin avant d’écrire une ligne de code.</p>
+          </article>
+          <article class="value-card reveal">
+            <span>02</span>
+            <h3>Architecture Durable</h3>
+            <p>Construire des bases techniques capables d’évoluer sans dette toxique.</p>
+          </article>
+          <article class="value-card reveal">
+            <span>03</span>
+            <h3>Performance & Accessibilité</h3>
+            <p>Des interfaces rapides, inclusives et pensées pour tous les utilisateurs.</p>
+          </article>
+          <article class="value-card reveal">
+            <span>04</span>
+            <h3>Communication Claire</h3>
+            <p>Transformer les contraintes techniques en décisions compréhensibles.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cv" id="cv">
+        <div class="section-heading reveal">
+          <p class="eyebrow">CV</p>
+          <h2>Jean-Marc DUSSAUD — Alternant Administrateur Systèmes et Réseaux</h2>
+          <p>Rennes (Mobilité France) | +33 6 10 23 00 59 | <a href="mailto:jeanmarcdussaud@gmail.com">jeanmarcdussaud@gmail.com</a></p>
+        </div>
+
+        <div class="case-study-grid">
+          <article class="case-study reveal">
+            <h3>Profil</h3>
+            <p>Étudiant en systèmes et réseaux et certifié Cisco CCNA / Fortinet NSE 4, je recherche une alternance pour devenir Administrateur Systèmes et Réseaux. Compétent en virtualisation, gestion de parcs (Linux/Windows) et sécurité périmétrique, je suis prêt à intégrer votre équipe pour superviser, optimiser et sécuriser votre infrastructure.</p>
+          </article>
+
+          <article class="case-study reveal">
+            <h3>Compétences techniques</h3>
+            <div class="case-columns">
+              <div>
+                <h4>Réseau, Cloud & Cybersécurité</h4>
+                <p>DNS, DHCP, TCP/IP, pfSense, IPFire, Wireshark, Zabbix, Kali Linux, VLAN, Cowrie (honeypot), Grafana, Loki, Azure, AWS, Windows Server/Client, Active Directory</p>
+              </div>
+              <div>
+                <h4>Développement</h4>
+                <p>Python, C#, JavaScript, Java, SQL, HTML, CSS, frameworks JS, Pandas, Vuforia/Unity, Websocket, FFmpeg</p>
+              </div>
+              <div>
+                <h4>Méthodologie</h4>
+                <p>AGILE, Kanban, GanttProject, documentation technique, Pack Office</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study reveal">
+            <h3>Certifications & Langues</h3>
+            <p>Cisco CCNA | Fortinet NSE 4 | Permis B</p>
+            <p>Français (natif) | Lingala (natif) | Anglais C1 | Allemand B2</p>
+          </article>
+
+          <article class="case-study reveal">
+            <h3>Projets & Expériences</h3>
+            <div class="case-columns">
+              <div>
+                <h4>Serenity — Sécurisation applicative (IA santé mentale)</h4>
+                <p>Conception et sécurisation d'une application IA, conformité RGPD, anonymisation, sécurisation des échanges applicatifs.</p>
+              </div>
+              <div>
+                <h4>Sécurisation réseau & pare-feu</h4>
+                <p>Administration pfSense / IPFire, règles de filtrage, segmentation VLAN, routage sécurisé, politiques d'accès.</p>
+              </div>
+              <div>
+                <h4>Détection & monitoring</h4>
+                <p>Honeypot SSH (Cowrie), corrélation logs avec Grafana/Loki, automatisation en Python, monitoring 24/7.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study reveal">
+            <h3>Projets GitHub</h3>
+            <p>Voir le profil GitHub pour la liste complète des projets : <a href="https://github.com/JMDcoding" target="_blank" rel="noreferrer">github.com/JMDcoding</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section projects" id="projects">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Projets sélectionnés</p>
+          <h2>Chaque projet raconte un problème, une décision et un résultat.</h2>
+        </div>
+
+        <div class="case-study-grid">
+          <article class="case-study reveal">
+            <div class="case-header">
+              <div>
+                <p class="case-tag">Mental Health Platform / AI Assisted Care</p>
+                <h3>Serenity</h3>
+              </div>
+              <span class="case-number">01</span>
+            </div>
+            <p class="case-hook">Une plateforme pensée pour rendre le soutien psychologique plus accessible, plus discret et plus humain.</p>
+            <div class="case-columns">
+              <div>
+                <h4>Le problème</h4>
+                <p>Les solutions de santé mentale sont souvent fragmentées, anxiogènes et peu personnalisées.</p>
+              </div>
+              <div>
+                <h4>Solution apportée</h4>
+                <p>Architecture centrée sur l’anonymat, la sécurité, l’assistance émotionnelle par IA et l’accessibilité cognitive.</p>
+              </div>
+              <div>
+                <h4>Impact</h4>
+                <p>Expérience réduisant la charge cognitive, base produit scalable et design system accessible conforme WCAG.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study reveal">
+            <div class="case-header">
+              <div>
+                <p class="case-tag">Dashboard SaaS / Analytics</p>
+                <h3>Velocity Ops</h3>
+              </div>
+              <span class="case-number">02</span>
+            </div>
+            <p class="case-hook">Transformer des données complexes en décisions rapides.</p>
+            <div class="case-columns">
+              <div>
+                <h4>Le problème</h4>
+                <p>Les équipes perdaient du temps entre plusieurs outils et des tableaux peu lisibles.</p>
+              </div>
+              <div>
+                <h4>Solution</h4>
+                <p>Dashboard temps réel avec API centralisée, architecture modulaire et optimisation des temps de chargement.</p>
+              </div>
+              <div>
+                <h4>Impact</h4>
+                <p>Temps d’analyse réduit, interface simplifiée et base extensible pour de nouveaux modules métier.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study reveal">
+            <div class="case-header">
+              <div>
+                <p class="case-tag">Plateforme Communautaire</p>
+                <h3>Northlink</h3>
+              </div>
+              <span class="case-number">03</span>
+            </div>
+            <p class="case-hook">Concevoir des espaces numériques qui favorisent des échanges sains et durables.</p>
+            <div class="case-columns">
+              <div>
+                <h4>Le problème</h4>
+                <p>Les communautés en ligne manquent souvent de structure, de modération et de fluidité.</p>
+              </div>
+              <div>
+                <h4>Solution</h4>
+                <p>Système communautaire avec modération intelligente, rôles dynamiques, temps réel et architecture scalable.</p>
+              </div>
+              <div>
+                <h4>Impact</h4>
+                <p>Expérience plus fluide, engagement renforcé et administration simplifiée.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section stack" id="stack">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Stack technique</p>
+          <h2>Des écosystèmes complets, pas juste une liste d’outils.</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <h3>Frontend Engineering</h3>
+            <ul>
+              <li>Next.js</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+              <li>Framer Motion</li>
+            </ul>
+            <p>Interfaces performantes, accessibles et maintenables.</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Backend Systems</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>NestJS</li>
+              <li>PostgreSQL</li>
+              <li>Prisma</li>
+              <li>Redis</li>
+            </ul>
+            <p>Architecture scalable, sécurité et performance.</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Infrastructure & Deployment</h3>
+            <ul>
+              <li>Docker</li>
+              <li>Vercel</li>
+              <li>Cloudflare</li>
+              <li>CI/CD</li>
+              <li>Monitoring</li>
+            </ul>
+            <p>Déploiements fiables et optimisation des performances.</p>
+          </article>
+          <article class="stack-card reveal">
+            <h3>Product Thinking</h3>
+            <ul>
+              <li>UX Strategy</li>
+              <li>Design Systems</li>
+              <li>Accessibility</li>
+              <li>Performance Optimization</li>
+            </ul>
+            <p>Créer des produits compréhensibles et utiles.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method" id="method">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Méthode de travail</p>
+          <h2>Une approche structurée, sans rigidité.</h2>
+        </div>
+
+        <div class="method-timeline">
+          <article class="timeline-item reveal">
+            <span>01</span>
+            <div>
+              <h3>Comprendre</h3>
+              <p>Analyser le vrai besoin utilisateur et métier.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span>02</span>
+            <div>
+              <h3>Concevoir</h3>
+              <p>Définir une architecture simple et évolutive.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span>03</span>
+            <div>
+              <h3>Construire</h3>
+              <p>Développer rapidement sans sacrifier la qualité.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <span>04</span>
+            <div>
+              <h3>Optimiser</h3>
+              <p>Mesurer, améliorer et faire évoluer.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-panel reveal">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Construisons quelque chose d’utile.</h2>
+            <p>
+              Je suis ouvert aux collaborations ambitieuses : produits SaaS, plateformes IA, outils à impact humain, architecture full-stack et expériences numériques modernes.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:jeanmarcdussaud@gmail.com">Envoyer un message</a>
+            <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">Télécharger le CV</a>
+            <a class="button button-tertiary" href="https://github.com/JMDcoding" target="_blank" rel="noreferrer">Voir GitHub</a>
+            <a class="button button-tertiary" href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Jean-Marc DUSSAUD. Construit pour durer.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

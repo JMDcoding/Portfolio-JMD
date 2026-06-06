@@ -1,0 +1,56 @@
+Jean-Marc DUSSAUD
+
+Alternant Administrateur Système et Réseaux – 1er Septembre 2026 (2 semaines école / 2 semaines entreprise)
+
+Rennes (Mobilité France)
++33 6 10 23 00 59
+jeanmarcdussaud@gmail.com
+linkedin.com/in/jeanmarc-dussaud
+github.com/JMDcoding
+
+PROFIL
+
+Étudiant en systèmes et réseaux et certifié Cisco CCNA / Fortinet NSE 4, je recherche une alternance pour devenir Administrateur Systèmes et Réseaux. Compétent en virtualisation, gestion de parcs (Linux/Windows) et sécurité périmétrique, je suis prêt à intégrer votre équipe pour superviser, optimiser et sécuriser votre infrastructure.
+
+COMPÉTENCES TECHNIQUES
+
+Réseau, Cloud et Cybersécurité:
+DNS, DHCP, TCP/IP, pfSense, IPFire, Wireshark, Zabbix, Kali Linux, VLAN, Honeypot SSH Cowrie, Grafana, Loki, Cloud, Windows Server/Client, Active Directory, Azure, AWS
+
+Développement:
+Python, C#, JavaScript, Java, SQL, HTML, CSS, Frameworks JS, Pandas, Vuforia/Unity, Websocket, FFmpeg
+
+Méthodologie de travail:
+AGILE, Kanban, GanttProject, Documentation technique, Pack Office
+
+Certifications:
+Cisco CCNA | Fortinet NSE 4 | Permis B
+
+Langues:
+Français (natif) | Lingala (natif) | Anglais C1 | Allemand B2
+
+EXPERIENCES & PROJETS
+
+SERENITY – Sécurisation applicative (IA santé mentale) (Projet) – 2024-2026 | SupdeVinci Rennes
+- Conception et sécurisation d'une application de santé mentale basée sur l'IA
+- Mise en conformité RGPD : gestion et anonymisation des données sensibles
+- Sécurisation des échanges applicatifs et intégration de la sécurité dans l'architecture IA
+
+Sécurisation réseau et pare-feu (Projet) – 2024-2025 | SupdeVinci Rennes
+- Administration de pare-feu pfSense et IPFire ; règles de filtrage avancées
+- Segmentation VLAN pour isolation des environnements sensibles
+- Configuration de politiques de sécurité, gestion des accès
+
+Détection d'intrusion et analyse de menaces (Projet) – 2024-2026 | SupdeVinci Rennes
+- Déploiement d'un honeypot SSH Cowrie
+- Corrélation et visualisation des logs via Grafana et Loki
+- Automatisation des tâches de sécurité avec Python
+
+Technicien Supérieur Systèmes et Virtualisation (Projet) – 2024-2025 | SupdeVinci Rennes
+- Administration VMware et Proxmox VE
+- Gestion des parcs Linux et Windows, snapshots, sauvegardes
+
+PROJETS GITHUB (sélection)
+Voir : https://github.com/JMDcoding
+
+-- Fin --

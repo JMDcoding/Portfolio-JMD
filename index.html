@@ -5,865 +5,410 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de Jean-Marc DUSSAUD — Administrateur Systèmes et Réseaux en alternance. Compétences : virtualisation, sécurité, supervision, Cloud."
+      content="Portfolio de Jean-Marc DUSSAUD — Administrateur Systèmes et Réseaux. Expérience rétro interactive avec un Macintosh vintage."
     />
-    <title>Portfolio | Full-Stack Engineer & Product Builder</title>
+    <title>Jean-Marc DUSSAUD | Portfolio Vintage Mac</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Retro Fonts (VT323 for screen, Courier for vintage look, Space Grotesk for headings) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=VT323&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Grid overlay background -->
     <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-orb bg-orb-left" aria-hidden="true"></div>
-    <div class="bg-orb bg-orb-right" aria-hidden="true"></div>
-    <div class="bg-laser bg-laser-one" aria-hidden="true"></div>
-    <div class="bg-laser bg-laser-two" aria-hidden="true"></div>
+    <div class="bg-vignette" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <div class="header-container">
-        <a class="brand" href="#hero" aria-label="Retour en haut">
-          <span class="brand-mark">JMD</span>
-          <span class="brand-copy">
-            <strong>Jean-Marc DUSSAUD</strong>
-            <span>Alternant Administrateur Systèmes & Réseaux</span>
-          </span>
-        </a>
-        <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-          <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect y="1" width="22" height="2" rx="1" fill="currentColor" />
-            <rect y="6" width="22" height="2" rx="1" fill="currentColor" />
-            <rect y="11" width="22" height="2" rx="1" fill="currentColor" />
-          </svg>
-        </button>
-
-        <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
-          <a href="#about">À propos</a>
-          <a href="#projects">Projets</a>
-          <a href="#stack">Stack</a>
-          <a href="#method">Méthode</a>
-          <a href="#contact">Contact</a>
-        </nav>
-
-        <a class="header-cta" href="#contact">Me contacter</a>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero section" id="hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Portfolio / Product Engineering / UX Strategy</p>
-          <h1>Je conçois des produits numériques fiables, humains et pensés pour durer.</h1>
-          <p class="hero-text">
-            J’aide les startups, entreprises et projets ambitieux à construire des plateformes modernes, rapides et accessibles
-            sans sacrifier l’expérience utilisateur ni la maintenabilité.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Voir les projets</a>
-            <a class="button button-secondary" href="#cv">Télécharger le CV</a>
-          </div>
-          <ul class="hero-points" aria-label="Points forts">
-            <li>Architecture scalable</li>
-            <li>Design systems accessibles</li>
-            <li>Performance orientée produit</li>
-          </ul>
-        </div>
-
-        <div class="hero-visual reveal">
-          <div class="visual-shell">
-            <div class="terminal-window">
-              <div class="terminal-bar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div class="terminal-content">
-                <p><span class="muted">status</span> :: building trust</p>
-                <p><span class="muted">mode</span> :: product-first engineering</p>
-                <p><span class="muted">focus</span> :: performance / clarity / impact</p>
-                <p class="terminal-highlight">> systems that feel simple at the surface</p>
-              </div>
-            </div>
-
-            <div class="network-card network-card-top">
-              <span class="network-dot"></span>
-              <div>
-                <strong>Low-friction UX</strong>
-                <p>Interfaces pensées pour décider vite.</p>
-              </div>
-            </div>
-
-            <div class="network-card network-card-bottom">
-              <span class="network-dot network-dot-alt"></span>
-              <div>
-                <strong>Reliable delivery</strong>
-                <p>Des bases techniques conçues pour durer.</p>
-              </div>
-            </div>
-
-            <div class="orbit orbit-one"></div>
-            <div class="orbit orbit-two"></div>
-            <div class="core-pulse"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section about" id="about">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Mindset / À propos</p>
-          <h2>Construire des systèmes utiles avant de construire des fonctionnalités.</h2>
+    <main class="portfolio-container">
+      <!-- Welcome Header -->
+      <header class="welcome-header">
+        <h1 class="reveal-fast">Jean-Marc DUSSAUD</h1>
+        <p class="subtitle reveal-fast">Alternant Administrateur Systèmes & Réseaux</p>
+        <div class="welcome-card reveal-fast">
           <p>
-            La technologie n’a de valeur que lorsqu’elle résout un vrai problème. Mon approche combine architecture logicielle,
-            expérience utilisateur et compréhension produit pour créer des solutions robustes, évolutives et réellement utilisables.
+            Bienvenue sur mon portfolio interactif. Explorez mes compétences en virtualisation, sécurité et administration de réseaux.
           </p>
+          <div class="pulse-indicator">💻 Cliquez sur l'écran du Macintosh pour démarrer l'expérience</div>
         </div>
+      </header>
 
-        <div class="about-grid">
-          <article class="value-card reveal">
-            <span>01</span>
-            <h3>Vision Produit</h3>
-            <p>Comprendre le besoin avant d’écrire une ligne de code.</p>
-          </article>
-          <article class="value-card reveal">
-            <span>02</span>
-            <h3>Architecture Durable</h3>
-            <p>Construire des bases techniques capables d’évoluer sans dette toxique.</p>
-          </article>
-          <article class="value-card reveal">
-            <span>03</span>
-            <h3>Performance & Accessibilité</h3>
-            <p>Des interfaces rapides, inclusives et pensées pour tous les utilisateurs.</p>
-          </article>
-          <article class="value-card reveal">
-            <span>04</span>
-            <h3>Communication Claire</h3>
-            <p>Transformer les contraintes techniques en décisions compréhensibles.</p>
-          </article>
-        </div>
-      </section>
+      <!-- Desk & Retro Mac Container -->
+      <div class="desk-environment">
+        <div class="macintosh-wrapper" id="mac-wrapper">
+          
+          <!-- Classic Macintosh Bezel & Case -->
+          <div class="mac-chassis">
+            
+            <!-- CRT Screen area -->
+            <div class="mac-screen-border">
+              <div class="mac-screen-bezel">
+                <div class="mac-screen-glass">
+                  <div class="mac-screen-content" id="mac-screen">
+                    
+                    <!-- 1. SCREEN OFF STATE -->
+                    <div class="screen-state" id="state-off">
+                      <div class="boot-prompt">
+                        <div class="boot-disquette">💾</div>
+                        <div class="boot-arrow">⬇</div>
+                        <p class="blink">CLIQUEZ POUR INITIALISER</p>
+                        <div class="system-tag">System 1.0</div>
+                      </div>
+                    </div>
 
-      <section class="section cv" id="cv">
-        <div class="section-heading reveal">
-          <p class="eyebrow">CV</p>
-          <h2>Jean-Marc DUSSAUD — Alternant Administrateur Systèmes et Réseaux</h2>
-          <p>Rennes (Mobilité France) | +33 6 10 23 00 59 | <a href="mailto:jeanmarcdussaud@gmail.com">jeanmarcdussaud@gmail.com</a></p>
-        </div>
+                    <!-- 2. BOOTING STATE -->
+                    <div class="screen-state hidden" id="state-booting">
+                      <div class="happy-mac-container">
+                        <div class="happy-mac-icon">😀</div>
+                        <p class="mac-loading-text">Welcome to Macintosh...</p>
+                        <div class="boot-progress-bar">
+                          <div class="boot-progress-fill" id="boot-progress"></div>
+                        </div>
+                      </div>
+                    </div>
 
-        <div class="case-study-grid">
-          <article class="case-study reveal">
-            <h3>Profil</h3>
-            <p>Étudiant en systèmes et réseaux et certifié Cisco CCNA / Fortinet NSE 4, je recherche une alternance pour devenir Administrateur Systèmes et Réseaux. Compétent en virtualisation, gestion de parcs (Linux/Windows) et sécurité périmétrique, je suis prêt à intégrer votre équipe pour superviser, optimiser et sécuriser votre infrastructure.</p>
-          </article>
+                    <!-- 3. ACTIVE OS STATE -->
+                    <div class="screen-state hidden" id="state-on">
+                      <!-- Retro Macintosh Top Menu Bar -->
+                      <div class="mac-menu-bar">
+                        <span class="menu-apple"></span>
+                        <span class="menu-item">Fichier</span>
+                        <span class="menu-item">Edition</span>
+                        <span class="menu-item">Spécial</span>
+                        <span class="menu-clock" id="menu-clock">18:00</span>
+                      </div>
 
-          <article class="case-study reveal">
-            <h3>Compétences techniques</h3>
-            <div class="case-columns">
-              <div>
-                <h4>Réseau, Cloud & Cybersécurité</h4>
-                <p>DNS, DHCP, TCP/IP, pfSense, IPFire, Wireshark, Zabbix, Kali Linux, VLAN, Cowrie (honeypot), Grafana, Loki, Azure, AWS, Windows Server/Client, Active Directory</p>
+                      <!-- Retro Desktop Grid (Mosaic of Squares) -->
+                      <div class="retro-desktop-grid" id="desktop-grid">
+                        <button class="mosaic-tile" data-target="win-about">
+                          <span class="tile-icon">👤</span>
+                          <span class="tile-label">À Propos</span>
+                        </button>
+                        <button class="mosaic-tile" data-target="win-cv">
+                          <span class="tile-icon">📄</span>
+                          <span class="tile-label">Mon CV</span>
+                        </button>
+                        <button class="mosaic-tile" data-target="win-projects">
+                          <span class="tile-icon">📁</span>
+                          <span class="tile-label">Projets (32)</span>
+                        </button>
+                        <button class="mosaic-tile" data-target="win-stack">
+                          <span class="tile-icon">⚙️</span>
+                          <span class="tile-label">Compétences</span>
+                        </button>
+                        <button class="mosaic-tile" data-target="win-contact">
+                          <span class="tile-icon">✉️</span>
+                          <span class="tile-label">Contact</span>
+                        </button>
+                        <button class="mosaic-tile tile-action-btn" id="btn-zoom-out">
+                          <span class="tile-icon">🔍</span>
+                          <span class="tile-label">Reculer</span>
+                        </button>
+                        <button class="mosaic-tile tile-action-btn" id="btn-shutdown">
+                          <span class="tile-icon">🔌</span>
+                          <span class="tile-label">Éteindre</span>
+                        </button>
+                      </div>
+
+                      <!-- OS Windows Inside Screen -->
+                      <div class="desktop-windows-container">
+                        
+                        <!-- ABOUT WINDOW -->
+                        <div class="mac-window hidden" id="win-about">
+                          <div class="mac-window-titlebar">
+                            <button class="mac-close-btn" data-close="win-about"></button>
+                            <div class="mac-window-title">À Propos</div>
+                          </div>
+                          <div class="mac-window-body">
+                            <h3>Jean-Marc DUSSAUD</h3>
+                            <p class="subtitle-bold">Concevoir des architectures réseau et systèmes durables.</p>
+                            <p>La technologie n'est qu'un outil pour résoudre de réels défis. Mon but en tant qu'administrateur systèmes & réseaux est de simplifier l'infrastructure, d'optimiser les flux et de blinder la sécurité périmétrique.</p>
+                            <hr class="retro-hr">
+                            <ul class="retro-list">
+                              <li><strong>Vision globale</strong> : Comprendre les enjeux métiers.</li>
+                              <li><strong>Durable & Scalable</strong> : Déployer des bases propres sans dette technique.</li>
+                              <li><strong>Sécurité d'abord</strong> : Intégrer les bonnes pratiques dès l'architecture.</li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <!-- CV WINDOW -->
+                        <div class="mac-window hidden" id="win-cv">
+                          <div class="mac-window-titlebar">
+                            <button class="mac-close-btn" data-close="win-cv"></button>
+                            <div class="mac-window-title">Mon CV</div>
+                          </div>
+                          <div class="mac-window-body">
+                            <h3>Administrateur Systèmes & Réseaux</h3>
+                            <p>📍 Rennes (Mobilité France) | 📧 jeanmarcdussaud@gmail.com</p>
+                            <p class="cv-summary">
+                              Étudiant en systèmes et réseaux certifié Cisco CCNA et Fortinet NSE 4. Prêt à superviser et optimiser votre infrastructure.
+                            </p>
+                            <hr class="retro-hr">
+                            <h4>Certifications & Langues</h4>
+                            <p>Cisco CCNA | Fortinet NSE 4 | Anglais C1, Allemand B2, Lingala</p>
+                            <h4>Expériences & Projets</h4>
+                            <ul class="retro-list">
+                              <li><strong>Pare-feu pfSense/IPFire</strong> : Segmentation VLAN, routage sécurisé.</li>
+                              <li><strong>Cowrie SSH Honeypot</strong> : Grafana, Loki, automatisation de logs.</li>
+                              <li><strong>Virtualisation</strong> : VMware ESXi, Proxmox VE, snapshots, backups.</li>
+                            </ul>
+                            <a href="Jean-Marc_DUSSAUD_CV.txt" download class="mac-btn">📥 Télécharger CV.txt</a>
+                          </div>
+                        </div>
+
+                        <!-- PROJECTS WINDOW -->
+                        <div class="mac-window hidden" id="win-projects">
+                          <div class="mac-window-titlebar">
+                            <button class="mac-close-btn" data-close="win-projects"></button>
+                            <div class="mac-window-title">Projets GitHub</div>
+                          </div>
+                          <div class="mac-window-body">
+                            <h4>Sélection de Projets Vedettes</h4>
+                            <div class="win-featured-grid">
+                              <div class="win-feat-card">
+                                <strong>Serenity</strong>
+                                <p>IA de santé mentale. Anonymisation et conformité RGPD.</p>
+                              </div>
+                              <div class="win-feat-card">
+                                <strong>Velocity Ops</strong>
+                                <p>Supervision et monitoring temps réel d'infrastructure.</p>
+                              </div>
+                              <div class="win-feat-card">
+                                <strong>Northlink</strong>
+                                <p>Système communautaire modulaire en temps réel.</p>
+                              </div>
+                            </div>
+                            <hr class="retro-hr">
+                            <h4>Tous les dépôts (32 projets)</h4>
+                            <div class="win-filters">
+                              <button class="win-filter-btn active" data-filter="all">Tous</button>
+                              <button class="win-filter-btn" data-filter="sec-net">Sécurité/Net</button>
+                              <button class="win-filter-btn" data-filter="web">Web</button>
+                              <button class="win-filter-btn" data-filter="python-data">Python/Data</button>
+                              <button class="win-filter-btn" data-filter="others">Autres</button>
+                            </div>
+                            <div class="win-repos-list">
+                              <!-- 1 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>Site_Web_Conseil_Financier <span class="retro-badge pvt">Privé</span></h5>
+                                <p>Plateforme de conseil sur les finances éthiques (React/Node).</p>
+                              </div>
+                              <!-- 2 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>Sérénité <span class="retro-badge pvt">Privé</span></h5>
+                                <p>IA santé mentale — Sécurisation applicative.</p>
+                              </div>
+                              <!-- 3 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Examen_linux_B2 <span class="retro-badge pub">Public</span></h5>
+                                <p>Scripts et configurations d'examen Linux.</p>
+                              </div>
+                              <!-- 4 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Mini-jeu-JAVA <span class="retro-badge pub">Public</span></h5>
+                                <p>Mini-jeu arcade développé en Java.</p>
+                              </div>
+                              <!-- 5 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Plateforme_Surveillance_IoT <span class="retro-badge pub">Public</span></h5>
+                                <p>Système de monitoring et surveillance de capteurs IoT.</p>
+                              </div>
+                              <!-- 6 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Malware_PY-Cadre-pédagogique- <span class="retro-badge pub">Public</span></h5>
+                                <p>Cadre d'analyse de malwares éducatif.</p>
+                              </div>
+                              <!-- 7 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Jeu-Video-Great_Road_Racer- <span class="retro-badge pub">Public</span></h5>
+                                <p>Jeu de course auto développé en C#.</p>
+                              </div>
+                              <!-- 8 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Scan_Anti-Poison <span class="retro-badge pub">Public</span></h5>
+                                <p>Scanner de composants et substances nocives.</p>
+                              </div>
+                              <!-- 9 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Virtualisation_PareFeu <span class="retro-badge pub">Public</span></h5>
+                                <p>Virtualisation de pare-feu et segmentation VLAN.</p>
+                              </div>
+                              <!-- 10 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Projet_Big-Data- <span class="retro-badge pub">Public</span></h5>
+                                <p>Projet académique de traitement de données massives.</p>
+                              </div>
+                              <!-- 11 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Taureau <span class="retro-badge pub">Public</span></h5>
+                                <p>Algorithmes et structures de données en C++.</p>
+                              </div>
+                              <!-- 12 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Honeypot- <span class="retro-badge pub">Public</span></h5>
+                                <p>Piège à intrusion (Grafana, Loki, honeypot Cowrie).</p>
+                              </div>
+                              <!-- 13 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Manipulation_PFSENSE <span class="retro-badge pub">Public</span></h5>
+                                <p>Routage, NAT et règles de filtrage avec pfSense.</p>
+                              </div>
+                              <!-- 14 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Bank_COBOL <span class="retro-badge pub">Public</span></h5>
+                                <p>Simulation d'un système bancaire robuste en COBOL.</p>
+                              </div>
+                              <!-- 15 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>FORTUNE <span class="retro-badge pub">Public</span></h5>
+                                <p>Application de microfinance et gestion de comptes.</p>
+                              </div>
+                              <!-- 16 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Suivant <span class="retro-badge pub">Public</span></h5>
+                                <p>Projet expérimental d'orchestration de scripts.</p>
+                              </div>
+                              <!-- 17 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Analyse_de_Logs <span class="retro-badge pub">Public</span></h5>
+                                <p>Analyse de logs serveurs et détection d'anomalies.</p>
+                              </div>
+                              <!-- 18 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Optimisation_Analyse_IA <span class="retro-badge pub">Public</span></h5>
+                                <p>Optimisation de modèles prédictifs d'IA.</p>
+                              </div>
+                              <!-- 19 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>Hack_pour_le_bien <span class="retro-badge pub">Public</span></h5>
+                                <p>Site informatif sur la cybersécurité éthique.</p>
+                              </div>
+                              <!-- 20 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Simulation_Physique <span class="retro-badge pub">Public</span></h5>
+                                <p>Simulation numérique de lois physiques en Python.</p>
+                              </div>
+                              <!-- 21 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Projet_RA-RV <span class="retro-badge pub">Public</span></h5>
+                                <p>Expériences en Réalité Virtuelle avec Unity/C#.</p>
+                              </div>
+                              <!-- 22 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>Portfolio-JMD <span class="retro-badge pub">Public</span></h5>
+                                <p>Le code source de ce portfolio retro interactif.</p>
+                              </div>
+                              <!-- 23 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>Projet_Etude_A2 <span class="retro-badge pub">Public</span></h5>
+                                <p>Projet de fin de deuxième année de cycle supérieur.</p>
+                              </div>
+                              <!-- 24 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Dashboard_Maintenance <span class="retro-badge pub">Public</span></h5>
+                                <p>Suivi et tableau de bord de maintenance préventive.</p>
+                              </div>
+                              <!-- 25 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>App_Rencontre_LIU <span class="retro-badge pub">Public</span></h5>
+                                <p>Application de rencontre universitaire (WebSockets).</p>
+                              </div>
+                              <!-- 26 -->
+                              <div class="win-repo-item" data-category="web">
+                                <h5>Portfolio-DAV <span class="retro-badge pvt">Privé</span></h5>
+                                <p>Portfolio sur mesure pour profil DAV.</p>
+                              </div>
+                              <!-- 27 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>IA_Telephonique <span class="retro-badge pub">Public</span></h5>
+                                <p>Assistant vocal IA intégré à flux VoIP.</p>
+                              </div>
+                              <!-- 28 -->
+                              <div class="win-repo-item" data-category="others">
+                                <h5>Bonjour <span class="retro-badge pvt">Privé</span></h5>
+                                <p>Prototype de test et validation de serveur.</p>
+                              </div>
+                              <!-- 29 -->
+                              <div class="win-repo-item" data-category="sec-net">
+                                <h5>Scanner-Kali-linux <span class="retro-badge pub">Public</span></h5>
+                                <p>Scripts d'automatisation d'audit Nmap.</p>
+                              </div>
+                              <!-- 30 -->
+                              <div class="win-repo-item" data-category="python-data">
+                                <h5>Tableau_de_bord_IoT <span class="retro-badge pub">Public</span></h5>
+                                <p>Monitoring de variables IoT en temps réel.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- STACK WINDOW -->
+                        <div class="mac-window hidden" id="win-stack">
+                          <div class="mac-window-titlebar">
+                            <button class="mac-close-btn" data-close="win-stack"></button>
+                            <div class="mac-window-title">Compétences</div>
+                          </div>
+                          <div class="mac-window-body">
+                            <h3>Réseau & Cybersécurité</h3>
+                            <p>DNS, DHCP, IPv4/IPv6, Pare-feux (pfSense, IPFire), Wireshark, Zabbix (Monitoring), Active Directory, Fortinet NSE 4, Cisco CCNA, Kali Linux</p>
+                            <hr class="retro-hr">
+                            <h3>Développement & Systèmes</h3>
+                            <p>Python, Bash/Shell scripting, C#, Java, COBOL, JavaScript, HTML, CSS, SQL. Virtualisation (VMware ESXi, Proxmox VE, Hyper-V)</p>
+                            <hr class="retro-hr">
+                            <h3>Méthodes & Outils</h3>
+                            <p>Docker, Git, CI/CD, méthodologies agiles, documentation technique approfondie.</p>
+                          </div>
+                        </div>
+
+                        <!-- CONTACT WINDOW -->
+                        <div class="mac-window hidden" id="win-contact">
+                          <div class="mac-window-titlebar">
+                            <button class="mac-close-btn" data-close="win-contact"></button>
+                            <div class="mac-window-title">Contact</div>
+                          </div>
+                          <div class="mac-window-body">
+                            <h3>Collaborons ensemble</h3>
+                            <p>Je suis ouvert aux discussions concernant des alternances ou des projets d'administration systèmes et sécurité.</p>
+                            <hr class="retro-hr">
+                            <div class="mac-contact-list">
+                              <a href="mailto:jeanmarcdussaud@gmail.com" class="mac-btn">✉️ Envoyer un Email</a>
+                              <a href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" class="mac-btn">🔗 Profil LinkedIn</a>
+                              <a href="https://github.com/JMDcoding" target="_blank" class="mac-btn">🐙 Profil GitHub</a>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
               </div>
-              <div>
-                <h4>Développement</h4>
-                <p>Python, C#, JavaScript, Java, SQL, HTML, CSS, frameworks JS, Pandas, Vuforia/Unity, Websocket, FFmpeg</p>
+            </div>
+
+            <!-- Floppy Slot & Retro brand -->
+            <div class="mac-case-bottom">
+              <div class="mac-floppy-slot">
+                <div class="mac-slot-opening"></div>
               </div>
-              <div>
-                <h4>Méthodologie</h4>
-                <p>AGILE, Kanban, GanttProject, documentation technique, Pack Office</p>
-              </div>
+              <div class="mac-logo"></div>
             </div>
-          </article>
-
-          <article class="case-study reveal">
-            <h3>Certifications & Langues</h3>
-            <p>Cisco CCNA | Fortinet NSE 4 | Permis B</p>
-            <p>Français (natif) | Lingala (natif) | Anglais C1 | Allemand B2</p>
-          </article>
-
-          <article class="case-study reveal">
-            <h3>Projets & Expériences</h3>
-            <div class="case-columns">
-              <div>
-                <h4>Serenity — Sécurisation applicative (IA santé mentale)</h4>
-                <p>Conception et sécurisation d'une application IA, conformité RGPD, anonymisation, sécurisation des échanges applicatifs.</p>
-              </div>
-              <div>
-                <h4>Sécurisation réseau & pare-feu</h4>
-                <p>Administration pfSense / IPFire, règles de filtrage, segmentation VLAN, routage sécurisé, politiques d'accès.</p>
-              </div>
-              <div>
-                <h4>Détection & monitoring</h4>
-                <p>Honeypot SSH (Cowrie), corrélation logs avec Grafana/Loki, automatisation en Python, monitoring 24/7.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-study reveal">
-            <h3>Projets GitHub</h3>
-            <p>Voir le profil GitHub pour la liste complète des projets : <a href="https://github.com/JMDcoding" target="_blank" rel="noreferrer">github.com/JMDcoding</a></p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section projects" id="projects">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Projets sélectionnés</p>
-          <h2>Chaque projet raconte un problème, une décision et un résultat.</h2>
-        </div>
-
-        <div class="case-study-grid">
-          <article class="case-study reveal">
-            <div class="case-header">
-              <div>
-                <p class="case-tag">Mental Health Platform / AI Assisted Care</p>
-                <h3>Serenity</h3>
-              </div>
-              <span class="case-number">01</span>
-            </div>
-            <p class="case-hook">Une plateforme pensée pour rendre le soutien psychologique plus accessible, plus discret et plus humain.</p>
-            <div class="case-columns">
-              <div>
-                <h4>Le problème</h4>
-                <p>Les solutions de santé mentale sont souvent fragmentées, anxiogènes et peu personnalisées.</p>
-              </div>
-              <div>
-                <h4>Solution apportée</h4>
-                <p>Architecture centrée sur l’anonymat, la sécurité, l’assistance émotionnelle par IA et l’accessibilité cognitive.</p>
-              </div>
-              <div>
-                <h4>Impact</h4>
-                <p>Expérience réduisant la charge cognitive, base produit scalable et design system accessible conforme WCAG.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-study reveal">
-            <div class="case-header">
-              <div>
-                <p class="case-tag">Dashboard SaaS / Analytics</p>
-                <h3>Velocity Ops</h3>
-              </div>
-              <span class="case-number">02</span>
-            </div>
-            <p class="case-hook">Transformer des données complexes en décisions rapides.</p>
-            <div class="case-columns">
-              <div>
-                <h4>Le problème</h4>
-                <p>Les équipes perdaient du temps entre plusieurs outils et des tableaux peu lisibles.</p>
-              </div>
-              <div>
-                <h4>Solution</h4>
-                <p>Dashboard temps réel avec API centralisée, architecture modulaire et optimisation des temps de chargement.</p>
-              </div>
-              <div>
-                <h4>Impact</h4>
-                <p>Temps d’analyse réduit, interface simplifiée et base extensible pour de nouveaux modules métier.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="case-study reveal">
-            <div class="case-header">
-              <div>
-                <p class="case-tag">Plateforme Communautaire</p>
-                <h3>Northlink</h3>
-              </div>
-              <span class="case-number">03</span>
-            </div>
-            <p class="case-hook">Concevoir des espaces numériques qui favorisent des échanges sains et durables.</p>
-            <div class="case-columns">
-              <div>
-                <h4>Le problème</h4>
-                <p>Les communautés en ligne manquent souvent de structure, de modération et de fluidité.</p>
-              </div>
-              <div>
-                <h4>Solution</h4>
-                <p>Système communautaire avec modération intelligente, rôles dynamiques, temps réel et architecture scalable.</p>
-              </div>
-              <div>
-                <h4>Impact</h4>
-                <p>Expérience plus fluide, engagement renforcé et administration simplifiée.</p>
-              </div>
-            </div>
-          </article>
-      </section>
-
-      <section class="section github-repos" id="github-repos">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Dépôts GitHub</p>
-          <h2>Mes Travaux & Projets de Recherche</h2>
-          <p>Une vue d'ensemble de mes dépôts incluant le développement d'applications, l'administration système, la cybersécurité et la gestion de données.</p>
-        </div>
-
-        <div class="filter-bar reveal">
-          <button class="filter-btn active" data-filter="all">Tous</button>
-          <button class="filter-btn" data-filter="sec-net">Sécurité & Réseaux</button>
-          <button class="filter-btn" data-filter="web">Développement Web</button>
-          <button class="filter-btn" data-filter="python-data">Python & Data</button>
-          <button class="filter-btn" data-filter="others">Autres</button>
-        </div>
-
-        <div class="repo-grid">
-          <!-- 1 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">💻</span>
-              <span class="repo-badge repo-private">Privé</span>
-            </div>
-            <h3>Site_Web_Conseil_Financier</h3>
-            <p>Plateforme de conseil sur les finances éthiques.</p>
-            <div class="repo-techs">
-              <span>Node.js</span>
-              <span>ReactJS</span>
-              <span>MongoDB</span>
-              <span>Docker</span>
-              <span>JS</span>
-            </div>
-          </article>
-
-          <!-- 2 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">🛡️</span>
-              <span class="repo-badge repo-private">Privé</span>
-            </div>
-            <h3>Sérénité</h3>
-            <p>IA santé mentale — Sécurisation applicative & conformité RGPD.</p>
-            <div class="repo-techs">
-              <span>JavaScript</span>
-              <span>CSS</span>
-              <span>HTML</span>
-              <span>Sécurité</span>
-            </div>
-          </article>
-
-          <!-- 3 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">🐧</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Examen_linux_B2</h3>
-            <p>Scripts et configurations d'examen Linux B2.</p>
-            <div class="repo-techs">
-              <span>Shell</span>
-              <span>Linux</span>
-              <span>Admin Sys</span>
-            </div>
-          </article>
-
-          <!-- 4 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">🎮</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Mini-jeu-JAVA</h3>
-            <p>Mini-jeu d'arcade classique codé en Java.</p>
-            <div class="repo-techs">
-              <span>Java</span>
-              <span>POO</span>
-            </div>
-          </article>
-
-          <!-- 5 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">📡</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Plateforme_Surveillance_IoT</h3>
-            <p>Système de monitoring et surveillance de capteurs IoT.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>IoT</span>
-              <span>Supervision</span>
-            </div>
-          </article>
-
-          <!-- 6 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">🪱</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Malware_PY-Cadre-pédagogique-</h3>
-            <p>Cadre d'analyse et d'étude de malwares à but éducatif.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>Cybersécurité</span>
-            </div>
-          </article>
-
-          <!-- 7 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">🏎️</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Jeu-Video-Great_Road_Racer-</h3>
-            <p>Jeu de course automobile rétro développé en C#.</p>
-            <div class="repo-techs">
-              <span>C#</span>
-              <span>.NET</span>
-            </div>
-          </article>
-
-          <!-- 8 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">🧪</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Scan_Anti-Poison</h3>
-            <p>Scanner d'ingrédients et détection de substances nocives.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>Algorithmique</span>
-            </div>
-          </article>
-
-          <!-- 9 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">🌐</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Virtualisation_PareFeu</h3>
-            <p>Virtualisation de pare-feu et segmentation réseau pfsense/VMware.</p>
-            <div class="repo-techs">
-              <span>VMware</span>
-              <span>pfSense</span>
-              <span>VLAN</span>
-            </div>
-          </article>
-
-          <!-- 10 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">📊</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Projet_Big-Data-</h3>
-            <p>Projet d'analyse de flux et traitement de données massives.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>Big Data</span>
-              <span>Pandas</span>
-            </div>
-          </article>
-
-          <!-- 11 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">🐂</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Taureau</h3>
-            <p>Projet académique et expérimental Taureau.</p>
-            <div class="repo-techs">
-              <span>C++</span>
-              <span>Algorithmes</span>
-            </div>
-          </article>
-
-          <!-- 12 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">🍯</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Honeypot-</h3>
-            <p>Piège de détection d'intrusion (Grafana, Loki, honeypot Cowrie).</p>
-            <div class="repo-techs">
-              <span>Grafana</span>
-              <span>Loki</span>
-              <span>Cowrie</span>
-              <span>Shell</span>
-            </div>
-          </article>
-
-          <!-- 13 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">🔒</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Manipulation_PFSENSE</h3>
-            <p>Mise en situation pratique, routage et filtrage réseau avec pfSense.</p>
-            <div class="repo-techs">
-              <span>pfSense</span>
-              <span>Firewall</span>
-              <span>Réseaux</span>
-            </div>
-          </article>
-
-          <!-- 14 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">🏦</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Bank_COBOL</h3>
-            <p>Simulation de systèmes bancaires transactionnels en COBOL.</p>
-            <div class="repo-techs">
-              <span>COBOL</span>
-              <span>Mainframe</span>
-            </div>
-          </article>
-
-          <!-- 15 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">💰</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>FORTUNE</h3>
-            <p>Application de microfinance et gestion de comptes.</p>
-            <div class="repo-techs">
-              <span>Java</span>
-              <span>SQL</span>
-              <span>Finance</span>
-            </div>
-          </article>
-
-          <!-- 16 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">⏭️</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Suivant</h3>
-            <p>Projet expérimental d'enchaînement de processus logiques.</p>
-            <div class="repo-techs">
-              <span>Shell</span>
-              <span>Scripting</span>
-            </div>
-          </article>
-
-          <!-- 17 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">📋</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Analyse_de_Logs</h3>
-            <p>Script d'analyse de journaux serveurs et détection de menaces.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>SecOps</span>
-              <span>Regex</span>
-            </div>
-          </article>
-
-          <!-- 18 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">🧠</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Optimisation_Analyse_IA</h3>
-            <p>Optimisation et entraînement de modèles d'IA prédictifs.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>IA</span>
-              <span>Machine Learning</span>
-            </div>
-          </article>
-
-          <!-- 19 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">🤝</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Hack_pour_le_bien</h3>
-            <p>Site d'information et sensibilisation à la cybersécurité éthique.</p>
-            <div class="repo-techs">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Sécurité</span>
-            </div>
-          </article>
-
-          <!-- 20 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">⚙️</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Simulation_Physique</h3>
-            <p>Simulation numérique de phénomènes physiques dynamiques.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>Matplotlib</span>
-            </div>
-          </article>
-
-          <!-- 21 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">🕶️</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Projet_RA-RV</h3>
-            <p>Création d'environnements immersifs en réalité virtuelle/augmentée.</p>
-            <div class="repo-techs">
-              <span>Unity</span>
-              <span>C#</span>
-              <span>Vuforia</span>
-            </div>
-          </article>
-
-          <!-- 22 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">📁</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Portfolio-JMD</h3>
-            <p>Le code source de ce portfolio moderne et interactif.</p>
-            <div class="repo-techs">
-              <span>JavaScript</span>
-              <span>CSS</span>
-              <span>HTML</span>
-            </div>
-          </article>
-
-          <!-- 23 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">🎓</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Projet_Etude_A2</h3>
-            <p>Projet académique de fin de deuxième année de cycle supérieur.</p>
-            <div class="repo-techs">
-              <span>JavaScript</span>
-              <span>HTML</span>
-              <span>CSS</span>
-            </div>
-          </article>
-
-          <!-- 24 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">🔧</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Dashboard_Maintenance</h3>
-            <p>Tableau de bord de suivi de la maintenance d'appareils.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>Dash</span>
-              <span>SQL</span>
-            </div>
-          </article>
-
-          <!-- 25 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">💬</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>App_Rencontre_LIU</h3>
-            <p>Application de rencontre et messagerie — L'amour est déconnecté.</p>
-            <div class="repo-techs">
-              <span>Node.js</span>
-              <span>JavaScript</span>
-              <span>Websocket</span>
-            </div>
-          </article>
-
-          <!-- 26 -->
-          <article class="repo-card reveal" data-category="web">
-            <div class="repo-header">
-              <span class="repo-icon">💼</span>
-              <span class="repo-badge repo-private">Privé</span>
-            </div>
-            <h3>Portfolio-DAV</h3>
-            <p>Conception d'un portfolio sur mesure pour un profil DAV.</p>
-            <div class="repo-techs">
-              <span>HTML</span>
-              <span>CSS</span>
-            </div>
-          </article>
-
-          <!-- 27 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">📞</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>IA_Telephonique</h3>
-            <p>Assistant vocal IA intelligent branché sur flux VoIP.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>VoIP</span>
-              <span>AI API</span>
-            </div>
-          </article>
-
-          <!-- 28 -->
-          <article class="repo-card reveal" data-category="others">
-            <div class="repo-header">
-              <span class="repo-icon">👋</span>
-              <span class="repo-badge repo-private">Privé</span>
-            </div>
-            <h3>Bonjour</h3>
-            <p>Prototype de test et de validation d'architecture.</p>
-            <div class="repo-techs">
-              <span>JavaScript</span>
-            </div>
-          </article>
-
-          <!-- 29 -->
-          <article class="repo-card reveal" data-category="sec-net">
-            <div class="repo-header">
-              <span class="repo-icon">🕵️</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Scanner-Kali-linux</h3>
-            <p>Scripts d'automatisation de scans de vulnérabilités pour Kali.</p>
-            <div class="repo-techs">
-              <span>Shell</span>
-              <span>Kali</span>
-              <span>Nmap</span>
-            </div>
-          </article>
-
-          <!-- 30 -->
-          <article class="repo-card reveal" data-category="python-data">
-            <div class="repo-header">
-              <span class="repo-icon">📈</span>
-              <span class="repo-badge repo-public">Public</span>
-            </div>
-            <h3>Tableau_de_bord_IoT</h3>
-            <p>Visualisation temps réel de données environnementales IoT.</p>
-            <div class="repo-techs">
-              <span>Python</span>
-              <span>IoT</span>
-              <span>Dash</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section stack" id="stack">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Stack technique</p>
-          <h2>Des écosystèmes complets, pas juste une liste d’outils.</h2>
-        </div>
-
-        <div class="stack-grid">
-          <article class="stack-card reveal">
-            <h3>Frontend Engineering</h3>
-            <ul>
-              <li>Next.js</li>
-              <li>React</li>
-              <li>TypeScript</li>
-              <li>Tailwind CSS</li>
-              <li>Framer Motion</li>
-            </ul>
-            <p>Interfaces performantes, accessibles et maintenables.</p>
-          </article>
-          <article class="stack-card reveal">
-            <h3>Backend Systems</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>NestJS</li>
-              <li>PostgreSQL</li>
-              <li>Prisma</li>
-              <li>Redis</li>
-            </ul>
-            <p>Architecture scalable, sécurité et performance.</p>
-          </article>
-          <article class="stack-card reveal">
-            <h3>Infrastructure & Deployment</h3>
-            <ul>
-              <li>Docker</li>
-              <li>Vercel</li>
-              <li>Cloudflare</li>
-              <li>CI/CD</li>
-              <li>Monitoring</li>
-            </ul>
-            <p>Déploiements fiables et optimisation des performances.</p>
-          </article>
-          <article class="stack-card reveal">
-            <h3>Product Thinking</h3>
-            <ul>
-              <li>UX Strategy</li>
-              <li>Design Systems</li>
-              <li>Accessibility</li>
-              <li>Performance Optimization</li>
-            </ul>
-            <p>Créer des produits compréhensibles et utiles.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section method" id="method">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Méthode de travail</p>
-          <h2>Une approche structurée, sans rigidité.</h2>
-        </div>
-
-        <div class="method-timeline">
-          <article class="timeline-item reveal">
-            <span>01</span>
-            <div>
-              <h3>Comprendre</h3>
-              <p>Analyser le vrai besoin utilisateur et métier.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <span>02</span>
-            <div>
-              <h3>Concevoir</h3>
-              <p>Définir une architecture simple et évolutive.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <span>03</span>
-            <div>
-              <h3>Construire</h3>
-              <p>Développer rapidement sans sacrifier la qualité.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <span>04</span>
-            <div>
-              <h3>Optimiser</h3>
-              <p>Mesurer, améliorer et faire évoluer.</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section contact" id="contact">
-        <div class="contact-panel reveal">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Construisons quelque chose d’utile.</h2>
-            <p>
-              Je suis ouvert aux collaborations ambitieuses : produits SaaS, plateformes IA, outils à impact humain, architecture full-stack et expériences numériques modernes.
-            </p>
+            
           </div>
-          <div class="contact-actions">
-            <a class="button button-primary" href="mailto:jeanmarcdussaud@gmail.com">Envoyer un message</a>
-            <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">Télécharger le CV</a>
-            <a class="button button-tertiary" href="https://github.com/JMDcoding" target="_blank" rel="noreferrer">Voir GitHub</a>
-            <a class="button button-tertiary" href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
+          <div class="mac-pedestal"></div>
+          <div class="mac-stand-base"></div>
         </div>
-      </section>
+
+        <!-- Desk Wood Surface -->
+        <div class="desk-surface"></div>
+        <div class="desk-leg desk-leg-left"></div>
+        <div class="desk-leg desk-leg-right"></div>
+      </div>
     </main>
-
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Jean-Marc DUSSAUD. Construit pour durer.</p>
-    </footer>
 
     <script src="script.js"></script>
   </body>

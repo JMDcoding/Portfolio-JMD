@@ -46,3 +46,32 @@ if (navToggle && siteNav) {
     navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 }
+
+// GitHub Repositories Filtering Logic
+const filterButtons = document.querySelectorAll('.filter-btn');
+const repoCards = document.querySelectorAll('.repo-card');
+
+if (filterButtons.length > 0 && repoCards.length > 0) {
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      repoCards.forEach((card) => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.classList.remove('hide');
+          // Force is-visible so they animate in nicely when shown
+          setTimeout(() => {
+            card.classList.add('is-visible');
+          }, 20);
+        } else {
+          card.classList.add('hide');
+        }
+      });
+    });
+  });
+}
+

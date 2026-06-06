@@ -24,30 +24,32 @@
     <div class="bg-laser bg-laser-two" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="#hero" aria-label="Retour en haut">
-        <span class="brand-mark">JMD</span>
-        <span class="brand-copy">
-          <strong>Jean-Marc DUSSAUD</strong>
-          <span>Alternant Administrateur Systèmes & Réseaux</span>
-        </span>
-      </a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect y="1" width="22" height="2" rx="1" fill="currentColor" />
-          <rect y="6" width="22" height="2" rx="1" fill="currentColor" />
-          <rect y="11" width="22" height="2" rx="1" fill="currentColor" />
-        </svg>
-      </button>
+      <div class="header-container">
+        <a class="brand" href="#hero" aria-label="Retour en haut">
+          <span class="brand-mark">JMD</span>
+          <span class="brand-copy">
+            <strong>Jean-Marc DUSSAUD</strong>
+            <span>Alternant Administrateur Systèmes & Réseaux</span>
+          </span>
+        </a>
+        <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+          <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect y="1" width="22" height="2" rx="1" fill="currentColor" />
+            <rect y="6" width="22" height="2" rx="1" fill="currentColor" />
+            <rect y="11" width="22" height="2" rx="1" fill="currentColor" />
+          </svg>
+        </button>
 
-      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
-        <a href="#about">À propos</a>
-        <a href="#projects">Projets</a>
-        <a href="#stack">Stack</a>
-        <a href="#method">Méthode</a>
-        <a href="#contact">Contact</a>
-      </nav>
+        <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
+          <a href="#about">À propos</a>
+          <a href="#projects">Projets</a>
+          <a href="#stack">Stack</a>
+          <a href="#method">Méthode</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <a class="header-cta" href="#contact">Me contacter</a>
+        <a class="header-cta" href="#contact">Me contacter</a>
+      </div>
     </header>
 
     <main>
@@ -284,6 +286,466 @@
                 <h4>Impact</h4>
                 <p>Expérience plus fluide, engagement renforcé et administration simplifiée.</p>
               </div>
+            </div>
+          </article>
+      </section>
+
+      <section class="section github-repos" id="github-repos">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Dépôts GitHub</p>
+          <h2>Mes Travaux & Projets de Recherche</h2>
+          <p>Une vue d'ensemble de mes dépôts incluant le développement d'applications, l'administration système, la cybersécurité et la gestion de données.</p>
+        </div>
+
+        <div class="filter-bar reveal">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="sec-net">Sécurité & Réseaux</button>
+          <button class="filter-btn" data-filter="web">Développement Web</button>
+          <button class="filter-btn" data-filter="python-data">Python & Data</button>
+          <button class="filter-btn" data-filter="others">Autres</button>
+        </div>
+
+        <div class="repo-grid">
+          <!-- 1 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">💻</span>
+              <span class="repo-badge repo-private">Privé</span>
+            </div>
+            <h3>Site_Web_Conseil_Financier</h3>
+            <p>Plateforme de conseil sur les finances éthiques.</p>
+            <div class="repo-techs">
+              <span>Node.js</span>
+              <span>ReactJS</span>
+              <span>MongoDB</span>
+              <span>Docker</span>
+              <span>JS</span>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">🛡️</span>
+              <span class="repo-badge repo-private">Privé</span>
+            </div>
+            <h3>Sérénité</h3>
+            <p>IA santé mentale — Sécurisation applicative & conformité RGPD.</p>
+            <div class="repo-techs">
+              <span>JavaScript</span>
+              <span>CSS</span>
+              <span>HTML</span>
+              <span>Sécurité</span>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">🐧</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Examen_linux_B2</h3>
+            <p>Scripts et configurations d'examen Linux B2.</p>
+            <div class="repo-techs">
+              <span>Shell</span>
+              <span>Linux</span>
+              <span>Admin Sys</span>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">🎮</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Mini-jeu-JAVA</h3>
+            <p>Mini-jeu d'arcade classique codé en Java.</p>
+            <div class="repo-techs">
+              <span>Java</span>
+              <span>POO</span>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">📡</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Plateforme_Surveillance_IoT</h3>
+            <p>Système de monitoring et surveillance de capteurs IoT.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>IoT</span>
+              <span>Supervision</span>
+            </div>
+          </article>
+
+          <!-- 6 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">🪱</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Malware_PY-Cadre-pédagogique-</h3>
+            <p>Cadre d'analyse et d'étude de malwares à but éducatif.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>Cybersécurité</span>
+            </div>
+          </article>
+
+          <!-- 7 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">🏎️</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Jeu-Video-Great_Road_Racer-</h3>
+            <p>Jeu de course automobile rétro développé en C#.</p>
+            <div class="repo-techs">
+              <span>C#</span>
+              <span>.NET</span>
+            </div>
+          </article>
+
+          <!-- 8 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">🧪</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Scan_Anti-Poison</h3>
+            <p>Scanner d'ingrédients et détection de substances nocives.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>Algorithmique</span>
+            </div>
+          </article>
+
+          <!-- 9 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">🌐</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Virtualisation_PareFeu</h3>
+            <p>Virtualisation de pare-feu et segmentation réseau pfsense/VMware.</p>
+            <div class="repo-techs">
+              <span>VMware</span>
+              <span>pfSense</span>
+              <span>VLAN</span>
+            </div>
+          </article>
+
+          <!-- 10 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">📊</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Projet_Big-Data-</h3>
+            <p>Projet d'analyse de flux et traitement de données massives.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>Big Data</span>
+              <span>Pandas</span>
+            </div>
+          </article>
+
+          <!-- 11 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">🐂</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Taureau</h3>
+            <p>Projet académique et expérimental Taureau.</p>
+            <div class="repo-techs">
+              <span>C++</span>
+              <span>Algorithmes</span>
+            </div>
+          </article>
+
+          <!-- 12 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">🍯</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Honeypot-</h3>
+            <p>Piège de détection d'intrusion (Grafana, Loki, honeypot Cowrie).</p>
+            <div class="repo-techs">
+              <span>Grafana</span>
+              <span>Loki</span>
+              <span>Cowrie</span>
+              <span>Shell</span>
+            </div>
+          </article>
+
+          <!-- 13 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">🔒</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Manipulation_PFSENSE</h3>
+            <p>Mise en situation pratique, routage et filtrage réseau avec pfSense.</p>
+            <div class="repo-techs">
+              <span>pfSense</span>
+              <span>Firewall</span>
+              <span>Réseaux</span>
+            </div>
+          </article>
+
+          <!-- 14 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">🏦</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Bank_COBOL</h3>
+            <p>Simulation de systèmes bancaires transactionnels en COBOL.</p>
+            <div class="repo-techs">
+              <span>COBOL</span>
+              <span>Mainframe</span>
+            </div>
+          </article>
+
+          <!-- 15 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">💰</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>FORTUNE</h3>
+            <p>Application de microfinance et gestion de comptes.</p>
+            <div class="repo-techs">
+              <span>Java</span>
+              <span>SQL</span>
+              <span>Finance</span>
+            </div>
+          </article>
+
+          <!-- 16 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">⏭️</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Suivant</h3>
+            <p>Projet expérimental d'enchaînement de processus logiques.</p>
+            <div class="repo-techs">
+              <span>Shell</span>
+              <span>Scripting</span>
+            </div>
+          </article>
+
+          <!-- 17 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">📋</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Analyse_de_Logs</h3>
+            <p>Script d'analyse de journaux serveurs et détection de menaces.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>SecOps</span>
+              <span>Regex</span>
+            </div>
+          </article>
+
+          <!-- 18 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">🧠</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Optimisation_Analyse_IA</h3>
+            <p>Optimisation et entraînement de modèles d'IA prédictifs.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>IA</span>
+              <span>Machine Learning</span>
+            </div>
+          </article>
+
+          <!-- 19 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">🤝</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Hack_pour_le_bien</h3>
+            <p>Site d'information et sensibilisation à la cybersécurité éthique.</p>
+            <div class="repo-techs">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Sécurité</span>
+            </div>
+          </article>
+
+          <!-- 20 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">⚙️</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Simulation_Physique</h3>
+            <p>Simulation numérique de phénomènes physiques dynamiques.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>Matplotlib</span>
+            </div>
+          </article>
+
+          <!-- 21 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">🕶️</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Projet_RA-RV</h3>
+            <p>Création d'environnements immersifs en réalité virtuelle/augmentée.</p>
+            <div class="repo-techs">
+              <span>Unity</span>
+              <span>C#</span>
+              <span>Vuforia</span>
+            </div>
+          </article>
+
+          <!-- 22 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">📁</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Portfolio-JMD</h3>
+            <p>Le code source de ce portfolio moderne et interactif.</p>
+            <div class="repo-techs">
+              <span>JavaScript</span>
+              <span>CSS</span>
+              <span>HTML</span>
+            </div>
+          </article>
+
+          <!-- 23 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">🎓</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Projet_Etude_A2</h3>
+            <p>Projet académique de fin de deuxième année de cycle supérieur.</p>
+            <div class="repo-techs">
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+          </article>
+
+          <!-- 24 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">🔧</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Dashboard_Maintenance</h3>
+            <p>Tableau de bord de suivi de la maintenance d'appareils.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>Dash</span>
+              <span>SQL</span>
+            </div>
+          </article>
+
+          <!-- 25 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">💬</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>App_Rencontre_LIU</h3>
+            <p>Application de rencontre et messagerie — L'amour est déconnecté.</p>
+            <div class="repo-techs">
+              <span>Node.js</span>
+              <span>JavaScript</span>
+              <span>Websocket</span>
+            </div>
+          </article>
+
+          <!-- 26 -->
+          <article class="repo-card reveal" data-category="web">
+            <div class="repo-header">
+              <span class="repo-icon">💼</span>
+              <span class="repo-badge repo-private">Privé</span>
+            </div>
+            <h3>Portfolio-DAV</h3>
+            <p>Conception d'un portfolio sur mesure pour un profil DAV.</p>
+            <div class="repo-techs">
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
+          </article>
+
+          <!-- 27 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">📞</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>IA_Telephonique</h3>
+            <p>Assistant vocal IA intelligent branché sur flux VoIP.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>VoIP</span>
+              <span>AI API</span>
+            </div>
+          </article>
+
+          <!-- 28 -->
+          <article class="repo-card reveal" data-category="others">
+            <div class="repo-header">
+              <span class="repo-icon">👋</span>
+              <span class="repo-badge repo-private">Privé</span>
+            </div>
+            <h3>Bonjour</h3>
+            <p>Prototype de test et de validation d'architecture.</p>
+            <div class="repo-techs">
+              <span>JavaScript</span>
+            </div>
+          </article>
+
+          <!-- 29 -->
+          <article class="repo-card reveal" data-category="sec-net">
+            <div class="repo-header">
+              <span class="repo-icon">🕵️</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Scanner-Kali-linux</h3>
+            <p>Scripts d'automatisation de scans de vulnérabilités pour Kali.</p>
+            <div class="repo-techs">
+              <span>Shell</span>
+              <span>Kali</span>
+              <span>Nmap</span>
+            </div>
+          </article>
+
+          <!-- 30 -->
+          <article class="repo-card reveal" data-category="python-data">
+            <div class="repo-header">
+              <span class="repo-icon">📈</span>
+              <span class="repo-badge repo-public">Public</span>
+            </div>
+            <h3>Tableau_de_bord_IoT</h3>
+            <p>Visualisation temps réel de données environnementales IoT.</p>
+            <div class="repo-techs">
+              <span>Python</span>
+              <span>IoT</span>
+              <span>Dash</span>
             </div>
           </article>
         </div>

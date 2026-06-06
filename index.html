@@ -11,16 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Canvas or background grids -->
+    <!-- Background grids -->
     <div class="cyber-grid" aria-hidden="true"></div>
-    <div class="glow-orb glow-cyan" aria-hidden="true"></div>
-    <div class="glow-orb glow-blue" aria-hidden="true"></div>
 
     <header class="site-header">
       <a class="brand" href="#hero" aria-label="Retour en haut">
@@ -54,13 +52,13 @@
       <!-- HERO SECTION -->
       <section class="hero section" id="hero">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="pulse-icon"></span> Disponible en Alternance - Septembre 2026</p>
+          <p class="eyebrow"><span class="pulse-icon"></span> Alternance Disponible - Septembre 2026</p>
           <h1>Sécuriser les flux, administrer l'infrastructure.</h1>
           <p class="hero-text">
-            Étudiant passionné de Systèmes & Réseaux, certifié <strong>Cisco CCNA</strong> & <strong>Fortinet NSE 4</strong>. Spécialisé en virtualisation, sécurité périmétrique et supervision d'infrastructures hybrides.
+            Étudiant passionné de Systèmes & Réseaux, certifié <strong>Cisco CCNA</strong> & <strong>Fortinet NSE 4</strong>. Spécialisé en virtualisation, sécurité périmétrique et supervision d'infrastructures d'entreprise.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Explorer les projets</a>
+            <a class="button button-primary" href="#projects">Découvrir les projets</a>
             <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               Télécharger le CV
@@ -69,25 +67,31 @@
         </div>
 
         <div class="hero-visual reveal">
-          <div class="terminal-container">
-            <div class="terminal-header">
-              <span class="terminal-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-              </span>
-              <span class="terminal-title">jmd@infrastructure-core:~</span>
+          <div class="info-dashboard">
+            <div class="dashboard-header">
+              <span class="dashboard-title">Fiche de Synthèse</span>
+              <span class="status-indicator"><span class="pulse-icon"></span> Actif</span>
             </div>
-            <div class="terminal-body" id="interactive-terminal">
-              <!-- Content filled via JavaScript -->
-              <noscript>
-                <p class="cmd-prompt">jmd@infra:~$ cat info.json</p>
-                <pre class="cmd-output">{
-  "status": "Online",
-  "certifications": ["CCNA", "Fortinet NSE 4"],
-  "focus": "Virtualization, Security, DevOps"
-}</pre>
-              </noscript>
+            <div class="dashboard-body">
+              <div class="dashboard-row">
+                <span class="dashboard-label">Recherche</span>
+                <span class="dashboard-value">Alternance Administrateur Systèmes & Réseaux</span>
+              </div>
+              <div class="dashboard-row">
+                <span class="dashboard-label">Rythme d'école</span>
+                <span class="dashboard-value">2 semaines entreprise / 2 semaines école</span>
+              </div>
+              <div class="dashboard-row">
+                <span class="dashboard-label">Certifications Validées</span>
+                <div class="dashboard-tags">
+                  <span>Cisco CCNA</span>
+                  <span>Fortinet NSE 4</span>
+                </div>
+              </div>
+              <div class="dashboard-row">
+                <span class="dashboard-label">Périmètre technique</span>
+                <span class="dashboard-value">Virtualisation, Sécurité, Supervision, Scripting</span>
+              </div>
             </div>
           </div>
         </div>
@@ -96,10 +100,10 @@
       <!-- ABOUT SECTION -->
       <section class="section about" id="about">
         <div class="section-heading reveal">
-          <p class="eyebrow">Profil & Mindset</p>
-          <h2>Concevoir des infrastructures résilientes et sécurisées.</h2>
+          <p class="eyebrow">Profil & Vision</p>
+          <h2>Concevoir des infrastructures résilientes et hautement disponibles.</h2>
           <p>
-            Face à l'évolution constante des menaces, une bonne infrastructure doit être robuste dès sa conception. Mon approche s'appuie sur la segmentation réseau rigoureuse, la virtualisation optimisée et un monitoring proactif en temps réel.
+            Une infrastructure robuste doit être sécurisée dès sa conception. Mon approche combine une segmentation réseau stricte, une virtualisation optimisée et un monitoring proactif continu pour anticiper les anomalies.
           </p>
         </div>
 
@@ -107,22 +111,22 @@
           <article class="value-card reveal">
             <div class="card-icon">🛡️</div>
             <h3>Sécurité & Isolation</h3>
-            <p>Segmentation VLAN, règles de pare-feu pfSense/Fortinet et déploiement de honeypots pour piéger et comprendre les intrusions.</p>
+            <p>Segmentation VLAN, filtrage de flux pfSense/Fortinet et mise en place de honeypots SSH pour analyser les tentatives d'intrusion.</p>
           </article>
           <article class="value-card reveal">
             <div class="card-icon">⚡</div>
-            <h3>Virtualisation & DevOps</h3>
-            <p>Déploiement et gestion d'hyperviseurs Proxmox VE et VMware ESXi. Automatisation système avec Python et scripting Bash.</p>
+            <h3>Virtualisation & Automatisation</h3>
+            <p>Déploiement et administration d'hyperviseurs VMware ESXi et Proxmox VE. Scripting d'automatisation système sous Python et Bash.</p>
           </article>
           <article class="value-card reveal">
             <div class="card-icon">📊</div>
             <h3>Supervision & Télémétrie</h3>
-            <p>Monitoring avancé avec Zabbix, collecte de logs centralisée via Grafana/Loki pour une visibilité totale de l'infrastructure.</p>
+            <p>Supervision d'équipements avec Zabbix. Collecte et corrélation de logs système centralisée à l'aide de Loki et Grafana.</p>
           </article>
           <article class="value-card reveal">
             <div class="card-icon">🤝</div>
-            <h3>Méthode & Rigueur</h3>
-            <p>Approche Agile, documentation technique rigoureuse, et respect strict des politiques de conformité des données (RGPD).</p>
+            <h3>Rigueur & Normes</h3>
+            <p>Mise en conformité RGPD, rédaction de documentations d'architecture et de procédures d'exploitation technique.</p>
           </article>
         </div>
       </section>
@@ -130,28 +134,28 @@
       <!-- CERTIFICATIONS SECTION -->
       <section class="section certs" id="certifications">
         <div class="section-heading reveal">
-          <p class="eyebrow">Validations Officielles</p>
-          <h2>Certifications Industrielles</h2>
+          <p class="eyebrow">Compétences Certifiées</p>
+          <h2>Certifications Professionnelles</h2>
         </div>
 
         <div class="certs-container">
           <div class="cert-card reveal">
             <div class="cert-badge">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <div class="cert-info">
               <h3>Cisco Certified Network Associate (CCNA)</h3>
-              <p>Routage et commutation, adressage IP, protocoles OSPF/EIGRP, sécurité réseau de base et services IP (DHCP, NAT, DNS).</p>
+              <p>Administration réseau, routage OSPF, commutation (switching), services d'adressage IP (DHCP, NAT) et sécurisation des ports.</p>
             </div>
           </div>
 
           <div class="cert-card reveal">
-            <div class="cert-badge alt-badge">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="line-1" x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div class="cert-badge">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </div>
             <div class="cert-info">
               <h3>Fortinet NSE 4 — Network Security Professional</h3>
-              <p>Configuration, administration et surveillance des pare-feux FortiGate. Gestion des politiques de sécurité et tunnels VPN.</p>
+              <p>Configuration, administration et surveillance des pare-feux FortiGate. Implémentation des politiques de sécurité et tunnels VPN.</p>
             </div>
           </div>
         </div>
@@ -160,14 +164,14 @@
       <!-- PROJECTS SECTION -->
       <section class="section projects" id="projects">
         <div class="section-heading reveal">
-          <p class="eyebrow">Portfolio</p>
+          <p class="eyebrow">Réalisations</p>
           <h2>Projets & Réalisations Pratiques</h2>
-          <p>Filtrer les projets par catégorie technique pour découvrir mon travail pratique :</p>
+          <p>Filtrer les projets par catégorie technique pour découvrir mes travaux d'études et personnels :</p>
           
           <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn active" data-filter="all">Tous les projets</button>
             <button class="filter-btn" data-filter="sys-net">Systèmes & Réseaux</button>
-            <button class="filter-btn" data-filter="security">Sécurité & Monitoring</button>
+            <button class="filter-btn" data-filter="security">Sécurité & Supervision</button>
             <button class="filter-btn" data-filter="dev">Développement & Scripts</button>
           </div>
         </div>
@@ -182,7 +186,7 @@
               </a>
             </div>
             <h3>Honeypot SSH, Grafana & Loki</h3>
-            <p class="project-desc">Déploiement d'un pot de miel (Honeypot) SSH avec Cowrie. Collecte et corrélation de logs d'attaques en temps réel avec Grafana et Loki pour la visualisation cartographique et l'analyse de force brute.</p>
+            <p class="project-desc">Déploiement d'un pot de miel (Honeypot) SSH Cowrie. Centralisation et corrélation de logs d'attaques à l'aide de Loki et Grafana pour l'analyse des cybermenaces.</p>
             <div class="project-tech">
               <span>Cowrie</span>
               <span>Grafana</span>
@@ -199,13 +203,13 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
-            <h3>Pare-Feu Virtuel & pfSense</h3>
-            <p class="project-desc">Configuration avancée et virtualisation de pare-feux pfSense/IPFire. Mise en place de règles de filtrage de ports, d'isolation VLAN, NAT et routage statique/dynamique pour environnements académiques.</p>
+            <h3>Pare-Feu Virtuels & pfSense</h3>
+            <p class="project-desc">Virtualisation et configuration complète de pare-feux pfSense/IPFire. Segmentation de réseaux via VLANs, configuration de NAT, routage et règles de sécurité filtrantes.</p>
             <div class="project-tech">
               <span>pfSense</span>
               <span>IPFire</span>
               <span>VLAN</span>
-              <span>Virtualisation</span>
+              <span>Sécurité</span>
             </div>
           </article>
 
@@ -218,12 +222,12 @@
               </a>
             </div>
             <h3>Sérénité — IA & RGPD</h3>
-            <p class="project-desc">Conception d'une application d'assistance en santé mentale basée sur l'IA, sécurisation des flux de données et implémentation de protocoles de chiffrement et d'anonymisation pour conformité RGPD.</p>
+            <p class="project-desc">Conception d'un service d'assistance mentale. Chiffrement de flux et mécanismes d'anonymisation des données sensibles des utilisateurs pour se conformer au RGPD.</p>
             <div class="project-tech">
               <span>JavaScript</span>
-              <span>Cryptographie</span>
               <span>RGPD</span>
-              <span>IA API</span>
+              <span>Anonymisation</span>
+              <span>SecOps</span>
             </div>
           </article>
 
@@ -236,12 +240,12 @@
               </a>
             </div>
             <h3>Surveillance IoT & Dashboard</h3>
-            <p class="project-desc">Plateforme et tableau de bord de supervision de capteurs physiques. Capture des métriques via des API locales et affichage des variations d'états d'appareils connectés.</p>
+            <p class="project-desc">Création d'un tableau de bord de monitoring d'équipements IoT. Capture de métriques en temps réel et alertes sur perte de connectivité.</p>
             <div class="project-tech">
               <span>Python</span>
+              <span>Supervision</span>
               <span>IoT</span>
               <span>Websockets</span>
-              <span>Dashboard</span>
             </div>
           </article>
 
@@ -253,8 +257,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
-            <h3>Scanner de Réseau Kali</h3>
-            <p class="project-desc">Scripts automatiques de scan et de mapping réseau sous Kali Linux. Utilisation combinée de Nmap pour auditer rapidement la sécurité périmétrique et détecter les ports ouverts et OS.</p>
+            <h3>Scanner de Réseau sous Kali</h3>
+            <p class="project-desc">Automatisation de scans réseau via Nmap et scripts Bash sous Kali Linux pour cartographier l'exposition des ports d'une infrastructure.</p>
             <div class="project-tech">
               <span>Kali Linux</span>
               <span>Nmap</span>
@@ -271,13 +275,13 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
-            <h3>Analyseur Automatisé de Logs</h3>
-            <p class="project-desc">Script en Python destiné à analyser des fichiers de logs Apache/syslog volumineux pour extraire les tentatives d'intrusions, adresses IP suspectes et anomalies de trafic.</p>
+            <h3>Analyseur Automatique de Logs</h3>
+            <p class="project-desc">Outil Python d'analyse de fichiers logs (Syslog / Apache) détectant les pics d'accès et alertant sur d'éventuelles attaques par force brute.</p>
             <div class="project-tech">
               <span>Python</span>
+              <span>Logs</span>
               <span>Regex</span>
-              <span>Syslog</span>
-              <span>Security</span>
+              <span>Ops</span>
             </div>
           </article>
 
@@ -290,11 +294,11 @@
               </a>
             </div>
             <h3>Bank COBOL</h3>
-            <p class="project-desc">Simulation d'un backend transactionnel de gestion bancaire écrit en COBOL. Permet la manipulation de comptes et de transactions avec validation rigoureuse des données.</p>
+            <p class="project-desc">Modélisation transactionnelle d'un système bancaire écrit en COBOL. Permet la gestion de comptes et l'étude des contraintes de robustesse legacy.</p>
             <div class="project-tech">
               <span>COBOL</span>
-              <span>Legacy Systems</span>
-              <span>Algorithms</span>
+              <span>Legacy</span>
+              <span>Algorithmique</span>
             </div>
           </article>
 
@@ -306,13 +310,13 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
-            <h3>Jeux Vidéo & Simulations 2D/3D</h3>
-            <p class="project-desc">Développement de mini-jeux interactifs, dont Great Road Racer en C# sous Unity, et un mini-jeu 2D sous Java, afin d'étudier la gestion des collisions et la physique des jeux.</p>
+            <h3>Simulations & Jeux 2D/3D</h3>
+            <p class="project-desc">Développement d'un jeu de course 3D sous Unity (C#) et de logique 2D sous Java pour s'exercer aux architectures orientées objet.</p>
             <div class="project-tech">
               <span>C#</span>
               <span>Unity</span>
               <span>Java</span>
-              <span>OOP</span>
+              <span>POO</span>
             </div>
           </article>
         </div>
@@ -387,7 +391,7 @@
             <p class="eyebrow">Contact</p>
             <h2>Bâtissons un réseau solide.</h2>
             <p>
-              À la recherche d'un alternant rigoureux, certifié et opérationnel pour renforcer vos équipes à Rennes ou ailleurs ? Contactez-moi par mail ou via les réseaux sociaux.
+              À la recherche d'un alternant rigoureux, certifié et opérationnel pour renforcer vos équipes réseaux à Rennes ou ailleurs ? Contactez-moi par mail ou via les réseaux sociaux.
             </p>
           </div>
           <div class="contact-actions">

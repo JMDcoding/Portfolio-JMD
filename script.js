@@ -20,8 +20,8 @@ if ('IntersectionObserver' in window) {
       }
     },
     {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.05,
+      rootMargin: '0px 0px -40px 0px',
     }
   );
 
@@ -49,7 +49,7 @@ navLinks.forEach((link) => {
   });
 });
 
-// Project filtering system
+// Project filtering system for secondary projects
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -78,6 +78,37 @@ filterButtons.forEach((btn) => {
         setTimeout(() => {
           card.style.display = 'none';
         }, 300);
+      }
+    });
+  });
+});
+
+// Case studies interactive tab switcher
+const caseStudies = document.querySelectorAll('.case-study-card');
+caseStudies.forEach((card) => {
+  const tabButtons = card.querySelectorAll('.tab-btn');
+  const tabPanes = card.querySelectorAll('.tab-pane');
+
+  tabButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      // Deactivate all tab buttons in this card
+      tabButtons.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      
+      // Deactivate all tab panes in this card
+      tabPanes.forEach((pane) => {
+        pane.classList.remove('active');
+      });
+
+      // Activate the clicked button
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Activate corresponding tab pane in this card
+      if (tabPanes[index]) {
+        tabPanes[index].classList.add('active');
       }
     });
   });

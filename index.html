@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio de Jean-Marc DUSSAUD — Alternant Administrateur Systèmes et Réseaux / Cybersécurité. Découvrez mes projets, compétences en virtualisation, sécurité et réseaux."
+      content="Portfolio de Jean-Marc DUSSAUD — Alternant Administrateur Systèmes, Réseaux & Cybersécurité. Découvrez mes projets transverses, mes certifications et mon lab."
     />
-    <title>Jean-Marc DUSSAUD | Alternant Administrateur Systèmes & Réseaux</title>
+    <title>Jean-Marc DUSSAUD | SysOps & Security Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Background grids -->
+    <!-- Background grids & ambient glow effects -->
     <div class="cyber-grid" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -39,8 +39,9 @@
 
       <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
         <a href="#about">Profil</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#piliers">Piliers</a>
         <a href="#projects">Projets</a>
+        <a href="#lab">Mon Lab</a>
         <a href="#stack">Compétences</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -53,9 +54,9 @@
       <section class="hero section" id="hero">
         <div class="hero-copy reveal">
           <p class="eyebrow"><span class="pulse-icon"></span> Alternance Disponible - Septembre 2026</p>
-          <h1>Sécuriser les flux, administrer l'infrastructure.</h1>
+          <h1>Administrateur Système & Réseau orienté Sécurité</h1>
           <p class="hero-text">
-            Étudiant passionné de Systèmes & Réseaux, certifié <strong>Cisco CCNA</strong> & <strong>Fortinet NSE 4</strong>. Spécialisé en virtualisation, sécurité périmétrique et supervision d'infrastructures d'entreprise.
+            Avec une forte culture de la satisfaction utilisateur et de la résilience opérationnelle. Certifié <strong>Cisco CCNA</strong> & <strong>Fortinet NSE 4</strong>, je conçois, déploie et protège les infrastructures d'entreprise.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">Découvrir les projets</a>
@@ -101,32 +102,80 @@
       <section class="section about" id="about">
         <div class="section-heading reveal">
           <p class="eyebrow">Profil & Vision</p>
-          <h2>Concevoir des infrastructures résilientes et hautement disponibles.</h2>
+          <h2>Bâtir des infrastructures fiables, centrées sur l'utilisateur</h2>
           <p>
-            Une infrastructure robuste doit être sécurisée dès sa conception. Mon approche combine une segmentation réseau stricte, une virtualisation optimisée et un monitoring proactif continu pour anticiper les anomalies.
+            Je m'attache à concevoir des systèmes où la sécurité et la performance ne nuisent jamais à l'expérience utilisateur. Mon parcours académique et mes certifications m'ont préparé à relever les défis de l'administration système moderne.
           </p>
         </div>
 
         <div class="about-grid">
           <article class="value-card reveal">
-            <div class="card-icon">🛡️</div>
-            <h3>Sécurité & Isolation</h3>
-            <p>Segmentation VLAN, filtrage de flux pfSense/Fortinet et mise en place de honeypots SSH pour analyser les tentatives d'intrusion.</p>
+            <div class="card-icon">🤝</div>
+            <h3>Pédagogie & Humain</h3>
+            <p>Traduire des contraintes de sécurité complexes en consignes simples. Sensibiliser les utilisateurs pour en faire le premier rempart contre les menaces.</p>
           </article>
           <article class="value-card reveal">
             <div class="card-icon">⚡</div>
-            <h3>Virtualisation & Automatisation</h3>
-            <p>Déploiement et administration d'hyperviseurs VMware ESXi et Proxmox VE. Scripting d'automatisation système sous Python et Bash.</p>
+            <h3>Gestion du Stress</h3>
+            <p>Garder la tête froide en situation d'incident critique pour diagnostiquer la source d'un problème et orchestrer sa résolution rapidement.</p>
           </article>
           <article class="value-card reveal">
-            <div class="card-icon">📊</div>
-            <h3>Supervision & Télémétrie</h3>
-            <p>Supervision d'équipements avec Zabbix. Collecte et corrélation de logs système centralisée à l'aide de Loki et Grafana.</p>
+            <div class="card-icon">🔍</div>
+            <h3>Curiosité & Veille</h3>
+            <p>Passionné par le fonctionnement profond des protocoles. Expérimentation continue en environnement de test (HomeLab) pour maîtriser les nouvelles technologies.</p>
           </article>
-          <article class="value-card reveal">
-            <div class="card-icon">🤝</div>
-            <h3>Rigueur & Normes</h3>
-            <p>Mise en conformité RGPD, rédaction de documentations d'architecture et de procédures d'exploitation technique.</p>
+        </div>
+      </section>
+
+      <!-- PILIERS DE COMPÉTENCES SECTION -->
+      <section class="section piliers" id="piliers">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Expertise</p>
+          <h2>Mes Piliers de Compétences</h2>
+          <p>Une approche logique et structurée du macro au micro pour assurer l'intégrité, la résilience et la disponibilité des données.</p>
+        </div>
+
+        <div class="piliers-grid">
+          <!-- Level 1: Systems & Networks -->
+          <article class="pilier-card reveal level-1">
+            <span class="pilier-badge">🌐 Niveau 1</span>
+            <h3>Systèmes & Réseaux</h3>
+            <p class="pilier-subtitle">Les Fondations</p>
+            <p class="pilier-desc">Conception, déploiement et maintien d'infrastructures informatiques robustes, virtualisées et automatisées.</p>
+            <ul class="pilier-list">
+              <li><strong>Réseau :</strong> Architecture LAN/WAN, commutation, routage dynamique, DNS/DHCP.</li>
+              <li><strong>Virtualisation :</strong> Hyperviseurs VMware ESXi & Proxmox VE (clustering, stockage).</li>
+              <li><strong>Systèmes :</strong> Administration Windows Server, parcs Linux (Debian/Ubuntu) et Active Directory.</li>
+              <li><strong>Automatisation :</strong> Scripting d'exploitation et tâches récurrentes en Bash et Python.</li>
+            </ul>
+          </article>
+
+          <!-- Level 2: Cybersecurity -->
+          <article class="pilier-card reveal level-2">
+            <span class="pilier-badge">🛡️ Niveau 2</span>
+            <h3>Cybersécurité</h3>
+            <p class="pilier-subtitle">La Protection</p>
+            <p class="pilier-desc">Sécurisation par design des flux et serveurs contre les intrusions et fuites de données.</p>
+            <ul class="pilier-list">
+              <li><strong>Sécurité Périmétrique :</strong> Configuration de pare-feux pfSense/FortiGate et routage NAT.</li>
+              <li><strong>Accès sécurisé :</strong> Tunnels VPN IPsec et OpenVPN pour le télétravail ou inter-sites.</li>
+              <li><strong>Supervision (SIEM) :</strong> Collecte de logs, détection d'intrusions (Honeypot SSH) et tableaux Grafana.</li>
+              <li><strong>Durcissement (Hardening) :</strong> Sécurisation d'Active Directory (GPO), stratégies de mots de passe.</li>
+            </ul>
+          </article>
+
+          <!-- Level 3: Support & Proximity -->
+          <article class="pilier-card reveal level-3">
+            <span class="pilier-badge">🤝 Niveau 3</span>
+            <h3>Support & Proximité</h3>
+            <p class="pilier-subtitle">L'Humain</p>
+            <p class="pilier-desc">Point de contact terrain avec les utilisateurs pour adapter la technologie à leurs besoins métier réels.</p>
+            <ul class="pilier-list">
+              <li><strong>Gestion des incidents :</strong> Application des méthodologies ITIL pour résoudre et documenter les tickets.</li>
+              <li><strong>Vulgarisation :</strong> Formation des collaborateurs face au phishing et à l'hygiène informatique.</li>
+              <li><strong>Documentation technique :</strong> Rédaction de schémas de topologie réseau et de procédures claires.</li>
+              <li><strong>Déploiement :</strong> Création de masters de postes clients et accompagnement des utilisateurs en production.</li>
+            </ul>
           </article>
         </div>
       </section>
@@ -145,7 +194,7 @@
             </div>
             <div class="cert-info">
               <h3>Cisco Certified Network Associate (CCNA)</h3>
-              <p>Administration réseau, routage OSPF, commutation (switching), services d'adressage IP (DHCP, NAT) et sécurisation des ports.</p>
+              <p>Administration réseau, routage OSPF, commutation (switching), services d'adressage IP (DHCP, NAT) et sécurisation des ports d'accès.</p>
             </div>
           </div>
 
@@ -165,164 +214,335 @@
       <section class="section projects" id="projects">
         <div class="section-heading reveal">
           <p class="eyebrow">Réalisations</p>
-          <h2>Projets & Réalisations Pratiques</h2>
-          <p>Filtrer les projets par catégorie technique pour découvrir mes travaux d'études et personnels :</p>
+          <h2>Projets & Études de Cas Réalisés</h2>
+          <p>Découvrez comment j'associe l'infrastructure, la sécurité et l'humain dans des études de cas détaillées :</p>
+        </div>
+
+        <!-- Transversal Projects (Case Studies) -->
+        <div class="case-studies-container">
+          <!-- Case Study 1: pfSense -->
+          <article class="case-study-card reveal">
+            <div class="case-study-info">
+              <div class="case-study-meta">
+                <span class="project-tag">🌐 Réseau & 🛡️ Sécurité</span>
+                <a href="https://github.com/JMDcoding/Manipulation_PFSENSE" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Sécurisation Réseau Multi-Site & VPN IPsec</h3>
+              <p class="case-study-desc">
+                Conception et déploiement d'une architecture réseau sécurisée inter-sites. Ce projet intègre le routage, la segmentation par VLANs et le chiffrement de bout en bout des flux de données.
+              </p>
+              <div class="topology-box">
+                <span class="topology-title">🖥️ Topologie Réseau Simulée</span>
+                <pre class="network-topology">[Internet] ──> [pfSense (WAN)] ──> [Switch L2 (VLANs)]
+                                    ├── VLAN 10 (Admin) ──> Clients masterisés
+                                    ├── VLAN 20 (DMZ)   ──> Windows/Linux Servers
+                                    └── VLAN 30 (VPN)   ──> Télétravail (IPsec)</pre>
+              </div>
+            </div>
+            <div class="case-study-tabs-container">
+              <div class="tabs-header">
+                <button class="tab-btn active" data-tab="infra" aria-selected="true">🌐 Infra</button>
+                <button class="tab-btn" data-tab="security" aria-selected="false">🛡️ Sécurité</button>
+                <button class="tab-btn" data-tab="support" aria-selected="false">🤝 Support</button>
+              </div>
+              <div class="tabs-content">
+                <div class="tab-pane active" id="p1-infra">
+                  <p class="pane-intro">🌐 Infrastructure & Réseaux</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Déploiement d'hyperviseurs :</strong> Installation de VMware ESXi et Proxmox VE pour héberger les machines et pare-feux virtuels.</li>
+                    <li><strong>Segmentation réseau :</strong> Configuration de VLANs distincts sur commutateurs virtuels pour séparer les flux administratifs, DMZ et postes utilisateurs.</li>
+                    <li><strong>Adressage IP & Routage :</strong> Mise en place de sous-réseaux IPv4 dédiés, services DHCP et serveurs DNS internes.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="p1-security">
+                  <p class="pane-intro">🛡️ Cybersécurité & Durcissement</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Pare-feu pfSense :</strong> Configuration de règles de filtrage de paquets strictes (Deny by default) et de politiques NAT.</li>
+                    <li><strong>Accès à distance sécurisé :</strong> Implémentation d'un tunnel VPN IPsec sécurisé et crypté pour le travail à distance.</li>
+                    <li><strong>Centralisation des logs :</strong> Exportation des logs du firewall vers un serveur externe pour l'audit et la traçabilité des accès.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="p1-support">
+                  <p class="pane-intro">🤝 Exploitation, ITIL & Support</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Rédaction de procédures :</strong> Rédaction de guides de connexion VPN clairs et imagés pour les collaborateurs.</li>
+                    <li><strong>Masterisation système :</strong> Création de templates d'OS sécurisés (Windows/Linux clients) prêts pour le déploiement en production.</li>
+                    <li><strong>Support de déploiement :</strong> Support utilisateur lors de la transition vers la nouvelle architecture réseau.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 2: Honeypot -->
+          <article class="case-study-card reveal">
+            <div class="case-study-info">
+              <div class="case-study-meta">
+                <span class="project-tag">🛡️ Sécurité & 🌐 Infra</span>
+                <a href="https://github.com/JMDcoding/Honeypot-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Honeypot SSH, Grafana & Loki</h3>
+              <p class="case-study-desc">
+                Création d'un pot de miel (Honeypot) SSH destiné à attirer, identifier et analyser en temps réel les cybermenaces automatisées de l'Internet.
+              </p>
+              <div class="topology-box">
+                <span class="topology-title">📊 Flux de Supervision de logs</span>
+                <pre class="network-topology">[Internet Scan SSH] ──> [Honeypot Cowrie]
+                               │
+                               └──> [Loki Collector] ──> [Grafana Dashboard]</pre>
+              </div>
+            </div>
+            <div class="case-study-tabs-container">
+              <div class="tabs-header">
+                <button class="tab-btn active" data-tab="infra" aria-selected="true">🌐 Infra</button>
+                <button class="tab-btn" data-tab="security" aria-selected="false">🛡️ Sécurité</button>
+                <button class="tab-btn" data-tab="support" aria-selected="false">🤝 Support</button>
+              </div>
+              <div class="tabs-content">
+                <div class="tab-pane active" id="p2-infra">
+                  <p class="pane-intro">🌐 Infrastructure & Réseaux</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Isolation Docker :</strong> Déploiement de conteneurs isolés via Docker Compose pour héberger le honeypot sans risque pour l'hôte.</li>
+                    <li><strong>Automatisation Python :</strong> Écriture de scripts Python pour l'extraction régulière de logs et le redémarrage automatique des instances en cas de crash.</li>
+                    <li><strong>Redirection de port :</strong> Configuration des règles NAT/redirection pour acheminer le trafic externe suspect vers l'environnement d'observation.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="p2-security">
+                  <p class="pane-intro">🛡️ Cybersécurité & Analyse</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Honeypot SSH Cowrie :</strong> Configuration du service pour simuler une interface shell Debian et capturer les identifiants et fichiers chargés.</li>
+                    <li><strong>Analyse de logs avec Loki & Grafana :</strong> Centralisation de la collecte de logs et visualisation des pays d'origine, commandes exécutées et types d'attaques.</li>
+                    <li><strong>Alerte automatique :</strong> Implémentation de seuils de détection pour alerter les administrateurs en cas de pic anormal d'attaques.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="p2-support">
+                  <p class="pane-intro">🤝 Exploitation, ITIL & Support</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Procédure de traitement d'incidents :</strong> Création de playbooks pour les équipes de sécurité en cas d'attaque par rebond détectée sur le lab.</li>
+                    <li><strong>Rapports de veille :</strong> Rédaction de rapports réguliers résumant les techniques d'attaques observées pour sensibiliser les équipes.</li>
+                    <li><strong>Gestion du cycle de vie des données :</strong> Automatisation de la rotation et de la purge des logs pour respecter l'espace disque et la politique de rétention.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 3: Serenity -->
+          <article class="case-study-card reveal">
+            <div class="case-study-info">
+              <div class="case-study-meta">
+                <span class="project-tag">🛡️ Sécurité & 🤝 Humain</span>
+                <a href="https://github.com/JMDcoding/S%C3%A9r%C3%A9nit%C3%A9" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Sérénité — IA Santé Mentale & RGPD</h3>
+              <p class="case-study-desc">
+                Conception sécurisée d'une application d'assistance en santé mentale basée sur l'intelligence artificielle, intégrant le respect de la vie privée dès la conception (Privacy by Design).
+              </p>
+              <div class="topology-box">
+                <span class="topology-title">🔒 Pipeline de Sécurisation des Données</span>
+                <pre class="network-topology">[Utilisateur Client] ── HTTPS/WSS (Chiffrement) ──> [Serveur Node.js]
+                                                         │
+                                                         └──> [Anonymisation RGPD] ──> [IA]
+                                                         └──> [Base Chiffrée SQL]</pre>
+              </div>
+            </div>
+            <div class="case-study-tabs-container">
+              <div class="tabs-header">
+                <button class="tab-btn active" data-tab="infra" aria-selected="true">🌐 Infra</button>
+                <button class="tab-btn" data-tab="security" aria-selected="false">🛡️ Sécurité</button>
+                <button class="tab-btn" data-tab="support" aria-selected="false">🤝 Support</button>
+              </div>
+              <div class="tabs-content">
+                <div class="tab-pane active" id="p3-infra">
+                  <p class="pane-intro">🌐 Infrastructure & Réseaux</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Serveur d'application :</strong> Mise en place de serveurs d'application Node.js virtualisés pour héberger l'application et connecter les APIs IA de santé.</li>
+                    <li><strong>Chiffrement de flux :</strong> Intégration de tunnels de communication sécurisés via Websockets chiffrés pour les échanges de chat en temps réel.</li>
+                    <li><strong>Bases de données relationnelles :</strong> Configuration d'un serveur SQL de stockage en mode haute disponibilité.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="p3-security">
+                  <p class="pane-intro">🛡️ Cybersécurité & Conformité</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Anonymisation des données :</strong> Implémentation d'algorithmes d'anonymisation et de pseudonymisation pour protéger les profils des patients.</li>
+                    <li><strong>Mise en conformité RGPD :</strong> Rédaction et intégration des règles d'accès strictes pour respecter les droits d'accès, d'effacement et de portabilité.</li>
+                    <li><strong>Durcissement des échanges :</strong> Signature des jetons JWT pour authentifier l'accès aux conversations et chiffrer les données cliniques stockées.</li>
+                  </ul>
+                </div>
+                <div class="tab-pane" id="p3-support">
+                  <p class="pane-intro">🤝 Exploitation, ITIL & Support</p>
+                  <ul class="pane-action-list">
+                    <li><strong>Documentation DPO :</strong> Rédaction de l'analyse d'impact relative à la protection des données (AIPD) pour le DPO de l'organisme.</li>
+                    <li><strong>Procédure de restauration :</strong> Mise en place de protocoles de sauvegarde régulière de la base SQL et tests de restauration post-sinistre.</li>
+                    <li><strong>Accompagnement de l'équipe de développement :</strong> Rédaction d'un guide des bonnes pratiques SecOps pour éviter l'introduction de failles de sécurité courantes (OWASP).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Secondary/Other projects list with filtering -->
+        <div class="other-projects-section">
+          <h3 class="other-projects-heading">🛠️ Autres Travaux & Réalisations</h3>
           
           <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">Tous les projets</button>
+            <button class="filter-btn active" data-filter="all">Tous</button>
             <button class="filter-btn" data-filter="sys-net">Systèmes & Réseaux</button>
             <button class="filter-btn" data-filter="security">Sécurité & Supervision</button>
             <button class="filter-btn" data-filter="dev">Développement & Scripts</button>
           </div>
-        </div>
 
-        <div class="projects-grid">
-          <!-- Project 1: Honeypot -->
-          <article class="project-card reveal" data-category="security">
-            <div class="project-header">
-              <span class="project-tag">Sécurité & Analyse</span>
-              <a href="https://github.com/JMDcoding/Honeypot-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Honeypot SSH, Grafana & Loki</h3>
-            <p class="project-desc">Déploiement d'un pot de miel (Honeypot) SSH Cowrie. Centralisation et corrélation de logs d'attaques à l'aide de Loki et Grafana pour l'analyse des cybermenaces.</p>
-            <div class="project-tech">
-              <span>Cowrie</span>
-              <span>Grafana</span>
-              <span>Loki</span>
-              <span>Docker</span>
-            </div>
-          </article>
+          <div class="projects-grid">
+            <!-- Project 4: Monitoring IoT -->
+            <article class="project-card reveal" data-category="sys-net">
+              <div class="project-header">
+                <span class="project-tag">IoT & Supervision</span>
+                <a href="https://github.com/JMDcoding/Mon_tableau_de_bord_IoT" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Surveillance IoT & Dashboard</h3>
+              <p class="project-desc">Création d'un tableau de bord de monitoring d'équipements IoT. Capture de métriques réseau en temps réel et alertes sur perte de connectivité.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Supervision</span>
+                <span>IoT</span>
+                <span>Websockets</span>
+              </div>
+            </article>
 
-          <!-- Project 2: PFSense -->
-          <article class="project-card reveal" data-category="sys-net">
-            <div class="project-header">
-              <span class="project-tag">Réseau & Firewall</span>
-              <a href="https://github.com/JMDcoding/Manipulation_PFSENSE" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Pare-Feu Virtuels & pfSense</h3>
-            <p class="project-desc">Virtualisation et configuration complète de pare-feux pfSense/IPFire. Segmentation de réseaux via VLANs, configuration de NAT, routage et règles de sécurité filtrantes.</p>
-            <div class="project-tech">
-              <span>pfSense</span>
-              <span>IPFire</span>
-              <span>VLAN</span>
-              <span>Sécurité</span>
-            </div>
-          </article>
+            <!-- Project 5: Scanner Kali Linux -->
+            <article class="project-card reveal" data-category="security">
+              <div class="project-header">
+                <span class="project-tag">Sécurité & Audits</span>
+                <a href="https://github.com/JMDcoding/Scanner-Kali-linux" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Scanner de Réseau sous Kali</h3>
+              <p class="project-desc">Automatisation de scans réseau via Nmap et scripts Bash sous Kali Linux pour cartographier l'exposition des ports et ports ouverts.</p>
+              <div class="project-tech">
+                <span>Kali Linux</span>
+                <span>Nmap</span>
+                <span>Bash</span>
+              </div>
+            </article>
 
-          <!-- Project 3: Serenity -->
-          <article class="project-card reveal" data-category="dev">
-            <div class="project-header">
-              <span class="project-tag">Sécurité Applicative</span>
-              <a href="https://github.com/JMDcoding/S%C3%A9r%C3%A9nit%C3%A9" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Sérénité — IA & RGPD</h3>
-            <p class="project-desc">Conception d'un service d'assistance mentale. Chiffrement de flux et mécanismes d'anonymisation des données sensibles des utilisateurs pour se conformer au RGPD.</p>
-            <div class="project-tech">
-              <span>JavaScript</span>
-              <span>RGPD</span>
-              <span>Anonymisation</span>
-              <span>SecOps</span>
-            </div>
-          </article>
+            <!-- Project 6: Log Analyzer -->
+            <article class="project-card reveal" data-category="dev">
+              <div class="project-header">
+                <span class="project-tag">Scripting & Ops</span>
+                <a href="https://github.com/JMDcoding/Analyse%20de%20Logs" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Analyseur de Logs Python</h3>
+              <p class="project-desc">Outil Python d'analyse de fichiers logs (Syslog / Apache) détectant les pics d'accès et alertant sur d'éventuelles attaques par force brute.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Logs</span>
+                <span>Regex</span>
+                <span>Ops</span>
+              </div>
+            </article>
 
-          <!-- Project 4: Monitoring IoT -->
-          <article class="project-card reveal" data-category="sys-net">
-            <div class="project-header">
-              <span class="project-tag">IoT & Supervision</span>
-              <a href="https://github.com/JMDcoding/Mon_tableau_de_bord_IoT" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Surveillance IoT & Dashboard</h3>
-            <p class="project-desc">Création d'un tableau de bord de monitoring d'équipements IoT. Capture de métriques en temps réel et alertes sur perte de connectivité.</p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>Supervision</span>
-              <span>IoT</span>
-              <span>Websockets</span>
-            </div>
-          </article>
+            <!-- Project 7: Bank Cobol -->
+            <article class="project-card reveal" data-category="dev">
+              <div class="project-header">
+                <span class="project-tag">Legacy Systems</span>
+                <a href="https://github.com/JMDcoding/Bank_COBOL" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Bank COBOL</h3>
+              <p class="project-desc">Modélisation transactionnelle d'un système bancaire écrit en COBOL. Permet la gestion de comptes et l'étude des contraintes de robustesse legacy.</p>
+              <div class="project-tech">
+                <span>COBOL</span>
+                <span>Legacy</span>
+                <span>Algorithmique</span>
+              </div>
+            </article>
 
-          <!-- Project 5: Scanner Kali Linux -->
-          <article class="project-card reveal" data-category="security">
-            <div class="project-header">
-              <span class="project-tag">Sécurité & Audits</span>
-              <a href="https://github.com/JMDcoding/Scanner-Kali-linux" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Scanner de Réseau sous Kali</h3>
-            <p class="project-desc">Automatisation de scans réseau via Nmap et scripts Bash sous Kali Linux pour cartographier l'exposition des ports d'une infrastructure.</p>
-            <div class="project-tech">
-              <span>Kali Linux</span>
-              <span>Nmap</span>
-              <span>Bash</span>
-              <span>Audit</span>
-            </div>
-          </article>
-
-          <!-- Project 6: Log Analyzer -->
-          <article class="project-card reveal" data-category="dev">
-            <div class="project-header">
-              <span class="project-tag">Scripting & Ops</span>
-              <a href="https://github.com/JMDcoding/Analyse%20de%20Logs" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Analyseur Automatique de Logs</h3>
-            <p class="project-desc">Outil Python d'analyse de fichiers logs (Syslog / Apache) détectant les pics d'accès et alertant sur d'éventuelles attaques par force brute.</p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>Logs</span>
-              <span>Regex</span>
-              <span>Ops</span>
-            </div>
-          </article>
-
-          <!-- Project 7: Bank Cobol -->
-          <article class="project-card reveal" data-category="dev">
-            <div class="project-header">
-              <span class="project-tag">Systèmes Académiques</span>
-              <a href="https://github.com/JMDcoding/Bank_COBOL" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Bank COBOL</h3>
-            <p class="project-desc">Modélisation transactionnelle d'un système bancaire écrit en COBOL. Permet la gestion de comptes et l'étude des contraintes de robustesse legacy.</p>
-            <div class="project-tech">
-              <span>COBOL</span>
-              <span>Legacy</span>
-              <span>Algorithmique</span>
-            </div>
-          </article>
-
-          <!-- Project 8: Mini Jeu Java / Unity -->
-          <article class="project-card reveal" data-category="dev">
-            <div class="project-header">
-              <span class="project-tag">Jeux & Simulation</span>
-              <a href="https://github.com/JMDcoding/Jeu-Video-Great_Road_Racer-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
-            <h3>Simulations & Jeux 2D/3D</h3>
-            <p class="project-desc">Développement d'un jeu de course 3D sous Unity (C#) et de logique 2D sous Java pour s'exercer aux architectures orientées objet.</p>
-            <div class="project-tech">
-              <span>C#</span>
-              <span>Unity</span>
-              <span>Java</span>
-              <span>POO</span>
-            </div>
-          </article>
+            <!-- Project 8: Mini Jeu Java / Unity -->
+            <article class="project-card reveal" data-category="dev">
+              <div class="project-header">
+                <span class="project-tag">Jeux & Simulation</span>
+                <a href="https://github.com/JMDcoding/Jeu-Video-Great_Road_Racer-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+              <h3>Simulations 2D/3D (C# / Java)</h3>
+              <p class="project-desc">Développement d'un jeu de course 3D sous Unity (C#) et de logique 2D sous Java pour s'exercer aux architectures orientées objet.</p>
+              <div class="project-tech">
+                <span>C#</span>
+                <span>Unity</span>
+                <span>Java</span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!-- SKILLS SECTION -->
+      <!-- SECTION HOMELAB & VEILLE -->
+      <section class="section lab" id="lab">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Passion & Exploration</p>
+          <h2>Mon HomeLab & Veille Technologique</h2>
+          <p>Découvrez mon environnement d'expérimentation domestique et ma méthode pour rester informé des dernières menaces et solutions du secteur.</p>
+        </div>
+
+        <div class="lab-container">
+          <div class="lab-card reveal">
+            <span class="lab-badge">🏠 Architecture HomeLab</span>
+            <h3>Un environnement de test d'entreprise à domicile</h3>
+            <p>
+              Pour tester de nouveaux outils de cybersécurité et parfaire mon expertise en administration système, j'ai conçu et assemblé un HomeLab isolé de mon réseau personnel.
+            </p>
+            <div class="lab-details">
+              <div class="lab-detail-item">
+                <strong>Hyperviseur :</strong> Proxmox VE tournant sur matériel dédié. Permet la création et le clonage rapide de machines virtuelles (VMs) et conteneurs (LXC).
+              </div>
+              <div class="lab-detail-item">
+                <strong>Réseau & Pare-feu :</strong> Firewall pfSense gérant l'isolation du HomeLab par VLAN, des règles de routage strictes et un serveur DNS local sécurisé.
+              </div>
+              <div class="lab-detail-item">
+                <strong>Supervision :</strong> Serveur Zabbix centralisant les métriques de charge CPU/RAM et Grafana affichant l'état opérationnel global.
+              </div>
+              <div class="lab-detail-item">
+                <strong>Services isolés :</strong> Serveurs Linux (Docker/Portainer), serveur SSH d'analyse (Cowrie honeypot), Active Directory d'apprentissage.
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-card reveal">
+            <span class="lab-badge">📡 Veille Technologique & Cyber</span>
+            <h3>Suivi régulier des menaces de l'écosystème</h3>
+            <p>
+              La résilience et la sécurité d'un réseau dépendent d'une veille informationnelle active. Je me tiens quotidiennement au courant de l'actualité des failles de sécurité (CVE) et des menaces émergentes.
+            </p>
+            <div class="lab-details">
+              <div class="lab-detail-item">
+                <strong>Alertes de sécurité :</strong> Suivi des bulletins du CERT-FR (ANSSI), publications de l'OWASP, CVE details et bases de données de vulnérabilités.
+              </div>
+              <div class="lab-detail-item">
+                <strong>Actualités IT :</strong> The Hacker News, Le Monde Informatique, Next, Reddit (r/sysadmin, r/cybersecurity).
+              </div>
+              <div class="lab-detail-item">
+                <strong>Entraînement pratique :</strong> Participation active à des défis de CTF (Capture The Flag) sur Root-Me et Hack The Box pour comprendre les chemins d'attaque.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION (STACK) -->
       <section class="section stack" id="stack">
         <div class="section-heading reveal">
           <p class="eyebrow">Compétences Techniques</p>
@@ -391,7 +611,7 @@
             <p class="eyebrow">Contact</p>
             <h2>Bâtissons un réseau solide.</h2>
             <p>
-              À la recherche d'un alternant rigoureux, certifié et opérationnel pour renforcer vos équipes réseaux à Rennes ou ailleurs ? Contactez-moi par mail ou via les réseaux sociaux.
+              À la recherche d'un alternant rigoureux, certifié et opérationnel pour renforcer vos équipes réseaux et sécurité à Rennes ou ailleurs ? Contactez-moi par mail ou via les réseaux sociaux.
             </p>
           </div>
           <div class="contact-actions">

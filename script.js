@@ -113,3 +113,29 @@ caseStudies.forEach((card) => {
     });
   });
 });
+
+// Contact form simulation handler
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Simulate submission progress
+    formStatus.textContent = "Envoi en cours...";
+    formStatus.className = "form-status";
+    formStatus.style.display = "block";
+
+    setTimeout(() => {
+      formStatus.textContent = "Message envoyé avec succès ! Jean-Marc vous répondra dans les plus brefs délais.";
+      formStatus.className = "form-status success";
+      contactForm.reset();
+      
+      // Auto-hide status message after 5 seconds
+      setTimeout(() => {
+        formStatus.style.display = "none";
+      }, 5000);
+    }, 1000);
+  });
+}

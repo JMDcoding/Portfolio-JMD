@@ -485,9 +485,12 @@ body::after {
 }
 
 .card-icon {
-  font-size: 2rem;
+  color: var(--accent-cyan);
   margin-bottom: 1.2rem;
   display: block;
+  display: grid;
+  align-items: center;
+  width: max-content;
 }
 
 .value-card h3 {
@@ -556,15 +559,20 @@ body::after {
 .pilier-card.level-2:hover { border-color: rgba(6, 182, 212, 0.3); }
 .pilier-card.level-3:hover { border-color: rgba(139, 92, 246, 0.3); }
 
+.pilier-header-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
 .pilier-badge {
-  align-self: flex-start;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-sm);
-  margin-bottom: 1rem;
 }
 
 .level-1 .pilier-badge {
@@ -583,11 +591,25 @@ body::after {
   border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
+.pilier-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.level-1 .pilier-icon { background: rgba(59, 130, 246, 0.08); color: var(--accent-blue); border: 1px solid rgba(59, 130, 246, 0.15); }
+.level-2 .pilier-icon { background: rgba(6, 182, 212, 0.08); color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.15); }
+.level-3 .pilier-icon { background: rgba(139, 92, 246, 0.08); color: var(--accent-purple); border: 1px solid rgba(139, 92, 246, 0.15); }
+
 .pilier-card h3 {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.4rem;
   color: #ffffff;
   margin-bottom: 0.2rem;
+  letter-spacing: -0.01em;
 }
 
 .pilier-subtitle {
@@ -624,15 +646,18 @@ body::after {
 }
 
 .pilier-list li::before {
-  content: "→";
+  content: "";
   position: absolute;
-  left: 0;
-  color: var(--accent-cyan);
-  font-weight: bold;
+  left: 0.2rem;
+  top: 0.55rem;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
 }
 
-.level-1 .pilier-list li::before { color: var(--accent-blue); }
-.level-3 .pilier-list li::before { color: var(--accent-purple); }
+.level-1 .pilier-list li::before { background-color: var(--accent-blue); box-shadow: 0 0 6px var(--accent-blue); }
+.level-2 .pilier-list li::before { background-color: var(--accent-cyan); box-shadow: 0 0 6px var(--accent-cyan); }
+.level-3 .pilier-list li::before { background-color: var(--accent-purple); box-shadow: 0 0 6px var(--accent-purple); }
 
 .pilier-list li strong {
   color: var(--text);
@@ -701,7 +726,7 @@ body::after {
   line-height: 1.5;
 }
 
-/* TRANSVERSAL PROJECTS & CASE STUDIES */
+/* TRANSVERSAL PROJECTS & CASE STUDIES (STAR METHOD) */
 .projects {
   border-top: 1px solid var(--line);
 }
@@ -730,7 +755,7 @@ body::after {
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
 
 .case-study-meta {
@@ -746,10 +771,32 @@ body::after {
   line-height: 1.25;
 }
 
+.star-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-problem,
+.project-result {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.project-problem strong {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.project-result strong {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
 .case-study-desc {
   color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 /* Network topology styled box */
@@ -758,7 +805,6 @@ body::after {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
   padding: 1.2rem;
-  margin-top: auto;
 }
 
 .topology-title {
@@ -880,19 +926,22 @@ body::after {
   position: relative;
   padding-left: 1.5rem;
   color: var(--muted);
+  line-height: 1.5;
 }
 
 .pane-action-list li::before {
-  content: "●";
+  content: "";
   position: absolute;
   left: 0.2rem;
-  font-size: 0.6rem;
-  top: 0.1rem;
+  top: 0.6rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
 }
 
-.tab-pane[id*="infra"] .pane-action-list li::before { color: var(--accent-blue); }
-.tab-pane[id*="security"] .pane-action-list li::before { color: var(--accent-cyan); }
-.tab-pane[id*="support"] .pane-action-list li::before { color: var(--accent-purple); }
+.tab-pane[id*="infra"] .pane-action-list li::before { background-color: var(--accent-blue); }
+.tab-pane[id*="security"] .pane-action-list li::before { background-color: var(--accent-cyan); }
+.tab-pane[id*="support"] .pane-action-list li::before { background-color: var(--accent-purple); }
 
 .pane-action-list li strong {
   color: var(--text);
@@ -1173,9 +1222,9 @@ body::after {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   overflow: hidden;
 }
@@ -1191,31 +1240,139 @@ body::after {
   pointer-events: none;
 }
 
-.contact-panel h2 {
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info h2 {
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(2rem, 3.2vw, 2.75rem);
   color: #ffffff;
-  margin-bottom: 0.8rem;
+  line-height: 1.2;
   background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.contact-panel p {
+.contact-info p {
   color: var(--muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
 }
 
-.contact-actions {
+.contact-links {
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
-  z-index: 2;
+  gap: 1.2rem;
+  margin-top: 1rem;
 }
 
-.contact-actions .button {
+.contact-links .button {
+  width: max-content;
+}
+
+.social-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: rgba(7, 10, 19, 0.3);
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.15);
+}
+
+/* Contact Form */
+.contact-form {
+  display: grid;
+  gap: 1.4rem;
   width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: rgba(7, 10, 19, 0.4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #475569;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  background: rgba(7, 10, 19, 0.6);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);
+}
+
+.contact-form .button-primary {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 0.95rem;
+}
+
+.form-status {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  display: none;
+  animation: tab-fade 0.2s ease;
+}
+
+.form-status.success {
+  display: block;
+  background-color: var(--accent-light-green);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.form-status.error {
+  display: block;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
 /* Footer */
@@ -1279,6 +1436,11 @@ body::after {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 968px) {
@@ -1306,15 +1468,15 @@ body::after {
   }
   
   .contact-panel {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
     padding: 3rem 2rem;
+  }
+  
+  .contact-info {
     text-align: center;
   }
   
-  .contact-actions {
-    max-width: 340px;
-    margin: 0 auto;
+  .contact-links {
+    align-items: center;
   }
 }
 

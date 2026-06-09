@@ -10,11 +10,18 @@
   --font-space: 'Space Grotesk', system-ui, sans-serif;
 }
 
-/* SCROLL CONTAINER (Enables iOS-style scroll snapping) */
+/* BASE TYPOGRAPHY — boosted for readability */
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
+body {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* SCROLL CONTAINER (Enables iOS-style scroll snapping) */
 .scroll-container {
   height: 100vh;
   overflow-y: auto;
@@ -52,23 +59,25 @@ html {
   box-sizing: border-box;
 }
 
-/* GLOBAL BACKGROUND LAYOVER */
+/* GLOBAL BACKGROUND LAYOVER
+   Priority: 1) local file, 2) Unsplash fallback
+   To use your own image: place bg.jpg inside assets/background/ */
 .global-background-overlay {
   position: fixed;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop');
+  background-image: url('assets/background/pexels-ranamatloob567-35203646.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: 0;
 }
 
-/* Dark glass layer to guarantee high readability */
+/* Dark overlay — léger pour laisser le fond respirer */
 .global-background-overlay::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(7, 10, 19, 0.82);
+  background-color: rgba(5, 8, 15, 0.60);
 }
 
 /* iOS MONOCHROME CLASS EFFECTS */
@@ -149,19 +158,34 @@ input, textarea {
   border-radius: 2px;
 }
 
-/* RESPONSIVE ERGONOMICS (Deactivates snap-scroll on small screens to prevent clipping content) */
-@media (max-width: 768px), (max-height: 720px) {
-  .scroll-container {
-    scroll-snap-type: none;
-    height: auto;
-    overflow-y: visible;
-  }
-  .section-page {
-    scroll-snap-align: none;
-    height: auto;
-    min-height: 100vh;
-    overflow: visible;
-    padding-top: 5.5rem;
-    padding-bottom: 4rem;
-  }
+/* PROFILE PHOTO — cadrage portrait : remonte l’image pour voir le bas */
+.profile-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 9999px;
+}
+
+/* PROFILE PHOTO PLACEHOLDER (shown when no photo) */
+.profile-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* CARDS SOMBRES — fond opaque assombri pour lisibilité du texte */
+.card-dark {
+  background-color: rgba(5, 8, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+/* Hover subtil sur les cards interactives */
+.card-dark-hover:hover {
+  background-color: rgba(12, 16, 32, 0.80);
+  border-color: rgba(255, 255, 255, 0.22);
 }

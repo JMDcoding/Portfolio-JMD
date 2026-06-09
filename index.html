@@ -110,17 +110,23 @@
 
         <div class="about-grid">
           <article class="value-card reveal">
-            <div class="card-icon">🤝</div>
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
             <h3>Pédagogie & Humain</h3>
             <p>Traduire des contraintes de sécurité complexes en consignes simples. Sensibiliser les utilisateurs pour en faire le premier rempart contre les menaces.</p>
           </article>
           <article class="value-card reveal">
-            <div class="card-icon">⚡</div>
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
             <h3>Gestion du Stress</h3>
             <p>Garder la tête froide en situation d'incident critique pour diagnostiquer la source d'un problème et orchestrer sa résolution rapidement.</p>
           </article>
           <article class="value-card reveal">
-            <div class="card-icon">🔍</div>
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
             <h3>Curiosité & Veille</h3>
             <p>Passionné par le fonctionnement profond des protocoles. Expérimentation continue en environnement de test (HomeLab) pour maîtriser les nouvelles technologies.</p>
           </article>
@@ -138,7 +144,7 @@
         <div class="piliers-grid">
           <!-- Level 1: Systems & Networks -->
           <article class="pilier-card reveal level-1">
-            <span class="pilier-badge">🌐 Niveau 1</span>
+            <span class="pilier-badge">Niveau 1</span>
             <h3>Systèmes & Réseaux</h3>
             <p class="pilier-subtitle">Les Fondations</p>
             <p class="pilier-desc">Conception, déploiement et maintien d'infrastructures informatiques robustes, virtualisées et automatisées.</p>
@@ -152,7 +158,7 @@
 
           <!-- Level 2: Cybersecurity -->
           <article class="pilier-card reveal level-2">
-            <span class="pilier-badge">🛡️ Niveau 2</span>
+            <span class="pilier-badge">Niveau 2</span>
             <h3>Cybersécurité</h3>
             <p class="pilier-subtitle">La Protection</p>
             <p class="pilier-desc">Sécurisation par design des flux et serveurs contre les intrusions et fuites de données.</p>
@@ -166,7 +172,7 @@
 
           <!-- Level 3: Support & Proximity -->
           <article class="pilier-card reveal level-3">
-            <span class="pilier-badge">🤝 Niveau 3</span>
+            <span class="pilier-badge">Niveau 3</span>
             <h3>Support & Proximité</h3>
             <p class="pilier-subtitle">L'Humain</p>
             <p class="pilier-desc">Point de contact terrain avec les utilisateurs pour adapter la technologie à leurs besoins métier réels.</p>
@@ -224,7 +230,7 @@
           <article class="case-study-card reveal">
             <div class="case-study-info">
               <div class="case-study-meta">
-                <span class="project-tag">🌐 Réseau & 🛡️ Sécurité</span>
+                <span class="project-tag">Réseau & Sécurité</span>
                 <a href="https://github.com/JMDcoding/Manipulation_PFSENSE" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 </a>
@@ -234,7 +240,7 @@
                 Conception et déploiement d'une architecture réseau sécurisée inter-sites. Ce projet intègre le routage, la segmentation par VLANs et le chiffrement de bout en bout des flux de données.
               </p>
               <div class="topology-box">
-                <span class="topology-title">🖥️ Topologie Réseau Simulée</span>
+                <span class="topology-title">Topologie Réseau Simulée</span>
                 <pre class="network-topology">[Internet] ──> [pfSense (WAN)] ──> [Switch L2 (VLANs)]
                                     ├── VLAN 10 (Admin) ──> Clients masterisés
                                     ├── VLAN 20 (DMZ)   ──> Windows/Linux Servers
@@ -243,13 +249,13 @@
             </div>
             <div class="case-study-tabs-container">
               <div class="tabs-header">
-                <button class="tab-btn active" data-tab="infra" aria-selected="true">🌐 Infra</button>
-                <button class="tab-btn" data-tab="security" aria-selected="false">🛡️ Sécurité</button>
-                <button class="tab-btn" data-tab="support" aria-selected="false">🤝 Support</button>
+                <button class="tab-btn active" data-tab="infra" aria-selected="true">Infra</button>
+                <button class="tab-btn" data-tab="security" aria-selected="false">Sécurité</button>
+                <button class="tab-btn" data-tab="support" aria-selected="false">Support</button>
               </div>
               <div class="tabs-content">
                 <div class="tab-pane active" id="p1-infra">
-                  <p class="pane-intro">🌐 Infrastructure & Réseaux</p>
+                  <p class="pane-intro">Infrastructure & Réseaux</p>
                   <ul class="pane-action-list">
                     <li><strong>Déploiement d'hyperviseurs :</strong> Installation de VMware ESXi et Proxmox VE pour héberger les machines et pare-feux virtuels.</li>
                     <li><strong>Segmentation réseau :</strong> Configuration de VLANs distincts sur commutateurs virtuels pour séparer les flux administratifs, DMZ et postes utilisateurs.</li>
@@ -257,7 +263,7 @@
                   </ul>
                 </div>
                 <div class="tab-pane" id="p1-security">
-                  <p class="pane-intro">🛡️ Cybersécurité & Durcissement</p>
+                  <p class="pane-intro">Cybersécurité & Durcissement</p>
                   <ul class="pane-action-list">
                     <li><strong>Pare-feu pfSense :</strong> Configuration de règles de filtrage de paquets strictes (Deny by default) et de politiques NAT.</li>
                     <li><strong>Accès à distance sécurisé :</strong> Implémentation d'un tunnel VPN IPsec sécurisé et crypté pour le travail à distance.</li>
@@ -265,7 +271,7 @@
                   </ul>
                 </div>
                 <div class="tab-pane" id="p1-support">
-                  <p class="pane-intro">🤝 Exploitation, ITIL & Support</p>
+                  <p class="pane-intro">Exploitation, ITIL & Support</p>
                   <ul class="pane-action-list">
                     <li><strong>Rédaction de procédures :</strong> Rédaction de guides de connexion VPN clairs et imagés pour les collaborateurs.</li>
                     <li><strong>Masterisation système :</strong> Création de templates d'OS sécurisés (Windows/Linux clients) prêts pour le déploiement en production.</li>
@@ -280,7 +286,7 @@
           <article class="case-study-card reveal">
             <div class="case-study-info">
               <div class="case-study-meta">
-                <span class="project-tag">🛡️ Sécurité & 🌐 Infra</span>
+                <span class="project-tag">Sécurité & Infra</span>
                 <a href="https://github.com/JMDcoding/Honeypot-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 </a>
@@ -290,7 +296,7 @@
                 Création d'un pot de miel (Honeypot) SSH destiné à attirer, identifier et analyser en temps réel les cybermenaces automatisées de l'Internet.
               </p>
               <div class="topology-box">
-                <span class="topology-title">📊 Flux de Supervision de logs</span>
+                <span class="topology-title">Flux de Supervision de logs</span>
                 <pre class="network-topology">[Internet Scan SSH] ──> [Honeypot Cowrie]
                                │
                                └──> [Loki Collector] ──> [Grafana Dashboard]</pre>
@@ -298,13 +304,13 @@
             </div>
             <div class="case-study-tabs-container">
               <div class="tabs-header">
-                <button class="tab-btn active" data-tab="infra" aria-selected="true">🌐 Infra</button>
-                <button class="tab-btn" data-tab="security" aria-selected="false">🛡️ Sécurité</button>
-                <button class="tab-btn" data-tab="support" aria-selected="false">🤝 Support</button>
+                <button class="tab-btn active" data-tab="infra" aria-selected="true">Infra</button>
+                <button class="tab-btn" data-tab="security" aria-selected="false">Sécurité</button>
+                <button class="tab-btn" data-tab="support" aria-selected="false">Support</button>
               </div>
               <div class="tabs-content">
                 <div class="tab-pane active" id="p2-infra">
-                  <p class="pane-intro">🌐 Infrastructure & Réseaux</p>
+                  <p class="pane-intro">Infrastructure & Réseaux</p>
                   <ul class="pane-action-list">
                     <li><strong>Isolation Docker :</strong> Déploiement de conteneurs isolés via Docker Compose pour héberger le honeypot sans risque pour l'hôte.</li>
                     <li><strong>Automatisation Python :</strong> Écriture de scripts Python pour l'extraction régulière de logs et le redémarrage automatique des instances en cas de crash.</li>
@@ -312,7 +318,7 @@
                   </ul>
                 </div>
                 <div class="tab-pane" id="p2-security">
-                  <p class="pane-intro">🛡️ Cybersécurité & Analyse</p>
+                  <p class="pane-intro">Cybersécurité & Analyse</p>
                   <ul class="pane-action-list">
                     <li><strong>Honeypot SSH Cowrie :</strong> Configuration du service pour simuler une interface shell Debian et capturer les identifiants et fichiers chargés.</li>
                     <li><strong>Analyse de logs avec Loki & Grafana :</strong> Centralisation de la collecte de logs et visualisation des pays d'origine, commandes exécutées et types d'attaques.</li>
@@ -320,7 +326,7 @@
                   </ul>
                 </div>
                 <div class="tab-pane" id="p2-support">
-                  <p class="pane-intro">🤝 Exploitation, ITIL & Support</p>
+                  <p class="pane-intro">Exploitation, ITIL & Support</p>
                   <ul class="pane-action-list">
                     <li><strong>Procédure de traitement d'incidents :</strong> Création de playbooks pour les équipes de sécurité en cas d'attaque par rebond détectée sur le lab.</li>
                     <li><strong>Rapports de veille :</strong> Rédaction de rapports réguliers résumant les techniques d'attaques observées pour sensibiliser les équipes.</li>
@@ -335,7 +341,7 @@
           <article class="case-study-card reveal">
             <div class="case-study-info">
               <div class="case-study-meta">
-                <span class="project-tag">🛡️ Sécurité & 🤝 Humain</span>
+                <span class="project-tag">Sécurité & Humain</span>
                 <a href="https://github.com/JMDcoding/S%C3%A9r%C3%A9nit%C3%A9" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 </a>
@@ -345,7 +351,7 @@
                 Conception sécurisée d'une application d'assistance en santé mentale basée sur l'intelligence artificielle, intégrant le respect de la vie privée dès la conception (Privacy by Design).
               </p>
               <div class="topology-box">
-                <span class="topology-title">🔒 Pipeline de Sécurisation des Données</span>
+                <span class="topology-title">Pipeline de Sécurisation des Données</span>
                 <pre class="network-topology">[Utilisateur Client] ── HTTPS/WSS (Chiffrement) ──> [Serveur Node.js]
                                                          │
                                                          └──> [Anonymisation RGPD] ──> [IA]
@@ -354,13 +360,13 @@
             </div>
             <div class="case-study-tabs-container">
               <div class="tabs-header">
-                <button class="tab-btn active" data-tab="infra" aria-selected="true">🌐 Infra</button>
-                <button class="tab-btn" data-tab="security" aria-selected="false">🛡️ Sécurité</button>
-                <button class="tab-btn" data-tab="support" aria-selected="false">🤝 Support</button>
+                <button class="tab-btn active" data-tab="infra" aria-selected="true">Infra</button>
+                <button class="tab-btn" data-tab="security" aria-selected="false">Sécurité</button>
+                <button class="tab-btn" data-tab="support" aria-selected="false">Support</button>
               </div>
               <div class="tabs-content">
                 <div class="tab-pane active" id="p3-infra">
-                  <p class="pane-intro">🌐 Infrastructure & Réseaux</p>
+                  <p class="pane-intro">Infrastructure & Réseaux</p>
                   <ul class="pane-action-list">
                     <li><strong>Serveur d'application :</strong> Mise en place de serveurs d'application Node.js virtualisés pour héberger l'application et connecter les APIs IA de santé.</li>
                     <li><strong>Chiffrement de flux :</strong> Intégration de tunnels de communication sécurisés via Websockets chiffrés pour les échanges de chat en temps réel.</li>
@@ -368,7 +374,7 @@
                   </ul>
                 </div>
                 <div class="tab-pane" id="p3-security">
-                  <p class="pane-intro">🛡️ Cybersécurité & Conformité</p>
+                  <p class="pane-intro">Cybersécurité & Conformité</p>
                   <ul class="pane-action-list">
                     <li><strong>Anonymisation des données :</strong> Implémentation d'algorithmes d'anonymisation et de pseudonymisation pour protéger les profils des patients.</li>
                     <li><strong>Mise en conformité RGPD :</strong> Rédaction et intégration des règles d'accès strictes pour respecter les droits d'accès, d'effacement et de portabilité.</li>
@@ -376,7 +382,7 @@
                   </ul>
                 </div>
                 <div class="tab-pane" id="p3-support">
-                  <p class="pane-intro">🤝 Exploitation, ITIL & Support</p>
+                  <p class="pane-intro">Exploitation, ITIL & Support</p>
                   <ul class="pane-action-list">
                     <li><strong>Documentation DPO :</strong> Rédaction de l'analyse d'impact relative à la protection des données (AIPD) pour le DPO de l'organisme.</li>
                     <li><strong>Procédure de restauration :</strong> Mise en place de protocoles de sauvegarde régulière de la base SQL et tests de restauration post-sinistre.</li>
@@ -390,7 +396,7 @@
 
         <!-- Secondary/Other projects list with filtering -->
         <div class="other-projects-section">
-          <h3 class="other-projects-heading">🛠️ Autres Travaux & Réalisations</h3>
+          <h3 class="other-projects-heading">Autres Travaux & Réalisations</h3>
           
           <div class="project-filters">
             <button class="filter-btn active" data-filter="all">Tous</button>
@@ -500,7 +506,7 @@
 
         <div class="lab-container">
           <div class="lab-card reveal">
-            <span class="lab-badge">🏠 Architecture HomeLab</span>
+            <span class="lab-badge">Architecture HomeLab</span>
             <h3>Un environnement de test d'entreprise à domicile</h3>
             <p>
               Pour tester de nouveaux outils de cybersécurité et parfaire mon expertise en administration système, j'ai conçu et assemblé un HomeLab isolé de mon réseau personnel.
@@ -522,7 +528,7 @@
           </div>
 
           <div class="lab-card reveal">
-            <span class="lab-badge">📡 Veille Technologique & Cyber</span>
+            <span class="lab-badge">Veille Technologique & Cyber</span>
             <h3>Suivi régulier des menaces de l'écosystème</h3>
             <p>
               La résilience et la sécurité d'un réseau dépendent d'une veille informationnelle active. Je me tiens quotidiennement au courant de l'actualité des failles de sécurité (CVE) et des menaces émergentes.

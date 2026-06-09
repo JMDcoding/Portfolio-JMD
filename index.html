@@ -1,712 +1,703 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio de Jean-Marc DUSSAUD — Alternant Administrateur Systèmes, Réseaux & Cybersécurité. Découvrez mes projets transverses, mon expertise technique et mon lab."
-    />
-    <title>Jean-Marc DUSSAUD | SysOps & Security Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Background grids & ambient glow effects -->
-    <div class="cyber-grid" aria-hidden="true"></div>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio professionnel de Jean-Marc DUSSAUD — Alternant Administrateur Systèmes &amp; Réseaux. Design iOS Glassmorphic, certifié CCNA &amp; Fortinet NSE 4." />
+  <title>Jean-Marc DUSSAUD | Portfolio SysOps &amp; Security</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ios: {
+              glass: 'rgba(15, 23, 42, 0.35)',
+              glassHover: 'rgba(30, 41, 59, 0.5)',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderFocus: 'rgba(6, 182, 212, 0.4)',
+              blue: '#007aff',
+              emerald: '#34c759',
+              indigo: '#5856d6',
+              cyan: '#32ade6',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            space: ['Space Grotesk', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-ios-blue selection:text-white overflow-x-hidden relative">
 
-    <header class="site-header">
-      <a class="brand" href="#hero" aria-label="Retour en haut">
-        <span class="brand-mark">JMD</span>
-        <span class="brand-copy">
-          <strong>Jean-Marc DUSSAUD</strong>
-          <span>SysOps & Security</span>
-        </span>
+  <!-- NAVIGATION HEADER (iOS Translucent Blur) -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/45 backdrop-blur-xl border-b border-ios-border transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group" aria-label="Retour à l'accueil">
+        <div class="w-8 h-8 rounded-lg bg-ios-blue flex items-center justify-center font-space font-bold text-white text-base shadow-[0_0_12px_rgba(0,122,255,0.3)] transition-transform group-hover:scale-105">
+          JMD
+        </div>
+        <div class="flex flex-col">
+          <strong class="font-space font-bold text-xs tracking-tight text-white group-hover:text-ios-blue transition-colors">Jean-Marc DUSSAUD</strong>
+          <span class="text-[9px] text-slate-400 font-semibold tracking-wider uppercase">SysOps &amp; Réseaux</span>
+        </div>
       </a>
-      
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect class="line-1" y="1" width="22" height="2" rx="1" fill="currentColor" />
-          <rect class="line-2" y="6" width="22" height="2" rx="1" fill="currentColor" />
-          <rect class="line-3" y="11" width="22" height="2" rx="1" fill="currentColor" />
-        </svg>
-      </button>
 
-      <nav id="site-navigation" class="site-nav" aria-label="Navigation principale">
-        <a href="#about">Profil</a>
-        <a href="#piliers">Piliers</a>
-        <a href="#projects">Projets</a>
-        <a href="#lab">Mon Lab</a>
-        <a href="#stack">Compétences</a>
-        <a href="#contact">Contact</a>
+      <!-- Navigation links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-6 font-semibold text-xs tracking-wider uppercase text-slate-300">
+        <a href="#home" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Accueil</a>
+        <a href="#certs" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Certifications</a>
+        <a href="#projects" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Projets</a>
+        <a href="#skills" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Compétences</a>
+        <a href="#contact" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Contact</a>
       </nav>
 
-      <a class="header-cta" href="#contact">Me Contacter</a>
-    </header>
+      <!-- Desktop Contact Button (Translucent iOS style) -->
+      <div class="hidden md:block">
+        <a href="#contact" class="px-4 py-2 rounded-full border border-ios-border text-white font-bold text-[10px] uppercase tracking-wider bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md">
+          Me Contacter
+        </a>
+      </div>
 
-    <main>
-      <!-- HERO SECTION -->
-      <section class="hero section" id="hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="pulse-icon"></span> Alternance Disponible - Septembre 2026</p>
-          <h1>Administrateur Système & Réseau orienté Sécurité</h1>
-          <p class="hero-text">
-            Avec une forte culture de la satisfaction utilisateur et de la résilience opérationnelle. Certifié <strong>Cisco CCNA</strong> & <strong>Fortinet NSE 4</strong>, je conçois, déploie et protège les infrastructures d'entreprise.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">Voir mes projets</a>
-            <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Télécharger mon CV
+      <!-- Mobile navigation menu button -->
+      <button class="md:hidden p-1.5 text-slate-300 hover:text-white focus:outline-none" id="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Panel (iOS Translucent Blur) -->
+    <div class="hidden md:hidden absolute top-16 left-0 w-full bg-slate-950/80 border-b border-ios-border transition-all duration-300 backdrop-blur-2xl" id="mobile-menu-panel">
+      <nav class="flex flex-col p-6 gap-4 font-semibold text-xs uppercase tracking-wider text-slate-300">
+        <a href="#home" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Accueil</a>
+        <a href="#certs" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Certifications</a>
+        <a href="#projects" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Projets</a>
+        <a href="#skills" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Compétences</a>
+        <a href="#contact" class="mobile-nav-link hover:text-white transition-colors py-1.5">Contact</a>
+        <a href="#contact" class="mobile-nav-link mt-2 py-3.5 rounded-xl bg-ios-blue text-center text-white text-xs font-bold tracking-widest uppercase shadow-md">Me Contacter</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN SCROLL CONTAINER -->
+  <main class="w-full relative">
+
+    <!-- PAGE 1: HOME (Accueil & Présentation) -->
+    <section id="home" class="section-page min-h-screen relative flex items-center justify-center pt-24 pb-16 px-6 md:px-12 bg-home">
+      <!-- Dark overlay to ensure contrast over the background image -->
+      <div class="absolute inset-0 bg-slate-950/70 z-0"></div>
+      
+      <div class="max-w-6xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center reveal">
+        
+        <!-- Left Side: Profile Photo & Slogan Info -->
+        <div class="lg:col-span-5 flex flex-col items-center text-center lg:text-left lg:items-start gap-6">
+          
+          <!-- iOS Profile Picture frame -->
+          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-white/10 bg-slate-900/50 backdrop-blur-md p-1.5 shadow-2xl relative group overflow-hidden">
+            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center overflow-hidden border border-white/5 relative">
+              <!-- Placeholder tech profile vector avatar -->
+              <svg class="w-24 h-24 text-slate-600 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+              <!-- Animated cyber HUD overlays inside photo -->
+              <div class="absolute inset-0 border border-ios-blue/10 rounded-full animate-pulse"></div>
+            </div>
+            <!-- Outer spinning glow ring -->
+            <div class="absolute inset-0 rounded-full border border-dashed border-ios-blue/30 animate-[spin_40s_linear_infinite] pointer-events-none"></div>
+          </div>
+          
+          <div class="flex flex-col gap-2">
+            <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full self-center lg:self-start">
+              Alternance disponible - 2026
+            </span>
+            <h1 class="font-space font-bold text-4xl md:text-5xl text-white tracking-tight leading-tight drop-shadow-md">
+              Jean-Marc <br class="hidden lg:block"/>DUSSAUD
+            </h1>
+            <p class="text-slate-400 font-semibold font-space text-sm tracking-wider uppercase">
+              Administrateur Systèmes &amp; Réseaux
+            </p>
+          </div>
+          
+          <div class="flex gap-4">
+            <a href="#projects" class="px-5 py-3 rounded-xl border border-white/10 text-white font-bold text-xs uppercase tracking-wider bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md shadow-md">
+              Mes projets
+            </a>
+            <a href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt" class="px-5 py-3 rounded-xl bg-ios-blue text-white font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all duration-300 shadow-md">
+              Télécharger CV
             </a>
           </div>
         </div>
 
-        <div class="hero-visual reveal">
-          <div class="info-dashboard">
-            <div class="dashboard-header">
-              <span class="dashboard-title">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
-                Fiche de Synthèse
-              </span>
-              <span class="status-indicator"><span class="pulse-icon"></span> Actif</span>
+        <!-- Right Side: parcours / ambitions detailed (iOS Glass Cards) -->
+        <div class="lg:col-span-7 flex flex-col gap-6">
+          
+          <!-- Presentation / parcours Card -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-xl relative overflow-hidden group hover:border-white/15 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 rounded-lg bg-ios-blue/10 border border-ios-blue/20 flex items-center justify-center text-ios-blue">
+                <i data-lucide="user" class="w-4.5 h-4.5"></i>
+              </div>
+              <h2 class="font-space font-bold text-lg text-white">Mon Parcours</h2>
             </div>
-            <div class="dashboard-body">
-              <div class="dashboard-row">
-                <span class="dashboard-label">Recherche</span>
-                <span class="dashboard-value">Alternance Administrateur Systèmes & Réseaux</span>
+            
+            <p class="text-slate-200 text-sm leading-relaxed mb-4">
+              Actuellement étudiant en administration systèmes, réseaux et cybersécurité à <strong class="text-white">SupdeVinci Rennes</strong>, j'associe des bases théoriques solides à des expérimentations techniques permanentes. J'ai validé les certifications reconnues <strong class="text-white">Cisco CCNA</strong> et <strong class="text-white">Fortinet NSE 4</strong>.
+            </p>
+            <p class="text-slate-300 text-sm leading-relaxed font-medium">
+              Je refuse les étiquettes de postes rigides. Ma valeur ajoutée réside dans ma triple compétence transversale : bâtir l'infrastructure (Systèmes/Réseaux), la protéger (Cybersécurité) et piloter les opérations (Support/Expérience utilisateur).
+            </p>
+          </div>
+
+          <!-- Long-term ambitions Card -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-xl relative overflow-hidden group hover:border-white/15 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 rounded-lg bg-ios-emerald/10 border border-ios-emerald/20 flex items-center justify-center text-ios-emerald">
+                <i data-lucide="compass" class="w-4.5 h-4.5"></i>
               </div>
-              <div class="dashboard-row">
-                <span class="dashboard-label">Rythme d'école</span>
-                <span class="dashboard-value">2 semaines entreprise / 2 semaines école</span>
+              <h2 class="font-space font-bold text-lg text-white">Mes Ambitions à Long Terme</h2>
+            </div>
+            
+            <p class="text-slate-200 text-sm leading-relaxed mb-4">
+              Mon objectif sur le long terme est d'évoluer vers le poste d'<strong>Ingénieur Infrastructures &amp; Cloud (DevSecOps)</strong> ou de <strong>Responsable Sécurité des Systèmes d'Information (RSSI)</strong>. Je souhaite concevoir et sécuriser des parcs de virtualisation et des réseaux hybrides d'envergure.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
+                <span>Viser la certification Cisco CCNP</span>
               </div>
-              <div class="dashboard-row">
-                <span class="dashboard-label">Certifications Validées</span>
-                <div class="dashboard-tags">
-                  <span>Cisco CCNA</span>
-                  <span>Fortinet NSE 4</span>
-                </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
+                <span>Spécification en audit cyber (CISSP)</span>
               </div>
-              <div class="dashboard-row">
-                <span class="dashboard-label">Périmètre technique</span>
-                <span class="dashboard-value">Virtualisation, Sécurité, Supervision, Scripting</span>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
+                <span>Automatisation complète (IaC Ansible)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
+                <span>Pilotage d'architectures hybrides AWS/Azure</span>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- ABOUT SECTION -->
-      <section class="section about" id="about">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Profil & Vision</p>
-          <h2>Bâtir des infrastructures fiables, centrées sur l'utilisateur</h2>
-          <p>
-            Je m'attache à concevoir des systèmes où la sécurité et la performance ne nuisent jamais à l'expérience utilisateur. Mon parcours académique et mes certifications m'ont préparé à relever les défis de l'administration système moderne.
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: CERTIFICATIONS -->
+    <section id="certs" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-certs">
+      <!-- Dark overlay to ensure contrast over the background image -->
+      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
+      
+      <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
+        <div class="mb-12 text-center md:text-left">
+          <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+            Compétences Certifiées
+          </span>
+          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Certifications &amp; Objectifs</h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
+            Retrouvez ici mes accréditations professionnelles internationales obtenues, en cours d'étude, ou planifiées comme jalons majeurs de mon parcours.
           </p>
         </div>
 
-        <div class="about-grid">
-          <article class="value-card reveal">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Pédagogie & Humain</h3>
-            <p>Traduire des contraintes de sécurité complexes en consignes simples. Sensibiliser les utilisateurs pour en faire le premier rempart contre les menaces.</p>
-          </article>
-          <article class="value-card reveal">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3>Gestion du Stress</h3>
-            <p>Garder la tête froide en situation d'incident critique pour diagnostiquer la source d'un problème et orchestrer sa résolution rapidement.</p>
-          </article>
-          <article class="value-card reveal">
-            <div class="card-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </div>
-            <h3>Curiosité & Veille</h3>
-            <p>Passionné par le fonctionnement profond des protocoles. Expérimentation continue en environnement de test (HomeLab) pour maîtriser les nouvelles technologies.</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- PILIERS DE COMPÉTENCES SECTION -->
-      <section class="section piliers" id="piliers">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Domaines d'intervention</p>
-          <h2>Mes Domaines de Compétences</h2>
-          <p>Une approche logique et structurée du macro au micro pour assurer l'intégrité, la résilience et la disponibilité des données.</p>
-        </div>
-
-        <div class="piliers-grid">
-          <!-- Level 1: Systems & Networks -->
-          <article class="pilier-card reveal level-1">
-            <div class="pilier-header-layout">
-              <span class="pilier-badge">Niveau 1</span>
-              <div class="pilier-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              </div>
-            </div>
-            <h3>Infrastructures & Systèmes</h3>
-            <p class="pilier-subtitle">Les Fondations</p>
-            <p class="pilier-desc">Conception, déploiement et maintien d'infrastructures informatiques robustes, virtualisées et automatisées.</p>
-            <ul class="pilier-list">
-              <li><strong>Réseau :</strong> Architecture LAN/WAN, commutation, routage dynamique, DNS/DHCP.</li>
-              <li><strong>Virtualisation :</strong> Hyperviseurs VMware ESXi & Proxmox VE (clustering, stockage).</li>
-              <li><strong>Systèmes :</strong> Administration Windows Server, parcs Linux (Debian/Ubuntu) et Active Directory.</li>
-              <li><strong>Automatisation :</strong> Scripting d'exploitation et tâches récurrentes en Bash et Python.</li>
-            </ul>
-          </article>
-
-          <!-- Level 2: Cybersecurity -->
-          <article class="pilier-card reveal level-2">
-            <div class="pilier-header-layout">
-              <span class="pilier-badge">Niveau 2</span>
-              <div class="pilier-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-            </div>
-            <h3>Sécurisation & Résilience</h3>
-            <p class="pilier-subtitle">La Protection par design</p>
-            <p class="pilier-desc">Sécurisation proactive des flux et serveurs contre les intrusions et fuites de données.</p>
-            <ul class="pilier-list">
-              <li><strong>Sécurité Périmétrique :</strong> Configuration de pare-feux pfSense/FortiGate et routage NAT.</li>
-              <li><strong>Accès sécurisé :</strong> Tunnels VPN IPsec et OpenVPN pour le télétravail ou inter-sites.</li>
-              <li><strong>Supervision (SIEM) :</strong> Collecte de logs, détection d'intrusions (Honeypot SSH) et tableaux Grafana.</li>
-              <li><strong>Durcissement (Hardening) :</strong> Sécurisation d'Active Directory (GPO), stratégies de mots de passe.</li>
-            </ul>
-          </article>
-
-          <!-- Level 3: Support & Proximity -->
-          <article class="pilier-card reveal level-3">
-            <div class="pilier-header-layout">
-              <span class="pilier-badge">Niveau 3</span>
-              <div class="pilier-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-            </div>
-            <h3>Gestion des Opérations & Expérience Utilisateur</h3>
-            <p class="pilier-subtitle">L'Humain & Les Processus</p>
-            <p class="pilier-desc">Point de contact terrain avec les utilisateurs pour adapter la technologie à leurs besoins métier réels.</p>
-            <ul class="pilier-list">
-              <li><strong>Gestion des incidents :</strong> Application des méthodologies ITIL pour résoudre et documenter les tickets.</li>
-              <li><strong>Vulgarisation :</strong> Formation des collaborateurs face au phishing et à l'hygiène informatique.</li>
-              <li><strong>Documentation technique :</strong> Rédaction de schémas de topologie réseau et de procédures claires.</li>
-              <li><strong>Déploiement :</strong> Création de masters de postes clients et accompagnement des utilisateurs en production.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS SECTION -->
-      <section class="section certs" id="certifications">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Compétences Certifiées</p>
-          <h2>Certifications Professionnelles</h2>
-        </div>
-
-        <div class="certs-container">
-          <div class="cert-card reveal">
-            <div class="cert-badge">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </div>
-            <div class="cert-info">
-              <h3>Cisco Certified Network Associate (CCNA)</h3>
-              <p>Administration réseau, routage OSPF, commutation (switching), services d'adressage IP (DHCP, NAT) et sécurisation des ports d'accès.</p>
-            </div>
-          </div>
-
-          <div class="cert-card reveal">
-            <div class="cert-badge">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <div class="cert-info">
-              <h3>Fortinet NSE 4 — Network Security Professional</h3>
-              <p>Configuration, administration et surveillance des pare-feux FortiGate. Implémentation des politiques de sécurité et tunnels VPN.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS SECTION (STAR METHOD) -->
-      <section class="section projects" id="projects">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Réalisations</p>
-          <h2>Projets & Études de Cas</h2>
-          <p>Découvrez mes réalisations techniques présentées selon la méthodologie STAR (Situation, Tâches/Problématique, Actions, Résultats) :</p>
-        </div>
-
-        <!-- Transversal Projects (Case Studies - STAR Format) -->
-        <div class="case-studies-container">
-          <!-- Case Study 1: pfSense -->
-          <article class="case-study-card reveal">
-            <div class="case-study-info">
-              <div class="case-study-meta">
-                <span class="project-tag">Infrastructure & Sécurité</span>
-                <a href="https://github.com/JMDcoding/Manipulation_PFSENSE" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Sécurisation Réseau Multi-Site & VPN IPsec</h3>
-              
-              <div class="star-section">
-                <p class="project-problem">
-                  <strong>Problématique :</strong> La dispersion géographique des collaborateurs et l'absence de segmentation interne exposaient l'entreprise à des risques d'interception de flux et de propagation latérale de logiciels malveillants.
-                </p>
-              </div>
-
-              <div class="topology-box">
-                <span class="topology-title">Topologie Réseau Simulée</span>
-                <pre class="network-topology">[Internet] ──> [pfSense (WAN)] ──> [Switch L2 (VLANs)]
-                                    ├── VLAN 10 (Admin) ──> Clients masterisés
-                                    ├── VLAN 20 (DMZ)   ──> Windows/Linux Servers
-                                    └── VLAN 30 (VPN)   ──> Télétravail (IPsec)</pre>
-              </div>
-              
-              <div class="star-section">
-                <p class="project-result">
-                  <strong>Impact :</strong> 100% des flux sensibles chiffrés, réduction de la surface d'attaque interne de 75% grâce à l'isolation VLAN et accès distant sécurisé garanti pour les collaborateurs.
-                </p>
-              </div>
-            </div>
-            <div class="case-study-tabs-container">
-              <div class="tabs-header">
-                <button class="tab-btn active" data-tab="infra" aria-selected="true">Infra</button>
-                <button class="tab-btn" data-tab="security" aria-selected="false">Sécurité</button>
-                <button class="tab-btn" data-tab="support" aria-selected="false">Support</button>
-              </div>
-              <div class="tabs-content">
-                <div class="tab-pane active" id="p1-infra">
-                  <p class="pane-intro">Infrastructure & Réseaux</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Déploiement d'hyperviseurs :</strong> Installation de VMware ESXi et Proxmox VE pour héberger les machines et pare-feux virtuels.</li>
-                    <li><strong>Segmentation réseau :</strong> Configuration de VLANs distincts sur commutateurs virtuels pour séparer les flux administratifs, DMZ et postes utilisateurs.</li>
-                    <li><strong>Adressage IP & Routage :</strong> Mise en place de sous-réseaux IPv4 dédiés, services DHCP et serveurs DNS internes.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="p1-security">
-                  <p class="pane-intro">Cybersécurité & Durcissement</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Pare-feu pfSense :</strong> Configuration de règles de filtrage de paquets strictes (Deny by default) et de politiques NAT.</li>
-                    <li><strong>Accès à distance sécurisé :</strong> Implémentation d'un tunnel VPN IPsec sécurisé et crypté pour le travail à distance.</li>
-                    <li><strong>Centralisation des logs :</strong> Exportation des logs du firewall vers un serveur externe pour l'audit et la traçabilité des accès.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="p1-support">
-                  <p class="pane-intro">Exploitation, ITIL & Support</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Rédaction de procédures :</strong> Rédaction de guides de connexion VPN clairs et imagés pour les collaborateurs.</li>
-                    <li><strong>Masterisation système :</strong> Création de templates d'OS sécurisés (Windows/Linux clients) prêts pour le déploiement en production.</li>
-                    <li><strong>Support de déploiement :</strong> Support utilisateur lors de la transition vers la nouvelle architecture réseau.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Case Study 2: Honeypot -->
-          <article class="case-study-card reveal">
-            <div class="case-study-info">
-              <div class="case-study-meta">
-                <span class="project-tag">Sécurité & Supervision</span>
-                <a href="https://github.com/JMDcoding/Honeypot-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Honeypot SSH, Grafana & Loki</h3>
-              
-              <div class="star-section">
-                <p class="project-problem">
-                  <strong>Problématique :</strong> Le manque de visibilité sur les types et l'origine des attaques ciblées contre les serveurs publics de l'entreprise empêchait la mise en place d'une stratégie de défense proactive.
-                </p>
-              </div>
-
-              <div class="topology-box">
-                <span class="topology-title">Flux de Supervision de logs</span>
-                <pre class="network-topology">[Internet Scan SSH] ──> [Honeypot Cowrie]
-                               │
-                               └──> [Loki Collector] ──> [Grafana Dashboard]</pre>
-              </div>
-              
-              <div class="star-section">
-                <p class="project-result">
-                  <strong>Impact :</strong> Identification et blocage automatisé de plus de 10 000 adresses IP malveillantes par semaine, avec des alertes d'incident transmises aux analystes en moins de 3 secondes.
-                </p>
-              </div>
-            </div>
-            <div class="case-study-tabs-container">
-              <div class="tabs-header">
-                <button class="tab-btn active" data-tab="infra" aria-selected="true">Infra</button>
-                <button class="tab-btn" data-tab="security" aria-selected="false">Sécurité</button>
-                <button class="tab-btn" data-tab="support" aria-selected="false">Support</button>
-              </div>
-              <div class="tabs-content">
-                <div class="tab-pane active" id="p2-infra">
-                  <p class="pane-intro">Infrastructure & Réseaux</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Isolation Docker :</strong> Déploiement de conteneurs isolés via Docker Compose pour héberger le honeypot sans risque pour l'hôte.</li>
-                    <li><strong>Automatisation Python :</strong> Écriture de scripts Python pour l'extraction régulière de logs et le redémarrage automatique des instances en cas de crash.</li>
-                    <li><strong>Redirection de port :</strong> Configuration des règles NAT/redirection pour acheminer le trafic externe suspect vers l'environnement d'observation.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="p2-security">
-                  <p class="pane-intro">Cybersécurité & Analyse</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Honeypot SSH Cowrie :</strong> Configuration du service pour simuler une interface shell Debian et capturer les identifiants et fichiers chargés.</li>
-                    <li><strong>Analyse de logs avec Loki & Grafana :</strong> Centralisation de la collecte de logs et visualisation des pays d'origine, commandes exécutées et types d'attaques.</li>
-                    <li><strong>Alerte automatique :</strong> Implémentation de seuils de détection pour alerter les administrateurs en cas de pic anormal d'attaques.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="p2-support">
-                  <p class="pane-intro">Exploitation, ITIL & Support</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Procédure de traitement d'incidents :</strong> Création de playbooks pour les équipes de sécurité en cas d'attaque par rebond détectée sur le lab.</li>
-                    <li><strong>Rapports de veille :</strong> Rédaction de rapports réguliers résumant les techniques d'attaques observées pour sensibiliser les équipes.</li>
-                    <li><strong>Gestion du cycle de vie des données :</strong> Outils de rotation et de purge des logs pour respecter la politique de rétention de données.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Case Study 3: Serenity -->
-          <article class="case-study-card reveal">
-            <div class="case-study-info">
-              <div class="case-study-meta">
-                <span class="project-tag">Sécurité Applicative & RGPD</span>
-                <a href="https://github.com/JMDcoding/S%C3%A9r%C3%A9nit%C3%A9" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Sérénité — IA Santé Mentale & RGPD</h3>
-              
-              <div class="star-section">
-                <p class="project-problem">
-                  <strong>Problématique :</strong> L'intégration de modèles d'intelligence artificielle dans une application de santé mentale exigeait le traitement de données cliniques sensibles, en stricte conformité avec le RGPD et le secret médical.
-                </p>
-              </div>
-
-              <div class="topology-box">
-                <span class="topology-title">Pipeline de Sécurisation des Données</span>
-                <pre class="network-topology">[Utilisateur Client] ── HTTPS/WSS (Chiffrement) ──> [Serveur Node.js]
-                                                         │
-                                                         └──> [Anonymisation RGPD] ──> [IA]
-                                                         └──> [Base Chiffrée SQL]</pre>
-              </div>
-              
-              <div class="star-section">
-                <p class="project-result">
-                  <strong>Impact :</strong> Conformité RGPD validée à 100% dès la phase de conception, assurant l'anonymisation complète et irréversible des dossiers des patients.
-                </p>
-              </div>
-            </div>
-            <div class="case-study-tabs-container">
-              <div class="tabs-header">
-                <button class="tab-btn active" data-tab="infra" aria-selected="true">Infra</button>
-                <button class="tab-btn" data-tab="security" aria-selected="false">Sécurité</button>
-                <button class="tab-btn" data-tab="support" aria-selected="false">Support</button>
-              </div>
-              <div class="tabs-content">
-                <div class="tab-pane active" id="p3-infra">
-                  <p class="pane-intro">Infrastructure & Réseaux</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Serveur d'application :</strong> Mise en place de serveurs d'application Node.js virtualisés pour héberger l'application et connecter les APIs IA de santé.</li>
-                    <li><strong>Chiffrement de flux :</strong> Intégration de tunnels de communication sécurisés via Websockets chiffrés pour les échanges de chat en temps réel.</li>
-                    <li><strong>Bases de données relationnelles :</strong> Configuration d'un serveur SQL de stockage en mode haute disponibilité.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="p3-security">
-                  <p class="pane-intro">Cybersécurité & Conformité</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Anonymisation des données :</strong> Implémentation d'algorithmes d'anonymisation et de pseudonymisation pour protéger les profils des patients.</li>
-                    <li><strong>Mise en conformité RGPD :</strong> Rédaction et intégration des règles d'accès strictes pour respecter les droits d'accès, d'effacement et de portabilité.</li>
-                    <li><strong>Durcissement des échanges :</strong> Signature des jetons JWT pour authentifier l'accès aux conversations et chiffrer les données cliniques stockées.</li>
-                  </ul>
-                </div>
-                <div class="tab-pane" id="p3-support">
-                  <p class="pane-intro">Exploitation, ITIL & Support</p>
-                  <ul class="pane-action-list">
-                    <li><strong>Documentation DPO :</strong> Rédaction de l'analyse d'impact relative à la protection des données (AIPD) pour le DPO de l'organisme.</li>
-                    <li><strong>Procédure de restauration :</strong> Mise en place de protocoles de sauvegarde régulière de la base SQL et tests de restauration post-sinistre.</li>
-                    <li><strong>Accompagnement de l'équipe de développement :</strong> Rédaction d'un guide des bonnes pratiques SecOps pour éviter l'introduction de failles de sécurité courantes (OWASP).</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Secondary/Other projects list with filtering -->
-        <div class="other-projects-section">
-          <h3 class="other-projects-heading">Autres Travaux & Réalisations</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">Tous</button>
-            <button class="filter-btn" data-filter="sys-net">Systèmes & Réseaux</button>
-            <button class="filter-btn" data-filter="security">Sécurité & Supervision</button>
-            <button class="filter-btn" data-filter="dev">Développement & Scripts</button>
-          </div>
-
-          <div class="projects-grid">
-            <!-- Project 4: Monitoring IoT -->
-            <article class="project-card reveal" data-category="sys-net">
-              <div class="project-header">
-                <span class="project-tag">IoT & Supervision</span>
-                <a href="https://github.com/JMDcoding/Mon_tableau_de_bord_IoT" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
+          <!-- Column 1: Obtained Certifications -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-white/15 transition-all duration-300">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-ios-emerald"></div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-10 h-10 rounded-lg bg-ios-emerald/10 border border-ios-emerald/20 flex items-center justify-center text-ios-emerald">
+                  <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] font-mono tracking-widest text-ios-emerald bg-ios-emerald/10 px-2 py-0.5 rounded font-bold uppercase border border-ios-emerald/15">OBTENUES</span>
               </div>
-              <h3>Surveillance IoT & Dashboard</h3>
-              <p class="project-desc">Création d'un tableau de bord de monitoring d'équipements IoT. Capture de métriques réseau en temps réel et alertes sur perte de connectivité.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Supervision</span>
-                <span>IoT</span>
-                <span>Websockets</span>
-              </div>
-            </article>
-
-            <!-- Project 5: Scanner Kali Linux -->
-            <article class="project-card reveal" data-category="security">
-              <div class="project-header">
-                <span class="project-tag">Sécurité & Audits</span>
-                <a href="https://github.com/JMDcoding/Scanner-Kali-linux" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Scanner de Réseau sous Kali</h3>
-              <p class="project-desc">Automatisation de scans réseau via Nmap et scripts Bash sous Kali Linux pour cartographier l'exposition des ports et ports ouverts.</p>
-              <div class="project-tech">
-                <span>Kali Linux</span>
-                <span>Nmap</span>
-                <span>Bash</span>
-              </div>
-            </article>
-
-            <!-- Project 6: Log Analyzer -->
-            <article class="project-card reveal" data-category="dev">
-              <div class="project-header">
-                <span class="project-tag">Scripting & Ops</span>
-                <a href="https://github.com/JMDcoding/Analyse%20de%20Logs" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Analyseur de Logs Python</h3>
-              <p class="project-desc">Outil Python d'analyse de fichiers logs (Syslog / Apache) détectant les pics d'accès et alertant sur d'éventuelles attaques par force brute.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Logs</span>
-                <span>Regex</span>
-                <span>Ops</span>
-              </div>
-            </article>
-
-            <!-- Project 7: Bank Cobol -->
-            <article class="project-card reveal" data-category="dev">
-              <div class="project-header">
-                <span class="project-tag">Legacy Systems</span>
-                <a href="https://github.com/JMDcoding/Bank_COBOL" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Bank COBOL</h3>
-              <p class="project-desc">Modélisation transactionnelle d'un système bancaire écrit en COBOL. Permet la gestion de comptes et l'étude des contraintes de robustesse legacy.</p>
-              <div class="project-tech">
-                <span>COBOL</span>
-                <span>Legacy</span>
-                <span>Algorithmique</span>
-              </div>
-            </article>
-
-            <!-- Project 8: Mini Jeu Java / Unity -->
-            <article class="project-card reveal" data-category="dev">
-              <div class="project-header">
-                <span class="project-tag">Jeux & Simulation</span>
-                <a href="https://github.com/JMDcoding/Jeu-Video-Great_Road_Racer-" target="_blank" rel="noreferrer" class="github-link" aria-label="Voir le code sur GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                </a>
-              </div>
-              <h3>Simulations 2D/3D (C# / Java)</h3>
-              <p class="project-desc">Développement d'un jeu de course 3D sous Unity (C#) et de logique 2D sous Java pour s'exercer aux architectures orientées objet.</p>
-              <div class="project-tech">
-                <span>C#</span>
-                <span>Unity</span>
-                <span>Java</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION HOMELAB & VEILLE -->
-      <section class="section lab" id="lab">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Passion & Exploration</p>
-          <h2>Mon HomeLab & Veille Technologique</h2>
-          <p>Découvrez mon environnement d'expérimentation domestique et ma méthode pour rester informé des dernières menaces et solutions du secteur.</p>
-        </div>
-
-        <div class="lab-container">
-          <div class="lab-card reveal">
-            <span class="lab-badge">Architecture HomeLab</span>
-            <h3>Un environnement de test d'entreprise à domicile</h3>
-            <p>
-              Pour tester de nouveaux outils de cybersécurité et parfaire mon expertise en administration système, j'ai conçu et assemblé un HomeLab isolé de mon réseau personnel.
-            </p>
-            <div class="lab-details">
-              <div class="lab-detail-item">
-                <strong>Hyperviseur :</strong> Proxmox VE tournant sur matériel dédié. Permet la création et le clonage rapide de machines virtuelles (VMs) et conteneurs (LXC).
-              </div>
-              <div class="lab-detail-item">
-                <strong>Réseau & Pare-feu :</strong> Firewall pfSense gérant l'isolation du HomeLab par VLAN, des règles de routage strictes et un serveur DNS local sécurisé.
-              </div>
-              <div class="lab-detail-item">
-                <strong>Supervision :</strong> Serveur Zabbix centralisant les métriques de charge CPU/RAM et Grafana affichant l'état opérationnel global.
-              </div>
-              <div class="lab-detail-item">
-                <strong>Services isolés :</strong> Serveurs Linux (Docker/Portainer), serveur SSH d'analyse (Cowrie honeypot), Active Directory d'apprentissage.
-              </div>
+              
+              <h3 class="font-space font-bold text-base text-white mb-4">Certifications Validées</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-6">Accréditations d'administration d'infrastructure et de sécurité périmétrique validées par des examens académiques.</p>
+              
+              <ul class="flex flex-col gap-4 text-xs text-slate-400">
+                <li class="border-b border-white/5 pb-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">Cisco CCNA (200-301)</strong>
+                    <span class="text-[9px] text-slate-500 font-mono">100% Validé</span>
+                  </div>
+                  <span>Concepts réseaux avancés, routage IP, commutation LAN, et protocoles DNS/DHCP/NAT.</span>
+                </li>
+                <li>
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">Fortinet NSE 4</strong>
+                    <span class="text-[9px] text-slate-500 font-mono">100% Validé</span>
+                  </div>
+                  <span>Configuration, surveillance et sécurité active des pare-feux FortiGate en entreprise.</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <div class="lab-card reveal">
-            <span class="lab-badge">Veille Technologique & Cyber</span>
-            <h3>Suivi régulier des menaces de l'écosystème</h3>
-            <p>
-              La résilience et la sécurité d'un réseau dépendent d'une veille informationnelle active. Je me tiens quotidiennement au courant de l'actualité des failles de sécurité (CVE) et des menaces émergentes.
-            </p>
-            <div class="lab-details">
-              <div class="lab-detail-item">
-                <strong>Alertes de sécurité :</strong> Suivi des bulletins du CERT-FR (ANSSI), publications de l'OWASP, CVE details et bases de données de vulnérabilités.
+          <!-- Column 2: In-Progress Certifications -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-white/15 transition-all duration-300">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-ios-blue"></div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-10 h-10 rounded-lg bg-ios-blue/10 border border-ios-blue/20 flex items-center justify-center text-ios-blue">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] font-mono tracking-widest text-ios-blue bg-ios-blue/10 px-2 py-0.5 rounded font-bold uppercase border border-ios-blue/15">EN COURS</span>
               </div>
-              <div class="lab-detail-item">
-                <strong>Actualités IT :</strong> The Hacker News, Le Monde Informatique, Next, Reddit (r/sysadmin, r/cybersecurity).
-              </div>
-              <div class="lab-detail-item">
-                <strong>Entraînement pratique :</strong> Participation active à des défis de CTF (Capture The Flag) sur Root-Me et Hack The Box pour comprendre les chemins d'attaque.
-              </div>
+              
+              <h3 class="font-space font-bold text-base text-white mb-4">Certifications en Préparation</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-6">Modules de formation initiés, préparés pour validation au cours de l'année scolaire 2026/2027.</p>
+              
+              <ul class="flex flex-col gap-4 text-xs text-slate-400">
+                <li class="border-b border-white/5 pb-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">LPIC-1 (System Admin)</strong>
+                    <span class="text-[9px] text-ios-blue font-mono">Préparation 80%</span>
+                  </div>
+                  <span>Administration Linux avancée, manipulation de fichiers de configuration, bash scripting et gestion de services.</span>
+                </li>
+                <li>
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">Fortinet NSE 5</strong>
+                    <span class="text-[9px] text-ios-blue font-mono">Préparation 40%</span>
+                  </div>
+                  <span>Analyse et corrélation de logs avec FortiAnalyzer et administration d'équipements FortiManager.</span>
+                </li>
+              </ul>
             </div>
           </div>
+
+          <!-- Column 3: Future desired Certifications -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-white/15 transition-all duration-300">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-ios-indigo"></div>
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-10 h-10 rounded-lg bg-ios-indigo/10 border border-ios-indigo/20 flex items-center justify-center text-ios-indigo">
+                  <i data-lucide="target" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[9px] font-mono tracking-widest text-ios-indigo bg-ios-indigo/10 px-2 py-0.5 rounded font-bold uppercase border border-ios-indigo/15">SOUHAITÉES</span>
+              </div>
+              
+              <h3 class="font-space font-bold text-base text-white mb-4">Objectifs à Moyen/Long Terme</h3>
+              <p class="text-slate-300 text-xs leading-relaxed mb-6">Accréditations cibles prévues dans mes perspectives d'évolution de carrière d'administrateur senior.</p>
+              
+              <ul class="flex flex-col gap-4 text-xs text-slate-400">
+                <li class="border-b border-white/5 pb-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">Cisco CCNP Enterprise</strong>
+                    <span class="text-[9px] text-slate-500 font-mono">Objectif 2-3 ans</span>
+                  </div>
+                  <span>Administration de réseaux d'entreprise complexes (routage OSPF, BGP, MPLS) et technologies SD-WAN.</span>
+                </li>
+                <li class="border-b border-white/5 pb-3">
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">CISSP (Cybersécurité)</strong>
+                    <span class="text-[9px] text-slate-500 font-mono">Objectif 5 ans</span>
+                  </div>
+                  <span>Standard d'or en sécurité de l'information (architecture de sécurité, gestion des risques et sécurité opérationnelle).</span>
+                </li>
+                <li>
+                  <div class="flex items-center justify-between mb-1">
+                    <strong class="text-white text-sm">AWS Architect / Azure Administrator</strong>
+                    <span class="text-[9px] text-slate-500 font-mono">Objectif 2 ans</span>
+                  </div>
+                  <span>Déploiement, gestion et sécurisation des ressources cloud hybrides ou publiques.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SKILLS SECTION (STACK) -->
-      <section class="section stack" id="stack">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Compétences Techniques</p>
-          <h2>Boîte à outils de l'Administrateur</h2>
+    <!-- PAGE 3: PROJETS -->
+    <section id="projects" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-projects">
+      <!-- Dark overlay to ensure contrast over the background image -->
+      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
+      
+      <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
+        <div class="mb-12 text-center md:text-left">
+          <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+            Portfolio Technique
+          </span>
+          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Mes Projets Réalisés</h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
+            Cliquez sur un projet pour consulter sa fiche complète selon la méthodologie STAR, voir les schémas d'architecture réseau associés et lire le code source.
+          </p>
         </div>
 
-        <div class="stack-grid">
-          <article class="stack-card reveal">
-            <h3>Systèmes & Virtualisation</h3>
-            <ul>
-              <li>VMware ESXi</li>
-              <li>Proxmox VE</li>
-              <li>Linux (Debian/Ubuntu)</li>
-              <li>Windows Server</li>
-              <li>Active Directory</li>
-              <li>Docker</li>
-            </ul>
-            <p>Administration de serveurs physiques et virtuels, gestion de parcs, snapshots et politiques de sauvegarde.</p>
-          </article>
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Project 1: Infrastructure -->
+          <div onclick="openProjectModal('p1')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Infrastructure &amp; Sécurité</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Refonte &amp; Sécurisation d'Infrastructure</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Migration et segmentation d'un parc système d'entreprise virtuel chiffré et audité de bout en bout.</p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Proxmox</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Ansible</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Wazuh SIEM</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">PfSense</span>
+            </div>
+          </div>
 
-          <article class="stack-card reveal">
-            <h3>Réseaux & Sécurité</h3>
-            <ul>
-              <li>pfSense / IPFire</li>
-              <li>VLAN / VPN</li>
-              <li>Wireshark</li>
-              <li>Nmap / Kali Linux</li>
-              <li>DNS / DHCP</li>
-              <li>FortiGate</li>
-            </ul>
-            <p>Conception de topologies réseau sécurisées, routage, filtrage de flux et diagnostics de protocoles.</p>
-          </article>
+          <!-- Project 2: Serenity -->
+          <div onclick="openProjectModal('p2')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Sécurité &amp; RGPD</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">SERENITY — IA Santé Mentale &amp; RGPD</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Conception, anonymisation et sécurisation des bases de données sensibles liées à une application médicale.</p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Node.js</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">SQL Chiffré</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Anonymisation</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">RGPD</span>
+            </div>
+          </div>
 
-          <article class="stack-card reveal">
-            <h3>Supervision & Cloud</h3>
-            <ul>
-              <li>Zabbix</li>
-              <li>Grafana</li>
-              <li>Loki</li>
-              <li>AWS</li>
-              <li>Azure</li>
-              <li>Syslog</li>
-            </ul>
-            <p>Télémétrie centralisée, gestion d'alertes en temps réel et bases de la transition vers le cloud hybride.</p>
-          </article>
+          <!-- Project 3: Honeypot -->
+          <div onclick="openProjectModal('p3')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Supervision &amp; Cyber</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Honeypot SSH, Grafana &amp; Loki</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Déploiement d'un honeypot SSH Cowrie collectant les attaques, avec alertes et statistiques Grafana en temps réel.</p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Cowrie</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Loki / Grafana</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Docker</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Python</span>
+            </div>
+          </div>
 
-          <article class="stack-card reveal">
-            <h3>Développement & Outils</h3>
-            <ul>
-              <li>Python</li>
-              <li>Bash</li>
-              <li>JavaScript</li>
-              <li>Java / C#</li>
-              <li>SQL</li>
-              <li>Git / GitHub</li>
-            </ul>
-            <p>Automatisation de tâches réseau, scripts de parsing et gestion de version collaborative.</p>
-          </article>
+          <!-- Project 4: Monitoring IoT -->
+          <div onclick="openProjectModal('p4')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">IoT &amp; Réseaux</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Surveillance IoT &amp; Dashboard</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Création d'un outil de capture des paquets et télémétrie en temps réel sur des cartes micro-contrôleurs.</p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Python</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Supervision</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Websockets</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">IoT</span>
+            </div>
+          </div>
+
+          <!-- Project 5: Scanner Nmap -->
+          <div onclick="openProjectModal('p5')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Audit &amp; Bash</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Scanner Réseau sous Kali Linux</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Outil d'automatisation des audits de vulnérabilités et d'analyse d'ouverture de ports via scripts nmap.</p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Kali Linux</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Nmap</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Bash Scripting</span>
+            </div>
+          </div>
+
+          <!-- Project 6: Log Analyzer -->
+          <div onclick="openProjectModal('p6')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Développement &amp; Script</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+              </div>
+              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Analyseur de Logs Python</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Script Python de parsing d'Apache/Syslog avec regex, identifiant les tentatives de brute-force et générant des alertes.</p>
+            </div>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Python</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Regex</span>
+              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Logs auditing</span>
+            </div>
+          </div>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- CONTACT SECTION -->
-      <section class="section contact" id="contact">
-        <div class="contact-panel reveal">
-          <div class="contact-info">
-            <p class="eyebrow">Contact</p>
-            <h2>Bâtissons un réseau solide.</h2>
-            <p>
-              À la recherche d'un alternant rigoureux, certifié et opérationnel pour renforcer vos équipes réseaux et sécurité à Rennes ou ailleurs ? Contactez-moi directement ou utilisez le formulaire.
-            </p>
-            <div class="contact-links">
-              <a class="button button-secondary" href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Télécharger mon CV
-              </a>
-              <div class="social-row">
-                <a href="https://github.com/JMDcoding" target="_blank" rel="noreferrer" class="social-link" aria-label="GitHub">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+    <!-- PAGE 4: COMPÉTENCES -->
+    <section id="skills" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-skills">
+      <!-- Dark overlay to ensure contrast over the background image -->
+      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
+      
+      <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
+        <div class="mb-12 text-center md:text-left">
+          <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+            Boîte à Outils
+          </span>
+          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Compétences Techniques</h2>
+          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
+            Retrouvez ici l'ensemble des compétences de mon CV, classées par domaines d'expertise et prêtes pour la production.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Category 1: Systems & networks / Security -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
+            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-ios-blue/10 border border-ios-blue/20 flex items-center justify-center text-ios-blue">
+                <i data-lucide="server" class="w-4 h-4"></i>
+              </div>
+              Réseaux, Cloud &amp; Cybersécurité
+            </h3>
+            
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">DNS &amp; DHCP</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">TCP/IP Protocols</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">pfSense / IPFire</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Fortinet FortiGate</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Wireshark Analysis</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Zabbix Monitoring</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Kali Linux Security</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">VLAN Isolation</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Cowrie SSH Honeypot</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Grafana &amp; Loki</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">VMware ESXi</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Proxmox VE</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Active Directory (AD)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">AWS &amp; Microsoft Azure</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Dev & scripting -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
+            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-ios-cyan/10 border border-ios-cyan/20 flex items-center justify-center text-ios-cyan">
+                <i data-lucide="code" class="w-4 h-4"></i>
+              </div>
+              Développement &amp; Scripting
+            </h3>
+            
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Python Scripting</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">C# / .NET</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">JavaScript / Frameworks</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Java Standard Edition</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">SQL Database &amp; Queries</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">HTML5 / CSS3 Styling</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Pandas Data Library</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Vuforia / Unity 3D</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Websockets Protocol</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">FFmpeg Audio/Video Command</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Methods & Tools -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
+            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-ios-indigo/10 border border-ios-indigo/20 flex items-center justify-center text-ios-indigo">
+                <i data-lucide="git-branch" class="w-4 h-4"></i>
+              </div>
+              Méthodologies &amp; Processus IT
+            </h3>
+            
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Méthodologie AGILE / Scrum</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Gestion de tickets Kanban</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">GanttProject (Planification)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Documentation Technique d'exploitation</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">ITIL Essentials (Incidents, Changes)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Microsoft Office 365 Pro</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Git / GitHub Collaboration</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Languages & values -->
+          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
+            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-ios-emerald/10 border border-ios-emerald/20 flex items-center justify-center text-ios-emerald">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </div>
+              Langues &amp; Communication
+            </h3>
+            
+            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Français (Natif)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Lingala (Natif)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Anglais C1 (Professionnel)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Allemand B2 (Intermédiaire)</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Pédagogie &amp; Sensibilisation Cyber</span>
+              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Rédaction de procédures IT claires</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5: CONTACT -->
+    <section id="contact" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-contact">
+      <!-- Dark overlay to ensure contrast over the background image -->
+      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
+      
+      <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+          
+          <!-- Contact Left info -->
+          <div class="lg:col-span-5 flex flex-col justify-between">
+            <div class="bg-ios-glass border border-ios-border rounded-2xl p-8 backdrop-blur-xl shadow-xl h-full flex flex-col justify-between">
+              <div>
+                <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+                  Restons Connectés
+                </span>
+                <h2 class="font-space font-bold text-3xl text-white mb-4">Entrons en Contact</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                  À la recherche d'un alternant passionné et certifié pour prendre soin de vos réseaux, déployer vos VM et administrer vos règles de sécurité ? Laissez-moi un message.
+                </p>
+                
+                <div class="flex flex-col gap-4 text-xs font-mono text-slate-300">
+                  <a href="mailto:jeanmarcdussaud@gmail.com" class="flex items-center gap-3.5 hover:text-ios-blue transition-colors self-start">
+                    <div class="w-8 h-8 rounded-lg bg-slate-950/60 border border-white/5 flex items-center justify-center text-ios-blue shadow">
+                      <i data-lucide="mail" class="w-4 h-4"></i>
+                    </div>
+                    <span>jeanmarcdussaud@gmail.com</span>
+                  </a>
+                  <a href="tel:+33610230059" class="flex items-center gap-3.5 hover:text-ios-blue transition-colors self-start">
+                    <div class="w-8 h-8 rounded-lg bg-slate-950/60 border border-white/5 flex items-center justify-center text-ios-blue shadow">
+                      <i data-lucide="phone" class="w-4 h-4"></i>
+                    </div>
+                    <span>+33 6 10 23 00 59</span>
+                  </a>
+                  <div class="flex items-center gap-3.5 text-slate-400 self-start">
+                    <div class="w-8 h-8 rounded-lg bg-slate-950/60 border border-white/5 flex items-center justify-center text-ios-blue shadow">
+                      <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    </div>
+                    <span>Rennes (Mobilité France)</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-3 mt-8 border-t border-white/5 pt-6">
+                <a href="https://github.com/JMDcoding" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-full bg-slate-950/60 border border-ios-border flex items-center justify-center text-slate-300 hover:text-ios-blue hover:border-ios-blue transition-all duration-300" aria-label="GitHub">
+                  <i data-lucide="github" class="w-4.5 h-4.5"></i>
                 </a>
-                <a href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer" class="social-link" aria-label="LinkedIn">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <a href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-full bg-slate-950/60 border border-ios-border flex items-center justify-center text-slate-300 hover:text-ios-blue hover:border-ios-blue transition-all duration-300" aria-label="LinkedIn">
+                  <i data-lucide="linkedin" class="w-4.5 h-4.5"></i>
                 </a>
               </div>
             </div>
           </div>
           
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label for="form-name">Nom</label>
-              <input type="text" id="form-name" name="name" placeholder="Votre nom" required />
+          <!-- Contact Right Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-ios-glass border border-ios-border rounded-2xl p-8 backdrop-blur-xl shadow-xl">
+              <form id="contact-form" class="flex flex-col gap-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div class="flex flex-col gap-1.5">
+                    <label for="form-name" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Nom complet</label>
+                    <input type="text" id="form-name" name="name" required placeholder="Votre nom" class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors" />
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <label for="form-email" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Adresse Email</label>
+                    <input type="email" id="form-email" name="email" required placeholder="nom@provider.com" class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors" />
+                  </div>
+                </div>
+                
+                <div class="flex flex-col gap-1.5">
+                  <label for="form-subject" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Objet</label>
+                  <input type="text" id="form-subject" name="subject" required placeholder="Sujet de votre message" class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors" />
+                </div>
+                
+                <div class="flex flex-col gap-1.5">
+                  <label for="form-message" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Message</label>
+                  <textarea id="form-message" name="message" required rows="4" placeholder="Décrivez votre besoin d'alternance ou projet..." class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors resize-none"></textarea>
+                </div>
+                
+                <button type="submit" class="px-5 py-3.5 rounded-xl bg-ios-blue text-white text-xs font-bold uppercase tracking-widest hover:opacity-95 transition-all duration-300 shadow-md flex items-center justify-center gap-2 self-start">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  Envoyer le message
+                </button>
+                
+                <!-- Status display -->
+                <div id="form-status" class="hidden font-mono text-xs p-4 rounded-xl border" aria-live="polite"></div>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="form-email">Email</label>
-              <input type="email" id="form-email" name="email" placeholder="votre@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="form-message">Message</label>
-              <textarea id="form-message" name="message" placeholder="Votre message..." rows="4" required></textarea>
-            </div>
-            <button type="submit" class="button button-primary">Envoyer le message</button>
-            <div class="form-status" id="form-status" aria-live="polite"></div>
-          </form>
+          </div>
+          
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Jean-Marc DUSSAUD. Tous droits réservés.</p>
-    </footer>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- FOOTER -->
+  <footer class="border-t border-ios-border bg-slate-950/80 py-8 relative z-10 text-center text-[10px] text-slate-500 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p>© <span id="year">2026</span> Jean-Marc DUSSAUD. Tous droits réservés.</p>
+      <p class="font-mono text-[9px] text-slate-600 flex items-center gap-1.5">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-ios-emerald"></i> iOS Glassmorphic Design v2.0
+      </p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC PROJECT MODAL (iOS Translucent Fullscreen Overlay) -->
+  <div id="project-detail-modal" class="fixed inset-0 z-[100] bg-slate-950/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-slate-900/90 border border-white/10 rounded-2xl w-full max-w-3xl p-6 md:p-8 relative flex flex-col gap-6 max-h-[90vh] shadow-2xl backdrop-blur-xl">
+      <button onclick="closeProjectModalDirect()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors" aria-label="Fermer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      
+      <!-- Modal Header -->
+      <div id="project-modal-header" class="border-b border-white/5 pb-4">
+        <!-- Injected via JavaScript -->
+      </div>
+      
+      <!-- Modal Scrollable Content -->
+      <div id="project-modal-body" class="flex-1 overflow-y-auto leading-relaxed text-sm text-slate-300 pr-2 select-text scrollbar-thin flex flex-col gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+      
+      <!-- Modal Footer -->
+      <div id="project-modal-footer" class="border-t border-white/5 pt-4 flex flex-wrap items-center justify-between gap-4">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>

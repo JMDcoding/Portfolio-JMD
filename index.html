@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio professionnel de Jean-Marc DUSSAUD — Alternant Administrateur Systèmes &amp; Réseaux. Design iOS Glassmorphic, certifié CCNA &amp; Fortinet NSE 4." />
-  <title>Jean-Marc DUSSAUD | Portfolio SysOps &amp; Security</title>
+  <meta name="description" content="Portfolio professionnel de Jean-Marc DUSSAUD. Design iOS Glassmorphic monochrome, certifié CCNA &amp; Fortinet NSE 4." />
+  <title>Jean-Marc DUSSAUD | Portfolio</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,14 +19,10 @@
         extend: {
           colors: {
             ios: {
-              glass: 'rgba(15, 23, 42, 0.35)',
-              glassHover: 'rgba(30, 41, 59, 0.5)',
-              border: 'rgba(255, 255, 255, 0.08)',
-              borderFocus: 'rgba(6, 182, 212, 0.4)',
-              blue: '#007aff',
-              emerald: '#34c759',
-              indigo: '#5856d6',
-              cyan: '#32ade6',
+              glass: 'rgba(0, 0, 0, 0.35)',
+              glassHover: 'rgba(255, 255, 255, 0.08)',
+              border: 'rgba(255, 255, 255, 0.12)',
+              borderFocus: 'rgba(255, 255, 255, 0.3)',
             }
           },
           fontFamily: {
@@ -45,23 +41,26 @@
   <!-- Lucide Icons (CDN) -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-ios-blue selection:text-white overflow-x-hidden relative">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-white selection:text-black overflow-x-hidden relative">
 
-  <!-- NAVIGATION HEADER (iOS Translucent Blur) -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/45 backdrop-blur-xl border-b border-ios-border transition-all duration-300">
+  <!-- GLOBAL BACKGROUND IMAGE & OVERLAY -->
+  <div class="global-background-overlay absolute inset-0 z-0 pointer-events-none" aria-hidden="true"></div>
+
+  <!-- NAVIGATION HEADER (iOS Transparent Blur) -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black/10 backdrop-blur-xl border-b border-ios-border transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group" aria-label="Retour à l'accueil">
-        <div class="w-8 h-8 rounded-lg bg-ios-blue flex items-center justify-center font-space font-bold text-white text-base shadow-[0_0_12px_rgba(0,122,255,0.3)] transition-transform group-hover:scale-105">
+        <div class="w-8 h-8 rounded-lg bg-black border border-ios-border flex items-center justify-center font-space font-bold text-white text-base shadow-[0_0_12px_rgba(255,255,255,0.08)] transition-transform group-hover:scale-102">
           JMD
         </div>
         <div class="flex flex-col">
-          <strong class="font-space font-bold text-xs tracking-tight text-white group-hover:text-ios-blue transition-colors">Jean-Marc DUSSAUD</strong>
-          <span class="text-[9px] text-slate-400 font-semibold tracking-wider uppercase">SysOps &amp; Réseaux</span>
+          <strong class="font-space font-bold text-xs tracking-tight text-white group-hover:text-slate-300 transition-colors">Jean-Marc DUSSAUD</strong>
+          <span class="text-[9px] text-slate-400 font-semibold tracking-wider uppercase">Alternant - Septembre 2026</span>
         </div>
       </a>
 
       <!-- Navigation links (Desktop) -->
-      <nav class="hidden md:flex items-center gap-6 font-semibold text-xs tracking-wider uppercase text-slate-300">
+      <nav class="hidden md:flex items-center gap-6 font-semibold text-xs tracking-wider uppercase text-slate-400">
         <a href="#home" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Accueil</a>
         <a href="#certs" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Certifications</a>
         <a href="#projects" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Projets</a>
@@ -69,9 +68,9 @@
         <a href="#contact" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Contact</a>
       </nav>
 
-      <!-- Desktop Contact Button (Translucent iOS style) -->
+      <!-- Desktop Contact Button (Transparent iOS style) -->
       <div class="hidden md:block">
-        <a href="#contact" class="px-4 py-2 rounded-full border border-ios-border text-white font-bold text-[10px] uppercase tracking-wider bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md">
+        <a href="#contact" class="px-4 py-2 rounded-xl border border-ios-border text-white font-bold text-[10px] uppercase tracking-wider bg-transparent hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md">
           Me Contacter
         </a>
       </div>
@@ -82,244 +81,230 @@
       </button>
     </div>
 
-    <!-- Mobile Navigation Panel (iOS Translucent Blur) -->
-    <div class="hidden md:hidden absolute top-16 left-0 w-full bg-slate-950/80 border-b border-ios-border transition-all duration-300 backdrop-blur-2xl" id="mobile-menu-panel">
+    <!-- Mobile Navigation Panel (iOS Transparent Blur) -->
+    <div class="hidden md:hidden absolute top-16 left-0 w-full bg-black/85 border-b border-ios-border transition-all duration-300 backdrop-blur-2xl" id="mobile-menu-panel">
       <nav class="flex flex-col p-6 gap-4 font-semibold text-xs uppercase tracking-wider text-slate-300">
         <a href="#home" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Accueil</a>
         <a href="#certs" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Certifications</a>
         <a href="#projects" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Projets</a>
         <a href="#skills" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-ios-border">Compétences</a>
         <a href="#contact" class="mobile-nav-link hover:text-white transition-colors py-1.5">Contact</a>
-        <a href="#contact" class="mobile-nav-link mt-2 py-3.5 rounded-xl bg-ios-blue text-center text-white text-xs font-bold tracking-widest uppercase shadow-md">Me Contacter</a>
+        <a href="#contact" class="mobile-nav-link mt-2 py-3.5 rounded-xl bg-black border border-ios-border text-center text-white text-xs font-bold tracking-widest uppercase shadow-md">Me Contacter</a>
       </nav>
     </div>
   </header>
 
-  <!-- MAIN SCROLL CONTAINER -->
-  <main class="w-full relative">
+  <!-- MAIN SCROLL CONTAINER WITH SNAP-Y -->
+  <main class="w-full relative z-10 scroll-container">
 
     <!-- PAGE 1: HOME (Accueil & Présentation) -->
-    <section id="home" class="section-page min-h-screen relative flex items-center justify-center pt-24 pb-16 px-6 md:px-12 bg-home">
-      <!-- Dark overlay to ensure contrast over the background image -->
-      <div class="absolute inset-0 bg-slate-950/70 z-0"></div>
-      
-      <div class="max-w-6xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center reveal">
+    <section id="home" class="section-page h-screen relative flex items-center justify-center px-6 md:px-12 bg-transparent overflow-hidden">
+      <div class="max-w-6xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center reveal">
         
         <!-- Left Side: Profile Photo & Slogan Info -->
-        <div class="lg:col-span-5 flex flex-col items-center text-center lg:text-left lg:items-start gap-6">
+        <div class="lg:col-span-5 flex flex-col items-center text-center lg:text-left lg:items-start gap-5">
           
-          <!-- iOS Profile Picture frame -->
-          <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-white/10 bg-slate-900/50 backdrop-blur-md p-1.5 shadow-2xl relative group overflow-hidden">
-            <div class="w-full h-full rounded-full bg-slate-950 flex items-center justify-center overflow-hidden border border-white/5 relative">
-              <!-- Placeholder tech profile vector avatar -->
-              <svg class="w-24 h-24 text-slate-600 transition-transform duration-500 group-hover:scale-105" viewBox="0 0 24 24" fill="currentColor">
+          <!-- iOS Profile Picture frame (Enlarged) -->
+          <div class="w-48 h-48 sm:w-56 sm:h-56 md:w-60 md:h-60 lg:w-64 lg:h-64 rounded-full border border-white/10 bg-black/40 backdrop-blur-md p-1 shadow-2xl relative overflow-hidden flex items-center justify-center transition-all duration-300 hover:border-white/20">
+            <img id="profile-img" src="profile.jpg" alt="Jean-Marc DUSSAUD" class="w-full h-full rounded-full object-cover hidden" onload="this.classList.remove('hidden'); document.getElementById('profile-placeholder').classList.add('hidden');" onerror="this.style.display='none'; document.getElementById('profile-placeholder').classList.remove('hidden');" />
+            <div id="profile-placeholder" class="w-full h-full rounded-full bg-black/60 flex items-center justify-center border border-white/5 transition-colors">
+              <svg class="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 text-slate-700" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
               </svg>
-              <!-- Animated cyber HUD overlays inside photo -->
-              <div class="absolute inset-0 border border-ios-blue/10 rounded-full animate-pulse"></div>
             </div>
-            <!-- Outer spinning glow ring -->
-            <div class="absolute inset-0 rounded-full border border-dashed border-ios-blue/30 animate-[spin_40s_linear_infinite] pointer-events-none"></div>
           </div>
           
-          <div class="flex flex-col gap-2">
-            <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full self-center lg:self-start">
-              Alternance disponible - 2026
+          <div class="flex flex-col gap-3">
+            <span class="text-xs md:text-sm font-mono font-bold tracking-widest text-slate-300 uppercase bg-white/5 border border-white/10 px-3.5 py-2 rounded-full self-center lg:self-start">
+              Alternance disponible - septembre 2026
             </span>
-            <h1 class="font-space font-bold text-4xl md:text-5xl text-white tracking-tight leading-tight drop-shadow-md">
-              Jean-Marc <br class="hidden lg:block"/>DUSSAUD
+            <h1 class="font-space font-bold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
+              Jean-Marc DUSSAUD
             </h1>
-            <p class="text-slate-400 font-semibold font-space text-sm tracking-wider uppercase">
-              Administrateur Systèmes &amp; Réseaux
+            <p class="text-slate-400 font-semibold font-space text-xs sm:text-sm tracking-wider uppercase">
+              L'informatique comme impact social
             </p>
           </div>
           
-          <div class="flex gap-4">
-            <a href="#projects" class="px-5 py-3 rounded-xl border border-white/10 text-white font-bold text-xs uppercase tracking-wider bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md shadow-md">
+          <div class="flex gap-4 mt-2">
+            <a href="#projects" class="px-5 py-3 rounded-xl border border-white/10 text-white font-bold text-xs md:text-sm uppercase tracking-wider bg-transparent hover:bg-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-md shadow-md">
               Mes projets
             </a>
-            <a href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt" class="px-5 py-3 rounded-xl bg-ios-blue text-white font-bold text-xs uppercase tracking-wider hover:opacity-90 transition-all duration-300 shadow-md">
+            <a href="Jean-Marc_DUSSAUD_CV.txt" download="Jean-Marc_DUSSAUD_CV.txt" class="px-5 py-3 rounded-xl bg-black border border-white/10 text-white font-bold text-xs md:text-sm uppercase tracking-wider hover:bg-white/10 transition-all duration-300 shadow-md">
               Télécharger CV
             </a>
           </div>
-        </div>
-
-        <!-- Right Side: parcours / ambitions detailed (iOS Glass Cards) -->
-        <div class="lg:col-span-7 flex flex-col gap-6">
+        <        <!-- Right Side: parcours / ambitions detailed (iOS Glass Cards) -->
+        <div class="lg:col-span-7 flex flex-col gap-5">
           
-          <!-- Presentation / parcours Card -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-xl relative overflow-hidden group hover:border-white/15 transition-all duration-300">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-8 h-8 rounded-lg bg-ios-blue/10 border border-ios-blue/20 flex items-center justify-center text-ios-blue">
-                <i data-lucide="user" class="w-4.5 h-4.5"></i>
+           <!-- Presentation / parcours Card -->
+           <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 md:p-7 backdrop-blur-xl shadow-xl transition-all duration-300">
+             <div class="flex items-center gap-3.5 mb-4">
+               <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200">
+                 <i data-lucide="user" class="w-5 h-5"></i>
+               </div>
+               <h2 class="font-space font-bold text-lg md:text-xl text-white">Mon Parcours</h2>
+             </div>
+             
+             <p class="text-slate-350 text-sm md:text-base leading-relaxed">
+               Actuellement étudiant en informatique à <strong class="text-white">SupdeVinci Rennes</strong>, j'associe des bases théoriques solides à des expérimentations techniques permanentes. J'ai validé les certifications professionnelles <strong class="text-white">Cisco CCNA</strong> et <strong class="text-white">Fortinet NSE 4</strong>.
+             </p>
+             <p class="text-slate-350 text-sm md:text-base leading-relaxed mt-3">
+               Je refuse les étiquettes de postes rigides. Ma valeur ajoutée réside dans ma triple compétence transversale : bâtir l'infrastructure, la protéger et piloter les opérations.
+             </p>
+           </div>
+  
+           <!-- Long-term ambitions Card -->
+           <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 md:p-7 backdrop-blur-xl shadow-xl transition-all duration-300">
+             <div class="flex items-center gap-3.5 mb-4">
+               <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-200">
+                 <i data-lucide="compass" class="w-5 h-5"></i>
+               </div>
+               <h2 class="font-space font-bold text-lg md:text-xl text-white">Mes Ambitions à Long Terme</h2>
+             </div>
+             
+             <p class="text-slate-350 text-sm md:text-base leading-relaxed mb-4">
+               Mon objectif sur le long terme est d'évoluer vers le poste d'<strong>Ingénieur Cloud</strong> ou de <strong>Responsable de Sécurité Opérationnelle</strong>. Je souhaite concevoir et sécuriser des parcs de virtualisation et des réseaux hybrides d'envergure.
+             </p>
+             
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm font-mono text-slate-400">
+               <div class="flex items-center gap-2">
+                 <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                 <span>Obtention de certifications réseau avancées</span>
+               </div>
+               <div class="flex items-center gap-2">
+                 <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                 <span>Spécialisation en audits et durcissement</span>
+               </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                <span>Orchestration IaC &amp; Automatisation</span>
               </div>
-              <h2 class="font-space font-bold text-lg text-white">Mon Parcours</h2>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-slate-500"></span>
+                <span>Pilotage d'architectures hybrides cloud</span>
+              </div>
             </div>
-            
-            <p class="text-slate-200 text-sm leading-relaxed mb-4">
-              Actuellement étudiant en administration systèmes, réseaux et cybersécurité à <strong class="text-white">SupdeVinci Rennes</strong>, j'associe des bases théoriques solides à des expérimentations techniques permanentes. J'ai validé les certifications reconnues <strong class="text-white">Cisco CCNA</strong> et <strong class="text-white">Fortinet NSE 4</strong>.
-            </p>
-            <p class="text-slate-300 text-sm leading-relaxed font-medium">
-              Je refuse les étiquettes de postes rigides. Ma valeur ajoutée réside dans ma triple compétence transversale : bâtir l'infrastructure (Systèmes/Réseaux), la protéger (Cybersécurité) et piloter les opérations (Support/Expérience utilisateur).
-            </p>
           </div>
-
-          <!-- Long-term ambitions Card -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 md:p-8 backdrop-blur-xl shadow-xl relative overflow-hidden group hover:border-white/15 transition-all duration-300">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-8 h-8 rounded-lg bg-ios-emerald/10 border border-ios-emerald/20 flex items-center justify-center text-ios-emerald">
-                <i data-lucide="compass" class="w-4.5 h-4.5"></i>
-              </div>
-              <h2 class="font-space font-bold text-lg text-white">Mes Ambitions à Long Terme</h2>
-            </div>
-            
-            <p class="text-slate-200 text-sm leading-relaxed mb-4">
-              Mon objectif sur le long terme est d'évoluer vers le poste d'<strong>Ingénieur Infrastructures &amp; Cloud (DevSecOps)</strong> ou de <strong>Responsable Sécurité des Systèmes d'Information (RSSI)</strong>. Je souhaite concevoir et sécuriser des parcs de virtualisation et des réseaux hybrides d'envergure.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono text-slate-400">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
-                <span>Viser la certification Cisco CCNP</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
-                <span>Spécification en audit cyber (CISSP)</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
-                <span>Automatisation complète (IaC Ansible)</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-ios-emerald"></span>
-                <span>Pilotage d'architectures hybrides AWS/Azure</span>
-              </div>
-            </div>
-          </div>
+        </div>         </div>
 
         </div>
       </div>
     </section>
 
     <!-- PAGE 2: CERTIFICATIONS -->
-    <section id="certs" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-certs">
-      <!-- Dark overlay to ensure contrast over the background image -->
-      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
-      
+    <section id="certs" class="section-page h-screen relative flex items-center justify-center px-6 md:px-12 bg-transparent overflow-hidden">
       <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
-        <div class="mb-12 text-center md:text-left">
-          <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+        <div class="mb-8 text-center md:text-left">
+          <span class="text-[10px] font-mono font-bold tracking-widest text-slate-300 uppercase bg-white/5 border border-white/10 px-3 py-1 rounded-full inline-block mb-2">
             Compétences Certifiées
           </span>
-          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Certifications &amp; Objectifs</h2>
-          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
-            Retrouvez ici mes accréditations professionnelles internationales obtenues, en cours d'étude, ou planifiées comme jalons majeurs de mon parcours.
+          <h2 class="font-space font-bold text-2xl md:text-3xl text-white">Certifications &amp; Objectifs</h2>
+          <p class="text-slate-400 text-xs md:text-sm mt-1 max-w-xl">
+            Accréditations professionnelles obtenues, en cours, ou planifiées dans mon parcours d'ingénierie.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
           
           <!-- Column 1: Obtained Certifications -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-white/15 transition-all duration-300">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-ios-emerald"></div>
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden transition-all duration-300">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-slate-400"></div>
             <div>
-              <div class="flex items-center justify-between mb-6">
-                <div class="w-10 h-10 rounded-lg bg-ios-emerald/10 border border-ios-emerald/20 flex items-center justify-center text-ios-emerald">
-                  <i data-lucide="award" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                  <i data-lucide="award" class="w-4 h-4"></i>
                 </div>
-                <span class="text-[9px] font-mono tracking-widest text-ios-emerald bg-ios-emerald/10 px-2 py-0.5 rounded font-bold uppercase border border-ios-emerald/15">OBTENUES</span>
+                <span class="text-[8px] font-mono tracking-widest text-slate-300 bg-white/5 px-2 py-0.5 rounded font-bold uppercase border border-white/10">OBTENUES</span>
               </div>
               
-              <h3 class="font-space font-bold text-base text-white mb-4">Certifications Validées</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6">Accréditations d'administration d'infrastructure et de sécurité périmétrique validées par des examens académiques.</p>
+              <h3 class="font-space font-bold text-base text-white mb-3">Certifications Validées</h3>
               
-              <ul class="flex flex-col gap-4 text-xs text-slate-400">
-                <li class="border-b border-white/5 pb-3">
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Cisco CCNA (200-301)</strong>
-                    <span class="text-[9px] text-slate-500 font-mono">100% Validé</span>
+              <ul class="flex flex-col gap-3 text-[12px] text-slate-400">
+                <li class="border-b border-white/5 pb-2">
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">Cisco CCNA</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">Validé</span>
                   </div>
-                  <span>Concepts réseaux avancés, routage IP, commutation LAN, et protocoles DNS/DHCP/NAT.</span>
+                  <span>Routage, commutation LAN, et protocoles réseaux standards.</span>
                 </li>
                 <li>
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Fortinet NSE 4</strong>
-                    <span class="text-[9px] text-slate-500 font-mono">100% Validé</span>
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">Fortinet NSE 4</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">Validé</span>
                   </div>
-                  <span>Configuration, surveillance et sécurité active des pare-feux FortiGate en entreprise.</span>
+                  <span>Administration et sécurité des pare-feux FortiGate.</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <!-- Column 2: In-Progress Certifications -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-white/15 transition-all duration-300">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-ios-blue"></div>
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden transition-all duration-300">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-slate-400"></div>
             <div>
-              <div class="flex items-center justify-between mb-6">
-                <div class="w-10 h-10 rounded-lg bg-ios-blue/10 border border-ios-blue/20 flex items-center justify-center text-ios-blue">
-                  <i data-lucide="clock" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
                 </div>
-                <span class="text-[9px] font-mono tracking-widest text-ios-blue bg-ios-blue/10 px-2 py-0.5 rounded font-bold uppercase border border-ios-blue/15">EN COURS</span>
+                <span class="text-[8px] font-mono tracking-widest text-slate-300 bg-white/5 px-2 py-0.5 rounded font-bold uppercase border border-white/10">EN COURS</span>
               </div>
               
-              <h3 class="font-space font-bold text-base text-white mb-4">Certifications en Préparation</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6">Modules de formation initiés, préparés pour validation au cours de l'année scolaire 2026/2027.</p>
+              <h3 class="font-space font-bold text-base text-white mb-3">En Préparation</h3>
               
-              <ul class="flex flex-col gap-4 text-xs text-slate-400">
-                <li class="border-b border-white/5 pb-3">
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">LPIC-1 (System Admin)</strong>
-                    <span class="text-[9px] text-ios-blue font-mono">Préparation 80%</span>
+              <ul class="flex flex-col gap-3 text-[12px] text-slate-400">
+                <li class="border-b border-white/5 pb-2">
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">LPIC-1 Linux Admin</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">80%</span>
                   </div>
-                  <span>Administration Linux avancée, manipulation de fichiers de configuration, bash scripting et gestion de services.</span>
+                  <span>Administration système, gestion des paquets et bash scripting.</span>
                 </li>
                 <li>
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Fortinet NSE 5</strong>
-                    <span class="text-[9px] text-ios-blue font-mono">Préparation 40%</span>
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">Fortinet NSE 5</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">40%</span>
                   </div>
-                  <span>Analyse et corrélation de logs avec FortiAnalyzer et administration d'équipements FortiManager.</span>
+                  <span>Gestion centralisée des pare-feux et analyse des logs.</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <!-- Column 3: Future desired Certifications -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden group hover:border-white/15 transition-all duration-300">
-            <div class="absolute top-0 left-0 w-full h-[2px] bg-ios-indigo"></div>
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl flex flex-col justify-between relative overflow-hidden transition-all duration-300">
+            <div class="absolute top-0 left-0 w-full h-[2px] bg-slate-450"></div>
             <div>
-              <div class="flex items-center justify-between mb-6">
-                <div class="w-10 h-10 rounded-lg bg-ios-indigo/10 border border-ios-indigo/20 flex items-center justify-center text-ios-indigo">
-                  <i data-lucide="target" class="w-5 h-5"></i>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                  <i data-lucide="target" class="w-4 h-4"></i>
                 </div>
-                <span class="text-[9px] font-mono tracking-widest text-ios-indigo bg-ios-indigo/10 px-2 py-0.5 rounded font-bold uppercase border border-ios-indigo/15">SOUHAITÉES</span>
+                <span class="text-[8px] font-mono tracking-widest text-slate-300 bg-white/5 px-2 py-0.5 rounded font-bold uppercase border border-white/10">SOUHAITÉES</span>
               </div>
               
-              <h3 class="font-space font-bold text-base text-white mb-4">Objectifs à Moyen/Long Terme</h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6">Accréditations cibles prévues dans mes perspectives d'évolution de carrière d'administrateur senior.</p>
+              <h3 class="font-space font-bold text-base text-white mb-3">Objectifs Futurs</h3>
               
-              <ul class="flex flex-col gap-4 text-xs text-slate-400">
-                <li class="border-b border-white/5 pb-3">
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Cisco CCNP Enterprise</strong>
-                    <span class="text-[9px] text-slate-500 font-mono">Objectif 2-3 ans</span>
+              <ul class="flex flex-col gap-2.5 text-[12px] text-slate-400">
+                <li class="border-b border-white/5 pb-2">
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">Cisco CCNP Enterprise</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">2-3 ans</span>
                   </div>
-                  <span>Administration de réseaux d'entreprise complexes (routage OSPF, BGP, MPLS) et technologies SD-WAN.</span>
+                  <span>Réseaux d'entreprise complexes et technologies WAN.</span>
                 </li>
-                <li class="border-b border-white/5 pb-3">
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">CISSP (Cybersécurité)</strong>
-                    <span class="text-[9px] text-slate-500 font-mono">Objectif 5 ans</span>
+                <li class="border-b border-white/5 pb-2">
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">CISSP</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">5 ans</span>
                   </div>
-                  <span>Standard d'or en sécurité de l'information (architecture de sécurité, gestion des risques et sécurité opérationnelle).</span>
+                  <span>Management global de la sécurité de l'information.</span>
                 </li>
                 <li>
-                  <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">AWS Architect / Azure Administrator</strong>
-                    <span class="text-[9px] text-slate-500 font-mono">Objectif 2 ans</span>
+                  <div class="flex items-center justify-between mb-0.5">
+                    <strong class="text-white text-[13px]">Cloud Architectures</strong>
+                    <span class="text-[8px] text-slate-500 font-mono">2 ans</span>
                   </div>
-                  <span>Déploiement, gestion et sécurisation des ressources cloud hybrides ou publiques.</span>
+                  <span>Déploiement et intégration cloud hybride (AWS/Azure).</span>
                 </li>
               </ul>
             </div>
@@ -330,127 +315,120 @@
     </section>
 
     <!-- PAGE 3: PROJETS -->
-    <section id="projects" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-projects">
-      <!-- Dark overlay to ensure contrast over the background image -->
-      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
-      
+    <section id="projects" class="section-page h-screen relative flex items-center justify-center px-6 md:px-12 bg-transparent overflow-hidden">
       <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
-        <div class="mb-12 text-center md:text-left">
-          <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+        <div class="mb-8 text-center md:text-left">
+          <span class="text-[10px] font-mono font-bold tracking-widest text-slate-300 uppercase bg-white/5 border border-white/10 px-3 py-1 rounded-full inline-block mb-2">
             Portfolio Technique
           </span>
-          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Mes Projets Réalisés</h2>
-          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
-            Cliquez sur un projet pour consulter sa fiche complète selon la méthodologie STAR, voir les schémas d'architecture réseau associés et lire le code source.
+          <h2 class="font-space font-bold text-2xl md:text-3xl text-white">Projets Réalisés</h2>
+          <p class="text-slate-400 text-xs md:text-sm mt-1 max-w-xl">
+            Cliquez sur un projet pour consulter sa fiche complète, voir les schémas joints et lire le code source.
           </p>
         </div>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Projects Grid (Compact) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           
           <!-- Project 1: Infrastructure -->
-          <div onclick="openProjectModal('p1')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+          <div onclick="openProjectModal('p1')" class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group min-h-[10.5rem]">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Infrastructure &amp; Sécurité</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-mono bg-white/5 border border-white/10 text-slate-300 px-2.5 py-0.5 rounded font-bold uppercase">Infrastructure &amp; Sécurité</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
               </div>
-              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Refonte &amp; Sécurisation d'Infrastructure</h3>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Migration et segmentation d'un parc système d'entreprise virtuel chiffré et audité de bout en bout.</p>
+              <h3 class="font-space font-bold text-base text-white mb-1.5 group-hover:text-slate-300 transition-colors">Refonte &amp; Sécurisation d'Infrastructure</h3>
+              <p class="text-slate-400 text-[12.5px] leading-snug">Migration et segmentation d'un parc système d'entreprise virtuel chiffré.</p>
             </div>
             <div class="flex flex-wrap gap-1 mt-2">
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Proxmox</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Ansible</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Wazuh SIEM</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">PfSense</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Proxmox</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Ansible</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Wazuh SIEM</span>
             </div>
           </div>
 
           <!-- Project 2: Serenity -->
-          <div onclick="openProjectModal('p2')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+          <div onclick="openProjectModal('p2')" class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group min-h-[10.5rem]">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Sécurité &amp; RGPD</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-mono bg-white/5 border border-white/10 text-slate-300 px-2.5 py-0.5 rounded font-bold uppercase">Sécurité &amp; RGPD</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
               </div>
-              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">SERENITY — IA Santé Mentale &amp; RGPD</h3>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Conception, anonymisation et sécurisation des bases de données sensibles liées à une application médicale.</p>
+              <h3 class="font-space font-bold text-base text-white mb-1.5 group-hover:text-slate-300 transition-colors">SERENITY — IA &amp; Conformité RGPD</h3>
+              <p class="text-slate-400 text-[12.5px] leading-snug">Anonymisation et sécurisation des bases de données sensibles d'une application.</p>
             </div>
             <div class="flex flex-wrap gap-1 mt-2">
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Node.js</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">SQL Chiffré</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Anonymisation</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">RGPD</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Node.js</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">SQL Server</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">RGPD</span>
             </div>
           </div>
 
           <!-- Project 3: Honeypot -->
-          <div onclick="openProjectModal('p3')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+          <div onclick="openProjectModal('p3')" class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group min-h-[10.5rem]">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Supervision &amp; Cyber</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-mono bg-white/5 border border-white/10 text-slate-300 px-2.5 py-0.5 rounded font-bold uppercase">Supervision &amp; Cyber</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
               </div>
-              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Honeypot SSH, Grafana &amp; Loki</h3>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Déploiement d'un honeypot SSH Cowrie collectant les attaques, avec alertes et statistiques Grafana en temps réel.</p>
+              <h3 class="font-space font-bold text-base text-white mb-1.5 group-hover:text-slate-300 transition-colors">Honeypot SSH, Grafana &amp; Loki</h3>
+              <p class="text-slate-400 text-[12.5px] leading-snug">Honeypot SSH collectant les logs d'intrusion et tableau de bord de supervision.</p>
             </div>
             <div class="flex flex-wrap gap-1 mt-2">
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Cowrie</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Loki / Grafana</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Docker</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Python</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Cowrie</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Loki</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Grafana</span>
             </div>
           </div>
 
           <!-- Project 4: Monitoring IoT -->
-          <div onclick="openProjectModal('p4')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+          <div onclick="openProjectModal('p4')" class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group min-h-[10.5rem]">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">IoT &amp; Réseaux</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-mono bg-white/5 border border-white/10 text-slate-300 px-2.5 py-0.5 rounded font-bold uppercase">IoT &amp; Réseaux</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
               </div>
-              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Surveillance IoT &amp; Dashboard</h3>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Création d'un outil de capture des paquets et télémétrie en temps réel sur des cartes micro-contrôleurs.</p>
+              <h3 class="font-space font-bold text-base text-white mb-1.5 group-hover:text-slate-300 transition-colors">Surveillance IoT &amp; Dashboard</h3>
+              <p class="text-slate-400 text-[12.5px] leading-snug">Capture réseau, analyse en temps réel et alertes sur micro-contrôleurs.</p>
             </div>
             <div class="flex flex-wrap gap-1 mt-2">
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Python</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Supervision</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Websockets</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">IoT</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Python</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Websockets</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Micro-controller</span>
             </div>
           </div>
 
           <!-- Project 5: Scanner Nmap -->
-          <div onclick="openProjectModal('p5')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+          <div onclick="openProjectModal('p5')" class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group min-h-[10.5rem]">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Audit &amp; Bash</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-mono bg-white/5 border border-white/10 text-slate-300 px-2.5 py-0.5 rounded font-bold uppercase">Audit &amp; Bash</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
               </div>
-              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Scanner Réseau sous Kali Linux</h3>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Outil d'automatisation des audits de vulnérabilités et d'analyse d'ouverture de ports via scripts nmap.</p>
+              <h3 class="font-space font-bold text-base text-white mb-1.5 group-hover:text-slate-300 transition-colors">Scanner Réseau sous Kali Linux</h3>
+              <p class="text-slate-400 text-[12.5px] leading-snug">Outil d'automatisation des audits réguliers de ports ouverts et services.</p>
             </div>
             <div class="flex flex-wrap gap-1 mt-2">
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Kali Linux</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Nmap</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Bash Scripting</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Kali Linux</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Nmap</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Bash</span>
             </div>
           </div>
 
           <!-- Project 6: Log Analyzer -->
-          <div onclick="openProjectModal('p6')" class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group">
+          <div onclick="openProjectModal('p6')" class="bg-ios-glass border border-ios-border rounded-xl p-5 backdrop-blur-xl shadow-xl hover:bg-ios-glassHover hover:border-white/20 transition-all duration-300 cursor-pointer flex flex-col justify-between group min-h-[10.5rem]">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[9px] font-mono bg-ios-blue/15 border border-ios-blue/20 text-ios-blue px-2 py-0.5 rounded font-bold uppercase">Développement &amp; Script</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[9px] font-mono bg-white/5 border border-white/10 text-slate-300 px-2.5 py-0.5 rounded font-bold uppercase">Développement &amp; Script</span>
                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
               </div>
-              <h3 class="font-space font-bold text-base text-white mb-2 group-hover:text-ios-blue transition-colors">Analyseur de Logs Python</h3>
-              <p class="text-slate-400 text-xs leading-relaxed mb-4">Script Python de parsing d'Apache/Syslog avec regex, identifiant les tentatives de brute-force et générant des alertes.</p>
+              <h3 class="font-space font-bold text-base text-white mb-1.5 group-hover:text-slate-300 transition-colors">Analyseur de Logs Python</h3>
+              <p class="text-slate-400 text-[12.5px] leading-snug">Analyse de logs de connexion Apache/Syslog par expressions régulières (regex).</p>
             </div>
             <div class="flex flex-wrap gap-1 mt-2">
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Python</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Regex</span>
-              <span class="text-[8px] font-mono bg-slate-950 px-1.5 py-0.5 rounded text-slate-500">Logs auditing</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Python</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Regex</span>
+              <span class="text-[8.5px] font-mono bg-black/60 px-2 py-0.5 rounded text-slate-400">Logs Parsing</span>
             </div>
           </div>
 
@@ -459,109 +437,99 @@
     </section>
 
     <!-- PAGE 4: COMPÉTENCES -->
-    <section id="skills" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-skills">
-      <!-- Dark overlay to ensure contrast over the background image -->
-      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
-      
+    <section id="skills" class="section-page h-screen relative flex items-center justify-center px-6 md:px-12 bg-transparent overflow-hidden">
       <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
-        <div class="mb-12 text-center md:text-left">
-          <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+        <div class="mb-8 text-center md:text-left">
+          <span class="text-[10px] font-mono font-bold tracking-widest text-slate-300 uppercase bg-white/5 border border-white/10 px-3 py-1 rounded-full inline-block mb-2">
             Boîte à Outils
           </span>
-          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Compétences Techniques</h2>
-          <p class="text-slate-400 text-sm md:text-base mt-2 max-w-2xl">
-            Retrouvez ici l'ensemble des compétences de mon CV, classées par domaines d'expertise et prêtes pour la production.
+          <h2 class="font-space font-bold text-2xl md:text-3xl text-white">Compétences Techniques</h2>
+          <p class="text-slate-400 text-xs md:text-sm mt-1 max-w-xl">
+            Synthèse des technologies, protocoles et méthodes présentés sur mon CV.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           
-          <!-- Category 1: Systems & networks / Security -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
-            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-ios-blue/10 border border-ios-blue/20 flex items-center justify-center text-ios-blue">
-                <i data-lucide="server" class="w-4 h-4"></i>
+          <!-- Category 1: Systems & networks -->
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-6 backdrop-blur-xl shadow-xl">
+            <h3 class="font-space font-bold text-base text-white mb-4 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                <i data-lucide="server" class="w-4.5 h-4.5"></i>
               </div>
-              Réseaux, Cloud &amp; Cybersécurité
+              Infrastructures, Systèmes &amp; Cybersécurité
             </h3>
             
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">DNS &amp; DHCP</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">TCP/IP Protocols</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">pfSense / IPFire</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Fortinet FortiGate</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Wireshark Analysis</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Zabbix Monitoring</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Kali Linux Security</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">VLAN Isolation</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Cowrie SSH Honeypot</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Grafana &amp; Loki</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">VMware ESXi</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Proxmox VE</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">Active Directory (AD)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-blue px-3 py-1.5 rounded-xl transition-all duration-300">AWS &amp; Microsoft Azure</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">DNS / DHCP / TCP-IP</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">pfSense / IPFire</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Fortinet FortiGate (NSE 4)</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Wireshark Analysis</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Zabbix / Grafana / Loki</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">VLAN Segmentation</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Cowrie Honeypot</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">VMware / Proxmox VE</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Active Directory</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">AWS &amp; Azure Basics</span>
             </div>
           </div>
 
           <!-- Category 2: Dev & scripting -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
-            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-ios-cyan/10 border border-ios-cyan/20 flex items-center justify-center text-ios-cyan">
-                <i data-lucide="code" class="w-4 h-4"></i>
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-6 backdrop-blur-xl shadow-xl">
+            <h3 class="font-space font-bold text-base text-white mb-4 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                <i data-lucide="code" class="w-4.5 h-4.5"></i>
               </div>
               Développement &amp; Scripting
             </h3>
             
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Python Scripting</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">C# / .NET</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">JavaScript / Frameworks</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Java Standard Edition</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">SQL Database &amp; Queries</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">HTML5 / CSS3 Styling</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Pandas Data Library</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Vuforia / Unity 3D</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">Websockets Protocol</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-cyan px-3 py-1.5 rounded-xl transition-all duration-300">FFmpeg Audio/Video Command</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Python Scripting</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">C# / .NET / Java</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">JavaScript</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">SQL Databases</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">HTML5 / CSS3</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Pandas Library</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Unity 3D / Vuforia</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Websockets / FFmpeg</span>
             </div>
           </div>
 
           <!-- Category 3: Methods & Tools -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
-            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-ios-indigo/10 border border-ios-indigo/20 flex items-center justify-center text-ios-indigo">
-                <i data-lucide="git-branch" class="w-4 h-4"></i>
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-6 backdrop-blur-xl shadow-xl">
+            <h3 class="font-space font-bold text-base text-white mb-4 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                <i data-lucide="git-branch" class="w-4.5 h-4.5"></i>
               </div>
               Méthodologies &amp; Processus IT
             </h3>
             
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Méthodologie AGILE / Scrum</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Gestion de tickets Kanban</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">GanttProject (Planification)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Documentation Technique d'exploitation</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">ITIL Essentials (Incidents, Changes)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Microsoft Office 365 Pro</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-indigo px-3 py-1.5 rounded-xl transition-all duration-300">Git / GitHub Collaboration</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">AGILE / Scrum</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Kanban ticketing</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">GanttProject (Planning)</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">ITIL Incident Management</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Technical Documentation</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Git / GitHub control</span>
             </div>
           </div>
 
-          <!-- Category 4: Languages & values -->
-          <div class="bg-ios-glass border border-ios-border rounded-2xl p-6 backdrop-blur-xl shadow-xl hover:border-white/10 transition-colors">
-            <h3 class="font-space font-bold text-base text-white mb-6 flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-ios-emerald/10 border border-ios-emerald/20 flex items-center justify-center text-ios-emerald">
-                <i data-lucide="globe" class="w-4 h-4"></i>
+          <!-- Category 4: Languages -->
+          <div class="bg-ios-glass border border-ios-border rounded-xl p-6 backdrop-blur-xl shadow-xl">
+            <h3 class="font-space font-bold text-base text-white mb-4 flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-300">
+                <i data-lucide="globe" class="w-4.5 h-4.5"></i>
               </div>
               Langues &amp; Communication
             </h3>
             
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Français (Natif)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Lingala (Natif)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Anglais C1 (Professionnel)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Allemand B2 (Intermédiaire)</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Pédagogie &amp; Sensibilisation Cyber</span>
-              <span class="bg-slate-950/60 border border-white/5 hover:border-ios-emerald px-3 py-1.5 rounded-xl transition-all duration-300">Rédaction de procédures IT claires</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Français (Natif)</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Lingala (Natif)</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Anglais C1</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Allemand B2</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Vulgarisation technique</span>
+              <span class="bg-black/60 border border-white/5 px-3 py-1.5 rounded-lg">Pédagogie d'assistance</span>
             </div>
           </div>
 
@@ -570,52 +538,49 @@
     </section>
 
     <!-- PAGE 5: CONTACT -->
-    <section id="contact" class="section-page min-h-screen relative flex items-center justify-center py-24 px-6 md:px-12 bg-contact">
-      <!-- Dark overlay to ensure contrast over the background image -->
-      <div class="absolute inset-0 bg-slate-950/75 z-0"></div>
-      
+    <section id="contact" class="section-page h-screen relative flex items-center justify-center px-6 md:px-12 bg-transparent overflow-hidden">
       <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           <!-- Contact Left info -->
           <div class="lg:col-span-5 flex flex-col justify-between">
-            <div class="bg-ios-glass border border-ios-border rounded-2xl p-8 backdrop-blur-xl shadow-xl h-full flex flex-col justify-between">
+            <div class="bg-ios-glass border border-ios-border rounded-xl p-6 backdrop-blur-xl shadow-xl h-full flex flex-col justify-between">
               <div>
-                <span class="text-xs font-mono font-bold tracking-widest text-ios-blue uppercase bg-ios-blue/10 border border-ios-blue/15 px-3 py-1 rounded-full inline-block mb-3">
+                <span class="text-[10px] font-mono font-bold tracking-widest text-slate-300 uppercase bg-white/5 border border-white/10 px-3 py-1 rounded-full inline-block mb-3">
                   Restons Connectés
                 </span>
-                <h2 class="font-space font-bold text-3xl text-white mb-4">Entrons en Contact</h2>
-                <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                  À la recherche d'un alternant passionné et certifié pour prendre soin de vos réseaux, déployer vos VM et administrer vos règles de sécurité ? Laissez-moi un message.
+                <h2 class="font-space font-bold text-2xl md:text-3xl text-white mb-3">Entrons en Contact</h2>
+                <p class="text-slate-400 text-[13px] md:text-sm leading-relaxed mb-6">
+                  À la recherche d'un profil pour une alternance à partir de septembre 2026 à Rennes (ou en mobilité nationale) ? Envoyez-moi un message.
                 </p>
                 
-                <div class="flex flex-col gap-4 text-xs font-mono text-slate-300">
-                  <a href="mailto:jeanmarcdussaud@gmail.com" class="flex items-center gap-3.5 hover:text-ios-blue transition-colors self-start">
-                    <div class="w-8 h-8 rounded-lg bg-slate-950/60 border border-white/5 flex items-center justify-center text-ios-blue shadow">
-                      <i data-lucide="mail" class="w-4 h-4"></i>
+                <div class="flex flex-col gap-3 text-[12px] font-mono text-slate-300">
+                  <a href="mailto:jeanmarcdussaud@gmail.com" class="flex items-center gap-3 hover:text-slate-400 transition-colors self-start">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/10 flex items-center justify-center text-slate-300 shadow">
+                      <i data-lucide="mail" class="w-4.5 h-4.5"></i>
                     </div>
                     <span>jeanmarcdussaud@gmail.com</span>
                   </a>
-                  <a href="tel:+33610230059" class="flex items-center gap-3.5 hover:text-ios-blue transition-colors self-start">
-                    <div class="w-8 h-8 rounded-lg bg-slate-950/60 border border-white/5 flex items-center justify-center text-ios-blue shadow">
-                      <i data-lucide="phone" class="w-4 h-4"></i>
+                  <a href="tel:+33610230059" class="flex items-center gap-3 hover:text-slate-400 transition-colors self-start">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/10 flex items-center justify-center text-slate-300 shadow">
+                      <i data-lucide="phone" class="w-4.5 h-4.5"></i>
                     </div>
                     <span>+33 6 10 23 00 59</span>
                   </a>
-                  <div class="flex items-center gap-3.5 text-slate-400 self-start">
-                    <div class="w-8 h-8 rounded-lg bg-slate-950/60 border border-white/5 flex items-center justify-center text-ios-blue shadow">
-                      <i data-lucide="map-pin" class="w-4 h-4"></i>
+                  <div class="flex items-center gap-3 text-slate-400 self-start">
+                    <div class="w-7 h-7 rounded-lg bg-black border border-white/10 flex items-center justify-center text-slate-300 shadow">
+                      <i data-lucide="map-pin" class="w-4.5 h-4.5"></i>
                     </div>
                     <span>Rennes (Mobilité France)</span>
                   </div>
                 </div>
               </div>
               
-              <div class="flex items-center gap-3 mt-8 border-t border-white/5 pt-6">
-                <a href="https://github.com/JMDcoding" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-full bg-slate-950/60 border border-ios-border flex items-center justify-center text-slate-300 hover:text-ios-blue hover:border-ios-blue transition-all duration-300" aria-label="GitHub">
+              <div class="flex items-center gap-3 mt-6 border-t border-white/5 pt-4">
+                <a href="https://github.com/JMDcoding" target="_blank" rel="noreferrer" class="w-8 h-8 rounded-full bg-black border border-ios-border flex items-center justify-center text-slate-300 hover:text-white hover:border-white transition-all duration-300" aria-label="GitHub">
                   <i data-lucide="github" class="w-4.5 h-4.5"></i>
                 </a>
-                <a href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer" class="w-9 h-9 rounded-full bg-slate-950/60 border border-ios-border flex items-center justify-center text-slate-300 hover:text-ios-blue hover:border-ios-blue transition-all duration-300" aria-label="LinkedIn">
+                <a href="https://linkedin.com/in/jeanmarc-dussaud" target="_blank" rel="noreferrer" class="w-8 h-8 rounded-full bg-black border border-ios-border flex items-center justify-center text-slate-300 hover:text-white hover:border-white transition-all duration-300" aria-label="LinkedIn">
                   <i data-lucide="linkedin" class="w-4.5 h-4.5"></i>
                 </a>
               </div>
@@ -624,36 +589,36 @@
           
           <!-- Contact Right Form -->
           <div class="lg:col-span-7">
-            <div class="bg-ios-glass border border-ios-border rounded-2xl p-8 backdrop-blur-xl shadow-xl">
-              <form id="contact-form" class="flex flex-col gap-5">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="bg-ios-glass border border-ios-border rounded-xl p-6 backdrop-blur-xl shadow-xl">
+              <form id="contact-form" class="flex flex-col gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div class="flex flex-col gap-1.5">
-                    <label for="form-name" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Nom complet</label>
-                    <input type="text" id="form-name" name="name" required placeholder="Votre nom" class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors" />
+                    <label for="form-name" class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">Nom complet</label>
+                    <input type="text" id="form-name" name="name" required placeholder="Votre nom" class="w-full bg-black/40 border border-ios-border rounded-xl px-4 py-2.5 text-slate-100 text-xs focus:outline-none focus:border-ios-borderFocus focus:bg-black/60 transition-colors" />
                   </div>
                   <div class="flex flex-col gap-1.5">
-                    <label for="form-email" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Adresse Email</label>
-                    <input type="email" id="form-email" name="email" required placeholder="nom@provider.com" class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors" />
+                    <label for="form-email" class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">Adresse Email</label>
+                    <input type="email" id="form-email" name="email" required placeholder="nom@provider.com" class="w-full bg-black/40 border border-ios-border rounded-xl px-4 py-2.5 text-slate-100 text-xs focus:outline-none focus:border-ios-borderFocus focus:bg-black/60 transition-colors" />
                   </div>
                 </div>
                 
                 <div class="flex flex-col gap-1.5">
-                  <label for="form-subject" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Objet</label>
-                  <input type="text" id="form-subject" name="subject" required placeholder="Sujet de votre message" class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors" />
+                  <label for="form-subject" class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">Objet</label>
+                  <input type="text" id="form-subject" name="subject" required placeholder="Sujet de votre message" class="w-full bg-black/40 border border-ios-border rounded-xl px-4 py-2.5 text-slate-100 text-xs focus:outline-none focus:border-ios-borderFocus focus:bg-black/60 transition-colors" />
                 </div>
                 
                 <div class="flex flex-col gap-1.5">
-                  <label for="form-message" class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">Message</label>
-                  <textarea id="form-message" name="message" required rows="4" placeholder="Décrivez votre besoin d'alternance ou projet..." class="w-full bg-slate-950/40 border border-ios-border rounded-xl px-4 py-3 text-slate-100 text-xs focus:outline-none focus:border-ios-blue focus:bg-slate-950/65 transition-colors resize-none"></textarea>
+                  <label for="form-message" class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">Message</label>
+                  <textarea id="form-message" name="message" required rows="3.5" placeholder="Décrivez votre besoin d'alternance ou projet..." class="w-full bg-black/40 border border-ios-border rounded-xl px-4 py-2.5 text-slate-100 text-xs focus:outline-none focus:border-ios-borderFocus focus:bg-black/60 transition-colors resize-none"></textarea>
                 </div>
                 
-                <button type="submit" class="px-5 py-3.5 rounded-xl bg-ios-blue text-white text-xs font-bold uppercase tracking-widest hover:opacity-95 transition-all duration-300 shadow-md flex items-center justify-center gap-2 self-start">
-                  <i data-lucide="send" class="w-4 h-4"></i>
+                <button type="submit" class="px-5 py-3 rounded-xl bg-black border border-white/10 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-white/10 transition-all duration-300 mt-1 flex items-center justify-center gap-2 self-start shadow-sm">
+                  <i data-lucide="send" class="w-3.5 h-3.5"></i>
                   Envoyer le message
                 </button>
                 
                 <!-- Status display -->
-                <div id="form-status" class="hidden font-mono text-xs p-4 rounded-xl border" aria-live="polite"></div>
+                <div id="form-status" class="hidden font-mono text-[10px] p-3 rounded-xl border" aria-live="polite"></div>
               </form>
             </div>
           </div>
@@ -665,34 +630,34 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-ios-border bg-slate-950/80 py-8 relative z-10 text-center text-[10px] text-slate-500 backdrop-blur-md">
+  <footer class="border-t border-ios-border bg-black/85 py-6 relative z-10 text-center text-[9px] text-slate-500 backdrop-blur-md">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <p>© <span id="year">2026</span> Jean-Marc DUSSAUD. Tous droits réservés.</p>
-      <p class="font-mono text-[9px] text-slate-600 flex items-center gap-1.5">
-        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-ios-emerald"></i> iOS Glassmorphic Design v2.0
+      <p class="font-mono text-[8px] text-slate-600 flex items-center gap-1.5 justify-center">
+        <i data-lucide="shield-check" class="w-3 h-3"></i> iOS Glassmorphic Design v2.0
       </p>
     </div>
   </footer>
 
-  <!-- DYNAMIC PROJECT MODAL (iOS Translucent Fullscreen Overlay) -->
-  <div id="project-detail-modal" class="fixed inset-0 z-[100] bg-slate-950/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-slate-900/90 border border-white/10 rounded-2xl w-full max-w-3xl p-6 md:p-8 relative flex flex-col gap-6 max-h-[90vh] shadow-2xl backdrop-blur-xl">
+  <!-- DYNAMIC PROJECT MODAL (iOS Grayscale Fullscreen Overlay) -->
+  <div id="project-detail-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-black border border-white/10 rounded-2xl w-full max-w-2xl p-6 relative flex flex-col gap-4 max-h-[90vh] shadow-2xl backdrop-blur-xl">
       <button onclick="closeProjectModalDirect()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors" aria-label="Fermer">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
       
       <!-- Modal Header -->
-      <div id="project-modal-header" class="border-b border-white/5 pb-4">
+      <div id="project-modal-header" class="border-b border-white/5 pb-3">
         <!-- Injected via JavaScript -->
       </div>
       
       <!-- Modal Scrollable Content -->
-      <div id="project-modal-body" class="flex-1 overflow-y-auto leading-relaxed text-sm text-slate-300 pr-2 select-text scrollbar-thin flex flex-col gap-6">
+      <div id="project-modal-body" class="flex-1 overflow-y-auto leading-relaxed text-xs text-slate-300 pr-1.5 select-text scrollbar-thin flex flex-col gap-4">
         <!-- Injected via JavaScript -->
       </div>
       
       <!-- Modal Footer -->
-      <div id="project-modal-footer" class="border-t border-white/5 pt-4 flex flex-wrap items-center justify-between gap-4">
+      <div id="project-modal-footer" class="border-t border-white/5 pt-3 flex flex-wrap items-center justify-between gap-3">
         <!-- Injected via JavaScript -->
       </div>
     </div>

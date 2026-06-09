@@ -1,5 +1,5 @@
 /* =========================================================================
-   Jean-Marc DUSSAUD - Portfolio JS Interactivity (iOS Edition)
+   Jean-Marc DUSSAUD - Portfolio JS Interactivity (iOS Monochrome Edition)
    Manages Scroll Spy active links, Scroll Reveal, Mobile Navigation,
    Dynamic Project Modals, and simulated Form Submissions.
    ========================================================================= */
@@ -34,7 +34,7 @@ const projectsData = {
     ]
   },
   p2: {
-    title: "SERENITY — IA Santé Mentale & RGPD",
+    title: "SERENITY — IA & Conformité RGPD",
     tag: "Sécurité & RGPD",
     techs: ["Node.js", "SQL Server", "Anonymisation", "RGPD Compliance", "Websockets"],
     github: "https://github.com/JMDcoding/S%C3%A9r%C3%A9nit%C3%A9",
@@ -49,8 +49,8 @@ const projectsData = {
     ],
     results: [
       "Conformité RGPD validée à 100% dès la phase d'audit pré-production.",
-      "Anonymisation irréversible des données cliniques garantie avant envoi à l'API IA.",
-      "Zéro incident d'exposition ou de fuite de données personnelles pendant la phase pilote."
+      "Anonymisation irréversible des données cliniques de santé mentale garantie avant transmission.",
+      "Aucun incident d'exposition ou de fuite de données personnelles pendant la phase pilote."
     ],
     docs: [
       { name: "Analyse d'Impact relative à la Protection des Données (AIPD)", type: "pdf" }
@@ -64,7 +64,7 @@ const projectsData = {
     tag: "Supervision & Cyber",
     techs: ["Honeypot Cowrie", "Grafana", "Loki", "Docker Compose", "Python Scripting"],
     github: "https://github.com/JMDcoding/Honeypot-",
-    situation: "L'organisation manquait cruellement de visibilité sur les attaques externes ciblant ses serveurs exposés sur Internet, rendant impossible la mise en place de politiques de bannissement proactives ou de veille sur les menaces.",
+    situation: "L'organisation manquait de visibilité sur les attaques externes ciblant ses serveurs exposés sur Internet, rendant impossible la mise en place de politiques de bannissement proactives ou de veille sur les menaces.",
     task: "Déployer un environnement de simulation d'attaque (Honeypot) isolé sur le port SSH, récupérer les tentatives d'intrusion et les analyser visuellement sur un dashboard en temps réel.",
     actions: [
       "Création d'un conteneur Docker isolé faisant tourner le honeypot SSH Cowrie.",
@@ -171,7 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
      1. SCROLL REVEAL EFFECT
      ========================================================================= */
   const revealElements = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  const scrollContainer = document.querySelector('.scroll-container');
+
+  if ('IntersectionObserver' in window && scrollContainer) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -181,7 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, {
       threshold: 0.05,
-      rootMargin: '0px 0px -40px 0px'
+      rootMargin: '0px 0px -20px 0px',
+      root: scrollContainer // Observe within the scroll snap container
     });
     revealElements.forEach(el => observer.observe(el));
   } else {
@@ -222,19 +225,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =========================================================================
-     3. SCROLL SPY ACTIVE LINK STATE
+     3. SCROLL SPY ACTIVE LINK STATE (Updated for Scroll Snap Container)
      ========================================================================= */
   const sections = document.querySelectorAll('section');
-  const navItems = document.querySelectorAll('.nav-item');
+  const navItems = document.querySelectorAll('.nav-item, .mobile-nav-link');
 
   function scrollSpy() {
+    if (!scrollContainer) return;
+    
     let currentSectionId = 'home';
-    const scrollPosition = window.scrollY + 100; // Offset for sticky nav
+    const containerScrollTop = scrollContainer.scrollTop;
+    const containerHeight = scrollContainer.clientHeight;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+      
+      // Determine active section when it occupies the majority of the viewport
+      if (containerScrollTop >= (sectionTop - containerHeight / 2) && containerScrollTop < (sectionTop + sectionHeight - containerHeight / 2)) {
         currentSectionId = section.getAttribute('id');
       }
     });
@@ -248,11 +256,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', scrollSpy);
-  scrollSpy(); // Initial call
+  if (scrollContainer) {
+    scrollContainer.addEventListener('scroll', scrollSpy);
+    scrollSpy(); // Initial run
+  }
 
   /* =========================================================================
-     4. CONTACT FORM VALIDATION & SIMULATION
+     4. CONTACT FORM VALIDATION & SIMULATION (Monochrome Theme)
      ========================================================================= */
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
@@ -265,14 +275,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const oldBtnHTML = submitBtn.innerHTML;
       
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i> Transmission...`;
+      submitBtn.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin text-white"></i> Transmission...`;
       lucide.createIcons();
       
       // Simulate form post
       setTimeout(() => {
         formStatus.classList.remove('hidden', 'border-red-500/20', 'bg-red-500/5', 'text-red-400');
-        formStatus.classList.add('border-ios-emerald/20', 'bg-ios-emerald/5', 'text-ios-emerald');
-        formStatus.innerHTML = `<strong>Message envoyé avec succès !</strong> Votre demande a été reçue. Jean-Marc DUSSAUD vous recontactera dans les plus brefs délais.`;
+        // Grayscale / monochrome success styles
+        formStatus.classList.add('border-white/10', 'bg-white/5', 'text-white');
+        formStatus.innerHTML = `<strong>Message envoyé avec succès !</strong> Votre demande a été reçue. Jean-Marc DUSSAUD vous répondra très rapidement.`;
         
         contactForm.reset();
         submitBtn.disabled = false;
@@ -289,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================================================================
-   5. DYNAMIC PROJECT DETAIL MODAL (iOS Style)
+   5. DYNAMIC PROJECT DETAIL MODAL (iOS Grayscale Edition)
    ========================================================================= */
 function openProjectModal(projectId) {
   const modal = document.getElementById('project-detail-modal');
@@ -301,108 +312,108 @@ function openProjectModal(projectId) {
 
   const project = projectsData[projectId];
 
-  // 1. Inject Header
+  // 1. Inject Header (Monochrome tags)
   headerEl.innerHTML = `
-    <div class="flex items-center gap-2 mb-2">
-      <span class="text-[9px] font-mono tracking-widest text-ios-blue bg-ios-blue/10 border border-ios-blue/15 px-2.5 py-0.5 rounded font-bold uppercase">${project.tag}</span>
+    <div class="flex items-center gap-2 mb-1.5">
+      <span class="text-[8px] font-mono tracking-widest text-slate-300 bg-white/5 border border-white/10 px-2 py-0.5 rounded font-bold uppercase">${project.tag}</span>
     </div>
-    <h3 class="font-space font-bold text-xl text-white">${project.title}</h3>
+    <h3 class="font-space font-bold text-base text-white">${project.title}</h3>
   `;
 
-  // 2. Inject Badges & STAR details in the scroll body
-  let techBadgesHTML = project.techs.map(t => `<span class="bg-white/5 border border-white/10 px-2 py-1 rounded-md text-[10px] font-mono text-slate-300 hover:border-ios-blue hover:text-white transition-colors">${t}</span>`).join('');
+  // 2. Inject Badges & STAR details in the scroll body (Monochrome tags & icons)
+  let techBadgesHTML = project.techs.map(t => `<span class="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[9px] font-mono text-slate-300 hover:border-white/30 transition-colors">${t}</span>`).join('');
   
   let actionsListHTML = project.actions.map(a => `
-    <li class="flex items-start gap-2 text-xs md:text-sm text-slate-300">
-      <i data-lucide="check" class="w-4 h-4 text-ios-blue flex-shrink-0 mt-0.5"></i>
+    <li class="flex items-start gap-2 text-[11px] text-slate-300">
+      <i data-lucide="check" class="w-3.5 h-3.5 text-slate-400 flex-shrink-0 mt-0.5"></i>
       <span>${a}</span>
     </li>
   `).join('');
 
   let resultsListHTML = project.results.map(r => `
-    <li class="flex items-start gap-2 text-xs md:text-sm text-slate-200">
-      <i data-lucide="trending-up" class="w-4 h-4 text-ios-emerald flex-shrink-0 mt-0.5"></i>
+    <li class="flex items-start gap-2 text-[11px] text-slate-200">
+      <i data-lucide="trending-up" class="w-3.5 h-3.5 text-slate-300 flex-shrink-0 mt-0.5"></i>
       <span>${r}</span>
     </li>
   `).join('');
 
   let docsListHTML = project.docs.map(d => `
-    <div class="flex items-center justify-between p-3.5 bg-slate-950/50 border border-white/5 rounded-xl hover:border-ios-blue/30 transition-colors group">
-      <div class="flex items-center gap-2.5">
-        <i data-lucide="${d.type === 'schema' ? 'network' : d.type === 'code' ? 'terminal' : 'file-text'}" class="w-4.5 h-4.5 text-ios-blue"></i>
-        <span class="text-xs font-mono text-slate-300 group-hover:text-white">${d.name}</span>
+    <div class="flex items-center justify-between p-2.5 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-colors group">
+      <div class="flex items-center gap-2">
+        <i data-lucide="${d.type === 'schema' ? 'network' : d.type === 'code' ? 'terminal' : 'file-text'}" class="w-4 h-4 text-slate-400"></i>
+        <span class="text-[10px] font-mono text-slate-400 group-hover:text-white">${d.name}</span>
       </div>
-      <button onclick="alert('Téléchargement simulé de : ${d.name}')" class="text-[10px] font-semibold uppercase tracking-wider text-slate-400 group-hover:text-ios-blue flex items-center gap-1">
-        <i data-lucide="download" class="w-3.5 h-3.5"></i> Ouvrir
+      <button onclick="alert('Téléchargement simulé de : ${d.name}')" class="text-[9px] font-semibold uppercase tracking-wider text-slate-500 group-hover:text-white flex items-center gap-1">
+        <i data-lucide="download" class="w-3 h-3"></i> Ouvrir
       </button>
     </div>
   `).join('');
 
   let photosListHTML = project.photos.map(p => `
-    <div class="flex flex-col gap-2 bg-slate-950/40 border border-white/5 rounded-xl p-3">
-      <img src="${p.url}" alt="${p.caption}" class="w-full h-auto rounded-lg border border-white/5 filter brightness-95" />
-      <span class="text-[10px] font-mono text-slate-500 text-center">${p.caption}</span>
+    <div class="flex flex-col gap-1.5 bg-black/40 border border-white/5 rounded-xl p-2.5">
+      <img src="${p.url}" alt="${p.caption}" class="w-full h-auto rounded border border-white/5 filter brightness-90 grayscale" />
+      <span class="text-[9px] font-mono text-slate-500 text-center">${p.caption}</span>
     </div>
   `).join('');
 
   bodyEl.innerHTML = `
     <!-- Tech Stack -->
-    <div class="flex flex-wrap gap-1.5 border-b border-white/5 pb-4">
+    <div class="flex flex-wrap gap-1 border-b border-white/5 pb-3">
       ${techBadgesHTML}
     </div>
 
     <!-- STAR - Situation -->
-    <div class="flex flex-col gap-2">
-      <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-ios-blue">1. Situation &amp; Contexte</h4>
-      <p class="text-slate-300 text-xs md:text-sm leading-relaxed">${project.situation}</p>
+    <div class="flex flex-col gap-1">
+      <h4 class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">1. Situation &amp; Contexte</h4>
+      <p class="text-slate-300 text-[11px] leading-relaxed">${project.situation}</p>
     </div>
 
     <!-- STAR - Tâche -->
-    <div class="flex flex-col gap-2">
-      <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-ios-blue">2. Tâche &amp; Objectif</h4>
-      <p class="text-slate-300 text-xs md:text-sm leading-relaxed">${project.task}</p>
+    <div class="flex flex-col gap-1">
+      <h4 class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">2. Tâche &amp; Objectif</h4>
+      <p class="text-slate-300 text-[11px] leading-relaxed">${project.task}</p>
     </div>
 
     <!-- STAR - Actions -->
-    <div class="flex flex-col gap-2.5">
-      <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-ios-blue">3. Actions Techniques Déployées</h4>
-      <ul class="flex flex-col gap-2.5 pl-1">
+    <div class="flex flex-col gap-1.5">
+      <h4 class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">3. Actions Techniques</h4>
+      <ul class="flex flex-col gap-2 pl-0.5">
         ${actionsListHTML}
       </ul>
     </div>
 
-    <!-- STAR - Résultats (Highlight block) -->
-    <div class="bg-ios-emerald/5 border border-ios-emerald/20 p-4 rounded-xl flex flex-col gap-2.5 shadow-[0_0_15px_rgba(52,199,89,0.02)]">
-      <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-ios-emerald">4. Résultats &amp; Impact (Métriques)</h4>
-      <ul class="flex flex-col gap-2 pl-1">
+    <!-- STAR - Résultats -->
+    <div class="bg-white/5 border border-white/10 p-3.5 rounded-xl flex flex-col gap-2 shadow-sm">
+      <h4 class="text-[9px] font-mono font-bold uppercase tracking-wider text-white">4. Résultats &amp; Impact (Métriques)</h4>
+      <ul class="flex flex-col gap-2 pl-0.5">
         ${resultsListHTML}
       </ul>
     </div>
 
     <!-- Documents joints -->
-    <div class="flex flex-col gap-3">
-      <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Documents techniques joints</h4>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    <div class="flex flex-col gap-2">
+      <h4 class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">Documents techniques joints</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
         ${docsListHTML}
       </div>
     </div>
 
     <!-- Galerie de photos / schémas -->
-    <div class="flex flex-col gap-3">
-      <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Illustrations d'architecture</h4>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="flex flex-col gap-2">
+      <h4 class="text-[9px] font-mono font-bold uppercase tracking-wider text-slate-400">Illustrations</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         ${photosListHTML}
       </div>
     </div>
   `;
 
-  // 3. Inject Footer Buttons
+  // 3. Inject Footer Buttons (Black theme)
   footerEl.innerHTML = `
-    <a href="${project.github}" target="_blank" rel="noreferrer" class="px-4 py-2.5 rounded-xl border border-white/10 bg-slate-950/60 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-2 hover:border-ios-blue hover:bg-slate-900 transition-colors shadow-sm">
-      <i data-lucide="github" class="w-4 h-4"></i>
+    <a href="${project.github}" target="_blank" rel="noreferrer" class="px-3.5 py-2.5 rounded-xl border border-white/10 bg-black text-white font-bold text-[10px] uppercase tracking-wider flex items-center gap-1.5 hover:bg-white/15 transition-colors shadow-sm">
+      <i data-lucide="github" class="w-3.5 h-3.5"></i>
       Consulter sur GitHub
     </a>
-    <button onclick="closeProjectModalDirect()" class="px-4 py-2.5 rounded-xl bg-slate-950 border border-white/5 text-slate-300 hover:text-white hover:border-white/10 text-xs font-bold uppercase transition-colors">
+    <button onclick="closeProjectModalDirect()" class="px-3.5 py-2.5 rounded-xl bg-black border border-white/10 text-slate-300 hover:text-white hover:bg-white/15 text-[10px] font-bold uppercase transition-colors">
       Fermer la vue
     </button>
   `;

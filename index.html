@@ -48,9 +48,6 @@
   <header class="fixed top-0 left-0 w-full z-50 card-dark border-b border-white/10 transition-all duration-300" id="main-header">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3 group" aria-label="Retour à l'accueil">
-        <div class="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center font-space font-bold text-white text-sm transition-transform group-hover:scale-105 card-dark">
-          JMD
-        </div>
         <div class="flex flex-col">
           <strong class="font-space font-bold text-sm tracking-tight text-white group-hover:text-slate-300 transition-colors">Jean-Marc DUSSAUD</strong>
           <span class="text-[11px] text-slate-400 font-semibold tracking-wider uppercase">Alternant · Septembre 2026</span>
@@ -61,6 +58,7 @@
       <nav class="hidden md:flex items-center gap-6 font-semibold text-sm tracking-wider uppercase text-slate-300">
         <a href="#home" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Accueil</a>
         <a href="#certs" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Certifications</a>
+        <a href="#experiences" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Expériences</a>
         <a href="#projects" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Projets</a>
         <a href="#skills" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Compétences</a>
         <a href="#contact" class="nav-item hover:text-white transition-colors py-2 px-1 relative">Contact</a>
@@ -84,6 +82,7 @@
       <nav class="flex flex-col p-6 gap-4 font-semibold text-xs uppercase tracking-wider text-slate-300">
         <a href="#home" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-white/10">Accueil</a>
         <a href="#certs" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-white/10">Certifications</a>
+        <a href="#experiences" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-white/10">Expériences</a>
         <a href="#projects" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-white/10">Projets</a>
         <a href="#skills" class="mobile-nav-link hover:text-white transition-colors py-1.5 border-b border-white/10">Compétences</a>
         <a href="#contact" class="mobile-nav-link hover:text-white transition-colors py-1.5">Contact</a>
@@ -224,15 +223,23 @@
               <ul class="flex flex-col gap-4 text-sm text-slate-300">
                 <li class="border-b border-white/10 pb-3">
                   <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Cisco CCNA</strong>
-                    <span class="text-xs text-slate-400 font-mono">Validé</span>
+                    <strong class="text-white text-sm">
+                      <a href="assets/certifications/cisco_ccna.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+                        Cisco CCNA <i data-lucide="external-link" class="w-3 h-3"></i>
+                      </a>
+                    </strong>
+                    <span class="text-xs text-slate-400 font-mono text-green-400">Validé</span>
                   </div>
                   <span class="text-xs text-slate-400">Routage, commutation LAN, et protocoles réseaux standards.</span>
                 </li>
                 <li>
                   <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Fortinet NSE 4</strong>
-                    <span class="text-xs text-slate-400 font-mono">Validé</span>
+                    <strong class="text-white text-sm">
+                      <a href="assets/certifications/fortinet_nse4.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+                        Fortinet NSE 4 <i data-lucide="external-link" class="w-3 h-3"></i>
+                      </a>
+                    </strong>
+                    <span class="text-xs text-slate-400 font-mono text-green-400">Validé</span>
                   </div>
                   <span class="text-xs text-slate-400">Administration et sécurité des pare-feux FortiGate.</span>
                 </li>
@@ -254,14 +261,22 @@
               <ul class="flex flex-col gap-4 text-sm text-slate-300">
                 <li class="border-b border-white/10 pb-3">
                   <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">LPIC-1 Linux Admin</strong>
+                    <strong class="text-white text-sm">
+                      <a href="https://www.lpi.org/our-certifications/lpic-1-overview" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+                        LPIC-1 Linux Admin <i data-lucide="external-link" class="w-3 h-3"></i>
+                      </a>
+                    </strong>
                     <span class="text-xs text-slate-400 font-mono">80%</span>
                   </div>
                   <span class="text-xs text-slate-400">Administration système, gestion des paquets et bash scripting.</span>
                 </li>
                 <li>
                   <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Fortinet NSE 5</strong>
+                    <strong class="text-white text-sm">
+                      <a href="https://training.fortinet.com/local/b2c/prog_cert.php?code=NSE5" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+                        Fortinet NSE 5 <i data-lucide="external-link" class="w-3 h-3"></i>
+                      </a>
+                    </strong>
                     <span class="text-xs text-slate-400 font-mono">40%</span>
                   </div>
                   <span class="text-xs text-slate-400">Gestion centralisée des pare-feux et analyse des logs.</span>
@@ -284,14 +299,22 @@
               <ul class="flex flex-col gap-3 text-sm text-slate-300">
                 <li class="border-b border-white/10 pb-3">
                   <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">Cisco CCNP Enterprise</strong>
+                    <strong class="text-white text-sm">
+                      <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/professional/ccnp-enterprise.html" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+                        Cisco CCNP Enterprise <i data-lucide="external-link" class="w-3 h-3"></i>
+                      </a>
+                    </strong>
                     <span class="text-xs text-slate-400 font-mono">2-3 ans</span>
                   </div>
                   <span class="text-xs text-slate-400">Réseaux d'entreprise complexes et technologies WAN.</span>
                 </li>
                 <li class="border-b border-white/10 pb-3">
                   <div class="flex items-center justify-between mb-1">
-                    <strong class="text-white text-sm">CISSP</strong>
+                    <strong class="text-white text-sm">
+                      <a href="https://www.isc2.org/Certifications/CISSP" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+                        CISSP <i data-lucide="external-link" class="w-3 h-3"></i>
+                      </a>
+                    </strong>
                     <span class="text-xs text-slate-400 font-mono">5 ans</span>
                   </div>
                   <span class="text-xs text-slate-400">Management global de la sécurité de l'information.</span>
@@ -311,6 +334,98 @@
       </div>
     </section>
 
+    <!-- PAGE 2.5: EXPERIENCES -->
+    <section id="experiences" class="section-page min-h-screen relative flex items-start justify-center px-6 md:px-12 py-24 bg-transparent overflow-y-auto">
+      <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
+        <div class="mb-8 text-center md:text-left">
+          <span class="text-xs font-mono font-bold tracking-widest text-slate-300 uppercase card-dark border border-white/15 px-4 py-1.5 rounded-full inline-block mb-3">
+            Parcours Pro
+          </span>
+          <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Expériences</h2>
+        </div>
+
+        <div class="flex flex-col gap-6">
+          
+          <!-- Experience 1 -->
+          <div class="card-dark rounded-2xl p-6 shadow-xl relative overflow-hidden transition-all duration-300">
+            <div class="absolute left-0 top-0 w-1 h-full bg-blue-500/50"></div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div>
+                <h3 class="font-space font-bold text-lg text-white">Stage Administrateur Systèmes et Réseaux</h3>
+                <span class="text-sm font-mono text-slate-400">PHENCO — Rep. Du Congo [Télétravail]</span>
+              </div>
+              <div class="mt-2 md:mt-0 text-xs font-mono border border-white/15 px-3 py-1 rounded-lg text-slate-300 card-dark inline-block self-start">
+                Juillet 2026 - Septembre 2026
+              </div>
+            </div>
+            <ul class="flex flex-col gap-2 text-sm text-slate-300 list-disc list-inside">
+              <li>Administration et maintenance des systèmes et infrastructures réseau.</li>
+              <li>Support technique et gestion des accès utilisateurs.</li>
+              <li>Analyse et renforcement de la sécurité informatique.</li>
+              <li>Réalisation d'un projet d'optimisation de l'infrastructure.</li>
+            </ul>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="card-dark rounded-2xl p-6 shadow-xl relative overflow-hidden transition-all duration-300">
+            <div class="absolute left-0 top-0 w-1 h-full bg-green-500/50"></div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div>
+                <h3 class="font-space font-bold text-lg text-white">Bénévole Devops &amp; Développeur Web</h3>
+                <span class="text-sm font-mono text-slate-400">Coopérative Orient — Rep. Du Congo [Télétravail]</span>
+              </div>
+              <div class="mt-2 md:mt-0 text-xs font-mono border border-white/15 px-3 py-1 rounded-lg text-slate-300 card-dark inline-block self-start">
+                Mai 2026 - Juin 2026
+              </div>
+            </div>
+            <ul class="flex flex-col gap-2 text-sm text-slate-300 list-disc list-inside mb-4">
+              <li>Automatisation des déploiements via des pipelines CI/CD.</li>
+              <li>Administration et gestion des infrastructures systèmes et cloud.</li>
+              <li>Déploiement et gestion de conteneurs (Docker).</li>
+              <li>Supervision, monitoring et optimisation des systèmes et applications.</li>
+            </ul>
+            <div class="flex items-center gap-3 mt-4">
+              <a href="https://github.com/JMDcoding/Cooperative-Orient" target="_blank" class="px-3 py-1.5 rounded-lg border border-white/15 text-white text-[10px] uppercase font-bold tracking-wider hover:bg-white/10 transition-colors flex items-center gap-1.5 card-dark">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Voir le projet sur GitHub
+              </a>
+              <button onclick="openProjectModal('p12')" class="px-3 py-1.5 rounded-lg border border-white/15 text-white text-[10px] uppercase font-bold tracking-wider hover:bg-white/10 transition-colors flex items-center gap-1.5 card-dark">
+                <i data-lucide="folder" class="w-3.5 h-3.5"></i> Fiche Projet
+              </button>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="card-dark rounded-2xl p-6 shadow-xl relative overflow-hidden transition-all duration-300">
+            <div class="absolute left-0 top-0 w-1 h-full bg-purple-500/50"></div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+              <div>
+                <h3 class="font-space font-bold text-lg text-white">Devops &amp; Support</h3>
+                <span class="text-sm font-mono text-slate-400">Plateforme de conseil financier (Projet) — France, Maroc [Télétravail]</span>
+              </div>
+              <div class="mt-2 md:mt-0 text-xs font-mono border border-white/15 px-3 py-1 rounded-lg text-slate-300 card-dark inline-block self-start">
+                Février 2026 - Juin 2026
+              </div>
+            </div>
+            <ul class="flex flex-col gap-2 text-sm text-slate-300 list-disc list-inside mb-4">
+              <li>Développement et maintenance d’applications web.</li>
+              <li>Support technique aux utilisateurs et résolution des incidents.</li>
+              <li>Gestion et mise à jour de bases de données et contenus web.</li>
+              <li>Tests, correction de bugs et amélioration continue des applications.</li>
+            </ul>
+            <div class="flex items-center gap-3 mt-4">
+              <a href="https://github.com/JMDcoding/Site_Web_Conseil_Financier" target="_blank" class="px-3 py-1.5 rounded-lg border border-white/15 text-white text-[10px] uppercase font-bold tracking-wider hover:bg-white/10 transition-colors flex items-center gap-1.5 card-dark">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Voir le projet sur GitHub
+              </a>
+              <button onclick="openProjectModal('p1')" class="px-3 py-1.5 rounded-lg border border-white/15 text-white text-[10px] uppercase font-bold tracking-wider hover:bg-white/10 transition-colors flex items-center gap-1.5 card-dark">
+                <i data-lucide="folder" class="w-3.5 h-3.5"></i> Fiche Projet
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- PAGE 3: PROJETS -->
     <section id="projects" class="section-page min-h-screen relative flex items-start justify-center px-6 md:px-12 py-24 bg-transparent overflow-y-auto">
       <div class="max-w-6xl w-full mx-auto relative z-10 reveal">
@@ -320,361 +435,39 @@
           </span>
           <h2 class="font-space font-bold text-3xl md:text-4xl text-white">Projets Réalisés</h2>
           <p class="text-slate-300 text-sm md:text-base mt-2 max-w-xl">
-            Cliquez sur un projet pour consulter sa fiche complète, voir les schémas joints et lire le code source.
+            Cliquez sur un projet pour consulter sa fiche complète. Utilisez la recherche et les filtres pour affiner.
           </p>
         </div>
 
-        <!-- Projects Grid — 22 projets -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          
-          <div onclick="openProjectModal('p1')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement Web</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Site Web Conseil Financier</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Site web professionnel pour un cabinet de conseil financier.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">HTML5</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">CSS3</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">JavaScript</span>
-            </div>
+        <!-- Search and Filters -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-white/5 border border-white/10 p-4 rounded-2xl">
+          <div class="relative w-full md:w-1/3">
+            <input type="text" id="project-search" placeholder="Rechercher par mots-clés..." class="w-full bg-black/40 border border-white/15 rounded-xl py-2 px-4 pl-10 text-slate-200 focus:outline-none focus:border-white/40 transition-colors" />
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-3.5"></i>
           </div>
-
-          <div onclick="openProjectModal('p2')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Sécurité &amp; RGPD</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">SERENITY — IA &amp; Conformité RGPD</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Anonymisation et sécurisation des bases de données sensibles.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Node.js</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">SQL Server</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">RGPD</span>
-            </div>
+          <div class="flex flex-wrap items-center gap-2 w-full md:w-2/3 justify-start md:justify-end" id="project-filters">
+            <button class="filter-btn active px-3 py-1.5 rounded-lg border border-white/15 text-xs font-mono text-white bg-white/15 shadow-sm hover:bg-white/20 transition-colors" data-filter="all">Tous</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/10 transition-colors" data-filter="Développement">Développement</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/10 transition-colors" data-filter="Cyber">Cyber</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/10 transition-colors" data-filter="Réseau">Réseau</button>
+            <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15 text-xs font-mono text-slate-400 hover:text-white hover:bg-white/10 transition-colors" data-filter="IA">IA</button>
           </div>
+        </div>
 
-          <div onclick="openProjectModal('p3')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement &amp; Jeu</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Mini-jeu JAVA</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Jeu interactif en Java exploitant la programmation orientée objet.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Java</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">POO</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Swing</span>
-            </div>
-          </div>
+        <!-- Projects Grid Container (populated by JS) -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-[400px]">
+          <!-- JS will inject cards here -->
+        </div>
 
-          <div onclick="openProjectModal('p4')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Projet Académique</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Projet d'Étude 2ème Année</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Projet de recherche et développement collaboratif en équipe.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Recherche</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Gestion de projet</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p5')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">IoT &amp; Réseaux</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Plateforme Surveillance IoT</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Capture réseau, analyse en temps réel et alertes sur micro-contrôleurs.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Python</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Websockets</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">IoT</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p6')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Cybersécurité &amp; Python</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Malware PY — Cadre Pédagogique</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Analyse de malware éducatif pour comprendre les techniques d'attaque.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Python</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Sécurité</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Pédagogie</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p7')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement &amp; Jeu</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Great Road Racer — Jeu Vidéo</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Jeu vidéo de course automobile avec système de scoring.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Game Dev</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Programmation</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p8')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Infrastructure &amp; Sécurité</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Virtualisation Pare-feu VM</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Déploiement et configuration de pare-feux en environnement virtualisé.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">VMware</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Virtualisation</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Firewall</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p9')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Cybersécurité &amp; Réseau</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Scan Anti-Poison</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Détection et prévention des attaques ARP Poisoning.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Python</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">ARP</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Réseau</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p10')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Data &amp; Analyse</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Projet Big Data</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Analyse et traitement de flux de données massifs.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Python</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Pandas</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Big Data</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p11')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Taureau (Taurus)</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Application logicielle complète avec architecture structurée.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Programmation</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Architecture</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p12')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement Web</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Coopérative Orient</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Système de gestion pour une coopérative associative.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Web</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Gestion</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Base de données</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p13')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Supervision &amp; Cyber</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Honeypot SSH, Grafana &amp; Loki</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Piège à intrusion SSH avec dashboard de supervision en temps réel.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Cowrie</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Loki</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Grafana</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p14')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Infrastructure &amp; Sécurité</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Manipulation PFSENSE</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Configuration avancée de pare-feux pfSense : filtrage, NAT, VPN.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">pfSense</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">VPN</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">VLANs</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p15')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement Legacy</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Bank COBOL</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Application bancaire simulant les opérations d'un système mainframe.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">COBOL</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Mainframe</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Bancaire</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p16')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement &amp; Finance</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">FORTUNE — Micro-finance</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Application de gestion de micro-finance et opérations financières.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Application</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Finance</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Gestion</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p17')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Suivant (Next)</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Projet de développement logiciel technique.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Programmation</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Développement</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p18')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement &amp; Script</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Analyseur de Logs Python</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Analyse de logs Apache/Syslog par expressions régulières (regex).</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Python</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Regex</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Logs</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p19')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">IA &amp; Data Science</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Optimisation &amp; Analyse IA</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Modèles d'analyse et d'optimisation basés sur l'intelligence artificielle.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Python</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">ML</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Optimisation</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p20')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Développement Web &amp; Éthique</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Site Web Hack for Good</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Plateforme de promotion du hacking éthique et cybersécurité.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">HTML5</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">CSS3</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Sécurité Web</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p21')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Science &amp; Programmation</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Simulation Phénomène Physique</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Simulation numérique de phénomènes physiques avec visualisation.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Simulation</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Physique</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Visualisation</span>
-            </div>
-          </div>
-
-          <div onclick="openProjectModal('p22')" class="card-dark card-dark-hover rounded-2xl p-5 shadow-xl cursor-pointer flex flex-col justify-between group min-h-[160px] transition-all duration-300">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono border border-white/15 text-slate-300 px-2.5 py-1 rounded-lg font-bold uppercase card-dark">Innovation &amp; Immersif</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-white transition-colors"></i>
-              </div>
-              <h3 class="font-space font-bold text-base text-white mb-2">Projet RA/RV — Réalité Augmentée</h3>
-              <p class="text-slate-300 text-xs leading-relaxed">Application de réalité augmentée/virtuelle avec Unity 3D et Vuforia.</p>
-            </div>
-            <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Unity 3D</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">Vuforia</span>
-              <span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">C#</span>
-            </div>
-          </div>
-
+        <!-- Pagination Controls -->
+        <div class="flex items-center justify-center gap-6 mt-8" id="pagination-controls">
+          <button id="prev-page" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent transition-all">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <span id="page-indicator" class="text-xs font-mono text-slate-400">Page 1 / 1</span>
+          <button id="next-page" class="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 disabled:opacity-30 disabled:hover:bg-transparent transition-all">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -697,21 +490,22 @@
           <div class="card-dark rounded-2xl p-5 shadow-xl">
             <h3 class="font-space font-bold text-sm text-white mb-4 flex items-center gap-2.5">
               <div class="w-9 h-9 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 flex-shrink-0 card-dark">
-                <i data-lucide="server" class="w-5 h-5"></i>
+                <i data-lucide="shield" class="w-5 h-5"></i>
               </div>
-              Infrastructures, Systèmes &amp; Cybersécurité
+              Réseau, Cloud et Cybersécurité
             </h3>
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">DNS / DHCP / TCP-IP</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">DNS / DHCP / TCP/IP</span>
               <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">pfSense / IPFire</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Fortinet FortiGate (NSE 4)</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Wireshark Analysis</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Zabbix / Grafana / Loki</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">VLAN Segmentation</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Cowrie Honeypot</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">VMware / Proxmox VE</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Wireshark / Zabbix</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Kali Linux</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">VLAN</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Honeypot SSH Cowrie</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Grafana / Loki</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Cloud</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Windows Server/Client</span>
               <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Active Directory</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">AWS &amp; Azure Basics</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Azure / AWS</span>
             </div>
           </div>
 
@@ -720,17 +514,18 @@
               <div class="w-9 h-9 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 flex-shrink-0 card-dark">
                 <i data-lucide="code" class="w-5 h-5"></i>
               </div>
-              Développement &amp; Scripting
+              Développement
             </h3>
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Python Scripting</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">C# / .NET / Java</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">JavaScript</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">SQL Databases</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">HTML5 / CSS3</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Pandas Library</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Unity 3D / Vuforia</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Websockets / FFmpeg</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Python</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">C# / Java</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">JavaScript / Frameworks JS</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">SQL</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">HTML / CSS</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Pandas</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Vuforia / Unity</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Websocket</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">FFmpeg</span>
             </div>
           </div>
 
@@ -739,15 +534,14 @@
               <div class="w-9 h-9 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 flex-shrink-0 card-dark">
                 <i data-lucide="git-branch" class="w-5 h-5"></i>
               </div>
-              Méthodologies &amp; Processus IT
+              Méthodologie de travail
             </h3>
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">AGILE / Scrum</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Kanban ticketing</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">GanttProject (Planning)</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">ITIL Incident Management</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Technical Documentation</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Git / GitHub control</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">AGILE</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Kanban</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">GanttProject</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Documentation technique</span>
+              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Pack Office</span>
             </div>
           </div>
 
@@ -756,15 +550,13 @@
               <div class="w-9 h-9 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 flex-shrink-0 card-dark">
                 <i data-lucide="globe" class="w-5 h-5"></i>
               </div>
-              Langues &amp; Communication
+              Langues
             </h3>
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-200">
               <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Français (Natif)</span>
               <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Lingala (Natif)</span>
               <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Anglais C1</span>
               <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Allemand B2</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Vulgarisation technique</span>
-              <span class="border border-white/15 px-3 py-1.5 rounded-lg card-dark">Pédagogie d'assistance</span>
             </div>
           </div>
 
@@ -794,12 +586,6 @@
                       <i data-lucide="mail" class="w-5 h-5"></i>
                     </div>
                     <span>jeanmarcdussaud@gmail.com</span>
-                  </a>
-                  <a href="tel:+33610230059" class="flex items-center gap-3 hover:text-white transition-colors self-start">
-                    <div class="w-9 h-9 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark">
-                      <i data-lucide="phone" class="w-5 h-5"></i>
-                    </div>
-                    <span>+33 6 10 23 00 59</span>
                   </a>
                   <div class="flex items-center gap-3 text-slate-400 self-start">
                     <div class="w-9 h-9 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark">

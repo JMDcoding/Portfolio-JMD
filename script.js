@@ -7,31 +7,25 @@
 // Project Data Store (STAR Method, GitHub Repository, & Attachments)
 const projectsData = {
   p1: {
-    title: "Refonte & Sécurisation d'Infrastructure",
-    tag: "Infrastructure & Sécurité",
-    techs: ["Proxmox VE", "Ansible", "Wazuh SIEM", "PfSense", "VLANs", "VPN IPsec"],
-    github: "https://github.com/JMDcoding/Manipulation_PFSENSE",
-    situation: "L'entreprise disposait d'un réseau plat sans cloisonnement de sécurité. Les serveurs de base de données sensibles et les postes clients se trouvaient sur le même segment. De plus, aucune centralisation de logs ni supervision n'existait, empêchant toute visibilité sur les incidents.",
-    task: "Moderniser l'architecture matérielle, isoler les flux d'administration des flux serveurs et collaborateurs par segmentation virtuelle, et déployer un système de détection d'intrusions (SIEM) robuste sans perturber l'activité.",
+    title: "Site Web Conseil Financier",
+    tag: "Développement Web",
+    techs: ["HTML5", "CSS3", "JavaScript", "Design Responsive"],
+    github: "https://github.com/JMDcoding/Site_Web_Conseil_Financier",
+    situation: "Un cabinet de conseil financier avait besoin d'une présence en ligne professionnelle pour présenter ses services et attirer de nouveaux clients.",
+    task: "Concevoir et développer un site web moderne, responsive et optimisé pour la conversion.",
     actions: [
-      "Déploiement d'un cluster d'hyperviseurs Proxmox VE sécurisés avec routage inter-VLAN.",
-      "Segmentation physique et virtuelle via pfSense : VLAN 10 (Admin), VLAN 20 (Servers), VLAN 30 (Ansible/Wazuh).",
-      "Écriture de playbooks Ansible pour déployer automatiquement les agents Wazuh et durcir les OS Debian.",
-      "Mise en place d'un tunnel VPN IPsec pour sécuriser l'accès distant des collaborateurs.",
-      "Centralisation des logs système et réseaux vers Wazuh SIEM avec règles de corrélation avancées."
+      "Conception de l'architecture du site et du parcours utilisateur.",
+      "Développement front-end responsive avec HTML5, CSS3 et JavaScript.",
+      "Intégration d'éléments visuels professionnels et de sections de présentation de services.",
+      "Optimisation SEO et performance pour un chargement rapide."
     ],
     results: [
-      "Temps de restauration (RTO) réduit de 75% grâce au clustering et sauvegardes programmées.",
-      "Baisse de 40% des incidents de sécurité suite à l'application des règles d'isolation Strict Deny.",
-      "Centralisation et audit à 100% des accès aux serveurs de production."
+      "Site fonctionnel et accessible sur tous les supports (desktop, tablette, mobile).",
+      "Interface professionnelle renforçant la crédibilité du cabinet.",
+      "Temps de chargement optimisé sous les 2 secondes."
     ],
-    docs: [
-      { name: "Topologie Réseau (Schéma PDF)", type: "schema" },
-      { name: "Playbooks de durcissement Ansible (.yml)", type: "code" }
-    ],
-    photos: [
-      { caption: "Schéma d'architecture VLAN", url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=600&auto=format&fit=crop" }
-    ]
+    docs: [],
+    photos: []
   },
   p2: {
     title: "SERENITY — IA & Conformité RGPD",
@@ -60,6 +54,218 @@ const projectsData = {
     ]
   },
   p3: {
+    title: "Mini-jeu JAVA",
+    tag: "Développement & Jeu",
+    techs: ["Java", "POO", "Swing", "Game Design"],
+    github: "https://github.com/JMDcoding/Mini-jeu-JAVA",
+    situation: "Projet académique visant à mettre en pratique les concepts de programmation orientée objet en Java à travers la création d'un mini-jeu interactif.",
+    task: "Développer un jeu fonctionnel en Java exploitant les principes de POO : héritage, polymorphisme et encapsulation.",
+    actions: [
+      "Modélisation UML des classes du jeu (personnages, niveaux, interactions).",
+      "Développement du moteur de jeu en Java avec interface graphique Swing.",
+      "Implémentation de la logique de gameplay et des règles de scoring.",
+      "Tests unitaires et débogage des mécaniques de jeu."
+    ],
+    results: [
+      "Jeu fonctionnel validé et présenté en soutenance académique.",
+      "Maîtrise des concepts POO avancés démontrée à travers l'architecture du code.",
+      "Code source documenté et versionné sur GitHub."
+    ],
+    docs: [],
+    photos: []
+  },
+  p4: {
+    title: "Projet d'Étude 2ème Année",
+    tag: "Projet Académique",
+    techs: ["Recherche", "Documentation", "Gestion de projet"],
+    github: "https://github.com/mlft9/projet-etude-2eme-annee",
+    situation: "Projet d'étude collaboratif de deuxième année visant à approfondir un sujet technique en équipe.",
+    task: "Mener un projet de recherche et de développement en équipe dans le cadre du cursus académique.",
+    actions: [
+      "Recherche bibliographique et état de l'art sur le sujet choisi.",
+      "Répartition des tâches et gestion de projet en méthodologie Agile.",
+      "Rédaction du rapport technique et préparation de la soutenance.",
+      "Collaboration via Git et outils de gestion de version."
+    ],
+    results: [
+      "Projet validé avec succès lors de la soutenance de fin d'année.",
+      "Compétences en travail d'équipe et gestion de projet renforcées.",
+      "Documentation technique complète livrée."
+    ],
+    docs: [],
+    photos: []
+  },
+  p5: {
+    title: "Plateforme Surveillance IoT",
+    tag: "IoT & Réseaux",
+    techs: ["Python", "Supervision", "Websockets", "Micro-contrôleurs", "Networking"],
+    github: "https://github.com/JMDcoding/Platform_Surveillan_IOT",
+    situation: "La supervision d'équipements matériels IoT distribués exigeait une agrégation de métriques rapide (températures, connectivité, ping) pour anticiper les pannes sur site.",
+    task: "Développer un serveur de supervision léger capable d'interroger périodiquement les micro-contrôleurs connectés et d'afficher leur statut opérationnel sur un écran de contrôle centralisé.",
+    actions: [
+      "Création d'un script d'écoute socket en Python pour centraliser les rapports d'état des cartes IoT.",
+      "Mise en œuvre d'un protocole d'échange Websocket asynchrone pour la transmission instantanée.",
+      "Développement d'un dashboard de supervision avec courbes de température et indicateurs ping.",
+      "Mise en place de règles d'alerte SMTP (emails) en cas d'absence de ping supérieure à 30 secondes."
+    ],
+    results: [
+      "Temps de détection de déconnexion descendu sous la barre des 2 secondes.",
+      "Réduction de 30% des interruptions d'équipements grâce aux alertes mail de prévention.",
+      "Supervision stable supportant plus de 50 modules IoT connectés simultanément."
+    ],
+    docs: [
+      { name: "Schéma d'intégration et d'adressage IP des modules", type: "schema" }
+    ],
+    photos: []
+  },
+  p6: {
+    title: "Malware PY — Cadre Pédagogique",
+    tag: "Cybersécurité & Python",
+    techs: ["Python", "Sécurité Offensive", "Analyse Malware", "Pédagogie"],
+    github: "https://github.com/JMDcoding/Malware_PY-Cadre-pedagogique-",
+    situation: "Comprendre les mécanismes internes des malwares est essentiel pour mieux les détecter et les neutraliser. Ce projet a été réalisé dans un cadre strictement pédagogique.",
+    task: "Développer et analyser un programme malveillant simulé en Python pour comprendre les techniques d'attaque et renforcer les capacités de défense.",
+    actions: [
+      "Étude des techniques courantes de malware (keylogger, reverse shell, persistance).",
+      "Développement d'un prototype de malware éducatif en Python dans un environnement sandboxé.",
+      "Analyse du comportement du malware avec des outils de détection (Wireshark, Process Monitor).",
+      "Rédaction d'un rapport détaillant les contre-mesures et méthodes de détection."
+    ],
+    results: [
+      "Compréhension approfondie des vecteurs d'attaque et mécanismes de persistance.",
+      "Identification des signatures comportementales exploitables par les outils de détection.",
+      "Documentation pédagogique complète à usage académique."
+    ],
+    docs: [],
+    photos: []
+  },
+  p7: {
+    title: "Great Road Racer — Jeu Vidéo",
+    tag: "Développement & Jeu",
+    techs: ["Game Development", "Programmation", "Design de niveaux"],
+    github: "https://github.com/JMDcoding/Jeu-Video-Great_Road_Racer-",
+    situation: "Projet de développement d'un jeu vidéo de course automobile pour explorer les mécaniques de game design et de programmation graphique.",
+    task: "Concevoir et développer un jeu de course jouable avec système de scoring et niveaux progressifs.",
+    actions: [
+      "Conception du game design document (GDD) et des mécaniques de course.",
+      "Développement du moteur de jeu et des contrôles véhicule.",
+      "Création des assets graphiques et des circuits de course.",
+      "Implémentation du système de score et de progression."
+    ],
+    results: [
+      "Jeu fonctionnel avec plusieurs niveaux de difficulté.",
+      "Gameplay fluide et responsive avec gestion des collisions.",
+      "Projet présenté et validé en contexte académique."
+    ],
+    docs: [],
+    photos: []
+  },
+  p8: {
+    title: "Virtualisation Pare-feu VM",
+    tag: "Infrastructure & Sécurité",
+    techs: ["VMware", "Virtualisation", "Pare-feu", "Réseau"],
+    github: "https://github.com/JMDcoding/Machine_Virtuelle_Firewall_Virtualisation",
+    situation: "La sécurisation des environnements virtualisés nécessitait le déploiement et la configuration de pare-feux au sein de machines virtuelles.",
+    task: "Mettre en place et configurer un pare-feu virtuel dans un environnement de virtualisation pour sécuriser les flux réseau inter-VM.",
+    actions: [
+      "Déploiement d'un environnement de virtualisation avec plusieurs machines virtuelles.",
+      "Installation et configuration d'un pare-feu virtuel (pfSense/IPFire).",
+      "Mise en place de règles de filtrage et de NAT entre les segments réseau.",
+      "Tests de sécurité et validation du cloisonnement réseau."
+    ],
+    results: [
+      "Pare-feu virtuel opérationnel assurant le filtrage inter-VLAN.",
+      "Isolation effective des segments réseau vérifiée par tests de pénétration.",
+      "Documentation complète de la configuration déployée."
+    ],
+    docs: [],
+    photos: []
+  },
+  p9: {
+    title: "Scan Anti-Poison",
+    tag: "Cybersécurité & Réseau",
+    techs: ["Python", "ARP Spoofing", "Détection d'intrusion", "Réseau"],
+    github: "https://github.com/JMDcoding/Scan_Anti-Poison",
+    situation: "Les attaques de type ARP Poisoning représentent une menace courante sur les réseaux locaux, permettant l'interception de données sensibles.",
+    task: "Développer un outil de détection et de prévention des attaques ARP Poisoning sur un réseau local.",
+    actions: [
+      "Analyse des mécanismes d'attaque ARP Spoofing/Poisoning.",
+      "Développement d'un scanner Python pour détecter les incohérences dans les tables ARP.",
+      "Implémentation d'un système d'alerte en temps réel lors de la détection d'une attaque.",
+      "Tests en environnement contrôlé pour valider l'efficacité de la détection."
+    ],
+    results: [
+      "Détection fiable des attaques ARP Poisoning en temps réel.",
+      "Alertes automatiques permettant une réaction rapide de l'administrateur.",
+      "Outil documenté et réutilisable en contexte professionnel."
+    ],
+    docs: [],
+    photos: []
+  },
+  p10: {
+    title: "Projet Big Data",
+    tag: "Data & Analyse",
+    techs: ["Python", "Pandas", "Big Data", "Analyse de données"],
+    github: "https://github.com/JMDcoding/Projet_Big-Data-",
+    situation: "Projet académique visant la compréhension des flux de données massifs et leur traitement à grande échelle.",
+    task: "Analyser et traiter de larges volumes de données en exploitant les outils et méthodes du Big Data.",
+    actions: [
+      "Collecte et nettoyage de jeux de données volumineux.",
+      "Exploration et visualisation des données avec Python et Pandas.",
+      "Application d'algorithmes de traitement et d'analyse statistique.",
+      "Présentation des résultats sous forme de rapports et visualisations."
+    ],
+    results: [
+      "Traitement efficace de jeux de données de plusieurs gigaoctets.",
+      "Insights exploitables extraits des données analysées.",
+      "Compétences Big Data validées dans le cadre du cursus."
+    ],
+    docs: [],
+    photos: []
+  },
+  p11: {
+    title: "Taureau (Taurus)",
+    tag: "Développement",
+    techs: ["Programmation", "Architecture logicielle"],
+    github: "https://github.com/JMDcoding/Taurus",
+    situation: "Projet de développement logiciel axé sur la création d'une application fonctionnelle.",
+    task: "Développer une application complète en respectant les bonnes pratiques de développement.",
+    actions: [
+      "Conception de l'architecture logicielle et modélisation des données.",
+      "Développement itératif avec gestion de version Git.",
+      "Tests et débogage pour assurer la fiabilité de l'application.",
+      "Documentation technique du projet."
+    ],
+    results: [
+      "Application fonctionnelle livrée et documentée.",
+      "Code source versionné et structuré sur GitHub.",
+      "Bonnes pratiques de développement appliquées."
+    ],
+    docs: [],
+    photos: []
+  },
+  p12: {
+    title: "Coopérative Orient",
+    tag: "Développement Web",
+    techs: ["Web", "Gestion", "Base de données"],
+    github: "https://github.com/JMDcoding/Cooperative-Orient",
+    situation: "Projet de développement d'une application de gestion pour une coopérative.",
+    task: "Concevoir et développer un système de gestion adapté aux besoins d'une coopérative.",
+    actions: [
+      "Analyse des besoins métier et conception du cahier des charges.",
+      "Développement de l'application avec gestion des membres et des transactions.",
+      "Mise en place de la base de données et des interfaces utilisateur.",
+      "Tests fonctionnels et validation avec les utilisateurs finaux."
+    ],
+    results: [
+      "Application de gestion fonctionnelle déployée.",
+      "Gestion simplifiée des membres et des opérations de la coopérative.",
+      "Interface utilisateur intuitive et accessible."
+    ],
+    docs: [],
+    photos: []
+  },
+  p13: {
     title: "Honeypot SSH, Grafana & Loki",
     tag: "Supervision & Cyber",
     techs: ["Honeypot Cowrie", "Grafana", "Loki", "Docker Compose", "Python Scripting"],
@@ -82,65 +288,97 @@ const projectsData = {
       { name: "Documentation d'installation Docker Compose", type: "code" },
       { name: "Rapport mensuel d'audit des menaces SSH", type: "pdf" }
     ],
-    photos: [
-      { caption: "Tableau de bord Grafana", url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" }
-    ]
+    photos: []
   },
-  p4: {
-    title: "Surveillance IoT & Dashboard",
-    tag: "IoT & Réseaux",
-    techs: ["Python", "Supervision", "Websockets", "Micro-contrôleurs", "Networking"],
-    github: "https://github.com/JMDcoding/Mon_tableau_de_bord_IoT",
-    situation: "La supervision d'équipements matériels IoT distribués exigeait une agrégation de métriques rapide (températures, connectivité, ping) pour anticiper les pannes sur site.",
-    task: "Développer un serveur de supervision léger capable d'interroger périodiquement les micro-contrôleurs connectés et d'afficher leur statut opérationnel sur un écran de contrôle centralisé.",
+  p14: {
+    title: "Manipulation PFSENSE",
+    tag: "Infrastructure & Sécurité",
+    techs: ["pfSense", "Firewall", "NAT", "VLANs", "VPN"],
+    github: "https://github.com/JMDcoding/Manipulation_PFSENSE",
+    situation: "La configuration avancée de pare-feux pfSense est essentielle pour sécuriser les infrastructures réseau d'entreprise.",
+    task: "Maîtriser les configurations avancées de pfSense : règles de filtrage, NAT, VPN et segmentation VLAN.",
     actions: [
-      "Création d'un script d'écoute socket en Python pour centraliser les rapports d'état des cartes IoT.",
-      "Mise en œuvre d'un protocole d'échange Websocket asynchrone pour la transmission instantanée.",
-      "Développement d'un dashboard de supervision avec courbes de température et indicateurs ping.",
-      "Mise en place de règles d'alerte SMTP (emails) en cas d'absence de ping supérieure à 30 secondes."
+      "Installation et configuration initiale de pfSense sur environnement virtualisé.",
+      "Mise en place de règles de filtrage granulaires et de NAT avancé.",
+      "Configuration de tunnels VPN IPsec et OpenVPN.",
+      "Segmentation réseau via VLANs avec routage inter-VLAN."
     ],
     results: [
-      "Temps de détection de déconnexion descendu sous la barre des 2 secondes.",
-      "Réduction de 30% des interruptions d'équipements grâce aux alertes mail de prévention.",
-      "Supervision stable supportant plus de 50 modules IoT connectés simultanément."
+      "Maîtrise opérationnelle de pfSense démontrée.",
+      "Infrastructure réseau segmentée et sécurisée.",
+      "Documentation détaillée des configurations déployées."
     ],
-    docs: [
-      { name: "Schéma d'intégration et d'adressage IP des modules", type: "schema" }
-    ],
-    photos: [
-      { caption: "Dashboard de contrôle IoT", url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" }
-    ]
+    docs: [],
+    photos: []
   },
-  p5: {
-    title: "Scanner Réseau sous Kali Linux",
-    tag: "Audit & Bash",
-    techs: ["Kali Linux", "Nmap", "Bash scripting", "Vulnerability auditing"],
-    github: "https://github.com/JMDcoding/Scanner-Kali-linux",
-    situation: "La détection manuelle d'équipements non-autorisés ou de ports ouverts vulnérables sur l'infrastructure d'entreprise prenait trop de temps et souffrait d'erreurs humaines fréquentes.",
-    task: "Automatiser l'audit régulier du réseau interne en scannant la topologie, en listant les ports et en alertant l'administrateur en cas de changement par rapport à la base saine.",
+  p15: {
+    title: "Bank COBOL",
+    tag: "Développement Legacy",
+    techs: ["COBOL", "Mainframe", "Système bancaire", "Batch Processing"],
+    github: "https://github.com/JMDcoding/Bank_COBOL",
+    situation: "Les systèmes bancaires historiques fonctionnent encore largement sur des programmes COBOL. Comprendre ce langage est essentiel pour maintenir ces systèmes critiques.",
+    task: "Développer une application bancaire en COBOL simulant les opérations courantes d'un système bancaire.",
     actions: [
-      "Écriture d'un script Bash englobant des requêtes Nmap ciblées sur les sous-réseaux IP.",
-      "Mise en place de filtres Regex pour extraire les services et versions exposées.",
-      "Sauvegarde des scans sous forme d'historique xml pour comparer les états réseau.",
-      "Automatisation du lancement du script par tâche planifiée Cron sous Kali Linux."
+      "Apprentissage du langage COBOL et de ses paradigmes de programmation.",
+      "Développement d'un programme de gestion de comptes bancaires.",
+      "Implémentation des opérations de dépôt, retrait et consultation de solde.",
+      "Gestion des fichiers séquentiels pour la persistance des données."
     ],
     results: [
-      "Détection instantanée sous 1 heure de tout nouvel hôte suspect connecté au LAN.",
-      "Identification proactive de 4 services obsolètes vulnérables corrigés avant exploitation.",
-      "Rapport automatisé généré quotidiennement pour l'équipe de sécurité informatique."
+      "Application bancaire fonctionnelle en COBOL.",
+      "Compréhension des systèmes legacy et de leur maintenance.",
+      "Compétence rare et valorisée sur le marché de l'emploi."
     ],
-    docs: [
-      { name: "Code source du script de scan Bash", type: "code" }
-    ],
-    photos: [
-      { caption: "Aperçu du script de scan Nmap", url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop" }
-    ]
+    docs: [],
+    photos: []
   },
-  p6: {
+  p16: {
+    title: "FORTUNE — Micro-finance",
+    tag: "Développement & Finance",
+    techs: ["Application", "Finance", "Gestion"],
+    github: "https://github.com/JMDcoding/FORTUNE",
+    situation: "Le secteur de la micro-finance nécessite des outils adaptés pour gérer les opérations financières à petite échelle.",
+    task: "Développer une application de micro-finance permettant la gestion simplifiée des opérations financières.",
+    actions: [
+      "Analyse des besoins spécifiques au secteur de la micro-finance.",
+      "Conception de l'architecture applicative et du modèle de données.",
+      "Développement des modules de gestion des prêts et des remboursements.",
+      "Tests fonctionnels et validation des calculs financiers."
+    ],
+    results: [
+      "Application de micro-finance opérationnelle.",
+      "Gestion automatisée des calculs d'intérêts et des échéanciers.",
+      "Interface utilisateur adaptée aux besoins du secteur."
+    ],
+    docs: [],
+    photos: []
+  },
+  p17: {
+    title: "Suivant (Next)",
+    tag: "Développement",
+    techs: ["Programmation", "Développement"],
+    github: "https://github.com/JMDcoding/Next",
+    situation: "Projet de développement logiciel.",
+    task: "Concevoir et développer une application dans le cadre d'un projet technique.",
+    actions: [
+      "Conception de l'architecture et planification du développement.",
+      "Développement itératif avec versioning Git.",
+      "Tests et validation du programme.",
+      "Documentation du code source."
+    ],
+    results: [
+      "Application fonctionnelle livrée.",
+      "Code versionné et documenté sur GitHub.",
+      "Objectifs du projet atteints."
+    ],
+    docs: [],
+    photos: []
+  },
+  p18: {
     title: "Analyseur de Logs Python",
     tag: "Développement & Script",
     techs: ["Python", "Regex", "Logs Auditing", "Automation", "Security Alerts"],
-    github: "https://github.com/JMDcoding/Analyse%20de%20Logs",
+    github: "https://github.com/JMDcoding/Analyse-de-Logs",
     situation: "Les fichiers de logs Apache et serveurs d'accès généraient des gigaoctets de données inexploitées, dissimulant des tentatives récurrentes de force brute ou d'injections de requêtes suspectes.",
     task: "Créer un script Python capable de lire en flux continu les fichiers logs, d'identifier les signatures de requêtes hostiles et de synthétiser les données importantes sous forme de rapports légers.",
     actions: [
@@ -157,9 +395,91 @@ const projectsData = {
     docs: [
       { name: "Documentation d'utilisation du script Python", type: "pdf" }
     ],
-    photos: [
-      { caption: "Capture du script d'analyse Regex", url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop" }
-    ]
+    photos: []
+  },
+  p19: {
+    title: "Optimisation & Analyse IA",
+    tag: "IA & Data Science",
+    techs: ["Python", "Machine Learning", "Analyse de données", "Optimisation"],
+    github: "https://github.com/JMDcoding/Projet_Optimisation_Analyse_IA",
+    situation: "L'optimisation des processus par l'intelligence artificielle est un enjeu majeur pour les entreprises cherchant à améliorer leur efficacité opérationnelle.",
+    task: "Développer des modèles d'analyse et d'optimisation basés sur l'IA pour résoudre des problèmes complexes.",
+    actions: [
+      "Collecte et préparation des jeux de données pour l'entraînement des modèles.",
+      "Développement et entraînement de modèles de Machine Learning.",
+      "Optimisation des hyperparamètres et évaluation des performances.",
+      "Visualisation des résultats et interprétation des prédictions."
+    ],
+    results: [
+      "Modèles d'IA performants avec des métriques de précision satisfaisantes.",
+      "Insights exploitables pour l'optimisation des processus cibles.",
+      "Documentation technique et rapport d'analyse complets."
+    ],
+    docs: [],
+    photos: []
+  },
+  p20: {
+    title: "Site Web Hack for Good",
+    tag: "Développement Web & Éthique",
+    techs: ["HTML5", "CSS3", "JavaScript", "Sécurité Web"],
+    github: "https://github.com/JMDcoding/Site-Web-Hack-for-good-",
+    situation: "Le hacking éthique et la sensibilisation à la cybersécurité nécessitent des plateformes accessibles pour éduquer le public.",
+    task: "Développer un site web dédié à la promotion du hacking éthique et de la cybersécurité responsable.",
+    actions: [
+      "Conception du design et de l'expérience utilisateur du site.",
+      "Développement front-end avec technologies web modernes.",
+      "Rédaction de contenus pédagogiques sur la cybersécurité.",
+      "Déploiement et tests d'accessibilité."
+    ],
+    results: [
+      "Site web fonctionnel promouvant le hacking éthique.",
+      "Contenus pédagogiques accessibles à un large public.",
+      "Interface moderne et responsive."
+    ],
+    docs: [],
+    photos: []
+  },
+  p21: {
+    title: "Simulation Phénomène Physique",
+    tag: "Science & Programmation",
+    techs: ["Simulation", "Physique", "Programmation", "Visualisation"],
+    github: "https://github.com/JMDcoding/Simumlation-Phenomene-Physique",
+    situation: "La simulation numérique de phénomènes physiques permet de comprendre et visualiser des concepts complexes de manière interactive.",
+    task: "Développer un programme de simulation de phénomènes physiques avec visualisation en temps réel.",
+    actions: [
+      "Modélisation mathématique du phénomène physique choisi.",
+      "Développement de l'algorithme de simulation numérique.",
+      "Création de l'interface de visualisation graphique.",
+      "Validation des résultats par comparaison avec les modèles théoriques."
+    ],
+    results: [
+      "Simulation fonctionnelle reproduisant fidèlement le phénomène physique.",
+      "Visualisation interactive permettant de modifier les paramètres en temps réel.",
+      "Résultats cohérents avec les prédictions théoriques."
+    ],
+    docs: [],
+    photos: []
+  },
+  p22: {
+    title: "Projet RA/RV — Réalité Augmentée",
+    tag: "Innovation & Immersif",
+    techs: ["Unity 3D", "Vuforia", "Réalité Augmentée", "Réalité Virtuelle", "C#"],
+    github: "https://github.com/JMDcoding/Projet_RA-RV",
+    situation: "Les technologies de réalité augmentée et virtuelle offrent de nouvelles possibilités d'interaction et de visualisation pour de nombreux secteurs.",
+    task: "Développer une application exploitant la réalité augmentée et/ou virtuelle avec Unity 3D et Vuforia.",
+    actions: [
+      "Apprentissage et maîtrise de Unity 3D et du SDK Vuforia.",
+      "Conception de l'expérience immersive et des interactions utilisateur.",
+      "Développement de l'application avec suivi de marqueurs et superposition 3D.",
+      "Tests sur appareils mobiles et optimisation des performances."
+    ],
+    results: [
+      "Application RA/RV fonctionnelle déployée sur mobile.",
+      "Expérience immersive fluide avec détection précise des marqueurs.",
+      "Compétences en technologies immersives validées."
+    ],
+    docs: [],
+    photos: []
   }
 };
 

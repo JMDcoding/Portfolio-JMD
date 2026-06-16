@@ -12,7 +12,7 @@ const projectsData = {
     description: "Site vitrine professionnel conçu pour un cabinet de conseil en gestion financière, présentant l'ensemble des services d'accompagnement et de stratégie patrimoniale.",
     techs: ["HTML5", "CSS3", "JavaScript", "Design Responsive"],
     github: "https://github.com/JMDcoding/Site_Web_Conseil_Financier",
-    website: "",
+    website: "https://site-web-conseil-financier-78gddzdju.vercel.app/",
     assetDir: "assets/projects/p01_site_web_conseil_financier",
     situation: "Un cabinet de conseil financier avait besoin d'une présence en ligne professionnelle pour présenter ses services et attirer de nouveaux clients.",
     task: "Concevoir et développer un site web moderne, responsive et optimisé pour la conversion.",
@@ -82,7 +82,7 @@ const projectsData = {
     photos: []
   },
   p4: {
-    title: "Projet d'Étude 2ème Année",
+    title: "ParcelIA",
     tag: "Projet Académique",
     description: "Projet de recherche et développement collaboratif mené en équipe de 2ème année, couvrant la méthodologie Agile, la rédaction technique et la gestion de version.",
     techs: ["Recherche", "Documentation", "Gestion de projet"],
@@ -281,7 +281,7 @@ const projectsData = {
     description: "Application de gestion pour une coopérative associative, intégrant la gestion des membres, des transactions et des opérations courantes avec base de données.",
     techs: ["Web", "Gestion", "Base de données"],
     github: "https://github.com/JMDcoding/Cooperative-Orient",
-    website: "",
+    website: "https://coop-rative-orient.vercel.app/#farms",
     assetDir: "assets/projects/p12_cooperative_orient",
     situation: "Projet de développement d'une application de gestion pour une coopérative.",
     task: "Concevoir et développer un système de gestion adapté aux besoins d'une coopérative.",
@@ -906,6 +906,10 @@ function renderProjects() {
       
       let techHTML = p.techs.slice(0, 3).map(t => `<span class="text-[10px] font-mono border border-white/10 px-2 py-1 rounded-lg text-slate-400 card-dark">${t}</span>`).join('');
       
+      const hasWebBtn = (greenDotProjectsIds.includes(id) && p.website) 
+        ? `<a href="${p.website}" target="_blank" onclick="event.stopPropagation()" class="mt-2 px-3 py-1.5 rounded-lg border border-white/15 text-white text-[10px] uppercase font-bold tracking-wider hover:bg-white/10 transition-colors inline-flex items-center gap-1.5 w-max bg-black/40"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Version Web</a>` 
+        : '';
+        
       card.innerHTML = `
         <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
         <div class="relative z-10">
@@ -918,8 +922,11 @@ function renderProjects() {
           <h3 class="font-space font-bold text-base text-white mb-2 flex items-center">${p.title} ${hasGreenDot}</h3>
           <p class="text-slate-300 text-xs leading-relaxed line-clamp-2">${p.description}</p>
         </div>
-        <div class="flex flex-wrap gap-1.5 mt-4 relative z-10">
-          ${techHTML}
+        <div class="flex flex-col gap-2 mt-4 relative z-10">
+          <div class="flex flex-wrap gap-1.5">
+            ${techHTML}
+          </div>
+          ${hasWebBtn}
         </div>
       `;
       grid.appendChild(card);

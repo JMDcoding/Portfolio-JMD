@@ -1,0 +1,14 @@
+﻿=== Suivant (Next) ===
+
+Placez ici les images et captures d'ecran de ce projet.
+
+Formats acceptes : .png, .jpg, .webp, .gif
+
+Exemples de fichiers a ajouter :
+  - screenshot_01.png  (capture d'ecran principale)
+  - screenshot_02.png  (capture d'ecran secondaire)
+  - result_01.png      (capture de resultats)
+  - schema_01.png      (schema d'architecture)
+  - demo.gif           (animation demonstrative)
+
+Les images seront automatiquement affichees dans la modale du projet sur le portfolio.

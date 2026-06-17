@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -697,177 +697,180 @@
     </div>
   </div>
 
-  <!-- ============================================================
-       GUIDE RECRUTEUR — Popup de bienvenue avec raccourcis clés
-       ============================================================ -->
+  <!-- TOUR GUIDE INTERACTIF -->
   <style>
-    /* Animations popup guide */
-    @keyframes guideIn {
-      from { opacity: 0; transform: translate(-50%, -50%) scale(0.92); }
-      to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    }
-    @keyframes guidePulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.12); }
-      50%       { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
-    }
-    #recruiter-guide {
-      animation: guideIn 0.45s cubic-bezier(.22,1,.36,1) both;
-    }
-    .guide-shortcut {
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-    .guide-shortcut:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: rgba(255,255,255,0.35);
-      transform: translateX(3px);
-    }
-    #guide-fab {
-      animation: guidePulse 2.5s ease-in-out infinite;
-      transition: all 0.25s ease;
-    }
-    #guide-fab:hover { transform: scale(1.1); }
+    .tseg{position:fixed;z-index:9000;background:rgba(0,0,0,0.78);backdrop-filter:blur(1px);transition:all .38s cubic-bezier(.22,1,.36,1);pointer-events:all}
+    #tring{position:fixed;z-index:9001;border:2px solid rgba(255,255,255,.65);box-shadow:0 0 0 4px rgba(255,255,255,.08),0 0 24px rgba(255,255,255,.18);pointer-events:none;transition:all .38s cubic-bezier(.22,1,.36,1);animation:rp 2.2s ease-in-out infinite}
+    @keyframes rp{0%,100%{box-shadow:0 0 0 4px rgba(255,255,255,.08),0 0 24px rgba(255,255,255,.18)}50%{box-shadow:0 0 0 7px rgba(255,255,255,.03),0 0 36px rgba(255,255,255,.28)}}
+    #ttip{position:fixed;z-index:9002;width:292px;background:rgba(10,10,16,.97);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:18px 18px 14px;box-shadow:0 24px 64px rgba(0,0,0,.7);transition:left .38s cubic-bezier(.22,1,.36,1),top .38s cubic-bezier(.22,1,.36,1)}
+    #ttip::before{content:'';position:absolute;width:10px;height:10px;background:rgba(10,10,16,.97);border:1px solid rgba(255,255,255,.18);transform:rotate(45deg)}
+    #ttip.at::before{top:-6px;left:50%;translate:-50% 0;border-bottom:none;border-right:none}
+    #ttip.ab::before{bottom:-6px;left:50%;translate:-50% 0;border-top:none;border-left:none}
+    #ttip.ar::before{left:-6px;top:50%;translate:0 -50%;border-top:none;border-right:none}
+    #ttip.al::before{right:-6px;top:50%;translate:0 -50%;border-bottom:none;border-left:none}
+    .td{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.2);transition:background .3s}
+    .td.a{background:#fff}.td.d{background:rgba(255,255,255,.45)}
+    #twelcome{position:fixed;inset:0;z-index:9010;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.82);backdrop-filter:blur(5px)}
+    #twcard{background:rgba(10,10,16,.97);border:1px solid rgba(255,255,255,.18);border-radius:26px;padding:36px 32px;max-width:430px;width:90vw;animation:twin .42s cubic-bezier(.22,1,.36,1) both}
+    @keyframes twin{from{opacity:0;transform:scale(.9) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    #tfab{position:fixed;bottom:24px;right:24px;z-index:8990;width:48px;height:48px;border-radius:50%;background:rgba(15,15,22,.9);border:1px solid rgba(255,255,255,.2);display:none;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s;animation:fp 2.8s ease-in-out infinite}
+    @keyframes fp{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.14)}50%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+    #tfab:hover{transform:scale(1.12)}
   </style>
 
-  <!-- Overlay fond -->  
-  <div id="guide-overlay" class="fixed inset-0 z-[150] bg-black/60 backdrop-blur-sm" onclick="closeGuide()"></div>
+  <div id="tseg-top"    class="tseg" style="display:none;top:0;left:0;right:0;height:0"></div>
+  <div id="tseg-bottom" class="tseg" style="display:none;top:100vh;left:0;right:0;bottom:0"></div>
+  <div id="tseg-left"   class="tseg" style="display:none;left:0;top:0;width:0;height:0"></div>
+  <div id="tseg-right"  class="tseg" style="display:none;right:0;left:100vw;top:0;height:0"></div>
+  <div id="tring" style="display:none"></div>
 
-  <!-- Popup principal -->
-  <div id="recruiter-guide" class="fixed top-1/2 left-1/2 z-[160] w-[92vw] max-w-lg
-       -translate-x-1/2 -translate-y-1/2 card-dark border border-white/20 rounded-3xl
-       shadow-2xl p-7 flex flex-col gap-5" role="dialog" aria-label="Guide recruteur">
-
-    <!-- En-tête -->
-    <div class="flex items-start justify-between gap-4">
-      <div>
-        <span class="text-[10px] font-mono font-bold tracking-widest text-slate-400 uppercase border border-white/15 px-3 py-1 rounded-full card-dark inline-block mb-2">
-          👋 Bienvenue
-        </span>
-        <h2 class="font-space font-bold text-xl text-white leading-tight">Guide Recruteur</h2>
-        <p class="text-slate-400 text-xs mt-1 font-mono leading-relaxed">
-          Cliquez sur un raccourci pour accéder directement à la section qui vous intéresse.
-        </p>
-      </div>
-      <button onclick="closeGuide()" class="text-slate-500 hover:text-white transition-colors flex-shrink-0 mt-1" aria-label="Fermer">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
+  <div id="ttip" style="display:none">
+    <div class="flex items-center justify-between mb-3">
+      <div id="tdots" class="flex gap-1.5"></div>
+      <button onclick="window._tSkip()" class="text-[10px] text-slate-600 hover:text-slate-400 font-mono">Fermer x</button>
     </div>
-
-    <!-- Raccourcis cliquables -->
-    <div class="flex flex-col gap-2.5">
-
-      <!-- CV -->
-      <a href="cv/cv.pdf" target="_blank"
-         class="guide-shortcut flex items-center gap-4 border border-white/15 rounded-2xl px-4 py-3.5 card-dark">
-        <div class="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark flex-shrink-0">
-          <i data-lucide="file-text" class="w-5 h-5"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="font-space font-bold text-sm text-white">Télécharger mon CV</div>
-          <div class="text-xs text-slate-400 font-mono mt-0.5">Accès direct au CV complet</div>
-        </div>
-        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 flex-shrink-0"></i>
-      </a>
-
-      <!-- Certifications -->
-      <a href="galerie-certifications.html" onclick="closeGuide()"
-         class="guide-shortcut flex items-center gap-4 border border-white/15 rounded-2xl px-4 py-3.5 card-dark">
-        <div class="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark flex-shrink-0">
-          <i data-lucide="award" class="w-5 h-5"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="font-space font-bold text-sm text-white">Mes Certifications</div>
-          <div class="text-xs text-slate-400 font-mono mt-0.5">Cisco CCNA · Fortinet NSE 1–4</div>
-        </div>
-        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 flex-shrink-0"></i>
-      </a>
-
-      <!-- Projets -->
-      <button onclick="closeGuide(); setTimeout(() => { document.querySelector('.scroll-container').scrollTo({ top: document.querySelector('#projects').offsetTop, behavior: 'smooth' }); }, 150);"
-         class="guide-shortcut w-full text-left flex items-center gap-4 border border-white/15 rounded-2xl px-4 py-3.5 card-dark">
-        <div class="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark flex-shrink-0">
-          <i data-lucide="code-2" class="w-5 h-5"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="font-space font-bold text-sm text-white">Portfolio Projets</div>
-          <div class="text-xs text-slate-400 font-mono mt-0.5">+20 projets : Cyber, Cloud, Dev, IoT…</div>
-        </div>
-        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 flex-shrink-0"></i>
-      </button>
-
-      <!-- Expériences -->
-      <button onclick="closeGuide(); setTimeout(() => { document.querySelector('.scroll-container').scrollTo({ top: document.querySelector('#experiences').offsetTop, behavior: 'smooth' }); }, 150);"
-         class="guide-shortcut w-full text-left flex items-center gap-4 border border-white/15 rounded-2xl px-4 py-3.5 card-dark">
-        <div class="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark flex-shrink-0">
-          <i data-lucide="briefcase" class="w-5 h-5"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="font-space font-bold text-sm text-white">Expériences Professionnelles</div>
-          <div class="text-xs text-slate-400 font-mono mt-0.5">Stages, bénévolat DevOps, missions</div>
-        </div>
-        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 flex-shrink-0"></i>
-      </button>
-
-      <!-- Contact -->
-      <button onclick="closeGuide(); setTimeout(() => { document.querySelector('.scroll-container').scrollTo({ top: document.querySelector('#contact').offsetTop, behavior: 'smooth' }); }, 150);"
-         class="guide-shortcut w-full text-left flex items-center gap-4 border border-white/15 rounded-2xl px-4 py-3.5 card-dark">
-        <div class="w-10 h-10 rounded-xl border border-white/15 flex items-center justify-center text-slate-300 card-dark flex-shrink-0">
-          <i data-lucide="mail" class="w-5 h-5"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <div class="font-space font-bold text-sm text-white">Me Contacter</div>
-          <div class="text-xs text-slate-400 font-mono mt-0.5">Disponible en alternance · Septembre 2026</div>
-        </div>
-        <i data-lucide="arrow-right" class="w-4 h-4 text-slate-500 flex-shrink-0"></i>
-      </button>
-
-    </div>
-
-    <!-- Pied de popup -->
-    <div class="flex items-center justify-between pt-1 border-t border-white/10">
-      <label class="flex items-center gap-2 text-xs text-slate-500 font-mono cursor-pointer select-none">
-        <input type="checkbox" id="guide-no-show" class="accent-white rounded" />
-        Ne plus afficher
-      </label>
-      <button onclick="closeGuide()"
-        class="px-4 py-2 rounded-xl border border-white/15 text-white text-xs font-bold uppercase tracking-wider card-dark hover:border-white/30 transition-all">
-        Explorer le portfolio
-      </button>
+    <p  id="ttlabel" class="text-[9px] font-mono text-slate-500 uppercase tracking-widest mb-1"></p>
+    <h3 id="tttitle" class="font-space font-bold text-sm text-white mb-1.5"></h3>
+    <p  id="tttext"  class="text-xs text-slate-400 leading-relaxed mb-4"></p>
+    <div class="flex items-center gap-2 justify-end">
+      <button id="tprev" onclick="window._tPrev()" class="px-3 py-1.5 rounded-lg border border-white/15 text-xs text-slate-400 hover:text-white font-bold transition-all" style="display:none">Prec.</button>
+      <button id="tnext" onclick="window._tNext()" class="px-4 py-1.5 rounded-xl text-xs text-white font-bold tracking-wide transition-all" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)">Suivant</button>
     </div>
   </div>
 
-  <!-- Bouton flottant pour rouvrir le guide -->
-  <button id="guide-fab" onclick="openGuide()"
-    class="fixed bottom-6 right-6 z-[140] w-12 h-12 rounded-full card-dark border border-white/20
-           flex items-center justify-center text-slate-300 hover:text-white shadow-xl"
-    aria-label="Ouvrir le guide recruteur" title="Guide recruteur">
-    <i data-lucide="compass" class="w-5 h-5"></i>
+  <div id="twelcome">
+    <div id="twcard">
+      <span class="text-[10px] font-mono text-slate-500 uppercase tracking-widest border border-white/10 px-3 py-1 rounded-full inline-block mb-4">Bienvenue</span>
+      <h2 class="font-space font-bold text-2xl text-white mb-2 leading-tight">Guide de premiere visite</h2>
+      <p class="text-slate-400 text-sm leading-relaxed mb-2">Je vais vous guider en <strong class="text-white">7 etapes</strong> directement sur les elements cles : CV, certifications, projets, experiences et contact.</p>
+      <p class="text-slate-500 text-xs font-mono mb-6">Chaque etape met en valeur l'element concerne sur la page.</p>
+      <div class="flex items-center gap-3">
+        <button onclick="window._tStart()" class="flex-1 py-3 rounded-xl border border-white/20 text-white text-sm font-bold tracking-wide hover:bg-white/10 transition-all">Commencer le guide</button>
+        <button onclick="window._tDismiss()" class="px-4 py-3 rounded-xl border border-white/10 text-slate-500 text-sm font-mono hover:text-slate-300 transition-colors">Ignorer</button>
+      </div>
+      <label class="flex items-center gap-2 text-xs text-slate-600 font-mono cursor-pointer mt-4 select-none">
+        <input type="checkbox" id="tnoshow" class="accent-white" />
+        Ne plus afficher a la prochaine visite
+      </label>
+    </div>
+  </div>
+
+  <button id="tfab" onclick="window._tReopen()" aria-label="Guide" title="Relancer le guide">
+    <i data-lucide="compass" class="w-5 h-5 text-slate-300"></i>
   </button>
 
   <script>
-    function openGuide() {
-      document.getElementById('recruiter-guide').style.display  = 'flex';
-      document.getElementById('guide-overlay').style.display    = 'block';
-      document.getElementById('guide-fab').style.display        = 'none';
+  (function(){
+    var STEPS=[
+      {sel:'a[href="cv/cv.pdf"]',                           sec:'home',        label:'Etape 1 / CV',              title:'Mon CV',                        text:'Cliquez ici pour ouvrir mon CV complet dans un nouvel onglet.'},
+      {sel:'a[href="galerie-certifications.html"]',          sec:'certs',       label:'Etape 2 / Certifications',  title:'Galerie de certifications',      text:'Acces a tous mes certificats PDF (Cisco CCNA, Fortinet NSE 1 a 4).'},
+      {sel:'a[href="galerie-certifications.html#cisco-ccna"]',sec:'certs',      label:'Etape 3 / Lien direct',     title:'Acces direct au certificat',     text:'Chaque lien pointe directement vers le certificat concerne dans la galerie.'},
+      {sel:'#project-filters',                               sec:'projects',    label:'Etape 4 / Filtres',          title:'Filtres et Recherche',           text:'Filtrez mes +20 projets par categorie (Cyber, Cloud, Dev, IoT) ou recherchez par mots-cles.'},
+      {sel:'#projects-grid',                                 sec:'projects',    label:'Etape 5 / Projets',          title:'Mes Projets',                    text:'Cliquez sur une carte pour ouvrir la fiche complete : contexte, actions et resultats.'},
+      {sel:'#experiences h2',                                sec:'experiences', label:'Etape 6 / Experiences',      title:'Experiences Professionnelles',    text:'Retrouvez mes stages, missions benevoles DevOps et contributions en entreprise.'},
+      {sel:'#contact-form',                                  sec:'contact',     label:'Etape 7 / Contact',          title:'Me Contacter',                   text:'Disponible en alternance des septembre 2026. Envoyez-moi un message directement ici !'}
+    ];
+    var PAD=10, cur=0, on=false;
+    var gid=function(id){return document.getElementById(id);};
+    var SC=function(){return document.querySelector('.scroll-container');};
+
+    function scrollSec(id){
+      return new Promise(function(res){
+        var c=SC(),s=document.getElementById(id);
+        if(!c||!s){res();return;}
+        if(Math.abs(c.scrollTop-s.offsetTop)<20){res();return;}
+        c.scrollTo({top:s.offsetTop,behavior:'smooth'});
+        setTimeout(res,680);
+      });
     }
-    function closeGuide() {
-      document.getElementById('recruiter-guide').style.display  = 'none';
-      document.getElementById('guide-overlay').style.display    = 'none';
-      document.getElementById('guide-fab').style.display        = 'flex';
-      if (document.getElementById('guide-no-show').checked) {
-        localStorage.setItem('jmd_guide_dismissed', '1');
+
+    function applyOverlay(r){
+      var x=r.left-PAD,y=r.top-PAD,w=r.width+PAD*2,h=r.height+PAD*2;
+      var s=function(id,css){var el=gid('tseg-'+id);Object.assign(el.style,{display:'block'});Object.assign(el.style,css);};
+      s('top',   {top:'0',left:'0',right:'0',height:Math.max(0,y)+'px'});
+      s('bottom',{top:(y+h)+'px',left:'0',right:'0',bottom:'0',height:''});
+      s('left',  {top:y+'px',left:'0',width:Math.max(0,x)+'px',height:h+'px'});
+      s('right', {top:y+'px',left:(x+w)+'px',right:'0',height:h+'px',width:''});
+      var rg=gid('tring');
+      Object.assign(rg.style,{display:'block',left:x+'px',top:y+'px',width:w+'px',height:h+'px',borderRadius:Math.min(14,h/3)+'px'});
+    }
+
+    function hideOverlay(){
+      ['top','bottom','left','right'].forEach(function(k){gid('tseg-'+k).style.display='none';});
+      gid('tring').style.display='none';
+    }
+
+    function applyTooltip(r){
+      var tip=gid('ttip'),TW=292,VW=window.innerWidth,VH=window.innerHeight;
+      tip.style.display='block';tip.style.width=TW+'px';
+      var TH=tip.offsetHeight||200,cx=r.left+r.width/2,L,T;
+      tip.className='';
+      if(r.bottom+TH+22<VH){
+        T=r.bottom+PAD+12;L=Math.max(8,Math.min(cx-TW/2,VW-TW-8));tip.classList.add('at');
+      }else{
+        T=r.top-PAD-TH-12;L=Math.max(8,Math.min(cx-TW/2,VW-TW-8));tip.classList.add('ab');
+        if(T<70){
+          L=r.right+PAD+12;T=Math.max(70,Math.min(r.top+r.height/2-TH/2,VH-TH-8));tip.className='ar';
+          if(L+TW>VW-8){L=r.left-TW-PAD-12;tip.className='al';}
+        }
       }
+      tip.style.left=Math.max(8,L)+'px';tip.style.top=Math.max(70,T)+'px';
     }
-    // N'affiche le guide qu'à la première visite (sauf si "ne plus afficher" coché)
-    document.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('jmd_guide_dismissed') === '1') {
-        document.getElementById('recruiter-guide').style.display = 'none';
-        document.getElementById('guide-overlay').style.display   = 'none';
-        document.getElementById('guide-fab').style.display       = 'flex';
+
+    function renderDots(idx){
+      var c=gid('tdots');c.innerHTML='';
+      STEPS.forEach(function(_,i){
+        var d=document.createElement('div');
+        d.className='td'+(i<idx?' d':i===idx?' a':'');
+        c.appendChild(d);
+      });
+    }
+
+    async function show(idx){
+      if(idx<0||idx>=STEPS.length)return;
+      cur=idx;on=true;
+      var st=STEPS[idx];
+      gid('ttlabel').textContent=st.label;
+      gid('tttitle').textContent=st.title;
+      gid('tttext').textContent=st.text;
+      renderDots(idx);
+      gid('tprev').style.display=idx>0?'inline-block':'none';
+      gid('tnext').textContent=idx===STEPS.length-1?'Terminer':'Suivant';
+      await scrollSec(st.sec);
+      var el=document.querySelector(st.sel);
+      if(!el)return;
+      el.scrollIntoView({behavior:'smooth',block:'nearest'});
+      await new Promise(function(r){setTimeout(r,200);});
+      var rect=el.getBoundingClientRect();
+      applyOverlay(rect);applyTooltip(rect);
+    }
+
+    function end(){hideOverlay();gid('ttip').style.display='none';gid('tfab').style.display='flex';on=false;}
+
+    window._tStart=function(){gid('twelcome').style.display='none';show(0);};
+    window._tNext=function(){cur>=STEPS.length-1?end():show(cur+1);};
+    window._tPrev=function(){if(cur>0)show(cur-1);};
+    window._tSkip=function(){end();};
+    window._tDismiss=function(){gid('twelcome').style.display='none';if(gid('tnoshow').checked)localStorage.setItem('jmd_tv2','1');gid('tfab').style.display='flex';};
+    window._tReopen=function(){gid('tfab').style.display='none';gid('twelcome').style.display='flex';};
+
+    window.addEventListener('resize',function(){
+      if(!on)return;
+      var el=document.querySelector(STEPS[cur].sel);
+      if(!el)return;
+      var r=el.getBoundingClientRect();
+      applyOverlay(r);applyTooltip(r);
+    });
+
+    document.addEventListener('DOMContentLoaded',function(){
+      lucide.createIcons();
+      if(localStorage.getItem('jmd_tv2')==='1'){
+        gid('twelcome').style.display='none';
+        gid('tfab').style.display='flex';
       }
     });
+  })();
   </script>
-
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,25 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>Jean-Marc DUSSAUD | Galerie des Certifications</title>
-  
+
+  <!-- Security CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.tailwindcss.com https://unpkg.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://cdn.jsdelivr.net; frame-src 'none'; object-src 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="no-referrer" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: {
-            ios: {
-              border: 'rgba(255, 255, 255, 0.14)',
-              borderFocus: 'rgba(255, 255, 255, 0.35)',
-            }
-          },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
             space: ['Space Grotesk', 'sans-serif'],
@@ -31,24 +32,57 @@
       }
     }
   </script>
-  
+
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- PDF.js — read-only viewer, no native download toolbar -->
+  <script src="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+
   <style>
-    /* Styling for iframe to blend in with the dark theme */
     .cert-container {
+      position: relative;
       height: 70vh;
-      min-height: 500px;
+      min-height: 480px;
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: 0.75rem;
       background-color: rgba(0,0,0,0.5);
       overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
     }
-    iframe {
+    canvas.pdf-canvas {
+      display: block;
       width: 100%;
       height: 100%;
-      border: none;
+      object-fit: contain;
+      pointer-events: none; /* empêche le drag */
+    }
+    .cert-scroll-area {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    canvas.pdf-page {
+      max-width: 100%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .fallback-msg {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      padding: 2rem;
     }
   </style>
 </head>
@@ -69,9 +103,10 @@
     <div class="max-w-4xl mx-auto">
       <div class="mb-10 text-center">
         <span class="text-xs font-mono font-bold tracking-widest text-slate-300 uppercase card-dark border border-white/15 px-4 py-1.5 rounded-full inline-block mb-3">
-          Certifications Validées
+          Certifications Récentes
         </span>
         <h1 class="font-space font-bold text-3xl md:text-4xl text-white">Consulter les Certificats</h1>
+        <p class="text-slate-400 text-xs mt-3 font-mono">📋 Consultation uniquement — Les certificats ne sont pas téléchargeables.</p>
       </div>
 
       <!-- Cisco CCNA -->
@@ -80,13 +115,9 @@
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/cisco.svg" class="w-6 h-6 invert opacity-80" alt="Cisco" />
           <h2 class="font-space font-bold text-2xl text-white">Cisco CCNA</h2>
         </div>
-        <div class="cert-container flex items-center justify-center relative">
-          <!-- The PDF viewer -->
-          <object data="assets/certifications/cisco_ccna.pdf" type="application/pdf" width="100%" height="100%" class="absolute inset-0 z-10" onerror="this.style.display='none'; document.getElementById('cisco-fallback').style.display='flex';">
-            <p class="hidden">Le PDF n'est pas supporté par votre navigateur.</p>
-          </object>
-          <!-- Fallback if PDF fails to load -->
-          <div id="cisco-fallback" class="absolute inset-0 z-0 flex flex-col items-center justify-center p-6 text-center">
+        <div class="cert-container">
+          <div class="cert-scroll-area" id="cisco-ccna-pages"></div>
+          <div class="fallback-msg" id="cisco-ccna-fallback">
             <i data-lucide="file-warning" class="w-12 h-12 text-slate-500 mb-3"></i>
             <p class="text-slate-400 text-sm">Le PDF de cette certification n'a pas encore été ajouté.</p>
           </div>
@@ -99,11 +130,9 @@
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fortinet.svg" class="w-6 h-6 invert opacity-80" alt="Fortinet" />
           <h2 class="font-space font-bold text-2xl text-white">Fortinet NSE 1</h2>
         </div>
-        <div class="cert-container flex items-center justify-center relative">
-          <object data="assets/certifications/FortinetNS1.pdf" type="application/pdf" width="100%" height="100%" class="absolute inset-0 z-10" onerror="this.style.display='none'; document.getElementById('fortinet1-fallback').style.display='flex';">
-            <p class="hidden">Le PDF n'est pas supporté par votre navigateur.</p>
-          </object>
-          <div id="fortinet1-fallback" class="absolute inset-0 z-0 flex flex-col items-center justify-center p-6 text-center">
+        <div class="cert-container">
+          <div class="cert-scroll-area" id="fortinet-nse1-pages"></div>
+          <div class="fallback-msg" id="fortinet-nse1-fallback">
             <i data-lucide="file-warning" class="w-12 h-12 text-slate-500 mb-3"></i>
             <p class="text-slate-400 text-sm">Le PDF de cette certification n'a pas encore été ajouté.</p>
           </div>
@@ -116,11 +145,9 @@
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fortinet.svg" class="w-6 h-6 invert opacity-80" alt="Fortinet" />
           <h2 class="font-space font-bold text-2xl text-white">Fortinet NSE 2</h2>
         </div>
-        <div class="cert-container flex items-center justify-center relative">
-          <object data="assets/certifications/fortinetNS2.pdf" type="application/pdf" width="100%" height="100%" class="absolute inset-0 z-10" onerror="this.style.display='none'; document.getElementById('fortinet2-fallback').style.display='flex';">
-            <p class="hidden">Le PDF n'est pas supporté par votre navigateur.</p>
-          </object>
-          <div id="fortinet2-fallback" class="absolute inset-0 z-0 flex flex-col items-center justify-center p-6 text-center">
+        <div class="cert-container">
+          <div class="cert-scroll-area" id="fortinet-nse2-pages"></div>
+          <div class="fallback-msg" id="fortinet-nse2-fallback">
             <i data-lucide="file-warning" class="w-12 h-12 text-slate-500 mb-3"></i>
             <p class="text-slate-400 text-sm">Le PDF de cette certification n'a pas encore été ajouté.</p>
           </div>
@@ -133,11 +160,9 @@
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fortinet.svg" class="w-6 h-6 invert opacity-80" alt="Fortinet" />
           <h2 class="font-space font-bold text-2xl text-white">Fortinet NSE 3</h2>
         </div>
-        <div class="cert-container flex items-center justify-center relative">
-          <object data="assets/certifications/fortinetNS3.pdf" type="application/pdf" width="100%" height="100%" class="absolute inset-0 z-10" onerror="this.style.display='none'; document.getElementById('fortinet3-fallback').style.display='flex';">
-            <p class="hidden">Le PDF n'est pas supporté par votre navigateur.</p>
-          </object>
-          <div id="fortinet3-fallback" class="absolute inset-0 z-0 flex flex-col items-center justify-center p-6 text-center">
+        <div class="cert-container">
+          <div class="cert-scroll-area" id="fortinet-nse3-pages"></div>
+          <div class="fallback-msg" id="fortinet-nse3-fallback">
             <i data-lucide="file-warning" class="w-12 h-12 text-slate-500 mb-3"></i>
             <p class="text-slate-400 text-sm">Le PDF de cette certification n'a pas encore été ajouté.</p>
           </div>
@@ -150,11 +175,9 @@
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fortinet.svg" class="w-6 h-6 invert opacity-80" alt="Fortinet" />
           <h2 class="font-space font-bold text-2xl text-white">Fortinet NSE 4</h2>
         </div>
-        <div class="cert-container flex items-center justify-center relative">
-          <object data="assets/certifications/fortinet_nse4.pdf" type="application/pdf" width="100%" height="100%" class="absolute inset-0 z-10" onerror="this.style.display='none'; document.getElementById('fortinet-fallback').style.display='flex';">
-            <p class="hidden">Le PDF n'est pas supporté par votre navigateur.</p>
-          </object>
-          <div id="fortinet-fallback" class="absolute inset-0 z-0 flex flex-col items-center justify-center p-6 text-center">
+        <div class="cert-container">
+          <div class="cert-scroll-area" id="fortinet-nse4-pages"></div>
+          <div class="fallback-msg" id="fortinet-nse4-fallback">
             <i data-lucide="file-warning" class="w-12 h-12 text-slate-500 mb-3"></i>
             <p class="text-slate-400 text-sm">Le PDF de cette certification n'a pas encore été ajouté.</p>
           </div>
@@ -164,17 +187,91 @@
     </div>
   </main>
 
+  <!-- Popup / Toast pour inviter à scroller -->
+  <div id="scroll-popup" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 max-w-md w-[90vw] bg-black/85 border border-white/20 backdrop-blur-md rounded-2xl px-5 py-4 shadow-2xl transition-all duration-500 opacity-0 translate-y-10 pointer-events-none flex items-start gap-3">
+    <i data-lucide="info" class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5"></i>
+    <p class="text-sm text-white font-medium flex-1">Certains PDF n'ont pas encore été ajoutés. Faites défiler vers le bas ou le haut pour voir les autres certifications disponibles.</p>
+    <button id="close-popup-btn" class="text-slate-400 hover:text-white pointer-events-auto flex-shrink-0 ml-1">
+      <i data-lucide="x" class="w-4 h-4"></i>
+    </button>
+  </div>
+
   <script>
     lucide.createIcons();
 
-    // Check if objects loaded successfully, if not show fallback (for browsers that don't trigger onerror on object)
-    window.addEventListener('load', () => {
-      document.querySelectorAll('object').forEach(obj => {
-        // Sometimes object data loading failures don't fire onerror.
-        // We handle it visually with z-index: the fallback is behind the object.
-        // If the object has no content, it's transparent, and the fallback shows.
-      });
+    // Désactiver le clic droit sur toute la page
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    // Désactiver les raccourcis de téléchargement et d'impression
+    document.addEventListener('keydown', e => {
+      if (
+        (e.ctrlKey || e.metaKey) && ['s', 'p', 'u'].includes(e.key.toLowerCase())
+      ) {
+        e.preventDefault();
+      }
     });
+
+    // Fermer le popup
+    document.getElementById('close-popup-btn').addEventListener('click', () => {
+      const popup = document.getElementById('scroll-popup');
+      popup.classList.add('opacity-0', 'translate-y-10');
+    });
+
+    // Liste des certificats à charger via PDF.js
+    const certs = [
+      { id: 'cisco-ccna',    path: 'assets/certifications/cisco_ccna.pdf'    },
+      { id: 'fortinet-nse1', path: 'assets/certifications/FortinetNS1.pdf'   },
+      { id: 'fortinet-nse2', path: 'assets/certifications/fortinetNS2.pdf'   },
+      { id: 'fortinet-nse3', path: 'assets/certifications/fortinetNS3.pdf'   },
+      { id: 'fortinet-nse4', path: 'assets/certifications/fortinet_nse4.pdf' },
+    ];
+
+    // Définir le worker PDF.js
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+
+    let missingCount = 0;
+
+    async function renderCert({ id, path }) {
+      const container = document.getElementById(`${id}-pages`);
+      const fallback  = document.getElementById(`${id}-fallback`);
+
+      try {
+        const pdf = await pdfjsLib.getDocument({ url: path, disableAutoFetch: true, disableStream: true }).promise;
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page  = await pdf.getPage(pageNum);
+          const scale = container.clientWidth / page.getViewport({ scale: 1 }).width || 1.5;
+          const vp    = page.getViewport({ scale });
+
+          const canvas  = document.createElement('canvas');
+          canvas.className = 'pdf-page';
+          canvas.width  = vp.width;
+          canvas.height = vp.height;
+          container.appendChild(canvas);
+
+          await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        }
+      } catch {
+        container.style.display = 'none';
+        fallback.style.display  = 'flex';
+        missingCount++;
+        checkMissing();
+      }
+    }
+
+    function checkMissing() {
+      if (missingCount > 0) {
+        const popup = document.getElementById('scroll-popup');
+        popup.classList.remove('opacity-0', 'translate-y-10');
+        popup.style.pointerEvents = 'auto';
+        setTimeout(() => {
+          popup.classList.add('opacity-0', 'translate-y-10');
+        }, 10000);
+      }
+    }
+
+    // Charger tous les certificats
+    Promise.all(certs.map(renderCert));
   </script>
 </body>
 </html>

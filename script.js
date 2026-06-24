@@ -137,9 +137,9 @@ const projectsData = {
     description: "Étude et développement d'un prototype de malware éducatif en Python dans un environnement sandboxé, pour comprendre les vecteurs d'attaque et renforcer les capacités de détection.",
     techs: ["Python", "Sécurité Offensive", "Analyse Malware", "Pédagogie"],
     github: "https://github.com/JMDcoding/Malware_PY-Cadre-pedagogique-",
-    website: "",
+    website: "projet-malware.html",
     assetDir: "assets/projects/p06_malware_py",
-    situation: "Comprendre les mécanismes internes des malwares est essentiel pour mieux les détecter et les neutraliser. Ce projet a été réalisé dans un cadre strictement pédagogique.",
+    situation: "Comprendre les mécanismes internes des malwares est essentiel pour mieux les détecter et les neutraliser. Ce projet a été réalisé dans un cadre strictement pédagogique. Utilité en entreprise : Renforcer les capacités de la Blue Team à anticiper et détecter les menaces, et développer des signatures de détection pour se protéger contre les attaques réelles.",
     task: "Développer et analyser un programme malveillant simulé en Python pour comprendre les techniques d'attaque et renforcer les capacités de défense.",
     actions: [
       "Étude des techniques courantes de malware (keylogger, reverse shell, persistance).",
@@ -185,9 +185,9 @@ const projectsData = {
     description: "Déploiement et configuration d'un pare-feu virtuel (pfSense/IPFire) dans un environnement de virtualisation pour sécuriser le cloisonnement réseau inter-VM.",
     techs: ["VMware", "Virtualisation", "Pare-feu", "Réseau"],
     github: "https://github.com/JMDcoding/Machine_Virtuelle_Firewall_Virtualisation",
-    website: "",
+    website: "projet-virtualisation.html",
     assetDir: "assets/projects/p08_virtualisation_pare_feu",
-    situation: "La sécurisation des environnements virtualisés nécessitait le déploiement et la configuration de pare-feux au sein de machines virtuelles.",
+    situation: "La sécurisation des environnements virtualisés nécessitait le déploiement et la configuration de pare-feux au sein de machines virtuelles. Utilité en entreprise : Réduire les coûts matériels en mutualisant les serveurs physiques, faciliter la reprise d'activité (PRA) et sécuriser le réseau via le cloisonnement inter-département.",
     task: "Mettre en place et configurer un pare-feu virtuel dans un environnement de virtualisation pour sécuriser les flux réseau inter-VM.",
     actions: [
       "Déploiement d'un environnement de virtualisation avec plusieurs machines virtuelles.",
@@ -305,9 +305,9 @@ const projectsData = {
     description: "Honeypot SSH Cowrie conteneurisé via Docker, avec collecte Loki et tableau de bord Grafana pour géolocaliser les IPs malveillantes et analyser les tentatives d'intrusion.",
     techs: ["Honeypot Cowrie", "Grafana", "Loki", "Docker Compose", "Python Scripting"],
     github: "https://github.com/JMDcoding/Honeypot-",
-    website: "",
+    website: "projet-honeypot.html",
     assetDir: "assets/projects/p13_honeypot_ssh",
-    situation: "L'organisation manquait de visibilité sur les attaques externes ciblant ses serveurs exposés sur Internet, rendant impossible la mise en place de politiques de bannissement proactives ou de veille sur les menaces.",
+    situation: "L'organisation manquait de visibilité sur les attaques externes ciblant ses serveurs exposés sur Internet, rendant impossible la mise en place de politiques de bannissement proactives ou de veille sur les menaces. Utilité en entreprise : Agir comme un système d'alerte précoce (leurre) pour détecter et analyser les attaquants, bloquant ainsi les adresses IP malveillantes avant qu'elles ne touchent l'infrastructure de production.",
     task: "Déployer un environnement de simulation d'attaque (Honeypot) isolé sur le port SSH, récupérer les tentatives d'intrusion et les analyser visuellement sur un dashboard en temps réel.",
     actions: [
       "Création d'un conteneur Docker isolé faisant tourner le honeypot SSH Cowrie.",
@@ -333,9 +333,9 @@ const projectsData = {
     description: "Configurations avancées de pare-feux pfSense : règles de filtrage granulaires, NAT avancé, tunnels VPN IPsec/OpenVPN et segmentation VLAN avec routage inter-VLAN.",
     techs: ["pfSense", "Firewall", "NAT", "VLANs", "VPN"],
     github: "https://github.com/JMDcoding/Manipulation_PFSENSE",
-    website: "",
+    website: "projet-pfsense.html",
     assetDir: "assets/projects/p14_manipulation_pfsense",
-    situation: "La configuration avancée de pare-feux pfSense est essentielle pour sécuriser les infrastructures réseau d'entreprise.",
+    situation: "La configuration avancée de pare-feux pfSense est essentielle pour sécuriser les infrastructures réseau d'entreprise. Utilité en entreprise : Sécuriser la frontière du réseau (pare-feu externe/interne), gérer le trafic inter-sites sécurisé, isoler les services critiques (DMZ) et permettre aux collaborateurs d'accéder au SI de manière sécurisée en télétravail via VPN.",
     task: "Maîtriser les configurations avancées de pfSense : règles de filtrage, NAT, VPN et segmentation VLAN.",
     actions: [
       "Installation et configuration initiale de pfSense sur environnement virtualisé.",
@@ -429,9 +429,9 @@ const projectsData = {
     description: "Script Python d'analyse de logs Apache/Syslog en flux continu par expressions régulières, avec détection de requêtes malveillantes et rapports HTML automatisés.",
     techs: ["Python", "Regex", "Logs Auditing", "Automation", "Security Alerts"],
     github: "https://github.com/JMDcoding/Analyse-de-Logs",
-    website: "",
+    website: "projet-analyse-logs.html",
     assetDir: "assets/projects/p18_analyseur_logs",
-    situation: "Les fichiers de logs Apache et serveurs d'accès généraient des gigaoctets de données inexploitées, dissimulant des tentatives récurrentes de force brute ou d'injections de requêtes suspectes.",
+    situation: "Les fichiers de logs Apache et serveurs d'accès généraient des gigaoctets de données inexploitées, dissimulant des tentatives récurrentes de force brute ou d'injections de requêtes suspectes. Utilité en entreprise : Identifier en temps réel les comportements anormaux, centraliser les alertes de sécurité (SIEM), satisfaire aux obligations légales de traçabilité et réduire le temps d'investigation en cas d'incident cyber.",
     task: "Créer un script Python capable de lire en flux continu les fichiers logs, d'identifier les signatures de requêtes hostiles et de synthétiser les données importantes sous forme de rapports légers.",
     actions: [
       "Développement d'un parser de fichiers logs asynchrone utilisant la bibliothèque standard de Python.",
@@ -797,7 +797,7 @@ function openProjectModal(projectId) {
     websiteButtonHTML = `
       <a href="${project.website}" target="_blank" rel="noreferrer" class="px-3.5 py-2.5 rounded-xl border border-white/10 bg-black text-white font-bold text-[10px] uppercase tracking-wider flex items-center gap-1.5 hover:bg-white/15 transition-colors shadow-sm">
         <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-        Visiter le site web
+        Version Web
       </a>
     `;
   }
